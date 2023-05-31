@@ -4,10 +4,10 @@
 typedef NVec{{key}}<T extends num> = ({{#value}}T,{{/value}});{{/repetitionsPerLength}}
 
 {{#repetitionsPerLength}}
-typedef Vec{{key}}<T extends num> = NVec{{key}}<double>;{{/repetitionsPerLength}}
+typedef Vec{{key}} = NVec{{key}}<double>;{{/repetitionsPerLength}}
 
 {{#repetitionsPerLength}}
-typedef IVec{{key}}<T extends num> = NVec{{key}}<int>;{{/repetitionsPerLength}}
+typedef IVec{{key}} = NVec{{key}}<int>;{{/repetitionsPerLength}}
 
 {{#propertiesForLenghts}}
 extension NVec{{key}}prperties<T extends num> on NVec{{key}}<T> {

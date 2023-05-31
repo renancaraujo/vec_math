@@ -6,14 +6,14 @@ typedef NVec3<T extends num> = (T,T,T,);
 typedef NVec2<T extends num> = (T,T,);
 
 
-typedef Vec4<T extends num> = NVec4<double>;
-typedef Vec3<T extends num> = NVec3<double>;
-typedef Vec2<T extends num> = NVec2<double>;
+typedef Vec4 = NVec4<double>;
+typedef Vec3 = NVec3<double>;
+typedef Vec2 = NVec2<double>;
 
 
-typedef IVec4<T extends num> = NVec4<int>;
-typedef IVec3<T extends num> = NVec3<int>;
-typedef IVec2<T extends num> = NVec2<int>;
+typedef IVec4 = NVec4<int>;
+typedef IVec3 = NVec3<int>;
+typedef IVec2 = NVec2<int>;
 
 
 extension NVec4prperties<T extends num> on NVec4<T> {
