@@ -1,0 +1,7 @@
+name: generate_vecs_hooks
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  mason: ">=0.1.0-dev.49 <0.1.0"
