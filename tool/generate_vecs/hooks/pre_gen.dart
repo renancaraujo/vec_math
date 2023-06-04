@@ -4,65 +4,85 @@ void run(HookContext context) {
   context.vars = main();
 }
 
-typedef SystemMapping = Map<int, List<List<String>>>;
+typedef SystemMapping = Map<int, List<System>>;
 
-final sequences = {
-  2: [1, 2],
-  3: [1, 2, 3],
-  4: [1, 2, 3, 4],
-};
+typedef System = ({String name, List<String> sequence});
 
 Map<String, dynamic> main() {
   final maxDimension = 4;
 
-  final repetitionsPerLength = <int, List<int>>{
-    for (int i = maxDimension; i >= 2; i--)
-      i: [
-        for (int j = 0; j < i; j++) j,
-      ],
-  };
-
-  final SystemMapping systemsPerLenght = distributeSystems({
+  final systemsPerLength = distributeSystems({
     2: [
-      ['width', 'height'],
+      (name: 'Size (width and height)', sequence: ['width', 'height']),
     ],
     4: [
-      ['x', 'y', 'z', 'w'],
-      ['r', 'g', 'b', 'a'],
-      ['s', 't', 'p', 'q'],
+      (name: 'XYZW', sequence: ['x', 'y', 'z', 'w']),
+      (name: 'RGBA', sequence: ['r', 'g', 'b', 'a']),
+      (name: 'STPQ', sequence: ['s', 't', 'p', 'q']),
     ]
   }, maxDimension);
 
-  final propertiesForLenghts = <int, Map<String, List<Map<String, dynamic>>>>{};
-  for (final entry in systemsPerLenght.entries) {
-    final properties = <Map<String, dynamic>>[];
-    final getters = <Map<String, dynamic>>[];
+  final sequences = <int, List<int>>{
+    for (int i = 2; i <= maxDimension; i++)
+      i: [
+        for (int j = 1; j <= i; j++) j,
+      ],
+  };
+
+  final getters = <int, Map<String, dynamic>>{};
+  for (final entry in systemsPerLength.entries) {
+    final multiElementGetters = <Map<String, dynamic>>[];
+    final singleElementGetters = <Map<String, dynamic>>[];
+    final List<String> systems = [];
     for (final system in entry.value) {
-      final getterIdentifiers = combinationsWithRepetition(system, 1);
-      getters.addAll(getterIdentifiers.map((e) {
-        return {'name': e.$1, 'sequence': e.$2.first};
+      final systemName = system.name;
+
+      systems.add(systemName);
+
+      final singleGettersIdentifiers = combinationsWithRepetition(
+        system.sequence,
+        1,
+      );
+
+      singleElementGetters.addAll(singleGettersIdentifiers.map((e) {
+        String ordinal = getOrdinal(e.$2.first);
+        return {
+          'name': e.$1,
+          'sequence': e.$2.first,
+          'ordinal': ordinal,
+          'system': systemName,
+        };
       }));
       for (int i = 2; i <= maxDimension; i++) {
-        final combinations = combinationsWithRepetition(system, i);
-        properties.addAll(combinations.map(
+        final combinations = combinationsWithRepetition(system.sequence, i);
+        multiElementGetters.addAll(combinations.map(
           (e) {
-            return {'returnLength': i, 'name': e.$1, 'sequence': e.$2};
+            final representation =
+                '(${e.$2.map((e) => getOrdinal(e)).join(', ')})';
+
+            return {
+              'returnLength': i,
+              'name': e.$1,
+              'sequence': e.$2,
+              'representation': representation,
+              'system': systemName,
+            };
           },
         ));
       }
     }
-    propertiesForLenghts[entry.key] ??= {};
-    propertiesForLenghts[entry.key]!['properties'] = properties;
-    propertiesForLenghts[entry.key]!['getters'] = getters;
+
+    final map = getters[entry.key] = {};
+    map['multiElementGetters'] = multiElementGetters;
+    map['singleElementGetters'] = singleElementGetters;
+    map['systems'] = systems;
+    map['sequence'] = sequences[entry.key];
   }
 
   final result = {
-    'repetitionsPerLength': repetitionsPerLength.asJSON(),
-    'systemsPerLenght': systemsPerLenght.asJSON(),
-    'propertiesForLenghts': propertiesForLenghts.asJSON(),
+    'sequences': sequences.asJSON(),
+    'getters': getters.asJSON(),
   };
-
-  // print(result);
 
   return result;
 }
@@ -88,12 +108,15 @@ SystemMapping distributeSystems(
   int maxDimension,
 ) {
   final SystemMapping actualSystems = {};
-  final previousSystems = <Iterable<String>>[];
+  final previousSystems = <System>[];
 
   for (int i = maxDimension; i >= 2; i--) {
     final entry = availableSystems[i];
 
-    final mySystems = previousSystems.map((e) => e.take(i).toList()).toList();
+    final List<System> mySystems = previousSystems
+        .map<System>(
+            (e) => (sequence: e.sequence.take(i).toList(), name: e.name))
+        .toList();
     if (entry != null) {
       mySystems.addAll(entry);
       previousSystems.addAll(entry);
@@ -101,7 +124,12 @@ SystemMapping distributeSystems(
     actualSystems[i] = mySystems;
   }
 
-  return actualSystems;
+  return {
+    for (final entry
+        in actualSystems.entries.toList()
+          ..sort((a, b) => a.key.compareTo(b.key)))
+      entry.key: entry.value,
+  };
 }
 
 List<(String, List<int>)> combinationsWithRepetition(
@@ -124,4 +152,21 @@ List<(String, List<int>)> combinationsWithRepetition(
   }
 
   return result;
+}
+
+String getOrdinal(int number) {
+  if (number % 100 >= 11 && number % 100 <= 13) {
+    return '${number}th';
+  } else {
+    switch (number % 10) {
+      case 1:
+        return '${number}st';
+      case 2:
+        return '${number}nd';
+      case 3:
+        return '${number}rd';
+      default:
+        return '${number}th';
+    }
+  }
 }
