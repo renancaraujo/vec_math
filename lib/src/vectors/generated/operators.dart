@@ -1,10 +1,11 @@
+// ignore_for_file: join_return_with_assignment
+
 import 'dart:math' as math;
 
 import 'package:vec_math/vec_math.dart';
 
 /// A set of operations that are common to all [NVec2]s.
 extension NVec2Methods<T extends num> on NVec2<T> {
-
   /// This Vector as a double vector ([Vec2]).
   ///
   /// Calls [num.toDouble] on each element.
@@ -15,24 +16,81 @@ extension NVec2Methods<T extends num> on NVec2<T> {
     );
   }
 
-  IVec2 toInt() => ($1.toInt(),$2.toInt(),);
+  /// This Vector as an integer vector ([IVec2]).
+  ///
+  /// Calls [num.toInt] on each element.
+  IVec2 toInt() => (
+        $1.toInt(),
+        $2.toInt(),
+      );
 
-  NVec2<T> abs() => ($1.abs() as T,$2.abs() as T,);
+  /// The absolute value of this vector.
+  ///
+  /// Calls [num.abs] on each element.
+  NVec2<T> abs() => (
+        $1.abs() as T,
+        $2.abs() as T,
+      );
 
+  /// The absolute value of this vector.
+  ///
+  /// See also:
+  /// - [abs]
   NVec2<T> absolute() => abs();
 
-  IVec2 ceil() => ($1.ceil(),$2.ceil(),);
+  /// Ceils each component of this vector.
+  ///
+  /// Calls [num.ceil] on each element.
+  IVec2 ceil() => (
+        $1.ceil(),
+        $2.ceil(),
+      );
 
-  Vec2 ceilToDouble() => ($1.ceilToDouble(),$2.ceilToDouble(),);
+  /// Ceils each component of this vector to a double.
+  ///
+  /// Calls [num.ceilToDouble] on each element.
+  Vec2 ceilToDouble() => (
+        $1.ceilToDouble(),
+        $2.ceilToDouble(),
+      );
 
-  IVec2 floor() => ($1.floor(),$2.floor(),);
+  /// Floors each component of this vector.
+  ///
+  /// Calls [num.floor] on each element.
+  IVec2 floor() => (
+        $1.floor(),
+        $2.floor(),
+      );
 
-  Vec2 floorToDouble() => ($1.floorToDouble(),$2.floorToDouble(),);
+  /// Floors each component of this vector to a double.
+  ///
+  /// Calls [num.floorToDouble] on each element.
+  Vec2 floorToDouble() => (
+        $1.floorToDouble(),
+        $2.floorToDouble(),
+      );
 
-  IVec2 round() => ($1.round(),$2.round(),);
+  /// Rounds each component of this vector.
+  ///
+  /// Calls [num.round] on each element.
+  IVec2 round() => (
+        $1.round(),
+        $2.round(),
+      );
 
-  Vec2 roundToDouble() => ($1.roundToDouble(),$2.roundToDouble(),);
+  /// Rounds each component of this vector to a double.
+  ///
+  /// Calls [num.roundToDouble] on each element.
+  Vec2 roundToDouble() => (
+        $1.roundToDouble(),
+        $2.roundToDouble(),
+      );
 
+  /// Clamps each component of this vector between
+  /// [lowerLimit] and [upperLimit].
+  ///
+  /// The arguments [lowerLimit] and [upperLimit] must form a valid range where
+  /// `lowerLimit.compareTo(upperLimit) <= 0`.
   NVec2<T> clampScalar(T lowerLimit, T upperLimit) {
     return (
       $1.clamp(lowerLimit, upperLimit) as T,
@@ -40,6 +98,12 @@ extension NVec2Methods<T extends num> on NVec2<T> {
     );
   }
 
+  /// Clamps each component of this vector between the equivalent components
+  /// of [lowerLimit] and [upperLimit].
+  ///
+  /// The elements of [lowerLimit] and [upperLimit] must form a valid
+  /// range where
+  /// `lowerLimit.$n.compareTo(upperLimit.$n) <= 0`.
   NVec2<T> clamp(NVec2<T> lowerLimit, NVec2<T> upperLimit) {
     return (
       $1.clamp(lowerLimit.$1, upperLimit.$1) as T,
@@ -47,6 +111,7 @@ extension NVec2Methods<T extends num> on NVec2<T> {
     );
   }
 
+  /// Multiplies each component of this vector by [scalar].
   Vec2 scale(double scalar) {
     return (
       ($1 * scalar),
@@ -54,36 +119,54 @@ extension NVec2Methods<T extends num> on NVec2<T> {
     );
   }
 
+  /// The distance between this vector and [other].
+  ///
+  /// See also:
+  /// - [distanceToSquared]
   double distanceTo(NVec2<T> other) {
     return math.sqrt(distanceToSquared(other));
   }
 
+  /// The squared distance between this vector and [other].
+  ///
+  /// This is useful for comparisons where the actual distance is not necessary
+  /// as it avoids the expensive square root operation.
+  ///
+  /// See also:
+  /// - [distanceTo]
   double distanceToSquared(NVec2<T> other) {
     var distance = 0.0;
 
     final d1 = $1 - other.$1;
-    distance +=  d1 * d1;
+    distance += d1 * d1;
 
     final d2 = $2 - other.$2;
-    distance +=  d2 * d2;
+    distance += d2 * d2;
 
     return distance;
   }
 
+  /// Add [other] to this vector after scaling it by [scalar].
   Vec2 addScaled(NVec2<T> other, double scalar) {
     return (
-    ($1 + other.$1 * scalar),
-    ($2 + other.$2 * scalar),
+      ($1 + other.$1 * scalar),
+      ($2 + other.$2 * scalar),
     );
   }
 
-  Iterable<T> toIterable() sync * {
+  /// Creates a iterable with the elements of this vector.
+  Iterable<T> toIterable() sync* {
     yield $1;
     yield $2;
   }
 
+  /// Get the iterable representation of this vector.
+  ///
+  /// See also:
+  /// - [toIterable]
   Iterable<T> get iterable => toIterable();
 
+  /// Negate the elements of this vector.
   NVec2<T> operator -() {
     return (
       -$1 as T,
@@ -91,6 +174,7 @@ extension NVec2Methods<T extends num> on NVec2<T> {
     );
   }
 
+  /// Sum of this vector and [other].
   NVec2<T> operator +(NVec2<T> other) {
     return (
       ($1 + other.$1 as T),
@@ -98,6 +182,7 @@ extension NVec2Methods<T extends num> on NVec2<T> {
     );
   }
 
+  /// Subtracts [other] from this vector.
   NVec2<T> operator -(NVec2<T> other) {
     return (
       ($1 - other.$1 as T),
@@ -105,18 +190,19 @@ extension NVec2Methods<T extends num> on NVec2<T> {
     );
   }
 
+  /// Multiplies this vector by [scalar].
   Vec2 operator *(double scalar) {
     return scale(scalar);
   }
 
-  Vec2 operator /(double scalar) {
-    return scale(1.0 / scalar);
+  /// Divides this vector by [number].
+  Vec2 operator /(double number) {
+    return scale(1.0 / number);
   }
 }
 
 /// A set of operations that are common to all [NVec2]s.
 extension NVec3Methods<T extends num> on NVec3<T> {
-
   /// This Vector as a double vector ([Vec3]).
   ///
   /// Calls [num.toDouble] on each element.
@@ -128,24 +214,89 @@ extension NVec3Methods<T extends num> on NVec3<T> {
     );
   }
 
-  IVec3 toInt() => ($1.toInt(),$2.toInt(),$3.toInt(),);
+  /// This Vector as an integer vector ([IVec3]).
+  ///
+  /// Calls [num.toInt] on each element.
+  IVec3 toInt() => (
+        $1.toInt(),
+        $2.toInt(),
+        $3.toInt(),
+      );
 
-  NVec3<T> abs() => ($1.abs() as T,$2.abs() as T,$3.abs() as T,);
+  /// The absolute value of this vector.
+  ///
+  /// Calls [num.abs] on each element.
+  NVec3<T> abs() => (
+        $1.abs() as T,
+        $2.abs() as T,
+        $3.abs() as T,
+      );
 
+  /// The absolute value of this vector.
+  ///
+  /// See also:
+  /// - [abs]
   NVec3<T> absolute() => abs();
 
-  IVec3 ceil() => ($1.ceil(),$2.ceil(),$3.ceil(),);
+  /// Ceils each component of this vector.
+  ///
+  /// Calls [num.ceil] on each element.
+  IVec3 ceil() => (
+        $1.ceil(),
+        $2.ceil(),
+        $3.ceil(),
+      );
 
-  Vec3 ceilToDouble() => ($1.ceilToDouble(),$2.ceilToDouble(),$3.ceilToDouble(),);
+  /// Ceils each component of this vector to a double.
+  ///
+  /// Calls [num.ceilToDouble] on each element.
+  Vec3 ceilToDouble() => (
+        $1.ceilToDouble(),
+        $2.ceilToDouble(),
+        $3.ceilToDouble(),
+      );
 
-  IVec3 floor() => ($1.floor(),$2.floor(),$3.floor(),);
+  /// Floors each component of this vector.
+  ///
+  /// Calls [num.floor] on each element.
+  IVec3 floor() => (
+        $1.floor(),
+        $2.floor(),
+        $3.floor(),
+      );
 
-  Vec3 floorToDouble() => ($1.floorToDouble(),$2.floorToDouble(),$3.floorToDouble(),);
+  /// Floors each component of this vector to a double.
+  ///
+  /// Calls [num.floorToDouble] on each element.
+  Vec3 floorToDouble() => (
+        $1.floorToDouble(),
+        $2.floorToDouble(),
+        $3.floorToDouble(),
+      );
 
-  IVec3 round() => ($1.round(),$2.round(),$3.round(),);
+  /// Rounds each component of this vector.
+  ///
+  /// Calls [num.round] on each element.
+  IVec3 round() => (
+        $1.round(),
+        $2.round(),
+        $3.round(),
+      );
 
-  Vec3 roundToDouble() => ($1.roundToDouble(),$2.roundToDouble(),$3.roundToDouble(),);
+  /// Rounds each component of this vector to a double.
+  ///
+  /// Calls [num.roundToDouble] on each element.
+  Vec3 roundToDouble() => (
+        $1.roundToDouble(),
+        $2.roundToDouble(),
+        $3.roundToDouble(),
+      );
 
+  /// Clamps each component of this vector between
+  /// [lowerLimit] and [upperLimit].
+  ///
+  /// The arguments [lowerLimit] and [upperLimit] must form a valid range where
+  /// `lowerLimit.compareTo(upperLimit) <= 0`.
   NVec3<T> clampScalar(T lowerLimit, T upperLimit) {
     return (
       $1.clamp(lowerLimit, upperLimit) as T,
@@ -154,6 +305,12 @@ extension NVec3Methods<T extends num> on NVec3<T> {
     );
   }
 
+  /// Clamps each component of this vector between the equivalent components
+  /// of [lowerLimit] and [upperLimit].
+  ///
+  /// The elements of [lowerLimit] and [upperLimit] must form a valid
+  /// range where
+  /// `lowerLimit.$n.compareTo(upperLimit.$n) <= 0`.
   NVec3<T> clamp(NVec3<T> lowerLimit, NVec3<T> upperLimit) {
     return (
       $1.clamp(lowerLimit.$1, upperLimit.$1) as T,
@@ -162,6 +319,7 @@ extension NVec3Methods<T extends num> on NVec3<T> {
     );
   }
 
+  /// Multiplies each component of this vector by [scalar].
   Vec3 scale(double scalar) {
     return (
       ($1 * scalar),
@@ -170,41 +328,59 @@ extension NVec3Methods<T extends num> on NVec3<T> {
     );
   }
 
+  /// The distance between this vector and [other].
+  ///
+  /// See also:
+  /// - [distanceToSquared]
   double distanceTo(NVec3<T> other) {
     return math.sqrt(distanceToSquared(other));
   }
 
+  /// The squared distance between this vector and [other].
+  ///
+  /// This is useful for comparisons where the actual distance is not necessary
+  /// as it avoids the expensive square root operation.
+  ///
+  /// See also:
+  /// - [distanceTo]
   double distanceToSquared(NVec3<T> other) {
     var distance = 0.0;
 
     final d1 = $1 - other.$1;
-    distance +=  d1 * d1;
+    distance += d1 * d1;
 
     final d2 = $2 - other.$2;
-    distance +=  d2 * d2;
+    distance += d2 * d2;
 
     final d3 = $3 - other.$3;
-    distance +=  d3 * d3;
+    distance += d3 * d3;
 
     return distance;
   }
 
+  /// Add [other] to this vector after scaling it by [scalar].
   Vec3 addScaled(NVec3<T> other, double scalar) {
     return (
-    ($1 + other.$1 * scalar),
-    ($2 + other.$2 * scalar),
-    ($3 + other.$3 * scalar),
+      ($1 + other.$1 * scalar),
+      ($2 + other.$2 * scalar),
+      ($3 + other.$3 * scalar),
     );
   }
 
-  Iterable<T> toIterable() sync * {
+  /// Creates a iterable with the elements of this vector.
+  Iterable<T> toIterable() sync* {
     yield $1;
     yield $2;
     yield $3;
   }
 
+  /// Get the iterable representation of this vector.
+  ///
+  /// See also:
+  /// - [toIterable]
   Iterable<T> get iterable => toIterable();
 
+  /// Negate the elements of this vector.
   NVec3<T> operator -() {
     return (
       -$1 as T,
@@ -213,6 +389,7 @@ extension NVec3Methods<T extends num> on NVec3<T> {
     );
   }
 
+  /// Sum of this vector and [other].
   NVec3<T> operator +(NVec3<T> other) {
     return (
       ($1 + other.$1 as T),
@@ -221,6 +398,7 @@ extension NVec3Methods<T extends num> on NVec3<T> {
     );
   }
 
+  /// Subtracts [other] from this vector.
   NVec3<T> operator -(NVec3<T> other) {
     return (
       ($1 - other.$1 as T),
@@ -229,18 +407,19 @@ extension NVec3Methods<T extends num> on NVec3<T> {
     );
   }
 
+  /// Multiplies this vector by [scalar].
   Vec3 operator *(double scalar) {
     return scale(scalar);
   }
 
-  Vec3 operator /(double scalar) {
-    return scale(1.0 / scalar);
+  /// Divides this vector by [number].
+  Vec3 operator /(double number) {
+    return scale(1.0 / number);
   }
 }
 
 /// A set of operations that are common to all [NVec2]s.
 extension NVec4Methods<T extends num> on NVec4<T> {
-
   /// This Vector as a double vector ([Vec4]).
   ///
   /// Calls [num.toDouble] on each element.
@@ -253,24 +432,97 @@ extension NVec4Methods<T extends num> on NVec4<T> {
     );
   }
 
-  IVec4 toInt() => ($1.toInt(),$2.toInt(),$3.toInt(),$4.toInt(),);
+  /// This Vector as an integer vector ([IVec4]).
+  ///
+  /// Calls [num.toInt] on each element.
+  IVec4 toInt() => (
+        $1.toInt(),
+        $2.toInt(),
+        $3.toInt(),
+        $4.toInt(),
+      );
 
-  NVec4<T> abs() => ($1.abs() as T,$2.abs() as T,$3.abs() as T,$4.abs() as T,);
+  /// The absolute value of this vector.
+  ///
+  /// Calls [num.abs] on each element.
+  NVec4<T> abs() => (
+        $1.abs() as T,
+        $2.abs() as T,
+        $3.abs() as T,
+        $4.abs() as T,
+      );
 
+  /// The absolute value of this vector.
+  ///
+  /// See also:
+  /// - [abs]
   NVec4<T> absolute() => abs();
 
-  IVec4 ceil() => ($1.ceil(),$2.ceil(),$3.ceil(),$4.ceil(),);
+  /// Ceils each component of this vector.
+  ///
+  /// Calls [num.ceil] on each element.
+  IVec4 ceil() => (
+        $1.ceil(),
+        $2.ceil(),
+        $3.ceil(),
+        $4.ceil(),
+      );
 
-  Vec4 ceilToDouble() => ($1.ceilToDouble(),$2.ceilToDouble(),$3.ceilToDouble(),$4.ceilToDouble(),);
+  /// Ceils each component of this vector to a double.
+  ///
+  /// Calls [num.ceilToDouble] on each element.
+  Vec4 ceilToDouble() => (
+        $1.ceilToDouble(),
+        $2.ceilToDouble(),
+        $3.ceilToDouble(),
+        $4.ceilToDouble(),
+      );
 
-  IVec4 floor() => ($1.floor(),$2.floor(),$3.floor(),$4.floor(),);
+  /// Floors each component of this vector.
+  ///
+  /// Calls [num.floor] on each element.
+  IVec4 floor() => (
+        $1.floor(),
+        $2.floor(),
+        $3.floor(),
+        $4.floor(),
+      );
 
-  Vec4 floorToDouble() => ($1.floorToDouble(),$2.floorToDouble(),$3.floorToDouble(),$4.floorToDouble(),);
+  /// Floors each component of this vector to a double.
+  ///
+  /// Calls [num.floorToDouble] on each element.
+  Vec4 floorToDouble() => (
+        $1.floorToDouble(),
+        $2.floorToDouble(),
+        $3.floorToDouble(),
+        $4.floorToDouble(),
+      );
 
-  IVec4 round() => ($1.round(),$2.round(),$3.round(),$4.round(),);
+  /// Rounds each component of this vector.
+  ///
+  /// Calls [num.round] on each element.
+  IVec4 round() => (
+        $1.round(),
+        $2.round(),
+        $3.round(),
+        $4.round(),
+      );
 
-  Vec4 roundToDouble() => ($1.roundToDouble(),$2.roundToDouble(),$3.roundToDouble(),$4.roundToDouble(),);
+  /// Rounds each component of this vector to a double.
+  ///
+  /// Calls [num.roundToDouble] on each element.
+  Vec4 roundToDouble() => (
+        $1.roundToDouble(),
+        $2.roundToDouble(),
+        $3.roundToDouble(),
+        $4.roundToDouble(),
+      );
 
+  /// Clamps each component of this vector between
+  /// [lowerLimit] and [upperLimit].
+  ///
+  /// The arguments [lowerLimit] and [upperLimit] must form a valid range where
+  /// `lowerLimit.compareTo(upperLimit) <= 0`.
   NVec4<T> clampScalar(T lowerLimit, T upperLimit) {
     return (
       $1.clamp(lowerLimit, upperLimit) as T,
@@ -280,6 +532,12 @@ extension NVec4Methods<T extends num> on NVec4<T> {
     );
   }
 
+  /// Clamps each component of this vector between the equivalent components
+  /// of [lowerLimit] and [upperLimit].
+  ///
+  /// The elements of [lowerLimit] and [upperLimit] must form a valid
+  /// range where
+  /// `lowerLimit.$n.compareTo(upperLimit.$n) <= 0`.
   NVec4<T> clamp(NVec4<T> lowerLimit, NVec4<T> upperLimit) {
     return (
       $1.clamp(lowerLimit.$1, upperLimit.$1) as T,
@@ -289,6 +547,7 @@ extension NVec4Methods<T extends num> on NVec4<T> {
     );
   }
 
+  /// Multiplies each component of this vector by [scalar].
   Vec4 scale(double scalar) {
     return (
       ($1 * scalar),
@@ -298,46 +557,64 @@ extension NVec4Methods<T extends num> on NVec4<T> {
     );
   }
 
+  /// The distance between this vector and [other].
+  ///
+  /// See also:
+  /// - [distanceToSquared]
   double distanceTo(NVec4<T> other) {
     return math.sqrt(distanceToSquared(other));
   }
 
+  /// The squared distance between this vector and [other].
+  ///
+  /// This is useful for comparisons where the actual distance is not necessary
+  /// as it avoids the expensive square root operation.
+  ///
+  /// See also:
+  /// - [distanceTo]
   double distanceToSquared(NVec4<T> other) {
     var distance = 0.0;
 
     final d1 = $1 - other.$1;
-    distance +=  d1 * d1;
+    distance += d1 * d1;
 
     final d2 = $2 - other.$2;
-    distance +=  d2 * d2;
+    distance += d2 * d2;
 
     final d3 = $3 - other.$3;
-    distance +=  d3 * d3;
+    distance += d3 * d3;
 
     final d4 = $4 - other.$4;
-    distance +=  d4 * d4;
+    distance += d4 * d4;
 
     return distance;
   }
 
+  /// Add [other] to this vector after scaling it by [scalar].
   Vec4 addScaled(NVec4<T> other, double scalar) {
     return (
-    ($1 + other.$1 * scalar),
-    ($2 + other.$2 * scalar),
-    ($3 + other.$3 * scalar),
-    ($4 + other.$4 * scalar),
+      ($1 + other.$1 * scalar),
+      ($2 + other.$2 * scalar),
+      ($3 + other.$3 * scalar),
+      ($4 + other.$4 * scalar),
     );
   }
 
-  Iterable<T> toIterable() sync * {
+  /// Creates a iterable with the elements of this vector.
+  Iterable<T> toIterable() sync* {
     yield $1;
     yield $2;
     yield $3;
     yield $4;
   }
 
+  /// Get the iterable representation of this vector.
+  ///
+  /// See also:
+  /// - [toIterable]
   Iterable<T> get iterable => toIterable();
 
+  /// Negate the elements of this vector.
   NVec4<T> operator -() {
     return (
       -$1 as T,
@@ -347,6 +624,7 @@ extension NVec4Methods<T extends num> on NVec4<T> {
     );
   }
 
+  /// Sum of this vector and [other].
   NVec4<T> operator +(NVec4<T> other) {
     return (
       ($1 + other.$1 as T),
@@ -356,6 +634,7 @@ extension NVec4Methods<T extends num> on NVec4<T> {
     );
   }
 
+  /// Subtracts [other] from this vector.
   NVec4<T> operator -(NVec4<T> other) {
     return (
       ($1 - other.$1 as T),
@@ -365,14 +644,13 @@ extension NVec4Methods<T extends num> on NVec4<T> {
     );
   }
 
+  /// Multiplies this vector by [scalar].
   Vec4 operator *(double scalar) {
     return scale(scalar);
   }
 
-  Vec4 operator /(double scalar) {
-    return scale(1.0 / scalar);
+  /// Divides this vector by [number].
+  Vec4 operator /(double number) {
+    return scale(1.0 / number);
   }
 }
-
-
-

@@ -2,4 +2,3 @@
 library vec_math;
 
 export 'src/vectors/vectors.dart';
-

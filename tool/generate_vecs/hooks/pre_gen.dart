@@ -25,9 +25,21 @@ Map<String, dynamic> main() {
       ),
     ],
     4: [
-      (name: 'XYZW', sequence: ['x', 'y', 'z', 'w'], description: 'Coordinates'),
-      (name: 'RGBA', sequence: ['r', 'g', 'b', 'a'], description: 'Color channels'),
-      (name: 'STPQ', sequence: ['s', 't', 'p', 'q'], description: 'Texture coordinates'),
+      (
+        name: 'XYZW',
+        sequence: ['x', 'y', 'z', 'w'],
+        description: 'Coordinates'
+      ),
+      (
+        name: 'RGBA',
+        sequence: ['r', 'g', 'b', 'a'],
+        description: 'Color channels'
+      ),
+      (
+        name: 'STPQ',
+        sequence: ['s', 't', 'p', 'q'],
+        description: 'Texture coordinates'
+      ),
     ]
   }, maxDimension);
 
