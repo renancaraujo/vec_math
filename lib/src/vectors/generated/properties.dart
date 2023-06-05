@@ -6,9 +6,9 @@ import 'package:vec_math/vec_math.dart';
 /// names in the supported conventions.
 ///
 /// These conventions are: 
-/// - XYZW
-/// - RGBA
-/// - STPQ
+/// - XYZW (Coordinates)
+/// - RGBA (Color channels)
+/// - STPQ (Texture coordinates)
 /// - Size (width and height)
 extension NVec2Properties<T extends num> on NVec2<T> {
 
@@ -30,10 +30,10 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// The 2nd element of the vector in the STPQ system.
   T get t => $2;
 
-  /// The 1st element of the vector in the Size (width and height) system.
+  /// The 1st element of the vector in the Size system.
   T get width => $1;
 
-  /// The 2nd element of the vector in the Size (width and height) system.
+  /// The 2nd element of the vector in the Size system.
   T get height => $2;
 
 
@@ -884,7 +884,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec2<T> get widthwidth => ($1,$1,);
 
   /// Returns a [NVec2] with elements equal to this one in the following
@@ -894,7 +894,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec2<T> get widthheight => ($1,$2,);
 
   /// Returns a [NVec2] with elements equal to this one in the following
@@ -904,7 +904,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec2<T> get heightwidth => ($2,$1,);
 
   /// Returns a [NVec2] with elements equal to this one in the following
@@ -914,7 +914,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec2<T> get heightheight => ($2,$2,);
 
   /// Returns a [NVec3] with elements equal to this one in the following
@@ -924,7 +924,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 1st, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec3<T> get widthwidthwidth => ($1,$1,$1,);
 
   /// Returns a [NVec3] with elements equal to this one in the following
@@ -934,7 +934,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 1st, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec3<T> get widthwidthheight => ($1,$1,$2,);
 
   /// Returns a [NVec3] with elements equal to this one in the following
@@ -944,7 +944,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 2nd, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec3<T> get widthheightwidth => ($1,$2,$1,);
 
   /// Returns a [NVec3] with elements equal to this one in the following
@@ -954,7 +954,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 2nd, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec3<T> get widthheightheight => ($1,$2,$2,);
 
   /// Returns a [NVec3] with elements equal to this one in the following
@@ -964,7 +964,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 1st, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec3<T> get heightwidthwidth => ($2,$1,$1,);
 
   /// Returns a [NVec3] with elements equal to this one in the following
@@ -974,7 +974,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 1st, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec3<T> get heightwidthheight => ($2,$1,$2,);
 
   /// Returns a [NVec3] with elements equal to this one in the following
@@ -984,7 +984,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 2nd, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec3<T> get heightheightwidth => ($2,$2,$1,);
 
   /// Returns a [NVec3] with elements equal to this one in the following
@@ -994,7 +994,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 2nd, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec3<T> get heightheightheight => ($2,$2,$2,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1004,7 +1004,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 1st, 1st, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get widthwidthwidthwidth => ($1,$1,$1,$1,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1014,7 +1014,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 1st, 1st, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get widthwidthwidthheight => ($1,$1,$1,$2,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1024,7 +1024,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 1st, 2nd, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get widthwidthheightwidth => ($1,$1,$2,$1,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1034,7 +1034,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 1st, 2nd, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get widthwidthheightheight => ($1,$1,$2,$2,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1044,7 +1044,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 2nd, 1st, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get widthheightwidthwidth => ($1,$2,$1,$1,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1054,7 +1054,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 2nd, 1st, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get widthheightwidthheight => ($1,$2,$1,$2,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1064,7 +1064,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 2nd, 2nd, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get widthheightheightwidth => ($1,$2,$2,$1,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1074,7 +1074,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (1st, 2nd, 2nd, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get widthheightheightheight => ($1,$2,$2,$2,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1084,7 +1084,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 1st, 1st, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get heightwidthwidthwidth => ($2,$1,$1,$1,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1094,7 +1094,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 1st, 1st, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get heightwidthwidthheight => ($2,$1,$1,$2,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1104,7 +1104,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 1st, 2nd, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get heightwidthheightwidth => ($2,$1,$2,$1,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1114,7 +1114,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 1st, 2nd, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get heightwidthheightheight => ($2,$1,$2,$2,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1124,7 +1124,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 2nd, 1st, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get heightheightwidthwidth => ($2,$2,$1,$1,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1134,7 +1134,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 2nd, 1st, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get heightheightwidthheight => ($2,$2,$1,$2,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1144,7 +1144,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 2nd, 2nd, 1st)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get heightheightheightwidth => ($2,$2,$2,$1,);
 
   /// Returns a [NVec4] with elements equal to this one in the following
@@ -1154,7 +1154,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// (2nd, 2nd, 2nd, 2nd)
   /// ```
   ///
-  /// Names follow the Size (width and height) system.
+  /// Names follow the Size system.
   NVec4<T> get heightheightheightheight => ($2,$2,$2,$2,);
 }
 /// A set of properties that are common to all [NVec3]s.
@@ -1163,9 +1163,9 @@ extension NVec2Properties<T extends num> on NVec2<T> {
 /// names in the supported conventions.
 ///
 /// These conventions are: 
-/// - XYZW
-/// - RGBA
-/// - STPQ
+/// - XYZW (Coordinates)
+/// - RGBA (Color channels)
+/// - STPQ (Texture coordinates)
 extension NVec3Properties<T extends num> on NVec3<T> {
 
   /// The 1st element of the vector in the XYZW system.
@@ -4712,9 +4712,9 @@ extension NVec3Properties<T extends num> on NVec3<T> {
 /// names in the supported conventions.
 ///
 /// These conventions are: 
-/// - XYZW
-/// - RGBA
-/// - STPQ
+/// - XYZW (Coordinates)
+/// - RGBA (Color channels)
+/// - STPQ (Texture coordinates)
 extension NVec4Properties<T extends num> on NVec4<T> {
 
   /// The 1st element of the vector in the XYZW system.

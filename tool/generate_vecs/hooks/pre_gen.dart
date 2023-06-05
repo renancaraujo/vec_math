@@ -8,7 +8,7 @@ void run(HookContext context) {
 
 typedef SystemMapping = Map<int, List<System>>;
 
-typedef System = ({String name, List<String> sequence});
+typedef System = ({String name, List<String> sequence, String description});
 
 const generatedLibPath = 'lib/src/vectors/generated';
 const generatedTestPath = 'test/src/vectors/generated';
@@ -18,12 +18,16 @@ Map<String, dynamic> main() {
 
   final systemsPerLength = distributeSystems({
     2: [
-      (name: 'Size (width and height)', sequence: ['width', 'height']),
+      (
+        name: 'Size',
+        sequence: ['width', 'height'],
+        description: 'width and height',
+      ),
     ],
     4: [
-      (name: 'XYZW', sequence: ['x', 'y', 'z', 'w']),
-      (name: 'RGBA', sequence: ['r', 'g', 'b', 'a']),
-      (name: 'STPQ', sequence: ['s', 't', 'p', 'q']),
+      (name: 'XYZW', sequence: ['x', 'y', 'z', 'w'], description: 'Coordinates'),
+      (name: 'RGBA', sequence: ['r', 'g', 'b', 'a'], description: 'Color channels'),
+      (name: 'STPQ', sequence: ['s', 't', 'p', 'q'], description: 'Texture coordinates'),
     ]
   }, maxDimension);
 
@@ -41,11 +45,9 @@ Map<String, dynamic> main() {
   for (final entry in systemsPerLength.entries) {
     final multiElementGetters = <Map<String, dynamic>>[];
     final singleElementGetters = <Map<String, dynamic>>[];
-    final List<String> systems = [];
+    final List<System> systems = [];
     for (final system in entry.value) {
-      final systemName = system.name;
-
-      systems.add(systemName);
+      systems.add(system);
 
       final singleGettersIdentifiers = combinationsWithRepetition(
         system.sequence,
@@ -58,7 +60,7 @@ Map<String, dynamic> main() {
           'name': e.$1,
           'sequence': e.$2.first,
           'ordinal': ordinal,
-          'system': systemName,
+          'system': system.name,
         };
       }));
       for (int i = 2; i <= maxDimension; i++) {
@@ -73,7 +75,7 @@ Map<String, dynamic> main() {
               'name': e.$1,
               'sequence': e.$2,
               'representation': representation,
-              'system': systemName,
+              'system': system.name,
             };
           },
         ));
@@ -83,13 +85,32 @@ Map<String, dynamic> main() {
     final map = getters[entry.key] = {};
     map['multiElementGetters'] = multiElementGetters;
     map['singleElementGetters'] = singleElementGetters;
-    map['systems'] = systems;
+    map['systems'] = systems.map((e) {
+      return {
+        'name': e.name,
+        'sequence': e.sequence,
+        'description': e.description,
+      };
+    }).toList();
     map['sequence'] = sequences[entry.key];
+  }
+
+  final allSystems = <String, dynamic>{};
+  for (final length in systemsPerLength.entries) {
+    for (final system in length.value) {
+      allSystems['${system.name}SystemNVec${length.key}'] = {
+        'length': length.key,
+        'systemName': system.name,
+        'sequence': system.sequence,
+        'description': system.description,
+      };
+    }
   }
 
   final result = {
     'sequences': sequences.asJSON(),
     'getters': getters.asJSON(),
+    'allSystems': allSystems.asJSON(),
   };
 
   return result;
@@ -122,8 +143,11 @@ SystemMapping distributeSystems(
     final entry = availableSystems[i];
 
     final List<System> mySystems = previousSystems
-        .map<System>(
-            (e) => (sequence: e.sequence.take(i).toList(), name: e.name))
+        .map<System>((e) => (
+              sequence: e.sequence.take(i).toList(),
+              name: e.name,
+              description: e.description,
+            ))
         .toList();
     if (entry != null) {
       mySystems.addAll(entry);
@@ -178,7 +202,6 @@ String getOrdinal(int number) {
     }
   }
 }
-
 
 extension on Directory {
   void deleteIfExists() {

@@ -6,7 +6,7 @@ import 'package:vec_math/vec_math.dart';
 /// names in the supported conventions.
 ///
 /// These conventions are: {{#value}}{{#systems}}
-/// - {{.}}{{/systems}}{{/value}}
+/// - {{name}} ({{description}}){{/systems}}{{/value}}
 extension NVec{{key}}Properties<T extends num> on NVec{{key}}<T> {
 {{#value}}{{#singleElementGetters}}
   /// The {{ordinal}} element of the vector in the {{system}} system.
