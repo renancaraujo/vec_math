@@ -5,3 +5,6 @@
 .packages
 build/
 pubspec.lock
+.idea
+.mason
+mason-lock.json

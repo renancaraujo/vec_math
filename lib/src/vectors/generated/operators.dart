@@ -2,9 +2,18 @@ import 'dart:math' as math;
 
 import 'package:vec_math/vec_math.dart';
 
+/// A set of operations that are common to all [NVec2]s.
 extension NVec2Methods<T extends num> on NVec2<T> {
 
-  Vec2 toDouble() => ($1.toDouble(),$2.toDouble(),);
+  /// This Vector as a double vector ([Vec2]).
+  ///
+  /// Calls [num.toDouble] on each element.
+  Vec2 toDouble() {
+    return (
+      $1.toDouble(),
+      $2.toDouble(),
+    );
+  }
 
   IVec2 toInt() => ($1.toInt(),$2.toInt(),);
 
@@ -45,6 +54,29 @@ extension NVec2Methods<T extends num> on NVec2<T> {
     );
   }
 
+  double distanceTo(NVec2<T> other) {
+    return math.sqrt(distanceToSquared(other));
+  }
+
+  double distanceToSquared(NVec2<T> other) {
+    var distance = 0.0;
+
+    final d1 = $1 - other.$1;
+    distance +=  d1 * d1;
+
+    final d2 = $2 - other.$2;
+    distance +=  d2 * d2;
+
+    return distance;
+  }
+
+  Vec2 addScaled(NVec2<T> other, double scalar) {
+    return (
+    ($1 + other.$1 * scalar),
+    ($2 + other.$2 * scalar),
+    );
+  }
+
   Iterable<T> toIterable() sync * {
     yield $1;
     yield $2;
@@ -80,34 +112,21 @@ extension NVec2Methods<T extends num> on NVec2<T> {
   Vec2 operator /(double scalar) {
     return scale(1.0 / scalar);
   }
-
-  double distanceTo(NVec2<T> other) {
-    return math.sqrt(distanceToSquared(other));
-  }
-
-  double distanceToSquared(NVec2<T> other) {
-    var distance = 0.0;
-    
-    final d1 = $1 - other.$1;
-    distance +=  d1 * d1;
-    
-    final d2 = $2 - other.$2;
-    distance +=  d2 * d2;
-    
-    return distance;
-  }
-
-  Vec2 addScaled(NVec2<T> other, double scalar) {
-    return (
-      ($1 + other.$1 * scalar),
-      ($2 + other.$2 * scalar),
-    );
-  }
 }
 
+/// A set of operations that are common to all [NVec2]s.
 extension NVec3Methods<T extends num> on NVec3<T> {
 
-  Vec3 toDouble() => ($1.toDouble(),$2.toDouble(),$3.toDouble(),);
+  /// This Vector as a double vector ([Vec3]).
+  ///
+  /// Calls [num.toDouble] on each element.
+  Vec3 toDouble() {
+    return (
+      $1.toDouble(),
+      $2.toDouble(),
+      $3.toDouble(),
+    );
+  }
 
   IVec3 toInt() => ($1.toInt(),$2.toInt(),$3.toInt(),);
 
@@ -151,6 +170,33 @@ extension NVec3Methods<T extends num> on NVec3<T> {
     );
   }
 
+  double distanceTo(NVec3<T> other) {
+    return math.sqrt(distanceToSquared(other));
+  }
+
+  double distanceToSquared(NVec3<T> other) {
+    var distance = 0.0;
+
+    final d1 = $1 - other.$1;
+    distance +=  d1 * d1;
+
+    final d2 = $2 - other.$2;
+    distance +=  d2 * d2;
+
+    final d3 = $3 - other.$3;
+    distance +=  d3 * d3;
+
+    return distance;
+  }
+
+  Vec3 addScaled(NVec3<T> other, double scalar) {
+    return (
+    ($1 + other.$1 * scalar),
+    ($2 + other.$2 * scalar),
+    ($3 + other.$3 * scalar),
+    );
+  }
+
   Iterable<T> toIterable() sync * {
     yield $1;
     yield $2;
@@ -190,38 +236,22 @@ extension NVec3Methods<T extends num> on NVec3<T> {
   Vec3 operator /(double scalar) {
     return scale(1.0 / scalar);
   }
-
-  double distanceTo(NVec3<T> other) {
-    return math.sqrt(distanceToSquared(other));
-  }
-
-  double distanceToSquared(NVec3<T> other) {
-    var distance = 0.0;
-    
-    final d1 = $1 - other.$1;
-    distance +=  d1 * d1;
-    
-    final d2 = $2 - other.$2;
-    distance +=  d2 * d2;
-    
-    final d3 = $3 - other.$3;
-    distance +=  d3 * d3;
-    
-    return distance;
-  }
-
-  Vec3 addScaled(NVec3<T> other, double scalar) {
-    return (
-      ($1 + other.$1 * scalar),
-      ($2 + other.$2 * scalar),
-      ($3 + other.$3 * scalar),
-    );
-  }
 }
 
+/// A set of operations that are common to all [NVec2]s.
 extension NVec4Methods<T extends num> on NVec4<T> {
 
-  Vec4 toDouble() => ($1.toDouble(),$2.toDouble(),$3.toDouble(),$4.toDouble(),);
+  /// This Vector as a double vector ([Vec4]).
+  ///
+  /// Calls [num.toDouble] on each element.
+  Vec4 toDouble() {
+    return (
+      $1.toDouble(),
+      $2.toDouble(),
+      $3.toDouble(),
+      $4.toDouble(),
+    );
+  }
 
   IVec4 toInt() => ($1.toInt(),$2.toInt(),$3.toInt(),$4.toInt(),);
 
@@ -268,6 +298,37 @@ extension NVec4Methods<T extends num> on NVec4<T> {
     );
   }
 
+  double distanceTo(NVec4<T> other) {
+    return math.sqrt(distanceToSquared(other));
+  }
+
+  double distanceToSquared(NVec4<T> other) {
+    var distance = 0.0;
+
+    final d1 = $1 - other.$1;
+    distance +=  d1 * d1;
+
+    final d2 = $2 - other.$2;
+    distance +=  d2 * d2;
+
+    final d3 = $3 - other.$3;
+    distance +=  d3 * d3;
+
+    final d4 = $4 - other.$4;
+    distance +=  d4 * d4;
+
+    return distance;
+  }
+
+  Vec4 addScaled(NVec4<T> other, double scalar) {
+    return (
+    ($1 + other.$1 * scalar),
+    ($2 + other.$2 * scalar),
+    ($3 + other.$3 * scalar),
+    ($4 + other.$4 * scalar),
+    );
+  }
+
   Iterable<T> toIterable() sync * {
     yield $1;
     yield $2;
@@ -310,37 +371,6 @@ extension NVec4Methods<T extends num> on NVec4<T> {
 
   Vec4 operator /(double scalar) {
     return scale(1.0 / scalar);
-  }
-
-  double distanceTo(NVec4<T> other) {
-    return math.sqrt(distanceToSquared(other));
-  }
-
-  double distanceToSquared(NVec4<T> other) {
-    var distance = 0.0;
-    
-    final d1 = $1 - other.$1;
-    distance +=  d1 * d1;
-    
-    final d2 = $2 - other.$2;
-    distance +=  d2 * d2;
-    
-    final d3 = $3 - other.$3;
-    distance +=  d3 * d3;
-    
-    final d4 = $4 - other.$4;
-    distance +=  d4 * d4;
-    
-    return distance;
-  }
-
-  Vec4 addScaled(NVec4<T> other, double scalar) {
-    return (
-      ($1 + other.$1 * scalar),
-      ($2 + other.$2 * scalar),
-      ($3 + other.$3 * scalar),
-      ($4 + other.$4 * scalar),
-    );
   }
 }
 

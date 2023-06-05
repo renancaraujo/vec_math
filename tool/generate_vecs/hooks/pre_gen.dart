@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:mason/mason.dart';
 
 void run(HookContext context) {
@@ -7,6 +9,9 @@ void run(HookContext context) {
 typedef SystemMapping = Map<int, List<System>>;
 
 typedef System = ({String name, List<String> sequence});
+
+const generatedLibPath = 'lib/src/vectors/generated';
+const generatedTestPath = 'test/src/vectors/generated';
 
 Map<String, dynamic> main() {
   final maxDimension = 4;
@@ -21,6 +26,9 @@ Map<String, dynamic> main() {
       (name: 'STPQ', sequence: ['s', 't', 'p', 'q']),
     ]
   }, maxDimension);
+
+  Directory(generatedLibPath).deleteIfExists();
+  Directory(generatedTestPath).deleteIfExists();
 
   final sequences = <int, List<int>>{
     for (int i = 2; i <= maxDimension; i++)
@@ -167,6 +175,15 @@ String getOrdinal(int number) {
         return '${number}rd';
       default:
         return '${number}th';
+    }
+  }
+}
+
+
+extension on Directory {
+  void deleteIfExists() {
+    if (existsSync()) {
+      deleteSync(recursive: true);
     }
   }
 }

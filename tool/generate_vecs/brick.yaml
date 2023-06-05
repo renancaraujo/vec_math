@@ -3,8 +3,6 @@ description: A new brick created with the Mason CLI.
 publish_to: none
 version: 0.1.0+1
 
-# The following defines the environment for the current brick.
-
 environment:
   mason: ">=0.1.0-dev.49 <0.1.0"
 

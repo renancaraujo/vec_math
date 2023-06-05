@@ -2,9 +2,17 @@ import 'dart:math' as math;
 
 import 'package:vec_math/vec_math.dart';
 {{#getters}}
+/// A set of operations that are common to all [NVec2]s.
 extension NVec{{key}}Methods<T extends num> on NVec{{key}}<T> {
 {{#value}}
-  Vec{{key}} toDouble() => ({{#sequence}}${{.}}.toDouble(),{{/sequence}});
+  /// This Vector as a double vector ([Vec{{key}}]).
+  ///
+  /// Calls [num.toDouble] on each element.
+  Vec{{key}} toDouble() {
+    return ({{#sequence}}
+      ${{.}}.toDouble(),{{/sequence}}
+    );
+  }
 
   IVec{{key}} toInt() => ({{#sequence}}${{.}}.toInt(),{{/sequence}});
 
@@ -42,6 +50,25 @@ extension NVec{{key}}Methods<T extends num> on NVec{{key}}<T> {
     );
   }
 
+  double distanceTo(NVec{{key}}<T> other) {
+    return math.sqrt(distanceToSquared(other));
+  }
+
+  double distanceToSquared(NVec{{key}}<T> other) {
+    var distance = 0.0;
+{{#sequence}}
+    final d{{.}} = ${{.}} - other.${{.}};
+    distance +=  d{{.}} * d{{.}};
+{{/sequence}}
+    return distance;
+  }
+
+  Vec{{key}} addScaled(NVec{{key}}<T> other, double scalar) {
+    return ({{#sequence}}
+    (${{.}} + other.${{.}} * scalar),{{/sequence}}
+    );
+  }
+
   Iterable<T> toIterable() sync * {
 {{#sequence}}    yield ${{.}};
 {{/sequence}}  }
@@ -72,25 +99,6 @@ extension NVec{{key}}Methods<T extends num> on NVec{{key}}<T> {
 
   Vec{{key}} operator /(double scalar) {
     return scale(1.0 / scalar);
-  }
-
-  double distanceTo(NVec{{key}}<T> other) {
-    return math.sqrt(distanceToSquared(other));
-  }
-
-  double distanceToSquared(NVec{{key}}<T> other) {
-    var distance = 0.0;
-    {{#sequence}}
-    final d{{.}} = ${{.}} - other.${{.}};
-    distance +=  d{{.}} * d{{.}};
-    {{/sequence}}
-    return distance;
-  }
-
-  Vec{{key}} addScaled(NVec{{key}}<T> other, double scalar) {
-    return ({{#sequence}}
-      (${{.}} + other.${{.}} * scalar),{{/sequence}}
-    );
   }{{/value}}
 }
 {{/getters}}
