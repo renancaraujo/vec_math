@@ -10,7 +10,7 @@ import 'package:vec_math/vec_math.dart';
 /// - RGBA (Color channels)
 /// - STPQ (Texture coordinates)
 /// - Size (width and height)
-extension NVec2Properties<T extends num> on NVec2<T> {
+extension NVec2Getters<T extends num> on NVec2<T> {
   /// The 1st element of the vector in the XYZW system.
   T get x => $1;
 
@@ -1661,7 +1661,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
 /// - XYZW (Coordinates)
 /// - RGBA (Color channels)
 /// - STPQ (Texture coordinates)
-extension NVec3Properties<T extends num> on NVec3<T> {
+extension NVec3Getters<T extends num> on NVec3<T> {
   /// The 1st element of the vector in the XYZW system.
   T get x => $1;
 
@@ -6829,7 +6829,7 @@ extension NVec3Properties<T extends num> on NVec3<T> {
 /// - XYZW (Coordinates)
 /// - RGBA (Color channels)
 /// - STPQ (Texture coordinates)
-extension NVec4Properties<T extends num> on NVec4<T> {
+extension NVec4Getters<T extends num> on NVec4<T> {
   /// The 1st element of the vector in the XYZW system.
   T get x => $1;
 

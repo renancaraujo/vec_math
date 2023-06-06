@@ -61,13 +61,13 @@ Map<String, dynamic> main() {
 
   final getters = <int, Map<String, dynamic>>{};
   final setters = <int, Map<String, dynamic>>{};
-  for (final entry in systemsPerLength.entries) {
+  for (final MapEntry(key:vectorLength, value:systemsForLength) in systemsPerLength.entries) {
     final multiElementGetters = <Map<String, dynamic>>[];
     final singleElementGetters = <Map<String, dynamic>>[];
     final multiElementSetters = <Map<String, dynamic>>[];
     final singleElementSetters = <Map<String, dynamic>>[];
     final List<System> systems = [];
-    for (final system in entry.value) {
+    for (final system in systemsForLength) {
       systems.add(system);
 
       final singleGettersIdentifiers = combinationsWithRepetition(
@@ -91,7 +91,7 @@ Map<String, dynamic> main() {
         String ordinal = getOrdinal(index);
 
         final sequenceOfParams = <dynamic>[
-          for (var number in sequences[entry.key]!)
+          for (var number in sequences[vectorLength]!)
             if (number == index) false else '\$$number',
         ];
 
@@ -123,13 +123,13 @@ Map<String, dynamic> main() {
           },
         ));
 
-        if (i < entry.key) {
+        if (i < vectorLength) {
           multiElementSetters
             ..addAll(combinations.where((e) => !e.hasRepetition).map((e) {
               var (:name, :sequenceOfIndexes, hasRepetition: _) = e;
 
               final sequenceOfParams = <Map<String, dynamic>>[
-                for (var number in sequences[entry.key]!)
+                for (var number in sequences[vectorLength]!)
                   if (sequenceOfIndexes.contains(number))
                     { 'valueFromParam' : '${sequenceOfIndexes.indexOf(number) + 1}' }
                   else
@@ -148,7 +148,7 @@ Map<String, dynamic> main() {
       }
     }
 
-    final map = getters[entry.key] = {};
+    final map = getters[vectorLength] = {};
     map['multiElementGetters'] = multiElementGetters;
     map['singleElementGetters'] = singleElementGetters;
     map['systems'] = systems.map((e) {
@@ -158,9 +158,9 @@ Map<String, dynamic> main() {
         'description': e.description,
       };
     }).toList();
-    map['sequence'] = sequences[entry.key];
+    map['sequence'] = sequences[vectorLength];
 
-    final mapSetters = setters[entry.key] = {};
+    final mapSetters = setters[vectorLength] = {};
     mapSetters['singleElementSetters'] = singleElementSetters;
     mapSetters['multiElementSetters'] = multiElementSetters;
   }

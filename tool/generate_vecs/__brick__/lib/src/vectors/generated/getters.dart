@@ -7,7 +7,7 @@ import 'package:vec_math/vec_math.dart';
 ///
 /// These conventions are: {{#value}}{{#systems}}
 /// - {{name}} ({{description}}){{/systems}}{{/value}}
-extension NVec{{key}}Properties<T extends num> on NVec{{key}}<T> {
+extension NVec{{key}}Getters<T extends num> on NVec{{key}}<T> {
 {{#value}}{{#singleElementGetters}}
   /// The {{ordinal}} element of the vector in the {{system}} system.
   T get {{name.camelCase()}} => ${{sequence}};

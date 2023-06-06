@@ -5,6 +5,8 @@ import 'dart:math' as math;
 import 'package:vec_math/vec_math.dart';
 
 /// A set of operations that are common to all [NVec2]s.
+///
+/// As Records are immutable, all modifications return a new instance.
 extension NVec2Methods<T extends num> on NVec2<T> {
   /// This Vector as a double vector ([Vec2]).
   ///
@@ -154,6 +156,15 @@ extension NVec2Methods<T extends num> on NVec2<T> {
     );
   }
 
+  int get length => 2;
+
+  Vec2 normalize() {
+    return (
+      $1 / length,
+      $2 / length,
+    );
+  }
+
   /// Creates a iterable with the elements of this vector.
   Iterable<T> toIterable() sync* {
     yield $1;
@@ -202,6 +213,8 @@ extension NVec2Methods<T extends num> on NVec2<T> {
 }
 
 /// A set of operations that are common to all [NVec2]s.
+///
+/// As Records are immutable, all modifications return a new instance.
 extension NVec3Methods<T extends num> on NVec3<T> {
   /// This Vector as a double vector ([Vec3]).
   ///
@@ -367,6 +380,16 @@ extension NVec3Methods<T extends num> on NVec3<T> {
     );
   }
 
+  int get length => 3;
+
+  Vec3 normalize() {
+    return (
+      $1 / length,
+      $2 / length,
+      $3 / length,
+    );
+  }
+
   /// Creates a iterable with the elements of this vector.
   Iterable<T> toIterable() sync* {
     yield $1;
@@ -419,6 +442,8 @@ extension NVec3Methods<T extends num> on NVec3<T> {
 }
 
 /// A set of operations that are common to all [NVec2]s.
+///
+/// As Records are immutable, all modifications return a new instance.
 extension NVec4Methods<T extends num> on NVec4<T> {
   /// This Vector as a double vector ([Vec4]).
   ///
@@ -597,6 +622,17 @@ extension NVec4Methods<T extends num> on NVec4<T> {
       ($2 + other.$2 * scalar),
       ($3 + other.$3 * scalar),
       ($4 + other.$4 * scalar),
+    );
+  }
+
+  int get length => 4;
+
+  Vec4 normalize() {
+    return (
+      $1 / length,
+      $2 / length,
+      $3 / length,
+      $4 / length,
     );
   }
 

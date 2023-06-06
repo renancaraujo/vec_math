@@ -5,6 +5,8 @@ import 'dart:math' as math;
 import 'package:vec_math/vec_math.dart';
 {{#getters}}
 /// A set of operations that are common to all [NVec2]s.
+///
+/// As Records are immutable, all modifications return a new instance.
 extension NVec{{key}}Methods<T extends num> on NVec{{key}}<T> {
 {{#value}}
   /// This Vector as a double vector ([Vec{{key}}]).
@@ -123,6 +125,16 @@ extension NVec{{key}}Methods<T extends num> on NVec{{key}}<T> {
   Vec{{key}} addScaled(NVec{{key}}<T> other, double scalar) {
     return ({{#sequence}}
     (${{.}} + other.${{.}} * scalar),{{/sequence}}
+    );
+  }
+
+  int get length => {{key}};
+
+  Vec{{key}} normalize() {
+    return (
+{{#sequence}}
+      ${{.}} / length,
+{{/sequence}}
     );
   }
 
