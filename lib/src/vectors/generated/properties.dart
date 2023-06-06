@@ -1255,7 +1255,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec2<T> get widthwidth => (
+  NVec2<T> get widthWidth => (
         $1,
         $1,
       );
@@ -1268,7 +1268,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec2<T> get widthheight => (
+  NVec2<T> get widthHeight => (
         $1,
         $2,
       );
@@ -1281,7 +1281,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec2<T> get heightwidth => (
+  NVec2<T> get heightWidth => (
         $2,
         $1,
       );
@@ -1294,7 +1294,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec2<T> get heightheight => (
+  NVec2<T> get heightHeight => (
         $2,
         $2,
       );
@@ -1307,7 +1307,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get widthwidthwidth => (
+  NVec3<T> get widthWidthWidth => (
         $1,
         $1,
         $1,
@@ -1321,7 +1321,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get widthwidthheight => (
+  NVec3<T> get widthWidthHeight => (
         $1,
         $1,
         $2,
@@ -1335,7 +1335,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get widthheightwidth => (
+  NVec3<T> get widthHeightWidth => (
         $1,
         $2,
         $1,
@@ -1349,7 +1349,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get widthheightheight => (
+  NVec3<T> get widthHeightHeight => (
         $1,
         $2,
         $2,
@@ -1363,7 +1363,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get heightwidthwidth => (
+  NVec3<T> get heightWidthWidth => (
         $2,
         $1,
         $1,
@@ -1377,7 +1377,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get heightwidthheight => (
+  NVec3<T> get heightWidthHeight => (
         $2,
         $1,
         $2,
@@ -1391,7 +1391,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get heightheightwidth => (
+  NVec3<T> get heightHeightWidth => (
         $2,
         $2,
         $1,
@@ -1405,7 +1405,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get heightheightheight => (
+  NVec3<T> get heightHeightHeight => (
         $2,
         $2,
         $2,
@@ -1419,7 +1419,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthwidthwidthwidth => (
+  NVec4<T> get widthWidthWidthWidth => (
         $1,
         $1,
         $1,
@@ -1434,7 +1434,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthwidthwidthheight => (
+  NVec4<T> get widthWidthWidthHeight => (
         $1,
         $1,
         $1,
@@ -1449,7 +1449,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthwidthheightwidth => (
+  NVec4<T> get widthWidthHeightWidth => (
         $1,
         $1,
         $2,
@@ -1464,7 +1464,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthwidthheightheight => (
+  NVec4<T> get widthWidthHeightHeight => (
         $1,
         $1,
         $2,
@@ -1479,7 +1479,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthheightwidthwidth => (
+  NVec4<T> get widthHeightWidthWidth => (
         $1,
         $2,
         $1,
@@ -1494,7 +1494,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthheightwidthheight => (
+  NVec4<T> get widthHeightWidthHeight => (
         $1,
         $2,
         $1,
@@ -1509,7 +1509,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthheightheightwidth => (
+  NVec4<T> get widthHeightHeightWidth => (
         $1,
         $2,
         $2,
@@ -1524,7 +1524,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthheightheightheight => (
+  NVec4<T> get widthHeightHeightHeight => (
         $1,
         $2,
         $2,
@@ -1539,7 +1539,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightwidthwidthwidth => (
+  NVec4<T> get heightWidthWidthWidth => (
         $2,
         $1,
         $1,
@@ -1554,7 +1554,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightwidthwidthheight => (
+  NVec4<T> get heightWidthWidthHeight => (
         $2,
         $1,
         $1,
@@ -1569,7 +1569,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightwidthheightwidth => (
+  NVec4<T> get heightWidthHeightWidth => (
         $2,
         $1,
         $2,
@@ -1584,7 +1584,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightwidthheightheight => (
+  NVec4<T> get heightWidthHeightHeight => (
         $2,
         $1,
         $2,
@@ -1599,7 +1599,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightheightwidthwidth => (
+  NVec4<T> get heightHeightWidthWidth => (
         $2,
         $2,
         $1,
@@ -1614,7 +1614,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightheightwidthheight => (
+  NVec4<T> get heightHeightWidthHeight => (
         $2,
         $2,
         $1,
@@ -1629,7 +1629,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightheightheightwidth => (
+  NVec4<T> get heightHeightHeightWidth => (
         $2,
         $2,
         $2,
@@ -1644,7 +1644,7 @@ extension NVec2Properties<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightheightheightheight => (
+  NVec4<T> get heightHeightHeightHeight => (
         $2,
         $2,
         $2,

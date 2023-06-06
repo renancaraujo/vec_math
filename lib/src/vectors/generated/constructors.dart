@@ -260,7 +260,7 @@ extension XYZWSystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (x: 1, y: 1).vec2 == (1.0, 1.0)
+  /// (x: 1, y: 2).vec2 == (1.0, 2.0)
   /// ```
   Vec2 get vec2 => (
         x.toDouble(),
@@ -272,7 +272,7 @@ extension XYZWSystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (x: 1.0, y: 1.0).ivec2 == (1, 1)
+  /// (x: 1.0, y: 2.0).ivec2 == (1, 2)
   /// ```
   IVec2 get ivec2 => (
         x.toInt(),
@@ -292,7 +292,7 @@ extension RGBASystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (r: 1, g: 1).vec2 == (1.0, 1.0)
+  /// (r: 1, g: 2).vec2 == (1.0, 2.0)
   /// ```
   Vec2 get vec2 => (
         r.toDouble(),
@@ -304,7 +304,7 @@ extension RGBASystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (r: 1.0, g: 1.0).ivec2 == (1, 1)
+  /// (r: 1.0, g: 2.0).ivec2 == (1, 2)
   /// ```
   IVec2 get ivec2 => (
         r.toInt(),
@@ -324,7 +324,7 @@ extension STPQSystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (s: 1, t: 1).vec2 == (1.0, 1.0)
+  /// (s: 1, t: 2).vec2 == (1.0, 2.0)
   /// ```
   Vec2 get vec2 => (
         s.toDouble(),
@@ -336,7 +336,7 @@ extension STPQSystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (s: 1.0, t: 1.0).ivec2 == (1, 1)
+  /// (s: 1.0, t: 2.0).ivec2 == (1, 2)
   /// ```
   IVec2 get ivec2 => (
         s.toInt(),
@@ -356,7 +356,7 @@ extension SizeSystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (width: 1, height: 1).vec2 == (1.0, 1.0)
+  /// (width: 1, height: 2).vec2 == (1.0, 2.0)
   /// ```
   Vec2 get vec2 => (
         width.toDouble(),
@@ -368,7 +368,7 @@ extension SizeSystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (width: 1.0, height: 1.0).ivec2 == (1, 1)
+  /// (width: 1.0, height: 2.0).ivec2 == (1, 2)
   /// ```
   IVec2 get ivec2 => (
         width.toInt(),
@@ -389,7 +389,7 @@ extension XYZWSystemNVec3X on ({
   ///
   /// Example:
   /// ```
-  /// (x: 1, y: 1, z: 1).vec3 == (1.0, 1.0, 1.0)
+  /// (x: 1, y: 2, z: 3).vec3 == (1.0, 2.0, 3.0)
   /// ```
   Vec3 get vec3 => (
         x.toDouble(),
@@ -402,7 +402,7 @@ extension XYZWSystemNVec3X on ({
   ///
   /// Example:
   /// ```
-  /// (x: 1.0, y: 1.0, z: 1.0).ivec3 == (1, 1, 1)
+  /// (x: 1.0, y: 2.0, z: 3.0).ivec3 == (1, 2, 3)
   /// ```
   IVec3 get ivec3 => (
         x.toInt(),
@@ -424,7 +424,7 @@ extension RGBASystemNVec3X on ({
   ///
   /// Example:
   /// ```
-  /// (r: 1, g: 1, b: 1).vec3 == (1.0, 1.0, 1.0)
+  /// (r: 1, g: 2, b: 3).vec3 == (1.0, 2.0, 3.0)
   /// ```
   Vec3 get vec3 => (
         r.toDouble(),
@@ -437,7 +437,7 @@ extension RGBASystemNVec3X on ({
   ///
   /// Example:
   /// ```
-  /// (r: 1.0, g: 1.0, b: 1.0).ivec3 == (1, 1, 1)
+  /// (r: 1.0, g: 2.0, b: 3.0).ivec3 == (1, 2, 3)
   /// ```
   IVec3 get ivec3 => (
         r.toInt(),
@@ -459,7 +459,7 @@ extension STPQSystemNVec3X on ({
   ///
   /// Example:
   /// ```
-  /// (s: 1, t: 1, p: 1).vec3 == (1.0, 1.0, 1.0)
+  /// (s: 1, t: 2, p: 3).vec3 == (1.0, 2.0, 3.0)
   /// ```
   Vec3 get vec3 => (
         s.toDouble(),
@@ -472,7 +472,7 @@ extension STPQSystemNVec3X on ({
   ///
   /// Example:
   /// ```
-  /// (s: 1.0, t: 1.0, p: 1.0).ivec3 == (1, 1, 1)
+  /// (s: 1.0, t: 2.0, p: 3.0).ivec3 == (1, 2, 3)
   /// ```
   IVec3 get ivec3 => (
         s.toInt(),
@@ -495,7 +495,7 @@ extension XYZWSystemNVec4X on ({
   ///
   /// Example:
   /// ```
-  /// (x: 1, y: 1, z: 1, w: 1).vec4 == (1.0, 1.0, 1.0, 1.0)
+  /// (x: 1, y: 2, z: 3, w: 4).vec4 == (1.0, 2.0, 3.0, 4.0)
   /// ```
   Vec4 get vec4 => (
         x.toDouble(),
@@ -509,7 +509,7 @@ extension XYZWSystemNVec4X on ({
   ///
   /// Example:
   /// ```
-  /// (x: 1.0, y: 1.0, z: 1.0, w: 1.0).ivec4 == (1, 1, 1, 1)
+  /// (x: 1.0, y: 2.0, z: 3.0, w: 4.0).ivec4 == (1, 2, 3, 4)
   /// ```
   IVec4 get ivec4 => (
         x.toInt(),
@@ -533,7 +533,7 @@ extension RGBASystemNVec4X on ({
   ///
   /// Example:
   /// ```
-  /// (r: 1, g: 1, b: 1, a: 1).vec4 == (1.0, 1.0, 1.0, 1.0)
+  /// (r: 1, g: 2, b: 3, a: 4).vec4 == (1.0, 2.0, 3.0, 4.0)
   /// ```
   Vec4 get vec4 => (
         r.toDouble(),
@@ -547,7 +547,7 @@ extension RGBASystemNVec4X on ({
   ///
   /// Example:
   /// ```
-  /// (r: 1.0, g: 1.0, b: 1.0, a: 1.0).ivec4 == (1, 1, 1, 1)
+  /// (r: 1.0, g: 2.0, b: 3.0, a: 4.0).ivec4 == (1, 2, 3, 4)
   /// ```
   IVec4 get ivec4 => (
         r.toInt(),
@@ -571,7 +571,7 @@ extension STPQSystemNVec4X on ({
   ///
   /// Example:
   /// ```
-  /// (s: 1, t: 1, p: 1, q: 1).vec4 == (1.0, 1.0, 1.0, 1.0)
+  /// (s: 1, t: 2, p: 3, q: 4).vec4 == (1.0, 2.0, 3.0, 4.0)
   /// ```
   Vec4 get vec4 => (
         s.toDouble(),
@@ -585,7 +585,7 @@ extension STPQSystemNVec4X on ({
   ///
   /// Example:
   /// ```
-  /// (s: 1.0, t: 1.0, p: 1.0, q: 1.0).ivec4 == (1, 1, 1, 1)
+  /// (s: 1.0, t: 2.0, p: 3.0, q: 4.0).ivec4 == (1, 2, 3, 4)
   /// ```
   IVec4 get ivec4 => (
         s.toInt(),

@@ -10,7 +10,7 @@ import 'package:vec_math/vec_math.dart';
 extension NVec{{key}}Properties<T extends num> on NVec{{key}}<T> {
 {{#value}}{{#singleElementGetters}}
   /// The {{ordinal}} element of the vector in the {{system}} system.
-  T get {{name}} => ${{sequence}};
+  T get {{name.camelCase()}} => ${{sequence}};
 {{/singleElementGetters}}{{#multiElementGetters}}
 
   /// Returns a [NVec{{returnLength}}] with elements equal to this one in the following
@@ -21,5 +21,5 @@ extension NVec{{key}}Properties<T extends num> on NVec{{key}}<T> {
   /// ```
   ///
   /// Names follow the {{system}} system.
-  NVec{{returnLength}}<T> get {{name}} => ({{#sequence}}${{.}},{{/sequence}});{{/multiElementGetters}}{{/value}}
+  NVec{{returnLength}}<T> get {{name.camelCase()}} => ({{#sequence}}${{.}},{{/sequence}});{{/multiElementGetters}}{{/value}}
 }{{/getters}}

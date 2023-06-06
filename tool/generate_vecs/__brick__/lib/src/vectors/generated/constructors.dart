@@ -73,7 +73,7 @@ extension {{#value}}Num{{/value}}X on ({{#value}}num,{{/value}}) {
 /// vectors from record of 4 numbers with elements named
 /// after the {{value.systemName}} ({{value.description}}) system.
 extension {{key}}X on ({
-{{#value}}{{#sequence}} num {{.}},{{/sequence}}{{/value}}
+{{#value}}{{#sequence}} num {{name}},{{/sequence}}{{/value}}
 }) {
 {{#value}}
 
@@ -82,18 +82,18 @@ extension {{key}}X on ({
   ///
   /// Example:
   /// ```
-  /// ({{#sequence}}{{.}}: 1, {{/sequence}}).vec{{length}} == ({{#sequence}}1.0, {{/sequence}})
+  /// ({{#sequence}}{{name}}: {{index}}, {{/sequence}}).vec{{length}} == ({{#sequence}}{{index}}.0, {{/sequence}})
   /// ```
-  Vec{{length}} get vec{{length}} => ({{#sequence}}{{.}}.toDouble(),{{/sequence}});
+  Vec{{length}} get vec{{length}} => ({{#sequence}}{{name}}.toDouble(),{{/sequence}});
 
   /// Returns an [IVec{{length}}] from a record of {{length}} numbers with elements named
   /// after the {{systemName}} ({{description}}) system.
   ///
   /// Example:
   /// ```
-  /// ({{#sequence}}{{.}}: 1.0, {{/sequence}}).ivec{{length}} == ({{#sequence}}1, {{/sequence}})
+  /// ({{#sequence}}{{name}}: {{index}}.0, {{/sequence}}).ivec{{length}} == ({{#sequence}}{{index}}, {{/sequence}})
   /// ```
-  IVec{{length}} get ivec{{length}} => ({{#sequence}}{{.}}.toInt(),{{/sequence}});
+  IVec{{length}} get ivec{{length}} => ({{#sequence}}{{name}}.toInt(),{{/sequence}});
 {{/value}}
 }
 {{/allSystems}}

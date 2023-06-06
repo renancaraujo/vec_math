@@ -10,6 +10,12 @@ typedef SystemMapping = Map<int, List<System>>;
 
 typedef System = ({String name, List<String> sequence, String description});
 
+typedef CombinationOfElements = ({
+  String name,
+  List<int> sequenceOfIndexes,
+  bool hasRepetition,
+});
+
 const generatedLibPath = 'lib/src/vectors/generated';
 const generatedTestPath = 'test/src/vectors/generated';
 
@@ -54,9 +60,12 @@ Map<String, dynamic> main() {
   };
 
   final getters = <int, Map<String, dynamic>>{};
+  final setters = <int, Map<String, dynamic>>{};
   for (final entry in systemsPerLength.entries) {
     final multiElementGetters = <Map<String, dynamic>>[];
     final singleElementGetters = <Map<String, dynamic>>[];
+    final multiElementSetters = <Map<String, dynamic>>[];
+    final singleElementSetters = <Map<String, dynamic>>[];
     final List<System> systems = [];
     for (final system in entry.value) {
       systems.add(system);
@@ -67,30 +76,75 @@ Map<String, dynamic> main() {
       );
 
       singleElementGetters.addAll(singleGettersIdentifiers.map((e) {
-        String ordinal = getOrdinal(e.$2.first);
+        String ordinal = getOrdinal(e.sequenceOfIndexes.first);
         return {
-          'name': e.$1,
-          'sequence': e.$2.first,
+          'name': e.name,
+          'sequence': e.sequenceOfIndexes.first,
           'ordinal': ordinal,
           'system': system.name,
         };
       }));
+
+      singleElementSetters.addAll(singleGettersIdentifiers.map((e) {
+        var (:name, :sequenceOfIndexes, hasRepetition: _) = e;
+        final index = sequenceOfIndexes.first;
+        String ordinal = getOrdinal(index);
+
+        final sequenceOfParams = <dynamic>[
+          for (var number in sequences[entry.key]!)
+            if (number == index) false else '\$$number',
+        ];
+
+        return {
+          'name': name.capitalize(),
+          'sequenceOfParams': sequenceOfParams,
+          'ordinal': ordinal,
+          'system': system.name,
+        };
+      }));
+
       for (int i = 2; i <= maxDimension; i++) {
         final combinations = combinationsWithRepetition(system.sequence, i);
         multiElementGetters.addAll(combinations.map(
           (e) {
-            final representation =
-                '(${e.$2.map((e) => getOrdinal(e)).join(', ')})';
+            var (:name, :sequenceOfIndexes, hasRepetition: _) = e;
+
+            final representation = '(${e.sequenceOfIndexes.map(
+                  (e) => getOrdinal(e),
+                ).join(', ')})';
 
             return {
               'returnLength': i,
-              'name': e.$1,
-              'sequence': e.$2,
+              'name': name,
+              'sequence': sequenceOfIndexes,
               'representation': representation,
               'system': system.name,
             };
           },
         ));
+
+        if (i < entry.key) {
+          multiElementSetters
+            ..addAll(combinations.where((e) => !e.hasRepetition).map((e) {
+              var (:name, :sequenceOfIndexes, hasRepetition: _) = e;
+
+              final sequenceOfParams = <Map<String, dynamic>>[
+                for (var number in sequences[entry.key]!)
+                  if (sequenceOfIndexes.contains(number))
+                    { 'valueFromParam' : '${sequenceOfIndexes.indexOf(number) + 1}' }
+                  else
+                    { 'valueFromVec': '$number', },
+              ];
+
+
+              return {
+                'name': name,
+                'setLength': i,
+                'sequenceOfParams': sequenceOfParams,
+                'system': system.name,
+              };
+            }));
+        }
       }
     }
 
@@ -105,6 +159,10 @@ Map<String, dynamic> main() {
       };
     }).toList();
     map['sequence'] = sequences[entry.key];
+
+    final mapSetters = setters[entry.key] = {};
+    mapSetters['singleElementSetters'] = singleElementSetters;
+    mapSetters['multiElementSetters'] = multiElementSetters;
   }
 
   final allSystems = <String, dynamic>{};
@@ -113,7 +171,12 @@ Map<String, dynamic> main() {
       allSystems['${system.name}SystemNVec${length.key}'] = {
         'length': length.key,
         'systemName': system.name,
-        'sequence': system.sequence,
+        'sequence': system.sequence
+            .map((e) => {
+                  'name': e,
+                  'index': system.sequence.indexOf(e) + 1,
+                })
+            .toList(),
         'description': system.description,
       };
     }
@@ -122,6 +185,7 @@ Map<String, dynamic> main() {
   final result = {
     'sequences': sequences.asJSON(),
     'getters': getters.asJSON(),
+    'setters': setters.asJSON(),
     'allSystems': allSystems.asJSON(),
   };
 
@@ -176,19 +240,33 @@ SystemMapping distributeSystems(
   };
 }
 
-List<(String, List<int>)> combinationsWithRepetition(
-    List<String> system, int length) {
-  List<(String, List<int>)> result = [('', [])];
+List<CombinationOfElements> combinationsWithRepetition(
+  List<String> system,
+  int length,
+) {
+  List<CombinationOfElements> result = [
+    (
+      name: '',
+      sequenceOfIndexes: [],
+      hasRepetition: false,
+    )
+  ];
 
   for (var i = 0; i < length; i++) {
-    List<(String, List<int>)> newCombinations = [];
+    List<CombinationOfElements> newCombinations = [];
 
-    for (var combination in result) {
+    for (var (:name, :sequenceOfIndexes, :hasRepetition) in result) {
       for (var item in system) {
         final index = system.indexOf(item) + 1;
-        final newCombination = '${combination.$1}$item';
-        final newSequence = [...combination.$2, index];
-        newCombinations.add((newCombination, newSequence));
+        final newCombination = '${name}${item.capitalize()}';
+        final newSequence = [...sequenceOfIndexes, index];
+        final hasNewRepetition =
+            hasRepetition || sequenceOfIndexes.contains(index);
+        newCombinations.add((
+          name: newCombination,
+          sequenceOfIndexes: newSequence,
+          hasRepetition: hasNewRepetition,
+        ));
       }
     }
 
@@ -220,5 +298,11 @@ extension on Directory {
     if (existsSync()) {
       deleteSync(recursive: true);
     }
+  }
+}
+
+extension on String {
+  String capitalize() {
+    return '${this[0].toUpperCase()}${substring(1)}';
   }
 }
