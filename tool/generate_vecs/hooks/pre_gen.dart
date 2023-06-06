@@ -61,7 +61,8 @@ Map<String, dynamic> main() {
 
   final getters = <int, Map<String, dynamic>>{};
   final setters = <int, Map<String, dynamic>>{};
-  for (final MapEntry(key:vectorLength, value:systemsForLength) in systemsPerLength.entries) {
+  for (final MapEntry(key: vectorLength, value: systemsForLength)
+      in systemsPerLength.entries) {
     final multiElementGetters = <Map<String, dynamic>>[];
     final singleElementGetters = <Map<String, dynamic>>[];
     final multiElementSetters = <Map<String, dynamic>>[];
@@ -131,11 +132,19 @@ Map<String, dynamic> main() {
               final sequenceOfParams = <Map<String, dynamic>>[
                 for (var number in sequences[vectorLength]!)
                   if (sequenceOfIndexes.contains(number))
-                    { 'valueFromParam' : '${sequenceOfIndexes.indexOf(number) + 1}' }
+                    {
+                      'ordinal': getOrdinal(number),
+                      'valueFromParam':
+                          '${sequenceOfIndexes.indexOf(number) + 1}',
+                      'valueFromParamOrdinal':
+                          getOrdinal(sequenceOfIndexes.indexOf(number) + 1),
+                    }
                   else
-                    { 'valueFromVec': '$number', },
+                    {
+                      'ordinal': getOrdinal(number),
+                      'valueFromVec': '$number',
+                    },
               ];
-
 
               return {
                 'name': name,

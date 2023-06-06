@@ -156,9 +156,11 @@ extension NVec2Methods<T extends num> on NVec2<T> {
     );
   }
 
+  /// The length of this vector.
   int get length => 2;
 
-  Vec2 normalize() {
+  /// Returns a normalized copy of this vector.
+  Vec2 normalized() {
     return (
       $1 / length,
       $2 / length,
@@ -380,9 +382,11 @@ extension NVec3Methods<T extends num> on NVec3<T> {
     );
   }
 
+  /// The length of this vector.
   int get length => 3;
 
-  Vec3 normalize() {
+  /// Returns a normalized copy of this vector.
+  Vec3 normalized() {
     return (
       $1 / length,
       $2 / length,
@@ -625,9 +629,11 @@ extension NVec4Methods<T extends num> on NVec4<T> {
     );
   }
 
+  /// The length of this vector.
   int get length => 4;
 
-  Vec4 normalize() {
+  /// Returns a normalized copy of this vector.
+  Vec4 normalized() {
     return (
       $1 / length,
       $2 / length,

@@ -128,9 +128,11 @@ extension NVec{{key}}Methods<T extends num> on NVec{{key}}<T> {
     );
   }
 
+  /// The length of this vector.
   int get length => {{key}};
 
-  Vec{{key}} normalize() {
+  /// Returns a normalized copy of this vector.
+  Vec{{key}} normalized() {
     return (
 {{#sequence}}
       ${{.}} / length,
