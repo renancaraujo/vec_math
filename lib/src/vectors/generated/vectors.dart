@@ -1,135 +1,209 @@
 import 'dart:math' as math;
+import 'package:meta/meta.dart';
 
-import 'package:vec_math/vec_math.dart';
+@immutable
+sealed class Vec<T extends num> {
+  const Vec(this.allocation);
 
-/// A type definition for a [Record] that represents a 2-dimensional
-/// vector of numbers.
-///
-/// See [Vec2] for a type definition of a 2-dimension vector of
-/// [double]s.
-///
-/// See [IVec2] for a type definition of a 2-dimension vector of
-/// [int]s.
-typedef NVec2<T extends num> = (
-  T,
-  T,
-);
+  final List<T> allocation;
+}
 
-/// A type definition for a [Record] that represents a 3-dimensional
-/// vector of numbers.
-///
-/// See [Vec3] for a type definition of a 3-dimension vector of
-/// [double]s.
-///
-/// See [IVec3] for a type definition of a 3-dimension vector of
-/// [int]s.
-typedef NVec3<T extends num> = (
-  T,
-  T,
-  T,
-);
+Iterable<T> _iterate2<T>(
+  T p1,
+  T p2,
+) sync* {
+  yield p1;
+  yield p2;
+}
 
-/// A type definition for a [Record] that represents a 4-dimensional
-/// vector of numbers.
-///
-/// See [Vec4] for a type definition of a 4-dimension vector of
-/// [double]s.
-///
-/// See [IVec4] for a type definition of a 4-dimension vector of
-/// [int]s.
-typedef NVec4<T extends num> = (
-  T,
-  T,
-  T,
-  T,
-);
+Iterable<T> _iterate3<T>(
+  T p1,
+  T p2,
+  T p3,
+) sync* {
+  yield p1;
+  yield p2;
+  yield p3;
+}
 
-/// A type definition for a [Record] that represents a 2-dimensional vector of
-/// [double]s.
-///
-/// It is a specialization of [NVec2], as a consequence, it has access to
-/// all the getters defined in [NVec2Getters].
+Iterable<T> _iterate4<T>(
+  T p1,
+  T p2,
+  T p3,
+  T p4,
+) sync* {
+  yield p1;
+  yield p2;
+  yield p3;
+  yield p4;
+}
+
+class NVec2<T extends num> extends Vec<T> {
+  NVec2(
+    T p1,
+    T p2,
+  ) : super(
+          List<T>.from(
+            _iterate2(
+              p1,
+              p2,
+            ),
+            growable: false,
+          ),
+        );
+
+  NVec2.fromList(List<T> list)
+      : super(
+          List<T>.from(
+            _iterate2(
+              list[0 % list.length],
+              list[1 % list.length],
+            ),
+            growable: false,
+          ),
+        );
+
+  NVec2.all(T item) : super(List<T>.filled(2, item));
+
+  T get $1 => allocation[0];
+
+  set $1(T value) => allocation[0] = value;
+
+  T get $2 => allocation[1];
+
+  set $2(T value) => allocation[1] = value;
+
+  /// The length of this vector.
+  final int length = 2;
+}
+
+class NVec3<T extends num> extends Vec<T> {
+  NVec3(
+    T p1,
+    T p2,
+    T p3,
+  ) : super(
+          List<T>.from(
+            _iterate3(
+              p1,
+              p2,
+              p3,
+            ),
+            growable: false,
+          ),
+        );
+
+  NVec3.fromList(List<T> list)
+      : super(
+          List<T>.from(
+            _iterate3(
+              list[0 % list.length],
+              list[1 % list.length],
+              list[2 % list.length],
+            ),
+            growable: false,
+          ),
+        );
+
+  NVec3.all(T item) : super(List<T>.filled(3, item));
+
+  T get $1 => allocation[0];
+
+  set $1(T value) => allocation[0] = value;
+
+  T get $2 => allocation[1];
+
+  set $2(T value) => allocation[1] = value;
+
+  T get $3 => allocation[2];
+
+  set $3(T value) => allocation[2] = value;
+
+  /// The length of this vector.
+  final int length = 3;
+}
+
+class NVec4<T extends num> extends Vec<T> {
+  NVec4(
+    T p1,
+    T p2,
+    T p3,
+    T p4,
+  ) : super(
+          List<T>.from(
+            _iterate4(
+              p1,
+              p2,
+              p3,
+              p4,
+            ),
+            growable: false,
+          ),
+        );
+
+  NVec4.fromList(List<T> list)
+      : super(
+          List<T>.from(
+            _iterate4(
+              list[0 % list.length],
+              list[1 % list.length],
+              list[2 % list.length],
+              list[3 % list.length],
+            ),
+            growable: false,
+          ),
+        );
+
+  NVec4.all(T item) : super(List<T>.filled(4, item));
+
+  T get $1 => allocation[0];
+
+  set $1(T value) => allocation[0] = value;
+
+  T get $2 => allocation[1];
+
+  set $2(T value) => allocation[1] = value;
+
+  T get $3 => allocation[2];
+
+  set $3(T value) => allocation[2] = value;
+
+  T get $4 => allocation[3];
+
+  set $4(T value) => allocation[3] = value;
+
+  /// The length of this vector.
+  final int length = 4;
+}
+
 typedef Vec2 = NVec2<double>;
-
-/// A type definition for a [Record] that represents a 3-dimensional vector of
-/// [double]s.
-///
-/// It is a specialization of [NVec3], as a consequence, it has access to
-/// all the getters defined in [NVec3Getters].
 typedef Vec3 = NVec3<double>;
-
-/// A type definition for a [Record] that represents a 4-dimensional vector of
-/// [double]s.
-///
-/// It is a specialization of [NVec4], as a consequence, it has access to
-/// all the getters defined in [NVec4Getters].
 typedef Vec4 = NVec4<double>;
 
-/// A type definition for a [Record] that represents a 2-dimensional vector of
-/// [int]s.
-///
-/// It is a specialization of [NVec2], as a consequence, it has access to
-/// all the getters defined in [NVec2Getters].
 typedef IVec2 = NVec2<int>;
-
-/// A type definition for a [Record] that represents a 3-dimensional vector of
-/// [int]s.
-///
-/// It is a specialization of [NVec3], as a consequence, it has access to
-/// all the getters defined in [NVec3Getters].
 typedef IVec3 = NVec3<int>;
-
-/// A type definition for a [Record] that represents a 4-dimensional vector of
-/// [int]s.
-///
-/// It is a specialization of [NVec4], as a consequence, it has access to
-/// all the getters defined in [NVec4Getters].
 typedef IVec4 = NVec4<int>;
 
-NVec2<T> maxVec2<T extends num>(NVec2<T> a, NVec2<T> b) {
-  return (
-    math.max(a.$1, b.$1),
-    math.max(a.$2, b.$2),
-  );
+V maxVec<V extends Vec<T>, T extends num>(V a, V b) {
+  final list = a.allocation.indexed
+      .map((i) => math.max(i.$2, b.allocation[i.$1]))
+      .toList(growable: false);
+
+  return switch (a) {
+    NVec2<T>() => NVec2.fromList(list) as V,
+    NVec3<T>() => NVec3.fromList(list) as V,
+    NVec4<T>() => NVec4.fromList(list) as V,
+  };
 }
 
-NVec2<T> minVec2<T extends num>(NVec2<T> a, NVec2<T> b) {
-  return (
-    math.min(a.$1, b.$1),
-    math.min(a.$2, b.$2),
-  );
-}
+V minVec<V extends Vec<T>, T extends num>(V a, V b) {
+  final list = a.allocation.indexed
+      .map((i) => math.min(i.$2, b.allocation[i.$1]))
+      .toList(growable: false);
 
-NVec3<T> maxVec3<T extends num>(NVec3<T> a, NVec3<T> b) {
-  return (
-    math.max(a.$1, b.$1),
-    math.max(a.$2, b.$2),
-    math.max(a.$3, b.$3),
-  );
-}
-
-NVec3<T> minVec3<T extends num>(NVec3<T> a, NVec3<T> b) {
-  return (
-    math.min(a.$1, b.$1),
-    math.min(a.$2, b.$2),
-    math.min(a.$3, b.$3),
-  );
-}
-
-NVec4<T> maxVec4<T extends num>(NVec4<T> a, NVec4<T> b) {
-  return (
-    math.max(a.$1, b.$1),
-    math.max(a.$2, b.$2),
-    math.max(a.$3, b.$3),
-    math.max(a.$4, b.$4),
-  );
-}
-
-NVec4<T> minVec4<T extends num>(NVec4<T> a, NVec4<T> b) {
-  return (
-    math.min(a.$1, b.$1),
-    math.min(a.$2, b.$2),
-    math.min(a.$3, b.$3),
-    math.min(a.$4, b.$4),
-  );
+  return switch (a) {
+    NVec2<T>() => NVec2.fromList(list) as V,
+    NVec3<T>() => NVec3.fromList(list) as V,
+    NVec4<T>() => NVec4.fromList(list) as V,
+  };
 }

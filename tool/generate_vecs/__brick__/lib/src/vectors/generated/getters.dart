@@ -21,5 +21,8 @@ extension NVec{{key}}Getters<T extends num> on NVec{{key}}<T> {
   /// ```
   ///
   /// Names follow the {{system}} system.
-  NVec{{returnLength}}<T> get {{name.camelCase()}} => ({{#sequence}}${{.}},{{/sequence}});{{/multiElementGetters}}{{/value}}
+  NVec{{returnLength}}<T> get {{name.camelCase()}} => NVec{{returnLength}}({{#sequence}}${{.}},{{/sequence}});{{/multiElementGetters}}{{/value}}
+
+  /// The length of this vector.
+  int get length => {{key}};
 }{{/getters}}

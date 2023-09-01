@@ -52,10 +52,10 @@ Map<String, dynamic> main() {
   Directory(generatedLibPath).deleteIfExists();
   Directory(generatedTestPath).deleteIfExists();
 
-  final sequences = <int, List<int>>{
+  final sequences = <int, List<Map<String, int>>>{
     for (int i = 2; i <= maxDimension; i++)
       i: [
-        for (int j = 1; j <= i; j++) j,
+        for (int j = 1; j <= i; j++) {'value': j, 'index': j - 1},
       ],
   };
 
@@ -93,7 +93,7 @@ Map<String, dynamic> main() {
 
         final sequenceOfParams = <dynamic>[
           for (var number in sequences[vectorLength]!)
-            if (number == index) false else '\$$number',
+            if (number['value'] == index) false else '\$${number['value']}',
         ];
 
         return {
@@ -101,6 +101,7 @@ Map<String, dynamic> main() {
           'sequenceOfParams': sequenceOfParams,
           'ordinal': ordinal,
           'system': system.name,
+          'changedMember': index,
         };
       }));
 
@@ -131,18 +132,19 @@ Map<String, dynamic> main() {
 
               final sequenceOfParams = <Map<String, dynamic>>[
                 for (var number in sequences[vectorLength]!)
-                  if (sequenceOfIndexes.contains(number))
+                  if (sequenceOfIndexes.contains(number['value']!))
                     {
-                      'ordinal': getOrdinal(number),
+                      'ordinal': getOrdinal(number['value']!),
                       'valueFromParam':
-                          '${sequenceOfIndexes.indexOf(number) + 1}',
-                      'valueFromParamOrdinal':
-                          getOrdinal(sequenceOfIndexes.indexOf(number) + 1),
+                          '${sequenceOfIndexes.indexOf(number['value']!) + 1}',
+                      'valueFromParamOrdinal': getOrdinal(
+                          sequenceOfIndexes.indexOf(number['value']!) + 1),
+                      'member': number['value']!,
                     }
                   else
                     {
-                      'ordinal': getOrdinal(number),
-                      'valueFromVec': '$number',
+                      'ordinal': getOrdinal(number['value']!),
+                      'valueFromVec': '${number['value']}',
                     },
               ];
 
