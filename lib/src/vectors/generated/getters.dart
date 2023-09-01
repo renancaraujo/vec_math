@@ -1,6 +1,6 @@
 import 'package:vec_math/vec_math.dart';
 
-/// A set of properties that are common to all [NVec2]s.
+/// A set of properties that are common to all [NumVec2]s.
 ///
 /// It comprises getters that return elements of the vector based on
 /// names in the supported conventions.
@@ -10,7 +10,7 @@ import 'package:vec_math/vec_math.dart';
 /// - RGBA (Color channels)
 /// - STPQ (Texture coordinates)
 /// - Size (width and height)
-extension NVec2Getters<T extends num> on NVec2<T> {
+extension NumVec2Getters<T extends num> on NumVec2<T> {
   /// The 1st element of the vector in the XYZW system.
   T get x => $1;
 
@@ -35,7 +35,7 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// The 2nd element of the vector in the Size system.
   T get height => $2;
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -43,12 +43,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get xx => NVec2(
+  NumVec2<T> get xx => NumVec2(
         $1,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -56,12 +56,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get xy => NVec2(
+  NumVec2<T> get xy => NumVec2(
         $1,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -69,12 +69,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get yx => NVec2(
+  NumVec2<T> get yx => NumVec2(
         $2,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -82,12 +82,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get yy => NVec2(
+  NumVec2<T> get yy => NumVec2(
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -95,13 +95,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xxx => NVec3(
+  NumVec3<T> get xxx => NumVec3(
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -109,13 +109,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xxy => NVec3(
+  NumVec3<T> get xxy => NumVec3(
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -123,13 +123,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xyx => NVec3(
+  NumVec3<T> get xyx => NumVec3(
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -137,13 +137,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xyy => NVec3(
+  NumVec3<T> get xyy => NumVec3(
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -151,13 +151,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yxx => NVec3(
+  NumVec3<T> get yxx => NumVec3(
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -165,13 +165,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yxy => NVec3(
+  NumVec3<T> get yxy => NumVec3(
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -179,13 +179,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yyx => NVec3(
+  NumVec3<T> get yyx => NumVec3(
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -193,13 +193,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yyy => NVec3(
+  NumVec3<T> get yyy => NumVec3(
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -207,14 +207,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxxx => NVec4(
+  NumVec4<T> get xxxx => NumVec4(
         $1,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -222,14 +222,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxxy => NVec4(
+  NumVec4<T> get xxxy => NumVec4(
         $1,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -237,14 +237,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxyx => NVec4(
+  NumVec4<T> get xxyx => NumVec4(
         $1,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -252,14 +252,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxyy => NVec4(
+  NumVec4<T> get xxyy => NumVec4(
         $1,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -267,14 +267,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyxx => NVec4(
+  NumVec4<T> get xyxx => NumVec4(
         $1,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -282,14 +282,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyxy => NVec4(
+  NumVec4<T> get xyxy => NumVec4(
         $1,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -297,14 +297,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyyx => NVec4(
+  NumVec4<T> get xyyx => NumVec4(
         $1,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -312,14 +312,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyyy => NVec4(
+  NumVec4<T> get xyyy => NumVec4(
         $1,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -327,14 +327,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxxx => NVec4(
+  NumVec4<T> get yxxx => NumVec4(
         $2,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -342,14 +342,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxxy => NVec4(
+  NumVec4<T> get yxxy => NumVec4(
         $2,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -357,14 +357,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxyx => NVec4(
+  NumVec4<T> get yxyx => NumVec4(
         $2,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -372,14 +372,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxyy => NVec4(
+  NumVec4<T> get yxyy => NumVec4(
         $2,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -387,14 +387,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyxx => NVec4(
+  NumVec4<T> get yyxx => NumVec4(
         $2,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -402,14 +402,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyxy => NVec4(
+  NumVec4<T> get yyxy => NumVec4(
         $2,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -417,14 +417,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyyx => NVec4(
+  NumVec4<T> get yyyx => NumVec4(
         $2,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -432,14 +432,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyyy => NVec4(
+  NumVec4<T> get yyyy => NumVec4(
         $2,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -447,12 +447,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get rr => NVec2(
+  NumVec2<T> get rr => NumVec2(
         $1,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -460,12 +460,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get rg => NVec2(
+  NumVec2<T> get rg => NumVec2(
         $1,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -473,12 +473,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get gr => NVec2(
+  NumVec2<T> get gr => NumVec2(
         $2,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -486,12 +486,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get gg => NVec2(
+  NumVec2<T> get gg => NumVec2(
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -499,13 +499,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rrr => NVec3(
+  NumVec3<T> get rrr => NumVec3(
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -513,13 +513,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rrg => NVec3(
+  NumVec3<T> get rrg => NumVec3(
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -527,13 +527,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rgr => NVec3(
+  NumVec3<T> get rgr => NumVec3(
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -541,13 +541,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rgg => NVec3(
+  NumVec3<T> get rgg => NumVec3(
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -555,13 +555,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get grr => NVec3(
+  NumVec3<T> get grr => NumVec3(
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -569,13 +569,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get grg => NVec3(
+  NumVec3<T> get grg => NumVec3(
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -583,13 +583,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get ggr => NVec3(
+  NumVec3<T> get ggr => NumVec3(
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -597,13 +597,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get ggg => NVec3(
+  NumVec3<T> get ggg => NumVec3(
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -611,14 +611,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrrr => NVec4(
+  NumVec4<T> get rrrr => NumVec4(
         $1,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -626,14 +626,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrrg => NVec4(
+  NumVec4<T> get rrrg => NumVec4(
         $1,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -641,14 +641,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrgr => NVec4(
+  NumVec4<T> get rrgr => NumVec4(
         $1,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -656,14 +656,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrgg => NVec4(
+  NumVec4<T> get rrgg => NumVec4(
         $1,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -671,14 +671,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgrr => NVec4(
+  NumVec4<T> get rgrr => NumVec4(
         $1,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -686,14 +686,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgrg => NVec4(
+  NumVec4<T> get rgrg => NumVec4(
         $1,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -701,14 +701,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rggr => NVec4(
+  NumVec4<T> get rggr => NumVec4(
         $1,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -716,14 +716,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rggg => NVec4(
+  NumVec4<T> get rggg => NumVec4(
         $1,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -731,14 +731,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grrr => NVec4(
+  NumVec4<T> get grrr => NumVec4(
         $2,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -746,14 +746,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grrg => NVec4(
+  NumVec4<T> get grrg => NumVec4(
         $2,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -761,14 +761,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grgr => NVec4(
+  NumVec4<T> get grgr => NumVec4(
         $2,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -776,14 +776,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grgg => NVec4(
+  NumVec4<T> get grgg => NumVec4(
         $2,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -791,14 +791,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggrr => NVec4(
+  NumVec4<T> get ggrr => NumVec4(
         $2,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -806,14 +806,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggrg => NVec4(
+  NumVec4<T> get ggrg => NumVec4(
         $2,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -821,14 +821,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gggr => NVec4(
+  NumVec4<T> get gggr => NumVec4(
         $2,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -836,14 +836,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gggg => NVec4(
+  NumVec4<T> get gggg => NumVec4(
         $2,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -851,12 +851,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get ss => NVec2(
+  NumVec2<T> get ss => NumVec2(
         $1,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -864,12 +864,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get st => NVec2(
+  NumVec2<T> get st => NumVec2(
         $1,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -877,12 +877,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get ts => NVec2(
+  NumVec2<T> get ts => NumVec2(
         $2,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -890,12 +890,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get tt => NVec2(
+  NumVec2<T> get tt => NumVec2(
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -903,13 +903,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sss => NVec3(
+  NumVec3<T> get sss => NumVec3(
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -917,13 +917,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sst => NVec3(
+  NumVec3<T> get sst => NumVec3(
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -931,13 +931,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sts => NVec3(
+  NumVec3<T> get sts => NumVec3(
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -945,13 +945,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get stt => NVec3(
+  NumVec3<T> get stt => NumVec3(
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -959,13 +959,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tss => NVec3(
+  NumVec3<T> get tss => NumVec3(
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -973,13 +973,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tst => NVec3(
+  NumVec3<T> get tst => NumVec3(
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -987,13 +987,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tts => NVec3(
+  NumVec3<T> get tts => NumVec3(
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1001,13 +1001,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ttt => NVec3(
+  NumVec3<T> get ttt => NumVec3(
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1015,14 +1015,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssss => NVec4(
+  NumVec4<T> get ssss => NumVec4(
         $1,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1030,14 +1030,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssst => NVec4(
+  NumVec4<T> get ssst => NumVec4(
         $1,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1045,14 +1045,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssts => NVec4(
+  NumVec4<T> get ssts => NumVec4(
         $1,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1060,14 +1060,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sstt => NVec4(
+  NumVec4<T> get sstt => NumVec4(
         $1,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1075,14 +1075,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stss => NVec4(
+  NumVec4<T> get stss => NumVec4(
         $1,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1090,14 +1090,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stst => NVec4(
+  NumVec4<T> get stst => NumVec4(
         $1,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1105,14 +1105,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stts => NVec4(
+  NumVec4<T> get stts => NumVec4(
         $1,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1120,14 +1120,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sttt => NVec4(
+  NumVec4<T> get sttt => NumVec4(
         $1,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1135,14 +1135,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsss => NVec4(
+  NumVec4<T> get tsss => NumVec4(
         $2,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1150,14 +1150,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsst => NVec4(
+  NumVec4<T> get tsst => NumVec4(
         $2,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1165,14 +1165,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsts => NVec4(
+  NumVec4<T> get tsts => NumVec4(
         $2,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1180,14 +1180,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tstt => NVec4(
+  NumVec4<T> get tstt => NumVec4(
         $2,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1195,14 +1195,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttss => NVec4(
+  NumVec4<T> get ttss => NumVec4(
         $2,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1210,14 +1210,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttst => NVec4(
+  NumVec4<T> get ttst => NumVec4(
         $2,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1225,14 +1225,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttts => NVec4(
+  NumVec4<T> get ttts => NumVec4(
         $2,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1240,14 +1240,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tttt => NVec4(
+  NumVec4<T> get tttt => NumVec4(
         $2,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1255,12 +1255,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec2<T> get widthWidth => NVec2(
+  NumVec2<T> get widthWidth => NumVec2(
         $1,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1268,12 +1268,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec2<T> get widthHeight => NVec2(
+  NumVec2<T> get widthHeight => NumVec2(
         $1,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1281,12 +1281,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec2<T> get heightWidth => NVec2(
+  NumVec2<T> get heightWidth => NumVec2(
         $2,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1294,12 +1294,12 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec2<T> get heightHeight => NVec2(
+  NumVec2<T> get heightHeight => NumVec2(
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1307,13 +1307,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get widthWidthWidth => NVec3(
+  NumVec3<T> get widthWidthWidth => NumVec3(
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1321,13 +1321,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get widthWidthHeight => NVec3(
+  NumVec3<T> get widthWidthHeight => NumVec3(
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1335,13 +1335,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get widthHeightWidth => NVec3(
+  NumVec3<T> get widthHeightWidth => NumVec3(
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1349,13 +1349,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get widthHeightHeight => NVec3(
+  NumVec3<T> get widthHeightHeight => NumVec3(
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1363,13 +1363,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get heightWidthWidth => NVec3(
+  NumVec3<T> get heightWidthWidth => NumVec3(
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1377,13 +1377,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get heightWidthHeight => NVec3(
+  NumVec3<T> get heightWidthHeight => NumVec3(
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1391,13 +1391,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get heightHeightWidth => NVec3(
+  NumVec3<T> get heightHeightWidth => NumVec3(
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1405,13 +1405,13 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec3<T> get heightHeightHeight => NVec3(
+  NumVec3<T> get heightHeightHeight => NumVec3(
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1419,14 +1419,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthWidthWidthWidth => NVec4(
+  NumVec4<T> get widthWidthWidthWidth => NumVec4(
         $1,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1434,14 +1434,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthWidthWidthHeight => NVec4(
+  NumVec4<T> get widthWidthWidthHeight => NumVec4(
         $1,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1449,14 +1449,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthWidthHeightWidth => NVec4(
+  NumVec4<T> get widthWidthHeightWidth => NumVec4(
         $1,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1464,14 +1464,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthWidthHeightHeight => NVec4(
+  NumVec4<T> get widthWidthHeightHeight => NumVec4(
         $1,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1479,14 +1479,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthHeightWidthWidth => NVec4(
+  NumVec4<T> get widthHeightWidthWidth => NumVec4(
         $1,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1494,14 +1494,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthHeightWidthHeight => NVec4(
+  NumVec4<T> get widthHeightWidthHeight => NumVec4(
         $1,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1509,14 +1509,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthHeightHeightWidth => NVec4(
+  NumVec4<T> get widthHeightHeightWidth => NumVec4(
         $1,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1524,14 +1524,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get widthHeightHeightHeight => NVec4(
+  NumVec4<T> get widthHeightHeightHeight => NumVec4(
         $1,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1539,14 +1539,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightWidthWidthWidth => NVec4(
+  NumVec4<T> get heightWidthWidthWidth => NumVec4(
         $2,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1554,14 +1554,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightWidthWidthHeight => NVec4(
+  NumVec4<T> get heightWidthWidthHeight => NumVec4(
         $2,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1569,14 +1569,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightWidthHeightWidth => NVec4(
+  NumVec4<T> get heightWidthHeightWidth => NumVec4(
         $2,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1584,14 +1584,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightWidthHeightHeight => NVec4(
+  NumVec4<T> get heightWidthHeightHeight => NumVec4(
         $2,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1599,14 +1599,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightHeightWidthWidth => NVec4(
+  NumVec4<T> get heightHeightWidthWidth => NumVec4(
         $2,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1614,14 +1614,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightHeightWidthHeight => NVec4(
+  NumVec4<T> get heightHeightWidthHeight => NumVec4(
         $2,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1629,14 +1629,14 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightHeightHeightWidth => NVec4(
+  NumVec4<T> get heightHeightHeightWidth => NumVec4(
         $2,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1644,7 +1644,7 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   /// ```
   ///
   /// Names follow the Size system.
-  NVec4<T> get heightHeightHeightHeight => NVec4(
+  NumVec4<T> get heightHeightHeightHeight => NumVec4(
         $2,
         $2,
         $2,
@@ -1655,7 +1655,7 @@ extension NVec2Getters<T extends num> on NVec2<T> {
   int get length => 2;
 }
 
-/// A set of properties that are common to all [NVec3]s.
+/// A set of properties that are common to all [NumVec3]s.
 ///
 /// It comprises getters that return elements of the vector based on
 /// names in the supported conventions.
@@ -1664,7 +1664,7 @@ extension NVec2Getters<T extends num> on NVec2<T> {
 /// - XYZW (Coordinates)
 /// - RGBA (Color channels)
 /// - STPQ (Texture coordinates)
-extension NVec3Getters<T extends num> on NVec3<T> {
+extension NumVec3Getters<T extends num> on NumVec3<T> {
   /// The 1st element of the vector in the XYZW system.
   T get x => $1;
 
@@ -1692,7 +1692,7 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// The 3rd element of the vector in the STPQ system.
   T get p => $3;
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1700,12 +1700,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get xx => NVec2(
+  NumVec2<T> get xx => NumVec2(
         $1,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1713,12 +1713,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get xy => NVec2(
+  NumVec2<T> get xy => NumVec2(
         $1,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1726,12 +1726,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get xz => NVec2(
+  NumVec2<T> get xz => NumVec2(
         $1,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1739,12 +1739,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get yx => NVec2(
+  NumVec2<T> get yx => NumVec2(
         $2,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1752,12 +1752,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get yy => NVec2(
+  NumVec2<T> get yy => NumVec2(
         $2,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1765,12 +1765,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get yz => NVec2(
+  NumVec2<T> get yz => NumVec2(
         $2,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1778,12 +1778,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get zx => NVec2(
+  NumVec2<T> get zx => NumVec2(
         $3,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1791,12 +1791,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get zy => NVec2(
+  NumVec2<T> get zy => NumVec2(
         $3,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1804,12 +1804,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get zz => NVec2(
+  NumVec2<T> get zz => NumVec2(
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1817,13 +1817,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xxx => NVec3(
+  NumVec3<T> get xxx => NumVec3(
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1831,13 +1831,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xxy => NVec3(
+  NumVec3<T> get xxy => NumVec3(
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1845,13 +1845,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xxz => NVec3(
+  NumVec3<T> get xxz => NumVec3(
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1859,13 +1859,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xyx => NVec3(
+  NumVec3<T> get xyx => NumVec3(
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1873,13 +1873,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xyy => NVec3(
+  NumVec3<T> get xyy => NumVec3(
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1887,13 +1887,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xyz => NVec3(
+  NumVec3<T> get xyz => NumVec3(
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1901,13 +1901,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xzx => NVec3(
+  NumVec3<T> get xzx => NumVec3(
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1915,13 +1915,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xzy => NVec3(
+  NumVec3<T> get xzy => NumVec3(
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1929,13 +1929,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xzz => NVec3(
+  NumVec3<T> get xzz => NumVec3(
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1943,13 +1943,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yxx => NVec3(
+  NumVec3<T> get yxx => NumVec3(
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1957,13 +1957,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yxy => NVec3(
+  NumVec3<T> get yxy => NumVec3(
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1971,13 +1971,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yxz => NVec3(
+  NumVec3<T> get yxz => NumVec3(
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1985,13 +1985,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yyx => NVec3(
+  NumVec3<T> get yyx => NumVec3(
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -1999,13 +1999,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yyy => NVec3(
+  NumVec3<T> get yyy => NumVec3(
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2013,13 +2013,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yyz => NVec3(
+  NumVec3<T> get yyz => NumVec3(
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2027,13 +2027,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yzx => NVec3(
+  NumVec3<T> get yzx => NumVec3(
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2041,13 +2041,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yzy => NVec3(
+  NumVec3<T> get yzy => NumVec3(
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2055,13 +2055,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yzz => NVec3(
+  NumVec3<T> get yzz => NumVec3(
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2069,13 +2069,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zxx => NVec3(
+  NumVec3<T> get zxx => NumVec3(
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2083,13 +2083,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zxy => NVec3(
+  NumVec3<T> get zxy => NumVec3(
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2097,13 +2097,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zxz => NVec3(
+  NumVec3<T> get zxz => NumVec3(
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2111,13 +2111,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zyx => NVec3(
+  NumVec3<T> get zyx => NumVec3(
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2125,13 +2125,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zyy => NVec3(
+  NumVec3<T> get zyy => NumVec3(
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2139,13 +2139,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zyz => NVec3(
+  NumVec3<T> get zyz => NumVec3(
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2153,13 +2153,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zzx => NVec3(
+  NumVec3<T> get zzx => NumVec3(
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2167,13 +2167,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zzy => NVec3(
+  NumVec3<T> get zzy => NumVec3(
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2181,13 +2181,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zzz => NVec3(
+  NumVec3<T> get zzz => NumVec3(
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2195,14 +2195,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxxx => NVec4(
+  NumVec4<T> get xxxx => NumVec4(
         $1,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2210,14 +2210,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxxy => NVec4(
+  NumVec4<T> get xxxy => NumVec4(
         $1,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2225,14 +2225,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxxz => NVec4(
+  NumVec4<T> get xxxz => NumVec4(
         $1,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2240,14 +2240,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxyx => NVec4(
+  NumVec4<T> get xxyx => NumVec4(
         $1,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2255,14 +2255,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxyy => NVec4(
+  NumVec4<T> get xxyy => NumVec4(
         $1,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2270,14 +2270,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxyz => NVec4(
+  NumVec4<T> get xxyz => NumVec4(
         $1,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2285,14 +2285,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxzx => NVec4(
+  NumVec4<T> get xxzx => NumVec4(
         $1,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2300,14 +2300,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxzy => NVec4(
+  NumVec4<T> get xxzy => NumVec4(
         $1,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2315,14 +2315,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxzz => NVec4(
+  NumVec4<T> get xxzz => NumVec4(
         $1,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2330,14 +2330,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyxx => NVec4(
+  NumVec4<T> get xyxx => NumVec4(
         $1,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2345,14 +2345,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyxy => NVec4(
+  NumVec4<T> get xyxy => NumVec4(
         $1,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2360,14 +2360,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyxz => NVec4(
+  NumVec4<T> get xyxz => NumVec4(
         $1,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2375,14 +2375,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyyx => NVec4(
+  NumVec4<T> get xyyx => NumVec4(
         $1,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2390,14 +2390,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyyy => NVec4(
+  NumVec4<T> get xyyy => NumVec4(
         $1,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2405,14 +2405,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyyz => NVec4(
+  NumVec4<T> get xyyz => NumVec4(
         $1,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2420,14 +2420,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyzx => NVec4(
+  NumVec4<T> get xyzx => NumVec4(
         $1,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2435,14 +2435,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyzy => NVec4(
+  NumVec4<T> get xyzy => NumVec4(
         $1,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2450,14 +2450,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyzz => NVec4(
+  NumVec4<T> get xyzz => NumVec4(
         $1,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2465,14 +2465,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzxx => NVec4(
+  NumVec4<T> get xzxx => NumVec4(
         $1,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2480,14 +2480,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzxy => NVec4(
+  NumVec4<T> get xzxy => NumVec4(
         $1,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2495,14 +2495,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzxz => NVec4(
+  NumVec4<T> get xzxz => NumVec4(
         $1,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2510,14 +2510,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzyx => NVec4(
+  NumVec4<T> get xzyx => NumVec4(
         $1,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2525,14 +2525,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzyy => NVec4(
+  NumVec4<T> get xzyy => NumVec4(
         $1,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2540,14 +2540,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzyz => NVec4(
+  NumVec4<T> get xzyz => NumVec4(
         $1,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2555,14 +2555,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzzx => NVec4(
+  NumVec4<T> get xzzx => NumVec4(
         $1,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2570,14 +2570,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzzy => NVec4(
+  NumVec4<T> get xzzy => NumVec4(
         $1,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2585,14 +2585,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzzz => NVec4(
+  NumVec4<T> get xzzz => NumVec4(
         $1,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2600,14 +2600,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxxx => NVec4(
+  NumVec4<T> get yxxx => NumVec4(
         $2,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2615,14 +2615,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxxy => NVec4(
+  NumVec4<T> get yxxy => NumVec4(
         $2,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2630,14 +2630,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxxz => NVec4(
+  NumVec4<T> get yxxz => NumVec4(
         $2,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2645,14 +2645,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxyx => NVec4(
+  NumVec4<T> get yxyx => NumVec4(
         $2,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2660,14 +2660,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxyy => NVec4(
+  NumVec4<T> get yxyy => NumVec4(
         $2,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2675,14 +2675,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxyz => NVec4(
+  NumVec4<T> get yxyz => NumVec4(
         $2,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2690,14 +2690,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxzx => NVec4(
+  NumVec4<T> get yxzx => NumVec4(
         $2,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2705,14 +2705,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxzy => NVec4(
+  NumVec4<T> get yxzy => NumVec4(
         $2,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2720,14 +2720,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxzz => NVec4(
+  NumVec4<T> get yxzz => NumVec4(
         $2,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2735,14 +2735,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyxx => NVec4(
+  NumVec4<T> get yyxx => NumVec4(
         $2,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2750,14 +2750,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyxy => NVec4(
+  NumVec4<T> get yyxy => NumVec4(
         $2,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2765,14 +2765,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyxz => NVec4(
+  NumVec4<T> get yyxz => NumVec4(
         $2,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2780,14 +2780,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyyx => NVec4(
+  NumVec4<T> get yyyx => NumVec4(
         $2,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2795,14 +2795,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyyy => NVec4(
+  NumVec4<T> get yyyy => NumVec4(
         $2,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2810,14 +2810,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyyz => NVec4(
+  NumVec4<T> get yyyz => NumVec4(
         $2,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2825,14 +2825,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyzx => NVec4(
+  NumVec4<T> get yyzx => NumVec4(
         $2,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2840,14 +2840,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyzy => NVec4(
+  NumVec4<T> get yyzy => NumVec4(
         $2,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2855,14 +2855,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyzz => NVec4(
+  NumVec4<T> get yyzz => NumVec4(
         $2,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2870,14 +2870,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzxx => NVec4(
+  NumVec4<T> get yzxx => NumVec4(
         $2,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2885,14 +2885,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzxy => NVec4(
+  NumVec4<T> get yzxy => NumVec4(
         $2,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2900,14 +2900,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzxz => NVec4(
+  NumVec4<T> get yzxz => NumVec4(
         $2,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2915,14 +2915,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzyx => NVec4(
+  NumVec4<T> get yzyx => NumVec4(
         $2,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2930,14 +2930,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzyy => NVec4(
+  NumVec4<T> get yzyy => NumVec4(
         $2,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2945,14 +2945,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzyz => NVec4(
+  NumVec4<T> get yzyz => NumVec4(
         $2,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2960,14 +2960,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzzx => NVec4(
+  NumVec4<T> get yzzx => NumVec4(
         $2,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2975,14 +2975,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzzy => NVec4(
+  NumVec4<T> get yzzy => NumVec4(
         $2,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -2990,14 +2990,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzzz => NVec4(
+  NumVec4<T> get yzzz => NumVec4(
         $2,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3005,14 +3005,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxxx => NVec4(
+  NumVec4<T> get zxxx => NumVec4(
         $3,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3020,14 +3020,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxxy => NVec4(
+  NumVec4<T> get zxxy => NumVec4(
         $3,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3035,14 +3035,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxxz => NVec4(
+  NumVec4<T> get zxxz => NumVec4(
         $3,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3050,14 +3050,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxyx => NVec4(
+  NumVec4<T> get zxyx => NumVec4(
         $3,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3065,14 +3065,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxyy => NVec4(
+  NumVec4<T> get zxyy => NumVec4(
         $3,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3080,14 +3080,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxyz => NVec4(
+  NumVec4<T> get zxyz => NumVec4(
         $3,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3095,14 +3095,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxzx => NVec4(
+  NumVec4<T> get zxzx => NumVec4(
         $3,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3110,14 +3110,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxzy => NVec4(
+  NumVec4<T> get zxzy => NumVec4(
         $3,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3125,14 +3125,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxzz => NVec4(
+  NumVec4<T> get zxzz => NumVec4(
         $3,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3140,14 +3140,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyxx => NVec4(
+  NumVec4<T> get zyxx => NumVec4(
         $3,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3155,14 +3155,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyxy => NVec4(
+  NumVec4<T> get zyxy => NumVec4(
         $3,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3170,14 +3170,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyxz => NVec4(
+  NumVec4<T> get zyxz => NumVec4(
         $3,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3185,14 +3185,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyyx => NVec4(
+  NumVec4<T> get zyyx => NumVec4(
         $3,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3200,14 +3200,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyyy => NVec4(
+  NumVec4<T> get zyyy => NumVec4(
         $3,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3215,14 +3215,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyyz => NVec4(
+  NumVec4<T> get zyyz => NumVec4(
         $3,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3230,14 +3230,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyzx => NVec4(
+  NumVec4<T> get zyzx => NumVec4(
         $3,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3245,14 +3245,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyzy => NVec4(
+  NumVec4<T> get zyzy => NumVec4(
         $3,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3260,14 +3260,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyzz => NVec4(
+  NumVec4<T> get zyzz => NumVec4(
         $3,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3275,14 +3275,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzxx => NVec4(
+  NumVec4<T> get zzxx => NumVec4(
         $3,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3290,14 +3290,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzxy => NVec4(
+  NumVec4<T> get zzxy => NumVec4(
         $3,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3305,14 +3305,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzxz => NVec4(
+  NumVec4<T> get zzxz => NumVec4(
         $3,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3320,14 +3320,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzyx => NVec4(
+  NumVec4<T> get zzyx => NumVec4(
         $3,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3335,14 +3335,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzyy => NVec4(
+  NumVec4<T> get zzyy => NumVec4(
         $3,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3350,14 +3350,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzyz => NVec4(
+  NumVec4<T> get zzyz => NumVec4(
         $3,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3365,14 +3365,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzzx => NVec4(
+  NumVec4<T> get zzzx => NumVec4(
         $3,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3380,14 +3380,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzzy => NVec4(
+  NumVec4<T> get zzzy => NumVec4(
         $3,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3395,14 +3395,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzzz => NVec4(
+  NumVec4<T> get zzzz => NumVec4(
         $3,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3410,12 +3410,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get rr => NVec2(
+  NumVec2<T> get rr => NumVec2(
         $1,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3423,12 +3423,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get rg => NVec2(
+  NumVec2<T> get rg => NumVec2(
         $1,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3436,12 +3436,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get rb => NVec2(
+  NumVec2<T> get rb => NumVec2(
         $1,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3449,12 +3449,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get gr => NVec2(
+  NumVec2<T> get gr => NumVec2(
         $2,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3462,12 +3462,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get gg => NVec2(
+  NumVec2<T> get gg => NumVec2(
         $2,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3475,12 +3475,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get gb => NVec2(
+  NumVec2<T> get gb => NumVec2(
         $2,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3488,12 +3488,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get br => NVec2(
+  NumVec2<T> get br => NumVec2(
         $3,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3501,12 +3501,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get bg => NVec2(
+  NumVec2<T> get bg => NumVec2(
         $3,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3514,12 +3514,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get bb => NVec2(
+  NumVec2<T> get bb => NumVec2(
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3527,13 +3527,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rrr => NVec3(
+  NumVec3<T> get rrr => NumVec3(
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3541,13 +3541,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rrg => NVec3(
+  NumVec3<T> get rrg => NumVec3(
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3555,13 +3555,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rrb => NVec3(
+  NumVec3<T> get rrb => NumVec3(
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3569,13 +3569,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rgr => NVec3(
+  NumVec3<T> get rgr => NumVec3(
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3583,13 +3583,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rgg => NVec3(
+  NumVec3<T> get rgg => NumVec3(
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3597,13 +3597,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rgb => NVec3(
+  NumVec3<T> get rgb => NumVec3(
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3611,13 +3611,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rbr => NVec3(
+  NumVec3<T> get rbr => NumVec3(
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3625,13 +3625,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rbg => NVec3(
+  NumVec3<T> get rbg => NumVec3(
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3639,13 +3639,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rbb => NVec3(
+  NumVec3<T> get rbb => NumVec3(
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3653,13 +3653,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get grr => NVec3(
+  NumVec3<T> get grr => NumVec3(
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3667,13 +3667,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get grg => NVec3(
+  NumVec3<T> get grg => NumVec3(
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3681,13 +3681,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get grb => NVec3(
+  NumVec3<T> get grb => NumVec3(
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3695,13 +3695,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get ggr => NVec3(
+  NumVec3<T> get ggr => NumVec3(
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3709,13 +3709,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get ggg => NVec3(
+  NumVec3<T> get ggg => NumVec3(
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3723,13 +3723,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get ggb => NVec3(
+  NumVec3<T> get ggb => NumVec3(
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3737,13 +3737,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gbr => NVec3(
+  NumVec3<T> get gbr => NumVec3(
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3751,13 +3751,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gbg => NVec3(
+  NumVec3<T> get gbg => NumVec3(
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3765,13 +3765,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gbb => NVec3(
+  NumVec3<T> get gbb => NumVec3(
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3779,13 +3779,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get brr => NVec3(
+  NumVec3<T> get brr => NumVec3(
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3793,13 +3793,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get brg => NVec3(
+  NumVec3<T> get brg => NumVec3(
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3807,13 +3807,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get brb => NVec3(
+  NumVec3<T> get brb => NumVec3(
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3821,13 +3821,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bgr => NVec3(
+  NumVec3<T> get bgr => NumVec3(
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3835,13 +3835,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bgg => NVec3(
+  NumVec3<T> get bgg => NumVec3(
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3849,13 +3849,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bgb => NVec3(
+  NumVec3<T> get bgb => NumVec3(
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3863,13 +3863,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bbr => NVec3(
+  NumVec3<T> get bbr => NumVec3(
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3877,13 +3877,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bbg => NVec3(
+  NumVec3<T> get bbg => NumVec3(
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3891,13 +3891,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bbb => NVec3(
+  NumVec3<T> get bbb => NumVec3(
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3905,14 +3905,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrrr => NVec4(
+  NumVec4<T> get rrrr => NumVec4(
         $1,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3920,14 +3920,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrrg => NVec4(
+  NumVec4<T> get rrrg => NumVec4(
         $1,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3935,14 +3935,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrrb => NVec4(
+  NumVec4<T> get rrrb => NumVec4(
         $1,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3950,14 +3950,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrgr => NVec4(
+  NumVec4<T> get rrgr => NumVec4(
         $1,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3965,14 +3965,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrgg => NVec4(
+  NumVec4<T> get rrgg => NumVec4(
         $1,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3980,14 +3980,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrgb => NVec4(
+  NumVec4<T> get rrgb => NumVec4(
         $1,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -3995,14 +3995,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrbr => NVec4(
+  NumVec4<T> get rrbr => NumVec4(
         $1,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4010,14 +4010,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrbg => NVec4(
+  NumVec4<T> get rrbg => NumVec4(
         $1,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4025,14 +4025,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrbb => NVec4(
+  NumVec4<T> get rrbb => NumVec4(
         $1,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4040,14 +4040,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgrr => NVec4(
+  NumVec4<T> get rgrr => NumVec4(
         $1,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4055,14 +4055,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgrg => NVec4(
+  NumVec4<T> get rgrg => NumVec4(
         $1,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4070,14 +4070,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgrb => NVec4(
+  NumVec4<T> get rgrb => NumVec4(
         $1,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4085,14 +4085,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rggr => NVec4(
+  NumVec4<T> get rggr => NumVec4(
         $1,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4100,14 +4100,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rggg => NVec4(
+  NumVec4<T> get rggg => NumVec4(
         $1,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4115,14 +4115,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rggb => NVec4(
+  NumVec4<T> get rggb => NumVec4(
         $1,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4130,14 +4130,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgbr => NVec4(
+  NumVec4<T> get rgbr => NumVec4(
         $1,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4145,14 +4145,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgbg => NVec4(
+  NumVec4<T> get rgbg => NumVec4(
         $1,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4160,14 +4160,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgbb => NVec4(
+  NumVec4<T> get rgbb => NumVec4(
         $1,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4175,14 +4175,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbrr => NVec4(
+  NumVec4<T> get rbrr => NumVec4(
         $1,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4190,14 +4190,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbrg => NVec4(
+  NumVec4<T> get rbrg => NumVec4(
         $1,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4205,14 +4205,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbrb => NVec4(
+  NumVec4<T> get rbrb => NumVec4(
         $1,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4220,14 +4220,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbgr => NVec4(
+  NumVec4<T> get rbgr => NumVec4(
         $1,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4235,14 +4235,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbgg => NVec4(
+  NumVec4<T> get rbgg => NumVec4(
         $1,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4250,14 +4250,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbgb => NVec4(
+  NumVec4<T> get rbgb => NumVec4(
         $1,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4265,14 +4265,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbbr => NVec4(
+  NumVec4<T> get rbbr => NumVec4(
         $1,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4280,14 +4280,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbbg => NVec4(
+  NumVec4<T> get rbbg => NumVec4(
         $1,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4295,14 +4295,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbbb => NVec4(
+  NumVec4<T> get rbbb => NumVec4(
         $1,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4310,14 +4310,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grrr => NVec4(
+  NumVec4<T> get grrr => NumVec4(
         $2,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4325,14 +4325,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grrg => NVec4(
+  NumVec4<T> get grrg => NumVec4(
         $2,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4340,14 +4340,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grrb => NVec4(
+  NumVec4<T> get grrb => NumVec4(
         $2,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4355,14 +4355,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grgr => NVec4(
+  NumVec4<T> get grgr => NumVec4(
         $2,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4370,14 +4370,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grgg => NVec4(
+  NumVec4<T> get grgg => NumVec4(
         $2,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4385,14 +4385,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grgb => NVec4(
+  NumVec4<T> get grgb => NumVec4(
         $2,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4400,14 +4400,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grbr => NVec4(
+  NumVec4<T> get grbr => NumVec4(
         $2,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4415,14 +4415,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grbg => NVec4(
+  NumVec4<T> get grbg => NumVec4(
         $2,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4430,14 +4430,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grbb => NVec4(
+  NumVec4<T> get grbb => NumVec4(
         $2,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4445,14 +4445,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggrr => NVec4(
+  NumVec4<T> get ggrr => NumVec4(
         $2,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4460,14 +4460,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggrg => NVec4(
+  NumVec4<T> get ggrg => NumVec4(
         $2,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4475,14 +4475,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggrb => NVec4(
+  NumVec4<T> get ggrb => NumVec4(
         $2,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4490,14 +4490,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gggr => NVec4(
+  NumVec4<T> get gggr => NumVec4(
         $2,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4505,14 +4505,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gggg => NVec4(
+  NumVec4<T> get gggg => NumVec4(
         $2,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4520,14 +4520,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gggb => NVec4(
+  NumVec4<T> get gggb => NumVec4(
         $2,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4535,14 +4535,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggbr => NVec4(
+  NumVec4<T> get ggbr => NumVec4(
         $2,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4550,14 +4550,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggbg => NVec4(
+  NumVec4<T> get ggbg => NumVec4(
         $2,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4565,14 +4565,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggbb => NVec4(
+  NumVec4<T> get ggbb => NumVec4(
         $2,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4580,14 +4580,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbrr => NVec4(
+  NumVec4<T> get gbrr => NumVec4(
         $2,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4595,14 +4595,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbrg => NVec4(
+  NumVec4<T> get gbrg => NumVec4(
         $2,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4610,14 +4610,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbrb => NVec4(
+  NumVec4<T> get gbrb => NumVec4(
         $2,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4625,14 +4625,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbgr => NVec4(
+  NumVec4<T> get gbgr => NumVec4(
         $2,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4640,14 +4640,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbgg => NVec4(
+  NumVec4<T> get gbgg => NumVec4(
         $2,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4655,14 +4655,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbgb => NVec4(
+  NumVec4<T> get gbgb => NumVec4(
         $2,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4670,14 +4670,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbbr => NVec4(
+  NumVec4<T> get gbbr => NumVec4(
         $2,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4685,14 +4685,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbbg => NVec4(
+  NumVec4<T> get gbbg => NumVec4(
         $2,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4700,14 +4700,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbbb => NVec4(
+  NumVec4<T> get gbbb => NumVec4(
         $2,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4715,14 +4715,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brrr => NVec4(
+  NumVec4<T> get brrr => NumVec4(
         $3,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4730,14 +4730,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brrg => NVec4(
+  NumVec4<T> get brrg => NumVec4(
         $3,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4745,14 +4745,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brrb => NVec4(
+  NumVec4<T> get brrb => NumVec4(
         $3,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4760,14 +4760,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brgr => NVec4(
+  NumVec4<T> get brgr => NumVec4(
         $3,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4775,14 +4775,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brgg => NVec4(
+  NumVec4<T> get brgg => NumVec4(
         $3,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4790,14 +4790,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brgb => NVec4(
+  NumVec4<T> get brgb => NumVec4(
         $3,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4805,14 +4805,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brbr => NVec4(
+  NumVec4<T> get brbr => NumVec4(
         $3,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4820,14 +4820,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brbg => NVec4(
+  NumVec4<T> get brbg => NumVec4(
         $3,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4835,14 +4835,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brbb => NVec4(
+  NumVec4<T> get brbb => NumVec4(
         $3,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4850,14 +4850,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgrr => NVec4(
+  NumVec4<T> get bgrr => NumVec4(
         $3,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4865,14 +4865,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgrg => NVec4(
+  NumVec4<T> get bgrg => NumVec4(
         $3,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4880,14 +4880,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgrb => NVec4(
+  NumVec4<T> get bgrb => NumVec4(
         $3,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4895,14 +4895,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bggr => NVec4(
+  NumVec4<T> get bggr => NumVec4(
         $3,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4910,14 +4910,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bggg => NVec4(
+  NumVec4<T> get bggg => NumVec4(
         $3,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4925,14 +4925,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bggb => NVec4(
+  NumVec4<T> get bggb => NumVec4(
         $3,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4940,14 +4940,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgbr => NVec4(
+  NumVec4<T> get bgbr => NumVec4(
         $3,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4955,14 +4955,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgbg => NVec4(
+  NumVec4<T> get bgbg => NumVec4(
         $3,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4970,14 +4970,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgbb => NVec4(
+  NumVec4<T> get bgbb => NumVec4(
         $3,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -4985,14 +4985,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbrr => NVec4(
+  NumVec4<T> get bbrr => NumVec4(
         $3,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5000,14 +5000,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbrg => NVec4(
+  NumVec4<T> get bbrg => NumVec4(
         $3,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5015,14 +5015,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbrb => NVec4(
+  NumVec4<T> get bbrb => NumVec4(
         $3,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5030,14 +5030,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbgr => NVec4(
+  NumVec4<T> get bbgr => NumVec4(
         $3,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5045,14 +5045,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbgg => NVec4(
+  NumVec4<T> get bbgg => NumVec4(
         $3,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5060,14 +5060,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbgb => NVec4(
+  NumVec4<T> get bbgb => NumVec4(
         $3,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5075,14 +5075,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbbr => NVec4(
+  NumVec4<T> get bbbr => NumVec4(
         $3,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5090,14 +5090,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbbg => NVec4(
+  NumVec4<T> get bbbg => NumVec4(
         $3,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5105,14 +5105,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbbb => NVec4(
+  NumVec4<T> get bbbb => NumVec4(
         $3,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5120,12 +5120,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get ss => NVec2(
+  NumVec2<T> get ss => NumVec2(
         $1,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5133,12 +5133,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get st => NVec2(
+  NumVec2<T> get st => NumVec2(
         $1,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5146,12 +5146,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get sp => NVec2(
+  NumVec2<T> get sp => NumVec2(
         $1,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5159,12 +5159,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get ts => NVec2(
+  NumVec2<T> get ts => NumVec2(
         $2,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5172,12 +5172,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get tt => NVec2(
+  NumVec2<T> get tt => NumVec2(
         $2,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5185,12 +5185,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get tp => NVec2(
+  NumVec2<T> get tp => NumVec2(
         $2,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5198,12 +5198,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get ps => NVec2(
+  NumVec2<T> get ps => NumVec2(
         $3,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5211,12 +5211,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get pt => NVec2(
+  NumVec2<T> get pt => NumVec2(
         $3,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5224,12 +5224,12 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get pp => NVec2(
+  NumVec2<T> get pp => NumVec2(
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5237,13 +5237,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sss => NVec3(
+  NumVec3<T> get sss => NumVec3(
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5251,13 +5251,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sst => NVec3(
+  NumVec3<T> get sst => NumVec3(
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5265,13 +5265,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ssp => NVec3(
+  NumVec3<T> get ssp => NumVec3(
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5279,13 +5279,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sts => NVec3(
+  NumVec3<T> get sts => NumVec3(
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5293,13 +5293,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get stt => NVec3(
+  NumVec3<T> get stt => NumVec3(
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5307,13 +5307,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get stp => NVec3(
+  NumVec3<T> get stp => NumVec3(
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5321,13 +5321,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sps => NVec3(
+  NumVec3<T> get sps => NumVec3(
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5335,13 +5335,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get spt => NVec3(
+  NumVec3<T> get spt => NumVec3(
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5349,13 +5349,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get spp => NVec3(
+  NumVec3<T> get spp => NumVec3(
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5363,13 +5363,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tss => NVec3(
+  NumVec3<T> get tss => NumVec3(
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5377,13 +5377,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tst => NVec3(
+  NumVec3<T> get tst => NumVec3(
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5391,13 +5391,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tsp => NVec3(
+  NumVec3<T> get tsp => NumVec3(
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5405,13 +5405,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tts => NVec3(
+  NumVec3<T> get tts => NumVec3(
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5419,13 +5419,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ttt => NVec3(
+  NumVec3<T> get ttt => NumVec3(
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5433,13 +5433,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ttp => NVec3(
+  NumVec3<T> get ttp => NumVec3(
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5447,13 +5447,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tps => NVec3(
+  NumVec3<T> get tps => NumVec3(
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5461,13 +5461,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tpt => NVec3(
+  NumVec3<T> get tpt => NumVec3(
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5475,13 +5475,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tpp => NVec3(
+  NumVec3<T> get tpp => NumVec3(
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5489,13 +5489,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pss => NVec3(
+  NumVec3<T> get pss => NumVec3(
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5503,13 +5503,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pst => NVec3(
+  NumVec3<T> get pst => NumVec3(
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5517,13 +5517,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get psp => NVec3(
+  NumVec3<T> get psp => NumVec3(
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5531,13 +5531,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pts => NVec3(
+  NumVec3<T> get pts => NumVec3(
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5545,13 +5545,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ptt => NVec3(
+  NumVec3<T> get ptt => NumVec3(
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5559,13 +5559,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ptp => NVec3(
+  NumVec3<T> get ptp => NumVec3(
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5573,13 +5573,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pps => NVec3(
+  NumVec3<T> get pps => NumVec3(
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5587,13 +5587,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ppt => NVec3(
+  NumVec3<T> get ppt => NumVec3(
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5601,13 +5601,13 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ppp => NVec3(
+  NumVec3<T> get ppp => NumVec3(
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5615,14 +5615,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssss => NVec4(
+  NumVec4<T> get ssss => NumVec4(
         $1,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5630,14 +5630,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssst => NVec4(
+  NumVec4<T> get ssst => NumVec4(
         $1,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5645,14 +5645,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sssp => NVec4(
+  NumVec4<T> get sssp => NumVec4(
         $1,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5660,14 +5660,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssts => NVec4(
+  NumVec4<T> get ssts => NumVec4(
         $1,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5675,14 +5675,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sstt => NVec4(
+  NumVec4<T> get sstt => NumVec4(
         $1,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5690,14 +5690,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sstp => NVec4(
+  NumVec4<T> get sstp => NumVec4(
         $1,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5705,14 +5705,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssps => NVec4(
+  NumVec4<T> get ssps => NumVec4(
         $1,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5720,14 +5720,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sspt => NVec4(
+  NumVec4<T> get sspt => NumVec4(
         $1,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5735,14 +5735,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sspp => NVec4(
+  NumVec4<T> get sspp => NumVec4(
         $1,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5750,14 +5750,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stss => NVec4(
+  NumVec4<T> get stss => NumVec4(
         $1,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5765,14 +5765,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stst => NVec4(
+  NumVec4<T> get stst => NumVec4(
         $1,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5780,14 +5780,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stsp => NVec4(
+  NumVec4<T> get stsp => NumVec4(
         $1,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5795,14 +5795,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stts => NVec4(
+  NumVec4<T> get stts => NumVec4(
         $1,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5810,14 +5810,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sttt => NVec4(
+  NumVec4<T> get sttt => NumVec4(
         $1,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5825,14 +5825,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sttp => NVec4(
+  NumVec4<T> get sttp => NumVec4(
         $1,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5840,14 +5840,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stps => NVec4(
+  NumVec4<T> get stps => NumVec4(
         $1,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5855,14 +5855,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stpt => NVec4(
+  NumVec4<T> get stpt => NumVec4(
         $1,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5870,14 +5870,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stpp => NVec4(
+  NumVec4<T> get stpp => NumVec4(
         $1,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5885,14 +5885,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spss => NVec4(
+  NumVec4<T> get spss => NumVec4(
         $1,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5900,14 +5900,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spst => NVec4(
+  NumVec4<T> get spst => NumVec4(
         $1,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5915,14 +5915,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spsp => NVec4(
+  NumVec4<T> get spsp => NumVec4(
         $1,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5930,14 +5930,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spts => NVec4(
+  NumVec4<T> get spts => NumVec4(
         $1,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5945,14 +5945,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sptt => NVec4(
+  NumVec4<T> get sptt => NumVec4(
         $1,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5960,14 +5960,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sptp => NVec4(
+  NumVec4<T> get sptp => NumVec4(
         $1,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5975,14 +5975,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spps => NVec4(
+  NumVec4<T> get spps => NumVec4(
         $1,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -5990,14 +5990,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sppt => NVec4(
+  NumVec4<T> get sppt => NumVec4(
         $1,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6005,14 +6005,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sppp => NVec4(
+  NumVec4<T> get sppp => NumVec4(
         $1,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6020,14 +6020,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsss => NVec4(
+  NumVec4<T> get tsss => NumVec4(
         $2,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6035,14 +6035,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsst => NVec4(
+  NumVec4<T> get tsst => NumVec4(
         $2,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6050,14 +6050,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tssp => NVec4(
+  NumVec4<T> get tssp => NumVec4(
         $2,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6065,14 +6065,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsts => NVec4(
+  NumVec4<T> get tsts => NumVec4(
         $2,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6080,14 +6080,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tstt => NVec4(
+  NumVec4<T> get tstt => NumVec4(
         $2,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6095,14 +6095,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tstp => NVec4(
+  NumVec4<T> get tstp => NumVec4(
         $2,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6110,14 +6110,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsps => NVec4(
+  NumVec4<T> get tsps => NumVec4(
         $2,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6125,14 +6125,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tspt => NVec4(
+  NumVec4<T> get tspt => NumVec4(
         $2,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6140,14 +6140,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tspp => NVec4(
+  NumVec4<T> get tspp => NumVec4(
         $2,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6155,14 +6155,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttss => NVec4(
+  NumVec4<T> get ttss => NumVec4(
         $2,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6170,14 +6170,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttst => NVec4(
+  NumVec4<T> get ttst => NumVec4(
         $2,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6185,14 +6185,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttsp => NVec4(
+  NumVec4<T> get ttsp => NumVec4(
         $2,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6200,14 +6200,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttts => NVec4(
+  NumVec4<T> get ttts => NumVec4(
         $2,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6215,14 +6215,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tttt => NVec4(
+  NumVec4<T> get tttt => NumVec4(
         $2,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6230,14 +6230,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tttp => NVec4(
+  NumVec4<T> get tttp => NumVec4(
         $2,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6245,14 +6245,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttps => NVec4(
+  NumVec4<T> get ttps => NumVec4(
         $2,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6260,14 +6260,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttpt => NVec4(
+  NumVec4<T> get ttpt => NumVec4(
         $2,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6275,14 +6275,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttpp => NVec4(
+  NumVec4<T> get ttpp => NumVec4(
         $2,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6290,14 +6290,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpss => NVec4(
+  NumVec4<T> get tpss => NumVec4(
         $2,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6305,14 +6305,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpst => NVec4(
+  NumVec4<T> get tpst => NumVec4(
         $2,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6320,14 +6320,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpsp => NVec4(
+  NumVec4<T> get tpsp => NumVec4(
         $2,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6335,14 +6335,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpts => NVec4(
+  NumVec4<T> get tpts => NumVec4(
         $2,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6350,14 +6350,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tptt => NVec4(
+  NumVec4<T> get tptt => NumVec4(
         $2,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6365,14 +6365,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tptp => NVec4(
+  NumVec4<T> get tptp => NumVec4(
         $2,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6380,14 +6380,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpps => NVec4(
+  NumVec4<T> get tpps => NumVec4(
         $2,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6395,14 +6395,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tppt => NVec4(
+  NumVec4<T> get tppt => NumVec4(
         $2,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6410,14 +6410,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tppp => NVec4(
+  NumVec4<T> get tppp => NumVec4(
         $2,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6425,14 +6425,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psss => NVec4(
+  NumVec4<T> get psss => NumVec4(
         $3,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6440,14 +6440,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psst => NVec4(
+  NumVec4<T> get psst => NumVec4(
         $3,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6455,14 +6455,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pssp => NVec4(
+  NumVec4<T> get pssp => NumVec4(
         $3,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6470,14 +6470,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psts => NVec4(
+  NumVec4<T> get psts => NumVec4(
         $3,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6485,14 +6485,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pstt => NVec4(
+  NumVec4<T> get pstt => NumVec4(
         $3,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6500,14 +6500,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pstp => NVec4(
+  NumVec4<T> get pstp => NumVec4(
         $3,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6515,14 +6515,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psps => NVec4(
+  NumVec4<T> get psps => NumVec4(
         $3,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6530,14 +6530,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pspt => NVec4(
+  NumVec4<T> get pspt => NumVec4(
         $3,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6545,14 +6545,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pspp => NVec4(
+  NumVec4<T> get pspp => NumVec4(
         $3,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6560,14 +6560,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptss => NVec4(
+  NumVec4<T> get ptss => NumVec4(
         $3,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6575,14 +6575,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptst => NVec4(
+  NumVec4<T> get ptst => NumVec4(
         $3,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6590,14 +6590,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptsp => NVec4(
+  NumVec4<T> get ptsp => NumVec4(
         $3,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6605,14 +6605,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptts => NVec4(
+  NumVec4<T> get ptts => NumVec4(
         $3,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6620,14 +6620,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pttt => NVec4(
+  NumVec4<T> get pttt => NumVec4(
         $3,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6635,14 +6635,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pttp => NVec4(
+  NumVec4<T> get pttp => NumVec4(
         $3,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6650,14 +6650,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptps => NVec4(
+  NumVec4<T> get ptps => NumVec4(
         $3,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6665,14 +6665,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptpt => NVec4(
+  NumVec4<T> get ptpt => NumVec4(
         $3,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6680,14 +6680,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptpp => NVec4(
+  NumVec4<T> get ptpp => NumVec4(
         $3,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6695,14 +6695,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppss => NVec4(
+  NumVec4<T> get ppss => NumVec4(
         $3,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6710,14 +6710,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppst => NVec4(
+  NumVec4<T> get ppst => NumVec4(
         $3,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6725,14 +6725,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppsp => NVec4(
+  NumVec4<T> get ppsp => NumVec4(
         $3,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6740,14 +6740,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppts => NVec4(
+  NumVec4<T> get ppts => NumVec4(
         $3,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6755,14 +6755,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pptt => NVec4(
+  NumVec4<T> get pptt => NumVec4(
         $3,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6770,14 +6770,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pptp => NVec4(
+  NumVec4<T> get pptp => NumVec4(
         $3,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6785,14 +6785,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppps => NVec4(
+  NumVec4<T> get ppps => NumVec4(
         $3,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6800,14 +6800,14 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pppt => NVec4(
+  NumVec4<T> get pppt => NumVec4(
         $3,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6815,7 +6815,7 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pppp => NVec4(
+  NumVec4<T> get pppp => NumVec4(
         $3,
         $3,
         $3,
@@ -6826,7 +6826,7 @@ extension NVec3Getters<T extends num> on NVec3<T> {
   int get length => 3;
 }
 
-/// A set of properties that are common to all [NVec4]s.
+/// A set of properties that are common to all [NumVec4]s.
 ///
 /// It comprises getters that return elements of the vector based on
 /// names in the supported conventions.
@@ -6835,7 +6835,7 @@ extension NVec3Getters<T extends num> on NVec3<T> {
 /// - XYZW (Coordinates)
 /// - RGBA (Color channels)
 /// - STPQ (Texture coordinates)
-extension NVec4Getters<T extends num> on NVec4<T> {
+extension NumVec4Getters<T extends num> on NumVec4<T> {
   /// The 1st element of the vector in the XYZW system.
   T get x => $1;
 
@@ -6872,7 +6872,7 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// The 4th element of the vector in the STPQ system.
   T get q => $4;
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6880,12 +6880,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get xx => NVec2(
+  NumVec2<T> get xx => NumVec2(
         $1,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6893,12 +6893,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get xy => NVec2(
+  NumVec2<T> get xy => NumVec2(
         $1,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6906,12 +6906,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get xz => NVec2(
+  NumVec2<T> get xz => NumVec2(
         $1,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6919,12 +6919,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get xw => NVec2(
+  NumVec2<T> get xw => NumVec2(
         $1,
         $4,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6932,12 +6932,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get yx => NVec2(
+  NumVec2<T> get yx => NumVec2(
         $2,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6945,12 +6945,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get yy => NVec2(
+  NumVec2<T> get yy => NumVec2(
         $2,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6958,12 +6958,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get yz => NVec2(
+  NumVec2<T> get yz => NumVec2(
         $2,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6971,12 +6971,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get yw => NVec2(
+  NumVec2<T> get yw => NumVec2(
         $2,
         $4,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6984,12 +6984,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get zx => NVec2(
+  NumVec2<T> get zx => NumVec2(
         $3,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -6997,12 +6997,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get zy => NVec2(
+  NumVec2<T> get zy => NumVec2(
         $3,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7010,12 +7010,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get zz => NVec2(
+  NumVec2<T> get zz => NumVec2(
         $3,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7023,12 +7023,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get zw => NVec2(
+  NumVec2<T> get zw => NumVec2(
         $3,
         $4,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7036,12 +7036,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get wx => NVec2(
+  NumVec2<T> get wx => NumVec2(
         $4,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7049,12 +7049,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get wy => NVec2(
+  NumVec2<T> get wy => NumVec2(
         $4,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7062,12 +7062,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get wz => NVec2(
+  NumVec2<T> get wz => NumVec2(
         $4,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7075,12 +7075,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec2<T> get ww => NVec2(
+  NumVec2<T> get ww => NumVec2(
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7088,13 +7088,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xxx => NVec3(
+  NumVec3<T> get xxx => NumVec3(
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7102,13 +7102,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xxy => NVec3(
+  NumVec3<T> get xxy => NumVec3(
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7116,13 +7116,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xxz => NVec3(
+  NumVec3<T> get xxz => NumVec3(
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7130,13 +7130,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xxw => NVec3(
+  NumVec3<T> get xxw => NumVec3(
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7144,13 +7144,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xyx => NVec3(
+  NumVec3<T> get xyx => NumVec3(
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7158,13 +7158,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xyy => NVec3(
+  NumVec3<T> get xyy => NumVec3(
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7172,13 +7172,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xyz => NVec3(
+  NumVec3<T> get xyz => NumVec3(
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7186,13 +7186,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xyw => NVec3(
+  NumVec3<T> get xyw => NumVec3(
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7200,13 +7200,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xzx => NVec3(
+  NumVec3<T> get xzx => NumVec3(
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7214,13 +7214,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xzy => NVec3(
+  NumVec3<T> get xzy => NumVec3(
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7228,13 +7228,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xzz => NVec3(
+  NumVec3<T> get xzz => NumVec3(
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7242,13 +7242,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xzw => NVec3(
+  NumVec3<T> get xzw => NumVec3(
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7256,13 +7256,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xwx => NVec3(
+  NumVec3<T> get xwx => NumVec3(
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7270,13 +7270,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xwy => NVec3(
+  NumVec3<T> get xwy => NumVec3(
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7284,13 +7284,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xwz => NVec3(
+  NumVec3<T> get xwz => NumVec3(
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7298,13 +7298,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get xww => NVec3(
+  NumVec3<T> get xww => NumVec3(
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7312,13 +7312,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yxx => NVec3(
+  NumVec3<T> get yxx => NumVec3(
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7326,13 +7326,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yxy => NVec3(
+  NumVec3<T> get yxy => NumVec3(
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7340,13 +7340,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yxz => NVec3(
+  NumVec3<T> get yxz => NumVec3(
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7354,13 +7354,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yxw => NVec3(
+  NumVec3<T> get yxw => NumVec3(
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7368,13 +7368,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yyx => NVec3(
+  NumVec3<T> get yyx => NumVec3(
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7382,13 +7382,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yyy => NVec3(
+  NumVec3<T> get yyy => NumVec3(
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7396,13 +7396,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yyz => NVec3(
+  NumVec3<T> get yyz => NumVec3(
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7410,13 +7410,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yyw => NVec3(
+  NumVec3<T> get yyw => NumVec3(
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7424,13 +7424,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yzx => NVec3(
+  NumVec3<T> get yzx => NumVec3(
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7438,13 +7438,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yzy => NVec3(
+  NumVec3<T> get yzy => NumVec3(
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7452,13 +7452,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yzz => NVec3(
+  NumVec3<T> get yzz => NumVec3(
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7466,13 +7466,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yzw => NVec3(
+  NumVec3<T> get yzw => NumVec3(
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7480,13 +7480,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get ywx => NVec3(
+  NumVec3<T> get ywx => NumVec3(
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7494,13 +7494,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get ywy => NVec3(
+  NumVec3<T> get ywy => NumVec3(
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7508,13 +7508,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get ywz => NVec3(
+  NumVec3<T> get ywz => NumVec3(
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7522,13 +7522,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get yww => NVec3(
+  NumVec3<T> get yww => NumVec3(
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7536,13 +7536,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zxx => NVec3(
+  NumVec3<T> get zxx => NumVec3(
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7550,13 +7550,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zxy => NVec3(
+  NumVec3<T> get zxy => NumVec3(
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7564,13 +7564,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zxz => NVec3(
+  NumVec3<T> get zxz => NumVec3(
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7578,13 +7578,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zxw => NVec3(
+  NumVec3<T> get zxw => NumVec3(
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7592,13 +7592,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zyx => NVec3(
+  NumVec3<T> get zyx => NumVec3(
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7606,13 +7606,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zyy => NVec3(
+  NumVec3<T> get zyy => NumVec3(
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7620,13 +7620,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zyz => NVec3(
+  NumVec3<T> get zyz => NumVec3(
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7634,13 +7634,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zyw => NVec3(
+  NumVec3<T> get zyw => NumVec3(
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7648,13 +7648,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zzx => NVec3(
+  NumVec3<T> get zzx => NumVec3(
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7662,13 +7662,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zzy => NVec3(
+  NumVec3<T> get zzy => NumVec3(
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7676,13 +7676,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zzz => NVec3(
+  NumVec3<T> get zzz => NumVec3(
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7690,13 +7690,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zzw => NVec3(
+  NumVec3<T> get zzw => NumVec3(
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7704,13 +7704,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zwx => NVec3(
+  NumVec3<T> get zwx => NumVec3(
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7718,13 +7718,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zwy => NVec3(
+  NumVec3<T> get zwy => NumVec3(
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7732,13 +7732,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zwz => NVec3(
+  NumVec3<T> get zwz => NumVec3(
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7746,13 +7746,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get zww => NVec3(
+  NumVec3<T> get zww => NumVec3(
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7760,13 +7760,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wxx => NVec3(
+  NumVec3<T> get wxx => NumVec3(
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7774,13 +7774,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wxy => NVec3(
+  NumVec3<T> get wxy => NumVec3(
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7788,13 +7788,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wxz => NVec3(
+  NumVec3<T> get wxz => NumVec3(
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7802,13 +7802,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wxw => NVec3(
+  NumVec3<T> get wxw => NumVec3(
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7816,13 +7816,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wyx => NVec3(
+  NumVec3<T> get wyx => NumVec3(
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7830,13 +7830,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wyy => NVec3(
+  NumVec3<T> get wyy => NumVec3(
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7844,13 +7844,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wyz => NVec3(
+  NumVec3<T> get wyz => NumVec3(
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7858,13 +7858,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wyw => NVec3(
+  NumVec3<T> get wyw => NumVec3(
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7872,13 +7872,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wzx => NVec3(
+  NumVec3<T> get wzx => NumVec3(
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7886,13 +7886,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wzy => NVec3(
+  NumVec3<T> get wzy => NumVec3(
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7900,13 +7900,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wzz => NVec3(
+  NumVec3<T> get wzz => NumVec3(
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7914,13 +7914,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wzw => NVec3(
+  NumVec3<T> get wzw => NumVec3(
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7928,13 +7928,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wwx => NVec3(
+  NumVec3<T> get wwx => NumVec3(
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7942,13 +7942,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wwy => NVec3(
+  NumVec3<T> get wwy => NumVec3(
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7956,13 +7956,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get wwz => NVec3(
+  NumVec3<T> get wwz => NumVec3(
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7970,13 +7970,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec3<T> get www => NVec3(
+  NumVec3<T> get www => NumVec3(
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7984,14 +7984,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxxx => NVec4(
+  NumVec4<T> get xxxx => NumVec4(
         $1,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -7999,14 +7999,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxxy => NVec4(
+  NumVec4<T> get xxxy => NumVec4(
         $1,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8014,14 +8014,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxxz => NVec4(
+  NumVec4<T> get xxxz => NumVec4(
         $1,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8029,14 +8029,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxxw => NVec4(
+  NumVec4<T> get xxxw => NumVec4(
         $1,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8044,14 +8044,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxyx => NVec4(
+  NumVec4<T> get xxyx => NumVec4(
         $1,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8059,14 +8059,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxyy => NVec4(
+  NumVec4<T> get xxyy => NumVec4(
         $1,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8074,14 +8074,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxyz => NVec4(
+  NumVec4<T> get xxyz => NumVec4(
         $1,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8089,14 +8089,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxyw => NVec4(
+  NumVec4<T> get xxyw => NumVec4(
         $1,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8104,14 +8104,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxzx => NVec4(
+  NumVec4<T> get xxzx => NumVec4(
         $1,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8119,14 +8119,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxzy => NVec4(
+  NumVec4<T> get xxzy => NumVec4(
         $1,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8134,14 +8134,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxzz => NVec4(
+  NumVec4<T> get xxzz => NumVec4(
         $1,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8149,14 +8149,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxzw => NVec4(
+  NumVec4<T> get xxzw => NumVec4(
         $1,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8164,14 +8164,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxwx => NVec4(
+  NumVec4<T> get xxwx => NumVec4(
         $1,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8179,14 +8179,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxwy => NVec4(
+  NumVec4<T> get xxwy => NumVec4(
         $1,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8194,14 +8194,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxwz => NVec4(
+  NumVec4<T> get xxwz => NumVec4(
         $1,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8209,14 +8209,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xxww => NVec4(
+  NumVec4<T> get xxww => NumVec4(
         $1,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8224,14 +8224,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyxx => NVec4(
+  NumVec4<T> get xyxx => NumVec4(
         $1,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8239,14 +8239,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyxy => NVec4(
+  NumVec4<T> get xyxy => NumVec4(
         $1,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8254,14 +8254,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyxz => NVec4(
+  NumVec4<T> get xyxz => NumVec4(
         $1,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8269,14 +8269,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyxw => NVec4(
+  NumVec4<T> get xyxw => NumVec4(
         $1,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8284,14 +8284,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyyx => NVec4(
+  NumVec4<T> get xyyx => NumVec4(
         $1,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8299,14 +8299,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyyy => NVec4(
+  NumVec4<T> get xyyy => NumVec4(
         $1,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8314,14 +8314,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyyz => NVec4(
+  NumVec4<T> get xyyz => NumVec4(
         $1,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8329,14 +8329,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyyw => NVec4(
+  NumVec4<T> get xyyw => NumVec4(
         $1,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8344,14 +8344,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyzx => NVec4(
+  NumVec4<T> get xyzx => NumVec4(
         $1,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8359,14 +8359,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyzy => NVec4(
+  NumVec4<T> get xyzy => NumVec4(
         $1,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8374,14 +8374,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyzz => NVec4(
+  NumVec4<T> get xyzz => NumVec4(
         $1,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8389,14 +8389,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyzw => NVec4(
+  NumVec4<T> get xyzw => NumVec4(
         $1,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8404,14 +8404,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xywx => NVec4(
+  NumVec4<T> get xywx => NumVec4(
         $1,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8419,14 +8419,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xywy => NVec4(
+  NumVec4<T> get xywy => NumVec4(
         $1,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8434,14 +8434,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xywz => NVec4(
+  NumVec4<T> get xywz => NumVec4(
         $1,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8449,14 +8449,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xyww => NVec4(
+  NumVec4<T> get xyww => NumVec4(
         $1,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8464,14 +8464,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzxx => NVec4(
+  NumVec4<T> get xzxx => NumVec4(
         $1,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8479,14 +8479,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzxy => NVec4(
+  NumVec4<T> get xzxy => NumVec4(
         $1,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8494,14 +8494,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzxz => NVec4(
+  NumVec4<T> get xzxz => NumVec4(
         $1,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8509,14 +8509,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzxw => NVec4(
+  NumVec4<T> get xzxw => NumVec4(
         $1,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8524,14 +8524,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzyx => NVec4(
+  NumVec4<T> get xzyx => NumVec4(
         $1,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8539,14 +8539,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzyy => NVec4(
+  NumVec4<T> get xzyy => NumVec4(
         $1,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8554,14 +8554,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzyz => NVec4(
+  NumVec4<T> get xzyz => NumVec4(
         $1,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8569,14 +8569,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzyw => NVec4(
+  NumVec4<T> get xzyw => NumVec4(
         $1,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8584,14 +8584,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzzx => NVec4(
+  NumVec4<T> get xzzx => NumVec4(
         $1,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8599,14 +8599,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzzy => NVec4(
+  NumVec4<T> get xzzy => NumVec4(
         $1,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8614,14 +8614,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzzz => NVec4(
+  NumVec4<T> get xzzz => NumVec4(
         $1,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8629,14 +8629,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzzw => NVec4(
+  NumVec4<T> get xzzw => NumVec4(
         $1,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8644,14 +8644,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzwx => NVec4(
+  NumVec4<T> get xzwx => NumVec4(
         $1,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8659,14 +8659,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzwy => NVec4(
+  NumVec4<T> get xzwy => NumVec4(
         $1,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8674,14 +8674,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzwz => NVec4(
+  NumVec4<T> get xzwz => NumVec4(
         $1,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8689,14 +8689,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xzww => NVec4(
+  NumVec4<T> get xzww => NumVec4(
         $1,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8704,14 +8704,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwxx => NVec4(
+  NumVec4<T> get xwxx => NumVec4(
         $1,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8719,14 +8719,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwxy => NVec4(
+  NumVec4<T> get xwxy => NumVec4(
         $1,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8734,14 +8734,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwxz => NVec4(
+  NumVec4<T> get xwxz => NumVec4(
         $1,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8749,14 +8749,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwxw => NVec4(
+  NumVec4<T> get xwxw => NumVec4(
         $1,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8764,14 +8764,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwyx => NVec4(
+  NumVec4<T> get xwyx => NumVec4(
         $1,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8779,14 +8779,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwyy => NVec4(
+  NumVec4<T> get xwyy => NumVec4(
         $1,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8794,14 +8794,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwyz => NVec4(
+  NumVec4<T> get xwyz => NumVec4(
         $1,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8809,14 +8809,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwyw => NVec4(
+  NumVec4<T> get xwyw => NumVec4(
         $1,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8824,14 +8824,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwzx => NVec4(
+  NumVec4<T> get xwzx => NumVec4(
         $1,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8839,14 +8839,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwzy => NVec4(
+  NumVec4<T> get xwzy => NumVec4(
         $1,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8854,14 +8854,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwzz => NVec4(
+  NumVec4<T> get xwzz => NumVec4(
         $1,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8869,14 +8869,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwzw => NVec4(
+  NumVec4<T> get xwzw => NumVec4(
         $1,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8884,14 +8884,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwwx => NVec4(
+  NumVec4<T> get xwwx => NumVec4(
         $1,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8899,14 +8899,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwwy => NVec4(
+  NumVec4<T> get xwwy => NumVec4(
         $1,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8914,14 +8914,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwwz => NVec4(
+  NumVec4<T> get xwwz => NumVec4(
         $1,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8929,14 +8929,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get xwww => NVec4(
+  NumVec4<T> get xwww => NumVec4(
         $1,
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8944,14 +8944,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxxx => NVec4(
+  NumVec4<T> get yxxx => NumVec4(
         $2,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8959,14 +8959,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxxy => NVec4(
+  NumVec4<T> get yxxy => NumVec4(
         $2,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8974,14 +8974,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxxz => NVec4(
+  NumVec4<T> get yxxz => NumVec4(
         $2,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -8989,14 +8989,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxxw => NVec4(
+  NumVec4<T> get yxxw => NumVec4(
         $2,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9004,14 +9004,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxyx => NVec4(
+  NumVec4<T> get yxyx => NumVec4(
         $2,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9019,14 +9019,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxyy => NVec4(
+  NumVec4<T> get yxyy => NumVec4(
         $2,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9034,14 +9034,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxyz => NVec4(
+  NumVec4<T> get yxyz => NumVec4(
         $2,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9049,14 +9049,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxyw => NVec4(
+  NumVec4<T> get yxyw => NumVec4(
         $2,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9064,14 +9064,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxzx => NVec4(
+  NumVec4<T> get yxzx => NumVec4(
         $2,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9079,14 +9079,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxzy => NVec4(
+  NumVec4<T> get yxzy => NumVec4(
         $2,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9094,14 +9094,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxzz => NVec4(
+  NumVec4<T> get yxzz => NumVec4(
         $2,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9109,14 +9109,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxzw => NVec4(
+  NumVec4<T> get yxzw => NumVec4(
         $2,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9124,14 +9124,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxwx => NVec4(
+  NumVec4<T> get yxwx => NumVec4(
         $2,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9139,14 +9139,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxwy => NVec4(
+  NumVec4<T> get yxwy => NumVec4(
         $2,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9154,14 +9154,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxwz => NVec4(
+  NumVec4<T> get yxwz => NumVec4(
         $2,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9169,14 +9169,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yxww => NVec4(
+  NumVec4<T> get yxww => NumVec4(
         $2,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9184,14 +9184,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyxx => NVec4(
+  NumVec4<T> get yyxx => NumVec4(
         $2,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9199,14 +9199,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyxy => NVec4(
+  NumVec4<T> get yyxy => NumVec4(
         $2,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9214,14 +9214,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyxz => NVec4(
+  NumVec4<T> get yyxz => NumVec4(
         $2,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9229,14 +9229,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyxw => NVec4(
+  NumVec4<T> get yyxw => NumVec4(
         $2,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9244,14 +9244,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyyx => NVec4(
+  NumVec4<T> get yyyx => NumVec4(
         $2,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9259,14 +9259,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyyy => NVec4(
+  NumVec4<T> get yyyy => NumVec4(
         $2,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9274,14 +9274,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyyz => NVec4(
+  NumVec4<T> get yyyz => NumVec4(
         $2,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9289,14 +9289,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyyw => NVec4(
+  NumVec4<T> get yyyw => NumVec4(
         $2,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9304,14 +9304,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyzx => NVec4(
+  NumVec4<T> get yyzx => NumVec4(
         $2,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9319,14 +9319,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyzy => NVec4(
+  NumVec4<T> get yyzy => NumVec4(
         $2,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9334,14 +9334,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyzz => NVec4(
+  NumVec4<T> get yyzz => NumVec4(
         $2,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9349,14 +9349,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyzw => NVec4(
+  NumVec4<T> get yyzw => NumVec4(
         $2,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9364,14 +9364,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yywx => NVec4(
+  NumVec4<T> get yywx => NumVec4(
         $2,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9379,14 +9379,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yywy => NVec4(
+  NumVec4<T> get yywy => NumVec4(
         $2,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9394,14 +9394,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yywz => NVec4(
+  NumVec4<T> get yywz => NumVec4(
         $2,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9409,14 +9409,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yyww => NVec4(
+  NumVec4<T> get yyww => NumVec4(
         $2,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9424,14 +9424,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzxx => NVec4(
+  NumVec4<T> get yzxx => NumVec4(
         $2,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9439,14 +9439,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzxy => NVec4(
+  NumVec4<T> get yzxy => NumVec4(
         $2,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9454,14 +9454,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzxz => NVec4(
+  NumVec4<T> get yzxz => NumVec4(
         $2,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9469,14 +9469,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzxw => NVec4(
+  NumVec4<T> get yzxw => NumVec4(
         $2,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9484,14 +9484,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzyx => NVec4(
+  NumVec4<T> get yzyx => NumVec4(
         $2,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9499,14 +9499,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzyy => NVec4(
+  NumVec4<T> get yzyy => NumVec4(
         $2,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9514,14 +9514,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzyz => NVec4(
+  NumVec4<T> get yzyz => NumVec4(
         $2,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9529,14 +9529,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzyw => NVec4(
+  NumVec4<T> get yzyw => NumVec4(
         $2,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9544,14 +9544,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzzx => NVec4(
+  NumVec4<T> get yzzx => NumVec4(
         $2,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9559,14 +9559,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzzy => NVec4(
+  NumVec4<T> get yzzy => NumVec4(
         $2,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9574,14 +9574,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzzz => NVec4(
+  NumVec4<T> get yzzz => NumVec4(
         $2,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9589,14 +9589,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzzw => NVec4(
+  NumVec4<T> get yzzw => NumVec4(
         $2,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9604,14 +9604,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzwx => NVec4(
+  NumVec4<T> get yzwx => NumVec4(
         $2,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9619,14 +9619,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzwy => NVec4(
+  NumVec4<T> get yzwy => NumVec4(
         $2,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9634,14 +9634,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzwz => NVec4(
+  NumVec4<T> get yzwz => NumVec4(
         $2,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9649,14 +9649,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get yzww => NVec4(
+  NumVec4<T> get yzww => NumVec4(
         $2,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9664,14 +9664,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywxx => NVec4(
+  NumVec4<T> get ywxx => NumVec4(
         $2,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9679,14 +9679,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywxy => NVec4(
+  NumVec4<T> get ywxy => NumVec4(
         $2,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9694,14 +9694,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywxz => NVec4(
+  NumVec4<T> get ywxz => NumVec4(
         $2,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9709,14 +9709,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywxw => NVec4(
+  NumVec4<T> get ywxw => NumVec4(
         $2,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9724,14 +9724,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywyx => NVec4(
+  NumVec4<T> get ywyx => NumVec4(
         $2,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9739,14 +9739,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywyy => NVec4(
+  NumVec4<T> get ywyy => NumVec4(
         $2,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9754,14 +9754,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywyz => NVec4(
+  NumVec4<T> get ywyz => NumVec4(
         $2,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9769,14 +9769,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywyw => NVec4(
+  NumVec4<T> get ywyw => NumVec4(
         $2,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9784,14 +9784,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywzx => NVec4(
+  NumVec4<T> get ywzx => NumVec4(
         $2,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9799,14 +9799,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywzy => NVec4(
+  NumVec4<T> get ywzy => NumVec4(
         $2,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9814,14 +9814,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywzz => NVec4(
+  NumVec4<T> get ywzz => NumVec4(
         $2,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9829,14 +9829,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywzw => NVec4(
+  NumVec4<T> get ywzw => NumVec4(
         $2,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9844,14 +9844,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywwx => NVec4(
+  NumVec4<T> get ywwx => NumVec4(
         $2,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9859,14 +9859,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywwy => NVec4(
+  NumVec4<T> get ywwy => NumVec4(
         $2,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9874,14 +9874,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywwz => NVec4(
+  NumVec4<T> get ywwz => NumVec4(
         $2,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9889,14 +9889,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get ywww => NVec4(
+  NumVec4<T> get ywww => NumVec4(
         $2,
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9904,14 +9904,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxxx => NVec4(
+  NumVec4<T> get zxxx => NumVec4(
         $3,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9919,14 +9919,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxxy => NVec4(
+  NumVec4<T> get zxxy => NumVec4(
         $3,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9934,14 +9934,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxxz => NVec4(
+  NumVec4<T> get zxxz => NumVec4(
         $3,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9949,14 +9949,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxxw => NVec4(
+  NumVec4<T> get zxxw => NumVec4(
         $3,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9964,14 +9964,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxyx => NVec4(
+  NumVec4<T> get zxyx => NumVec4(
         $3,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9979,14 +9979,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxyy => NVec4(
+  NumVec4<T> get zxyy => NumVec4(
         $3,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -9994,14 +9994,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxyz => NVec4(
+  NumVec4<T> get zxyz => NumVec4(
         $3,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10009,14 +10009,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxyw => NVec4(
+  NumVec4<T> get zxyw => NumVec4(
         $3,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10024,14 +10024,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxzx => NVec4(
+  NumVec4<T> get zxzx => NumVec4(
         $3,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10039,14 +10039,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxzy => NVec4(
+  NumVec4<T> get zxzy => NumVec4(
         $3,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10054,14 +10054,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxzz => NVec4(
+  NumVec4<T> get zxzz => NumVec4(
         $3,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10069,14 +10069,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxzw => NVec4(
+  NumVec4<T> get zxzw => NumVec4(
         $3,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10084,14 +10084,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxwx => NVec4(
+  NumVec4<T> get zxwx => NumVec4(
         $3,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10099,14 +10099,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxwy => NVec4(
+  NumVec4<T> get zxwy => NumVec4(
         $3,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10114,14 +10114,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxwz => NVec4(
+  NumVec4<T> get zxwz => NumVec4(
         $3,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10129,14 +10129,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zxww => NVec4(
+  NumVec4<T> get zxww => NumVec4(
         $3,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10144,14 +10144,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyxx => NVec4(
+  NumVec4<T> get zyxx => NumVec4(
         $3,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10159,14 +10159,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyxy => NVec4(
+  NumVec4<T> get zyxy => NumVec4(
         $3,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10174,14 +10174,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyxz => NVec4(
+  NumVec4<T> get zyxz => NumVec4(
         $3,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10189,14 +10189,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyxw => NVec4(
+  NumVec4<T> get zyxw => NumVec4(
         $3,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10204,14 +10204,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyyx => NVec4(
+  NumVec4<T> get zyyx => NumVec4(
         $3,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10219,14 +10219,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyyy => NVec4(
+  NumVec4<T> get zyyy => NumVec4(
         $3,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10234,14 +10234,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyyz => NVec4(
+  NumVec4<T> get zyyz => NumVec4(
         $3,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10249,14 +10249,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyyw => NVec4(
+  NumVec4<T> get zyyw => NumVec4(
         $3,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10264,14 +10264,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyzx => NVec4(
+  NumVec4<T> get zyzx => NumVec4(
         $3,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10279,14 +10279,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyzy => NVec4(
+  NumVec4<T> get zyzy => NumVec4(
         $3,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10294,14 +10294,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyzz => NVec4(
+  NumVec4<T> get zyzz => NumVec4(
         $3,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10309,14 +10309,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyzw => NVec4(
+  NumVec4<T> get zyzw => NumVec4(
         $3,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10324,14 +10324,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zywx => NVec4(
+  NumVec4<T> get zywx => NumVec4(
         $3,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10339,14 +10339,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zywy => NVec4(
+  NumVec4<T> get zywy => NumVec4(
         $3,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10354,14 +10354,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zywz => NVec4(
+  NumVec4<T> get zywz => NumVec4(
         $3,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10369,14 +10369,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zyww => NVec4(
+  NumVec4<T> get zyww => NumVec4(
         $3,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10384,14 +10384,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzxx => NVec4(
+  NumVec4<T> get zzxx => NumVec4(
         $3,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10399,14 +10399,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzxy => NVec4(
+  NumVec4<T> get zzxy => NumVec4(
         $3,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10414,14 +10414,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzxz => NVec4(
+  NumVec4<T> get zzxz => NumVec4(
         $3,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10429,14 +10429,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzxw => NVec4(
+  NumVec4<T> get zzxw => NumVec4(
         $3,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10444,14 +10444,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzyx => NVec4(
+  NumVec4<T> get zzyx => NumVec4(
         $3,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10459,14 +10459,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzyy => NVec4(
+  NumVec4<T> get zzyy => NumVec4(
         $3,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10474,14 +10474,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzyz => NVec4(
+  NumVec4<T> get zzyz => NumVec4(
         $3,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10489,14 +10489,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzyw => NVec4(
+  NumVec4<T> get zzyw => NumVec4(
         $3,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10504,14 +10504,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzzx => NVec4(
+  NumVec4<T> get zzzx => NumVec4(
         $3,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10519,14 +10519,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzzy => NVec4(
+  NumVec4<T> get zzzy => NumVec4(
         $3,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10534,14 +10534,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzzz => NVec4(
+  NumVec4<T> get zzzz => NumVec4(
         $3,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10549,14 +10549,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzzw => NVec4(
+  NumVec4<T> get zzzw => NumVec4(
         $3,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10564,14 +10564,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzwx => NVec4(
+  NumVec4<T> get zzwx => NumVec4(
         $3,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10579,14 +10579,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzwy => NVec4(
+  NumVec4<T> get zzwy => NumVec4(
         $3,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10594,14 +10594,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzwz => NVec4(
+  NumVec4<T> get zzwz => NumVec4(
         $3,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10609,14 +10609,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zzww => NVec4(
+  NumVec4<T> get zzww => NumVec4(
         $3,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10624,14 +10624,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwxx => NVec4(
+  NumVec4<T> get zwxx => NumVec4(
         $3,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10639,14 +10639,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwxy => NVec4(
+  NumVec4<T> get zwxy => NumVec4(
         $3,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10654,14 +10654,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwxz => NVec4(
+  NumVec4<T> get zwxz => NumVec4(
         $3,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10669,14 +10669,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwxw => NVec4(
+  NumVec4<T> get zwxw => NumVec4(
         $3,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10684,14 +10684,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwyx => NVec4(
+  NumVec4<T> get zwyx => NumVec4(
         $3,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10699,14 +10699,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwyy => NVec4(
+  NumVec4<T> get zwyy => NumVec4(
         $3,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10714,14 +10714,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwyz => NVec4(
+  NumVec4<T> get zwyz => NumVec4(
         $3,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10729,14 +10729,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwyw => NVec4(
+  NumVec4<T> get zwyw => NumVec4(
         $3,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10744,14 +10744,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwzx => NVec4(
+  NumVec4<T> get zwzx => NumVec4(
         $3,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10759,14 +10759,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwzy => NVec4(
+  NumVec4<T> get zwzy => NumVec4(
         $3,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10774,14 +10774,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwzz => NVec4(
+  NumVec4<T> get zwzz => NumVec4(
         $3,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10789,14 +10789,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwzw => NVec4(
+  NumVec4<T> get zwzw => NumVec4(
         $3,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10804,14 +10804,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwwx => NVec4(
+  NumVec4<T> get zwwx => NumVec4(
         $3,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10819,14 +10819,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwwy => NVec4(
+  NumVec4<T> get zwwy => NumVec4(
         $3,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10834,14 +10834,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwwz => NVec4(
+  NumVec4<T> get zwwz => NumVec4(
         $3,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10849,14 +10849,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get zwww => NVec4(
+  NumVec4<T> get zwww => NumVec4(
         $3,
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10864,14 +10864,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxxx => NVec4(
+  NumVec4<T> get wxxx => NumVec4(
         $4,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10879,14 +10879,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxxy => NVec4(
+  NumVec4<T> get wxxy => NumVec4(
         $4,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10894,14 +10894,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxxz => NVec4(
+  NumVec4<T> get wxxz => NumVec4(
         $4,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10909,14 +10909,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxxw => NVec4(
+  NumVec4<T> get wxxw => NumVec4(
         $4,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10924,14 +10924,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxyx => NVec4(
+  NumVec4<T> get wxyx => NumVec4(
         $4,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10939,14 +10939,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxyy => NVec4(
+  NumVec4<T> get wxyy => NumVec4(
         $4,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10954,14 +10954,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxyz => NVec4(
+  NumVec4<T> get wxyz => NumVec4(
         $4,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10969,14 +10969,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxyw => NVec4(
+  NumVec4<T> get wxyw => NumVec4(
         $4,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10984,14 +10984,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxzx => NVec4(
+  NumVec4<T> get wxzx => NumVec4(
         $4,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -10999,14 +10999,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxzy => NVec4(
+  NumVec4<T> get wxzy => NumVec4(
         $4,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11014,14 +11014,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxzz => NVec4(
+  NumVec4<T> get wxzz => NumVec4(
         $4,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11029,14 +11029,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxzw => NVec4(
+  NumVec4<T> get wxzw => NumVec4(
         $4,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11044,14 +11044,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxwx => NVec4(
+  NumVec4<T> get wxwx => NumVec4(
         $4,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11059,14 +11059,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxwy => NVec4(
+  NumVec4<T> get wxwy => NumVec4(
         $4,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11074,14 +11074,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxwz => NVec4(
+  NumVec4<T> get wxwz => NumVec4(
         $4,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11089,14 +11089,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wxww => NVec4(
+  NumVec4<T> get wxww => NumVec4(
         $4,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11104,14 +11104,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyxx => NVec4(
+  NumVec4<T> get wyxx => NumVec4(
         $4,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11119,14 +11119,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyxy => NVec4(
+  NumVec4<T> get wyxy => NumVec4(
         $4,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11134,14 +11134,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyxz => NVec4(
+  NumVec4<T> get wyxz => NumVec4(
         $4,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11149,14 +11149,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyxw => NVec4(
+  NumVec4<T> get wyxw => NumVec4(
         $4,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11164,14 +11164,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyyx => NVec4(
+  NumVec4<T> get wyyx => NumVec4(
         $4,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11179,14 +11179,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyyy => NVec4(
+  NumVec4<T> get wyyy => NumVec4(
         $4,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11194,14 +11194,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyyz => NVec4(
+  NumVec4<T> get wyyz => NumVec4(
         $4,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11209,14 +11209,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyyw => NVec4(
+  NumVec4<T> get wyyw => NumVec4(
         $4,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11224,14 +11224,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyzx => NVec4(
+  NumVec4<T> get wyzx => NumVec4(
         $4,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11239,14 +11239,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyzy => NVec4(
+  NumVec4<T> get wyzy => NumVec4(
         $4,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11254,14 +11254,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyzz => NVec4(
+  NumVec4<T> get wyzz => NumVec4(
         $4,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11269,14 +11269,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyzw => NVec4(
+  NumVec4<T> get wyzw => NumVec4(
         $4,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11284,14 +11284,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wywx => NVec4(
+  NumVec4<T> get wywx => NumVec4(
         $4,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11299,14 +11299,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wywy => NVec4(
+  NumVec4<T> get wywy => NumVec4(
         $4,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11314,14 +11314,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wywz => NVec4(
+  NumVec4<T> get wywz => NumVec4(
         $4,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11329,14 +11329,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wyww => NVec4(
+  NumVec4<T> get wyww => NumVec4(
         $4,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11344,14 +11344,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzxx => NVec4(
+  NumVec4<T> get wzxx => NumVec4(
         $4,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11359,14 +11359,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzxy => NVec4(
+  NumVec4<T> get wzxy => NumVec4(
         $4,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11374,14 +11374,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzxz => NVec4(
+  NumVec4<T> get wzxz => NumVec4(
         $4,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11389,14 +11389,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzxw => NVec4(
+  NumVec4<T> get wzxw => NumVec4(
         $4,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11404,14 +11404,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzyx => NVec4(
+  NumVec4<T> get wzyx => NumVec4(
         $4,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11419,14 +11419,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzyy => NVec4(
+  NumVec4<T> get wzyy => NumVec4(
         $4,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11434,14 +11434,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzyz => NVec4(
+  NumVec4<T> get wzyz => NumVec4(
         $4,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11449,14 +11449,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzyw => NVec4(
+  NumVec4<T> get wzyw => NumVec4(
         $4,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11464,14 +11464,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzzx => NVec4(
+  NumVec4<T> get wzzx => NumVec4(
         $4,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11479,14 +11479,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzzy => NVec4(
+  NumVec4<T> get wzzy => NumVec4(
         $4,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11494,14 +11494,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzzz => NVec4(
+  NumVec4<T> get wzzz => NumVec4(
         $4,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11509,14 +11509,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzzw => NVec4(
+  NumVec4<T> get wzzw => NumVec4(
         $4,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11524,14 +11524,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzwx => NVec4(
+  NumVec4<T> get wzwx => NumVec4(
         $4,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11539,14 +11539,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzwy => NVec4(
+  NumVec4<T> get wzwy => NumVec4(
         $4,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11554,14 +11554,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzwz => NVec4(
+  NumVec4<T> get wzwz => NumVec4(
         $4,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11569,14 +11569,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wzww => NVec4(
+  NumVec4<T> get wzww => NumVec4(
         $4,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11584,14 +11584,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwxx => NVec4(
+  NumVec4<T> get wwxx => NumVec4(
         $4,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11599,14 +11599,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwxy => NVec4(
+  NumVec4<T> get wwxy => NumVec4(
         $4,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11614,14 +11614,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwxz => NVec4(
+  NumVec4<T> get wwxz => NumVec4(
         $4,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11629,14 +11629,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwxw => NVec4(
+  NumVec4<T> get wwxw => NumVec4(
         $4,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11644,14 +11644,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwyx => NVec4(
+  NumVec4<T> get wwyx => NumVec4(
         $4,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11659,14 +11659,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwyy => NVec4(
+  NumVec4<T> get wwyy => NumVec4(
         $4,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11674,14 +11674,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwyz => NVec4(
+  NumVec4<T> get wwyz => NumVec4(
         $4,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11689,14 +11689,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwyw => NVec4(
+  NumVec4<T> get wwyw => NumVec4(
         $4,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11704,14 +11704,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwzx => NVec4(
+  NumVec4<T> get wwzx => NumVec4(
         $4,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11719,14 +11719,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwzy => NVec4(
+  NumVec4<T> get wwzy => NumVec4(
         $4,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11734,14 +11734,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwzz => NVec4(
+  NumVec4<T> get wwzz => NumVec4(
         $4,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11749,14 +11749,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwzw => NVec4(
+  NumVec4<T> get wwzw => NumVec4(
         $4,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11764,14 +11764,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwwx => NVec4(
+  NumVec4<T> get wwwx => NumVec4(
         $4,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11779,14 +11779,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwwy => NVec4(
+  NumVec4<T> get wwwy => NumVec4(
         $4,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11794,14 +11794,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwwz => NVec4(
+  NumVec4<T> get wwwz => NumVec4(
         $4,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11809,14 +11809,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the XYZW system.
-  NVec4<T> get wwww => NVec4(
+  NumVec4<T> get wwww => NumVec4(
         $4,
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11824,12 +11824,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get rr => NVec2(
+  NumVec2<T> get rr => NumVec2(
         $1,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11837,12 +11837,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get rg => NVec2(
+  NumVec2<T> get rg => NumVec2(
         $1,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11850,12 +11850,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get rb => NVec2(
+  NumVec2<T> get rb => NumVec2(
         $1,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11863,12 +11863,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get ra => NVec2(
+  NumVec2<T> get ra => NumVec2(
         $1,
         $4,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11876,12 +11876,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get gr => NVec2(
+  NumVec2<T> get gr => NumVec2(
         $2,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11889,12 +11889,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get gg => NVec2(
+  NumVec2<T> get gg => NumVec2(
         $2,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11902,12 +11902,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get gb => NVec2(
+  NumVec2<T> get gb => NumVec2(
         $2,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11915,12 +11915,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get ga => NVec2(
+  NumVec2<T> get ga => NumVec2(
         $2,
         $4,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11928,12 +11928,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get br => NVec2(
+  NumVec2<T> get br => NumVec2(
         $3,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11941,12 +11941,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get bg => NVec2(
+  NumVec2<T> get bg => NumVec2(
         $3,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11954,12 +11954,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get bb => NVec2(
+  NumVec2<T> get bb => NumVec2(
         $3,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11967,12 +11967,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get ba => NVec2(
+  NumVec2<T> get ba => NumVec2(
         $3,
         $4,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11980,12 +11980,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get ar => NVec2(
+  NumVec2<T> get ar => NumVec2(
         $4,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -11993,12 +11993,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get ag => NVec2(
+  NumVec2<T> get ag => NumVec2(
         $4,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12006,12 +12006,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get ab => NVec2(
+  NumVec2<T> get ab => NumVec2(
         $4,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12019,12 +12019,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec2<T> get aa => NVec2(
+  NumVec2<T> get aa => NumVec2(
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12032,13 +12032,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rrr => NVec3(
+  NumVec3<T> get rrr => NumVec3(
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12046,13 +12046,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rrg => NVec3(
+  NumVec3<T> get rrg => NumVec3(
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12060,13 +12060,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rrb => NVec3(
+  NumVec3<T> get rrb => NumVec3(
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12074,13 +12074,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rra => NVec3(
+  NumVec3<T> get rra => NumVec3(
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12088,13 +12088,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rgr => NVec3(
+  NumVec3<T> get rgr => NumVec3(
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12102,13 +12102,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rgg => NVec3(
+  NumVec3<T> get rgg => NumVec3(
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12116,13 +12116,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rgb => NVec3(
+  NumVec3<T> get rgb => NumVec3(
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12130,13 +12130,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rga => NVec3(
+  NumVec3<T> get rga => NumVec3(
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12144,13 +12144,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rbr => NVec3(
+  NumVec3<T> get rbr => NumVec3(
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12158,13 +12158,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rbg => NVec3(
+  NumVec3<T> get rbg => NumVec3(
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12172,13 +12172,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rbb => NVec3(
+  NumVec3<T> get rbb => NumVec3(
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12186,13 +12186,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rba => NVec3(
+  NumVec3<T> get rba => NumVec3(
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12200,13 +12200,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rar => NVec3(
+  NumVec3<T> get rar => NumVec3(
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12214,13 +12214,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rag => NVec3(
+  NumVec3<T> get rag => NumVec3(
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12228,13 +12228,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get rab => NVec3(
+  NumVec3<T> get rab => NumVec3(
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12242,13 +12242,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get raa => NVec3(
+  NumVec3<T> get raa => NumVec3(
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12256,13 +12256,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get grr => NVec3(
+  NumVec3<T> get grr => NumVec3(
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12270,13 +12270,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get grg => NVec3(
+  NumVec3<T> get grg => NumVec3(
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12284,13 +12284,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get grb => NVec3(
+  NumVec3<T> get grb => NumVec3(
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12298,13 +12298,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gra => NVec3(
+  NumVec3<T> get gra => NumVec3(
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12312,13 +12312,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get ggr => NVec3(
+  NumVec3<T> get ggr => NumVec3(
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12326,13 +12326,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get ggg => NVec3(
+  NumVec3<T> get ggg => NumVec3(
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12340,13 +12340,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get ggb => NVec3(
+  NumVec3<T> get ggb => NumVec3(
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12354,13 +12354,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gga => NVec3(
+  NumVec3<T> get gga => NumVec3(
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12368,13 +12368,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gbr => NVec3(
+  NumVec3<T> get gbr => NumVec3(
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12382,13 +12382,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gbg => NVec3(
+  NumVec3<T> get gbg => NumVec3(
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12396,13 +12396,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gbb => NVec3(
+  NumVec3<T> get gbb => NumVec3(
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12410,13 +12410,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gba => NVec3(
+  NumVec3<T> get gba => NumVec3(
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12424,13 +12424,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gar => NVec3(
+  NumVec3<T> get gar => NumVec3(
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12438,13 +12438,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gag => NVec3(
+  NumVec3<T> get gag => NumVec3(
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12452,13 +12452,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gab => NVec3(
+  NumVec3<T> get gab => NumVec3(
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12466,13 +12466,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get gaa => NVec3(
+  NumVec3<T> get gaa => NumVec3(
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12480,13 +12480,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get brr => NVec3(
+  NumVec3<T> get brr => NumVec3(
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12494,13 +12494,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get brg => NVec3(
+  NumVec3<T> get brg => NumVec3(
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12508,13 +12508,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get brb => NVec3(
+  NumVec3<T> get brb => NumVec3(
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12522,13 +12522,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bra => NVec3(
+  NumVec3<T> get bra => NumVec3(
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12536,13 +12536,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bgr => NVec3(
+  NumVec3<T> get bgr => NumVec3(
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12550,13 +12550,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bgg => NVec3(
+  NumVec3<T> get bgg => NumVec3(
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12564,13 +12564,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bgb => NVec3(
+  NumVec3<T> get bgb => NumVec3(
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12578,13 +12578,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bga => NVec3(
+  NumVec3<T> get bga => NumVec3(
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12592,13 +12592,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bbr => NVec3(
+  NumVec3<T> get bbr => NumVec3(
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12606,13 +12606,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bbg => NVec3(
+  NumVec3<T> get bbg => NumVec3(
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12620,13 +12620,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bbb => NVec3(
+  NumVec3<T> get bbb => NumVec3(
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12634,13 +12634,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bba => NVec3(
+  NumVec3<T> get bba => NumVec3(
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12648,13 +12648,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bar => NVec3(
+  NumVec3<T> get bar => NumVec3(
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12662,13 +12662,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bag => NVec3(
+  NumVec3<T> get bag => NumVec3(
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12676,13 +12676,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get bab => NVec3(
+  NumVec3<T> get bab => NumVec3(
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12690,13 +12690,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get baa => NVec3(
+  NumVec3<T> get baa => NumVec3(
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12704,13 +12704,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get arr => NVec3(
+  NumVec3<T> get arr => NumVec3(
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12718,13 +12718,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get arg => NVec3(
+  NumVec3<T> get arg => NumVec3(
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12732,13 +12732,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get arb => NVec3(
+  NumVec3<T> get arb => NumVec3(
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12746,13 +12746,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get ara => NVec3(
+  NumVec3<T> get ara => NumVec3(
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12760,13 +12760,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get agr => NVec3(
+  NumVec3<T> get agr => NumVec3(
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12774,13 +12774,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get agg => NVec3(
+  NumVec3<T> get agg => NumVec3(
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12788,13 +12788,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get agb => NVec3(
+  NumVec3<T> get agb => NumVec3(
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12802,13 +12802,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get aga => NVec3(
+  NumVec3<T> get aga => NumVec3(
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12816,13 +12816,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get abr => NVec3(
+  NumVec3<T> get abr => NumVec3(
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12830,13 +12830,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get abg => NVec3(
+  NumVec3<T> get abg => NumVec3(
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12844,13 +12844,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get abb => NVec3(
+  NumVec3<T> get abb => NumVec3(
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12858,13 +12858,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get aba => NVec3(
+  NumVec3<T> get aba => NumVec3(
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12872,13 +12872,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get aar => NVec3(
+  NumVec3<T> get aar => NumVec3(
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12886,13 +12886,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get aag => NVec3(
+  NumVec3<T> get aag => NumVec3(
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12900,13 +12900,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get aab => NVec3(
+  NumVec3<T> get aab => NumVec3(
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12914,13 +12914,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec3<T> get aaa => NVec3(
+  NumVec3<T> get aaa => NumVec3(
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12928,14 +12928,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrrr => NVec4(
+  NumVec4<T> get rrrr => NumVec4(
         $1,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12943,14 +12943,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrrg => NVec4(
+  NumVec4<T> get rrrg => NumVec4(
         $1,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12958,14 +12958,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrrb => NVec4(
+  NumVec4<T> get rrrb => NumVec4(
         $1,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12973,14 +12973,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrra => NVec4(
+  NumVec4<T> get rrra => NumVec4(
         $1,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -12988,14 +12988,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrgr => NVec4(
+  NumVec4<T> get rrgr => NumVec4(
         $1,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13003,14 +13003,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrgg => NVec4(
+  NumVec4<T> get rrgg => NumVec4(
         $1,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13018,14 +13018,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrgb => NVec4(
+  NumVec4<T> get rrgb => NumVec4(
         $1,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13033,14 +13033,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrga => NVec4(
+  NumVec4<T> get rrga => NumVec4(
         $1,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13048,14 +13048,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrbr => NVec4(
+  NumVec4<T> get rrbr => NumVec4(
         $1,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13063,14 +13063,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrbg => NVec4(
+  NumVec4<T> get rrbg => NumVec4(
         $1,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13078,14 +13078,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrbb => NVec4(
+  NumVec4<T> get rrbb => NumVec4(
         $1,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13093,14 +13093,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrba => NVec4(
+  NumVec4<T> get rrba => NumVec4(
         $1,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13108,14 +13108,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrar => NVec4(
+  NumVec4<T> get rrar => NumVec4(
         $1,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13123,14 +13123,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrag => NVec4(
+  NumVec4<T> get rrag => NumVec4(
         $1,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13138,14 +13138,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rrab => NVec4(
+  NumVec4<T> get rrab => NumVec4(
         $1,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13153,14 +13153,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rraa => NVec4(
+  NumVec4<T> get rraa => NumVec4(
         $1,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13168,14 +13168,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgrr => NVec4(
+  NumVec4<T> get rgrr => NumVec4(
         $1,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13183,14 +13183,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgrg => NVec4(
+  NumVec4<T> get rgrg => NumVec4(
         $1,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13198,14 +13198,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgrb => NVec4(
+  NumVec4<T> get rgrb => NumVec4(
         $1,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13213,14 +13213,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgra => NVec4(
+  NumVec4<T> get rgra => NumVec4(
         $1,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13228,14 +13228,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rggr => NVec4(
+  NumVec4<T> get rggr => NumVec4(
         $1,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13243,14 +13243,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rggg => NVec4(
+  NumVec4<T> get rggg => NumVec4(
         $1,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13258,14 +13258,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rggb => NVec4(
+  NumVec4<T> get rggb => NumVec4(
         $1,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13273,14 +13273,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgga => NVec4(
+  NumVec4<T> get rgga => NumVec4(
         $1,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13288,14 +13288,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgbr => NVec4(
+  NumVec4<T> get rgbr => NumVec4(
         $1,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13303,14 +13303,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgbg => NVec4(
+  NumVec4<T> get rgbg => NumVec4(
         $1,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13318,14 +13318,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgbb => NVec4(
+  NumVec4<T> get rgbb => NumVec4(
         $1,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13333,14 +13333,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgba => NVec4(
+  NumVec4<T> get rgba => NumVec4(
         $1,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13348,14 +13348,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgar => NVec4(
+  NumVec4<T> get rgar => NumVec4(
         $1,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13363,14 +13363,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgag => NVec4(
+  NumVec4<T> get rgag => NumVec4(
         $1,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13378,14 +13378,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgab => NVec4(
+  NumVec4<T> get rgab => NumVec4(
         $1,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13393,14 +13393,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rgaa => NVec4(
+  NumVec4<T> get rgaa => NumVec4(
         $1,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13408,14 +13408,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbrr => NVec4(
+  NumVec4<T> get rbrr => NumVec4(
         $1,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13423,14 +13423,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbrg => NVec4(
+  NumVec4<T> get rbrg => NumVec4(
         $1,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13438,14 +13438,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbrb => NVec4(
+  NumVec4<T> get rbrb => NumVec4(
         $1,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13453,14 +13453,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbra => NVec4(
+  NumVec4<T> get rbra => NumVec4(
         $1,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13468,14 +13468,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbgr => NVec4(
+  NumVec4<T> get rbgr => NumVec4(
         $1,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13483,14 +13483,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbgg => NVec4(
+  NumVec4<T> get rbgg => NumVec4(
         $1,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13498,14 +13498,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbgb => NVec4(
+  NumVec4<T> get rbgb => NumVec4(
         $1,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13513,14 +13513,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbga => NVec4(
+  NumVec4<T> get rbga => NumVec4(
         $1,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13528,14 +13528,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbbr => NVec4(
+  NumVec4<T> get rbbr => NumVec4(
         $1,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13543,14 +13543,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbbg => NVec4(
+  NumVec4<T> get rbbg => NumVec4(
         $1,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13558,14 +13558,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbbb => NVec4(
+  NumVec4<T> get rbbb => NumVec4(
         $1,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13573,14 +13573,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbba => NVec4(
+  NumVec4<T> get rbba => NumVec4(
         $1,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13588,14 +13588,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbar => NVec4(
+  NumVec4<T> get rbar => NumVec4(
         $1,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13603,14 +13603,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbag => NVec4(
+  NumVec4<T> get rbag => NumVec4(
         $1,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13618,14 +13618,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbab => NVec4(
+  NumVec4<T> get rbab => NumVec4(
         $1,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13633,14 +13633,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rbaa => NVec4(
+  NumVec4<T> get rbaa => NumVec4(
         $1,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13648,14 +13648,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rarr => NVec4(
+  NumVec4<T> get rarr => NumVec4(
         $1,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13663,14 +13663,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rarg => NVec4(
+  NumVec4<T> get rarg => NumVec4(
         $1,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13678,14 +13678,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rarb => NVec4(
+  NumVec4<T> get rarb => NumVec4(
         $1,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13693,14 +13693,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rara => NVec4(
+  NumVec4<T> get rara => NumVec4(
         $1,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13708,14 +13708,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ragr => NVec4(
+  NumVec4<T> get ragr => NumVec4(
         $1,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13723,14 +13723,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ragg => NVec4(
+  NumVec4<T> get ragg => NumVec4(
         $1,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13738,14 +13738,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ragb => NVec4(
+  NumVec4<T> get ragb => NumVec4(
         $1,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13753,14 +13753,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get raga => NVec4(
+  NumVec4<T> get raga => NumVec4(
         $1,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13768,14 +13768,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rabr => NVec4(
+  NumVec4<T> get rabr => NumVec4(
         $1,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13783,14 +13783,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rabg => NVec4(
+  NumVec4<T> get rabg => NumVec4(
         $1,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13798,14 +13798,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get rabb => NVec4(
+  NumVec4<T> get rabb => NumVec4(
         $1,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13813,14 +13813,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get raba => NVec4(
+  NumVec4<T> get raba => NumVec4(
         $1,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13828,14 +13828,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get raar => NVec4(
+  NumVec4<T> get raar => NumVec4(
         $1,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13843,14 +13843,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get raag => NVec4(
+  NumVec4<T> get raag => NumVec4(
         $1,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13858,14 +13858,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get raab => NVec4(
+  NumVec4<T> get raab => NumVec4(
         $1,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13873,14 +13873,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get raaa => NVec4(
+  NumVec4<T> get raaa => NumVec4(
         $1,
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13888,14 +13888,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grrr => NVec4(
+  NumVec4<T> get grrr => NumVec4(
         $2,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13903,14 +13903,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grrg => NVec4(
+  NumVec4<T> get grrg => NumVec4(
         $2,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13918,14 +13918,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grrb => NVec4(
+  NumVec4<T> get grrb => NumVec4(
         $2,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13933,14 +13933,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grra => NVec4(
+  NumVec4<T> get grra => NumVec4(
         $2,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13948,14 +13948,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grgr => NVec4(
+  NumVec4<T> get grgr => NumVec4(
         $2,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13963,14 +13963,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grgg => NVec4(
+  NumVec4<T> get grgg => NumVec4(
         $2,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13978,14 +13978,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grgb => NVec4(
+  NumVec4<T> get grgb => NumVec4(
         $2,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -13993,14 +13993,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grga => NVec4(
+  NumVec4<T> get grga => NumVec4(
         $2,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14008,14 +14008,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grbr => NVec4(
+  NumVec4<T> get grbr => NumVec4(
         $2,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14023,14 +14023,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grbg => NVec4(
+  NumVec4<T> get grbg => NumVec4(
         $2,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14038,14 +14038,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grbb => NVec4(
+  NumVec4<T> get grbb => NumVec4(
         $2,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14053,14 +14053,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grba => NVec4(
+  NumVec4<T> get grba => NumVec4(
         $2,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14068,14 +14068,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grar => NVec4(
+  NumVec4<T> get grar => NumVec4(
         $2,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14083,14 +14083,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grag => NVec4(
+  NumVec4<T> get grag => NumVec4(
         $2,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14098,14 +14098,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get grab => NVec4(
+  NumVec4<T> get grab => NumVec4(
         $2,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14113,14 +14113,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get graa => NVec4(
+  NumVec4<T> get graa => NumVec4(
         $2,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14128,14 +14128,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggrr => NVec4(
+  NumVec4<T> get ggrr => NumVec4(
         $2,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14143,14 +14143,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggrg => NVec4(
+  NumVec4<T> get ggrg => NumVec4(
         $2,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14158,14 +14158,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggrb => NVec4(
+  NumVec4<T> get ggrb => NumVec4(
         $2,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14173,14 +14173,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggra => NVec4(
+  NumVec4<T> get ggra => NumVec4(
         $2,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14188,14 +14188,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gggr => NVec4(
+  NumVec4<T> get gggr => NumVec4(
         $2,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14203,14 +14203,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gggg => NVec4(
+  NumVec4<T> get gggg => NumVec4(
         $2,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14218,14 +14218,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gggb => NVec4(
+  NumVec4<T> get gggb => NumVec4(
         $2,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14233,14 +14233,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggga => NVec4(
+  NumVec4<T> get ggga => NumVec4(
         $2,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14248,14 +14248,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggbr => NVec4(
+  NumVec4<T> get ggbr => NumVec4(
         $2,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14263,14 +14263,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggbg => NVec4(
+  NumVec4<T> get ggbg => NumVec4(
         $2,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14278,14 +14278,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggbb => NVec4(
+  NumVec4<T> get ggbb => NumVec4(
         $2,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14293,14 +14293,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggba => NVec4(
+  NumVec4<T> get ggba => NumVec4(
         $2,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14308,14 +14308,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggar => NVec4(
+  NumVec4<T> get ggar => NumVec4(
         $2,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14323,14 +14323,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggag => NVec4(
+  NumVec4<T> get ggag => NumVec4(
         $2,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14338,14 +14338,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggab => NVec4(
+  NumVec4<T> get ggab => NumVec4(
         $2,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14353,14 +14353,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get ggaa => NVec4(
+  NumVec4<T> get ggaa => NumVec4(
         $2,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14368,14 +14368,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbrr => NVec4(
+  NumVec4<T> get gbrr => NumVec4(
         $2,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14383,14 +14383,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbrg => NVec4(
+  NumVec4<T> get gbrg => NumVec4(
         $2,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14398,14 +14398,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbrb => NVec4(
+  NumVec4<T> get gbrb => NumVec4(
         $2,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14413,14 +14413,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbra => NVec4(
+  NumVec4<T> get gbra => NumVec4(
         $2,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14428,14 +14428,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbgr => NVec4(
+  NumVec4<T> get gbgr => NumVec4(
         $2,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14443,14 +14443,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbgg => NVec4(
+  NumVec4<T> get gbgg => NumVec4(
         $2,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14458,14 +14458,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbgb => NVec4(
+  NumVec4<T> get gbgb => NumVec4(
         $2,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14473,14 +14473,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbga => NVec4(
+  NumVec4<T> get gbga => NumVec4(
         $2,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14488,14 +14488,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbbr => NVec4(
+  NumVec4<T> get gbbr => NumVec4(
         $2,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14503,14 +14503,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbbg => NVec4(
+  NumVec4<T> get gbbg => NumVec4(
         $2,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14518,14 +14518,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbbb => NVec4(
+  NumVec4<T> get gbbb => NumVec4(
         $2,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14533,14 +14533,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbba => NVec4(
+  NumVec4<T> get gbba => NumVec4(
         $2,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14548,14 +14548,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbar => NVec4(
+  NumVec4<T> get gbar => NumVec4(
         $2,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14563,14 +14563,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbag => NVec4(
+  NumVec4<T> get gbag => NumVec4(
         $2,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14578,14 +14578,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbab => NVec4(
+  NumVec4<T> get gbab => NumVec4(
         $2,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14593,14 +14593,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gbaa => NVec4(
+  NumVec4<T> get gbaa => NumVec4(
         $2,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14608,14 +14608,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get garr => NVec4(
+  NumVec4<T> get garr => NumVec4(
         $2,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14623,14 +14623,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get garg => NVec4(
+  NumVec4<T> get garg => NumVec4(
         $2,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14638,14 +14638,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get garb => NVec4(
+  NumVec4<T> get garb => NumVec4(
         $2,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14653,14 +14653,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gara => NVec4(
+  NumVec4<T> get gara => NumVec4(
         $2,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14668,14 +14668,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gagr => NVec4(
+  NumVec4<T> get gagr => NumVec4(
         $2,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14683,14 +14683,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gagg => NVec4(
+  NumVec4<T> get gagg => NumVec4(
         $2,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14698,14 +14698,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gagb => NVec4(
+  NumVec4<T> get gagb => NumVec4(
         $2,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14713,14 +14713,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gaga => NVec4(
+  NumVec4<T> get gaga => NumVec4(
         $2,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14728,14 +14728,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gabr => NVec4(
+  NumVec4<T> get gabr => NumVec4(
         $2,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14743,14 +14743,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gabg => NVec4(
+  NumVec4<T> get gabg => NumVec4(
         $2,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14758,14 +14758,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gabb => NVec4(
+  NumVec4<T> get gabb => NumVec4(
         $2,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14773,14 +14773,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gaba => NVec4(
+  NumVec4<T> get gaba => NumVec4(
         $2,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14788,14 +14788,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gaar => NVec4(
+  NumVec4<T> get gaar => NumVec4(
         $2,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14803,14 +14803,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gaag => NVec4(
+  NumVec4<T> get gaag => NumVec4(
         $2,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14818,14 +14818,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gaab => NVec4(
+  NumVec4<T> get gaab => NumVec4(
         $2,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14833,14 +14833,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get gaaa => NVec4(
+  NumVec4<T> get gaaa => NumVec4(
         $2,
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14848,14 +14848,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brrr => NVec4(
+  NumVec4<T> get brrr => NumVec4(
         $3,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14863,14 +14863,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brrg => NVec4(
+  NumVec4<T> get brrg => NumVec4(
         $3,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14878,14 +14878,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brrb => NVec4(
+  NumVec4<T> get brrb => NumVec4(
         $3,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14893,14 +14893,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brra => NVec4(
+  NumVec4<T> get brra => NumVec4(
         $3,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14908,14 +14908,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brgr => NVec4(
+  NumVec4<T> get brgr => NumVec4(
         $3,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14923,14 +14923,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brgg => NVec4(
+  NumVec4<T> get brgg => NumVec4(
         $3,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14938,14 +14938,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brgb => NVec4(
+  NumVec4<T> get brgb => NumVec4(
         $3,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14953,14 +14953,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brga => NVec4(
+  NumVec4<T> get brga => NumVec4(
         $3,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14968,14 +14968,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brbr => NVec4(
+  NumVec4<T> get brbr => NumVec4(
         $3,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14983,14 +14983,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brbg => NVec4(
+  NumVec4<T> get brbg => NumVec4(
         $3,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -14998,14 +14998,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brbb => NVec4(
+  NumVec4<T> get brbb => NumVec4(
         $3,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15013,14 +15013,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brba => NVec4(
+  NumVec4<T> get brba => NumVec4(
         $3,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15028,14 +15028,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brar => NVec4(
+  NumVec4<T> get brar => NumVec4(
         $3,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15043,14 +15043,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brag => NVec4(
+  NumVec4<T> get brag => NumVec4(
         $3,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15058,14 +15058,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get brab => NVec4(
+  NumVec4<T> get brab => NumVec4(
         $3,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15073,14 +15073,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get braa => NVec4(
+  NumVec4<T> get braa => NumVec4(
         $3,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15088,14 +15088,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgrr => NVec4(
+  NumVec4<T> get bgrr => NumVec4(
         $3,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15103,14 +15103,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgrg => NVec4(
+  NumVec4<T> get bgrg => NumVec4(
         $3,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15118,14 +15118,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgrb => NVec4(
+  NumVec4<T> get bgrb => NumVec4(
         $3,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15133,14 +15133,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgra => NVec4(
+  NumVec4<T> get bgra => NumVec4(
         $3,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15148,14 +15148,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bggr => NVec4(
+  NumVec4<T> get bggr => NumVec4(
         $3,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15163,14 +15163,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bggg => NVec4(
+  NumVec4<T> get bggg => NumVec4(
         $3,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15178,14 +15178,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bggb => NVec4(
+  NumVec4<T> get bggb => NumVec4(
         $3,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15193,14 +15193,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgga => NVec4(
+  NumVec4<T> get bgga => NumVec4(
         $3,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15208,14 +15208,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgbr => NVec4(
+  NumVec4<T> get bgbr => NumVec4(
         $3,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15223,14 +15223,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgbg => NVec4(
+  NumVec4<T> get bgbg => NumVec4(
         $3,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15238,14 +15238,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgbb => NVec4(
+  NumVec4<T> get bgbb => NumVec4(
         $3,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15253,14 +15253,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgba => NVec4(
+  NumVec4<T> get bgba => NumVec4(
         $3,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15268,14 +15268,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgar => NVec4(
+  NumVec4<T> get bgar => NumVec4(
         $3,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15283,14 +15283,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgag => NVec4(
+  NumVec4<T> get bgag => NumVec4(
         $3,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15298,14 +15298,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgab => NVec4(
+  NumVec4<T> get bgab => NumVec4(
         $3,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15313,14 +15313,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bgaa => NVec4(
+  NumVec4<T> get bgaa => NumVec4(
         $3,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15328,14 +15328,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbrr => NVec4(
+  NumVec4<T> get bbrr => NumVec4(
         $3,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15343,14 +15343,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbrg => NVec4(
+  NumVec4<T> get bbrg => NumVec4(
         $3,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15358,14 +15358,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbrb => NVec4(
+  NumVec4<T> get bbrb => NumVec4(
         $3,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15373,14 +15373,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbra => NVec4(
+  NumVec4<T> get bbra => NumVec4(
         $3,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15388,14 +15388,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbgr => NVec4(
+  NumVec4<T> get bbgr => NumVec4(
         $3,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15403,14 +15403,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbgg => NVec4(
+  NumVec4<T> get bbgg => NumVec4(
         $3,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15418,14 +15418,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbgb => NVec4(
+  NumVec4<T> get bbgb => NumVec4(
         $3,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15433,14 +15433,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbga => NVec4(
+  NumVec4<T> get bbga => NumVec4(
         $3,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15448,14 +15448,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbbr => NVec4(
+  NumVec4<T> get bbbr => NumVec4(
         $3,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15463,14 +15463,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbbg => NVec4(
+  NumVec4<T> get bbbg => NumVec4(
         $3,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15478,14 +15478,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbbb => NVec4(
+  NumVec4<T> get bbbb => NumVec4(
         $3,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15493,14 +15493,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbba => NVec4(
+  NumVec4<T> get bbba => NumVec4(
         $3,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15508,14 +15508,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbar => NVec4(
+  NumVec4<T> get bbar => NumVec4(
         $3,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15523,14 +15523,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbag => NVec4(
+  NumVec4<T> get bbag => NumVec4(
         $3,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15538,14 +15538,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbab => NVec4(
+  NumVec4<T> get bbab => NumVec4(
         $3,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15553,14 +15553,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bbaa => NVec4(
+  NumVec4<T> get bbaa => NumVec4(
         $3,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15568,14 +15568,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get barr => NVec4(
+  NumVec4<T> get barr => NumVec4(
         $3,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15583,14 +15583,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get barg => NVec4(
+  NumVec4<T> get barg => NumVec4(
         $3,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15598,14 +15598,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get barb => NVec4(
+  NumVec4<T> get barb => NumVec4(
         $3,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15613,14 +15613,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bara => NVec4(
+  NumVec4<T> get bara => NumVec4(
         $3,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15628,14 +15628,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bagr => NVec4(
+  NumVec4<T> get bagr => NumVec4(
         $3,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15643,14 +15643,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bagg => NVec4(
+  NumVec4<T> get bagg => NumVec4(
         $3,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15658,14 +15658,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get bagb => NVec4(
+  NumVec4<T> get bagb => NumVec4(
         $3,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15673,14 +15673,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get baga => NVec4(
+  NumVec4<T> get baga => NumVec4(
         $3,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15688,14 +15688,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get babr => NVec4(
+  NumVec4<T> get babr => NumVec4(
         $3,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15703,14 +15703,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get babg => NVec4(
+  NumVec4<T> get babg => NumVec4(
         $3,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15718,14 +15718,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get babb => NVec4(
+  NumVec4<T> get babb => NumVec4(
         $3,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15733,14 +15733,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get baba => NVec4(
+  NumVec4<T> get baba => NumVec4(
         $3,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15748,14 +15748,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get baar => NVec4(
+  NumVec4<T> get baar => NumVec4(
         $3,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15763,14 +15763,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get baag => NVec4(
+  NumVec4<T> get baag => NumVec4(
         $3,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15778,14 +15778,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get baab => NVec4(
+  NumVec4<T> get baab => NumVec4(
         $3,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15793,14 +15793,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get baaa => NVec4(
+  NumVec4<T> get baaa => NumVec4(
         $3,
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15808,14 +15808,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arrr => NVec4(
+  NumVec4<T> get arrr => NumVec4(
         $4,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15823,14 +15823,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arrg => NVec4(
+  NumVec4<T> get arrg => NumVec4(
         $4,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15838,14 +15838,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arrb => NVec4(
+  NumVec4<T> get arrb => NumVec4(
         $4,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15853,14 +15853,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arra => NVec4(
+  NumVec4<T> get arra => NumVec4(
         $4,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15868,14 +15868,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get argr => NVec4(
+  NumVec4<T> get argr => NumVec4(
         $4,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15883,14 +15883,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get argg => NVec4(
+  NumVec4<T> get argg => NumVec4(
         $4,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15898,14 +15898,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get argb => NVec4(
+  NumVec4<T> get argb => NumVec4(
         $4,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15913,14 +15913,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arga => NVec4(
+  NumVec4<T> get arga => NumVec4(
         $4,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15928,14 +15928,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arbr => NVec4(
+  NumVec4<T> get arbr => NumVec4(
         $4,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15943,14 +15943,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arbg => NVec4(
+  NumVec4<T> get arbg => NumVec4(
         $4,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15958,14 +15958,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arbb => NVec4(
+  NumVec4<T> get arbb => NumVec4(
         $4,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15973,14 +15973,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arba => NVec4(
+  NumVec4<T> get arba => NumVec4(
         $4,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -15988,14 +15988,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arar => NVec4(
+  NumVec4<T> get arar => NumVec4(
         $4,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16003,14 +16003,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arag => NVec4(
+  NumVec4<T> get arag => NumVec4(
         $4,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16018,14 +16018,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get arab => NVec4(
+  NumVec4<T> get arab => NumVec4(
         $4,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16033,14 +16033,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get araa => NVec4(
+  NumVec4<T> get araa => NumVec4(
         $4,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16048,14 +16048,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agrr => NVec4(
+  NumVec4<T> get agrr => NumVec4(
         $4,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16063,14 +16063,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agrg => NVec4(
+  NumVec4<T> get agrg => NumVec4(
         $4,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16078,14 +16078,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agrb => NVec4(
+  NumVec4<T> get agrb => NumVec4(
         $4,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16093,14 +16093,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agra => NVec4(
+  NumVec4<T> get agra => NumVec4(
         $4,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16108,14 +16108,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aggr => NVec4(
+  NumVec4<T> get aggr => NumVec4(
         $4,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16123,14 +16123,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aggg => NVec4(
+  NumVec4<T> get aggg => NumVec4(
         $4,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16138,14 +16138,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aggb => NVec4(
+  NumVec4<T> get aggb => NumVec4(
         $4,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16153,14 +16153,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agga => NVec4(
+  NumVec4<T> get agga => NumVec4(
         $4,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16168,14 +16168,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agbr => NVec4(
+  NumVec4<T> get agbr => NumVec4(
         $4,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16183,14 +16183,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agbg => NVec4(
+  NumVec4<T> get agbg => NumVec4(
         $4,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16198,14 +16198,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agbb => NVec4(
+  NumVec4<T> get agbb => NumVec4(
         $4,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16213,14 +16213,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agba => NVec4(
+  NumVec4<T> get agba => NumVec4(
         $4,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16228,14 +16228,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agar => NVec4(
+  NumVec4<T> get agar => NumVec4(
         $4,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16243,14 +16243,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agag => NVec4(
+  NumVec4<T> get agag => NumVec4(
         $4,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16258,14 +16258,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agab => NVec4(
+  NumVec4<T> get agab => NumVec4(
         $4,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16273,14 +16273,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get agaa => NVec4(
+  NumVec4<T> get agaa => NumVec4(
         $4,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16288,14 +16288,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abrr => NVec4(
+  NumVec4<T> get abrr => NumVec4(
         $4,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16303,14 +16303,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abrg => NVec4(
+  NumVec4<T> get abrg => NumVec4(
         $4,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16318,14 +16318,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abrb => NVec4(
+  NumVec4<T> get abrb => NumVec4(
         $4,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16333,14 +16333,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abra => NVec4(
+  NumVec4<T> get abra => NumVec4(
         $4,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16348,14 +16348,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abgr => NVec4(
+  NumVec4<T> get abgr => NumVec4(
         $4,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16363,14 +16363,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abgg => NVec4(
+  NumVec4<T> get abgg => NumVec4(
         $4,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16378,14 +16378,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abgb => NVec4(
+  NumVec4<T> get abgb => NumVec4(
         $4,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16393,14 +16393,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abga => NVec4(
+  NumVec4<T> get abga => NumVec4(
         $4,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16408,14 +16408,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abbr => NVec4(
+  NumVec4<T> get abbr => NumVec4(
         $4,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16423,14 +16423,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abbg => NVec4(
+  NumVec4<T> get abbg => NumVec4(
         $4,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16438,14 +16438,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abbb => NVec4(
+  NumVec4<T> get abbb => NumVec4(
         $4,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16453,14 +16453,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abba => NVec4(
+  NumVec4<T> get abba => NumVec4(
         $4,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16468,14 +16468,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abar => NVec4(
+  NumVec4<T> get abar => NumVec4(
         $4,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16483,14 +16483,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abag => NVec4(
+  NumVec4<T> get abag => NumVec4(
         $4,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16498,14 +16498,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abab => NVec4(
+  NumVec4<T> get abab => NumVec4(
         $4,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16513,14 +16513,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get abaa => NVec4(
+  NumVec4<T> get abaa => NumVec4(
         $4,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16528,14 +16528,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aarr => NVec4(
+  NumVec4<T> get aarr => NumVec4(
         $4,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16543,14 +16543,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aarg => NVec4(
+  NumVec4<T> get aarg => NumVec4(
         $4,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16558,14 +16558,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aarb => NVec4(
+  NumVec4<T> get aarb => NumVec4(
         $4,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16573,14 +16573,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aara => NVec4(
+  NumVec4<T> get aara => NumVec4(
         $4,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16588,14 +16588,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aagr => NVec4(
+  NumVec4<T> get aagr => NumVec4(
         $4,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16603,14 +16603,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aagg => NVec4(
+  NumVec4<T> get aagg => NumVec4(
         $4,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16618,14 +16618,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aagb => NVec4(
+  NumVec4<T> get aagb => NumVec4(
         $4,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16633,14 +16633,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aaga => NVec4(
+  NumVec4<T> get aaga => NumVec4(
         $4,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16648,14 +16648,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aabr => NVec4(
+  NumVec4<T> get aabr => NumVec4(
         $4,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16663,14 +16663,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aabg => NVec4(
+  NumVec4<T> get aabg => NumVec4(
         $4,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16678,14 +16678,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aabb => NVec4(
+  NumVec4<T> get aabb => NumVec4(
         $4,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16693,14 +16693,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aaba => NVec4(
+  NumVec4<T> get aaba => NumVec4(
         $4,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16708,14 +16708,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aaar => NVec4(
+  NumVec4<T> get aaar => NumVec4(
         $4,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16723,14 +16723,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aaag => NVec4(
+  NumVec4<T> get aaag => NumVec4(
         $4,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16738,14 +16738,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aaab => NVec4(
+  NumVec4<T> get aaab => NumVec4(
         $4,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16753,14 +16753,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the RGBA system.
-  NVec4<T> get aaaa => NVec4(
+  NumVec4<T> get aaaa => NumVec4(
         $4,
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16768,12 +16768,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get ss => NVec2(
+  NumVec2<T> get ss => NumVec2(
         $1,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16781,12 +16781,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get st => NVec2(
+  NumVec2<T> get st => NumVec2(
         $1,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16794,12 +16794,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get sp => NVec2(
+  NumVec2<T> get sp => NumVec2(
         $1,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16807,12 +16807,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get sq => NVec2(
+  NumVec2<T> get sq => NumVec2(
         $1,
         $4,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16820,12 +16820,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get ts => NVec2(
+  NumVec2<T> get ts => NumVec2(
         $2,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16833,12 +16833,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get tt => NVec2(
+  NumVec2<T> get tt => NumVec2(
         $2,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16846,12 +16846,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get tp => NVec2(
+  NumVec2<T> get tp => NumVec2(
         $2,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16859,12 +16859,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get tq => NVec2(
+  NumVec2<T> get tq => NumVec2(
         $2,
         $4,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16872,12 +16872,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get ps => NVec2(
+  NumVec2<T> get ps => NumVec2(
         $3,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16885,12 +16885,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get pt => NVec2(
+  NumVec2<T> get pt => NumVec2(
         $3,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16898,12 +16898,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get pp => NVec2(
+  NumVec2<T> get pp => NumVec2(
         $3,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16911,12 +16911,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get pq => NVec2(
+  NumVec2<T> get pq => NumVec2(
         $3,
         $4,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16924,12 +16924,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get qs => NVec2(
+  NumVec2<T> get qs => NumVec2(
         $4,
         $1,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16937,12 +16937,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get qt => NVec2(
+  NumVec2<T> get qt => NumVec2(
         $4,
         $2,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16950,12 +16950,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get qp => NVec2(
+  NumVec2<T> get qp => NumVec2(
         $4,
         $3,
       );
 
-  /// Returns a [NVec2] with elements equal to this one in the following
+  /// Returns a [NumVec2] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16963,12 +16963,12 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec2<T> get qq => NVec2(
+  NumVec2<T> get qq => NumVec2(
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16976,13 +16976,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sss => NVec3(
+  NumVec3<T> get sss => NumVec3(
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -16990,13 +16990,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sst => NVec3(
+  NumVec3<T> get sst => NumVec3(
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17004,13 +17004,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ssp => NVec3(
+  NumVec3<T> get ssp => NumVec3(
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17018,13 +17018,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ssq => NVec3(
+  NumVec3<T> get ssq => NumVec3(
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17032,13 +17032,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sts => NVec3(
+  NumVec3<T> get sts => NumVec3(
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17046,13 +17046,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get stt => NVec3(
+  NumVec3<T> get stt => NumVec3(
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17060,13 +17060,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get stp => NVec3(
+  NumVec3<T> get stp => NumVec3(
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17074,13 +17074,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get stq => NVec3(
+  NumVec3<T> get stq => NumVec3(
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17088,13 +17088,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sps => NVec3(
+  NumVec3<T> get sps => NumVec3(
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17102,13 +17102,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get spt => NVec3(
+  NumVec3<T> get spt => NumVec3(
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17116,13 +17116,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get spp => NVec3(
+  NumVec3<T> get spp => NumVec3(
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17130,13 +17130,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get spq => NVec3(
+  NumVec3<T> get spq => NumVec3(
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17144,13 +17144,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sqs => NVec3(
+  NumVec3<T> get sqs => NumVec3(
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17158,13 +17158,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sqt => NVec3(
+  NumVec3<T> get sqt => NumVec3(
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17172,13 +17172,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sqp => NVec3(
+  NumVec3<T> get sqp => NumVec3(
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17186,13 +17186,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get sqq => NVec3(
+  NumVec3<T> get sqq => NumVec3(
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17200,13 +17200,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tss => NVec3(
+  NumVec3<T> get tss => NumVec3(
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17214,13 +17214,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tst => NVec3(
+  NumVec3<T> get tst => NumVec3(
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17228,13 +17228,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tsp => NVec3(
+  NumVec3<T> get tsp => NumVec3(
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17242,13 +17242,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tsq => NVec3(
+  NumVec3<T> get tsq => NumVec3(
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17256,13 +17256,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tts => NVec3(
+  NumVec3<T> get tts => NumVec3(
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17270,13 +17270,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ttt => NVec3(
+  NumVec3<T> get ttt => NumVec3(
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17284,13 +17284,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ttp => NVec3(
+  NumVec3<T> get ttp => NumVec3(
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17298,13 +17298,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ttq => NVec3(
+  NumVec3<T> get ttq => NumVec3(
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17312,13 +17312,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tps => NVec3(
+  NumVec3<T> get tps => NumVec3(
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17326,13 +17326,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tpt => NVec3(
+  NumVec3<T> get tpt => NumVec3(
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17340,13 +17340,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tpp => NVec3(
+  NumVec3<T> get tpp => NumVec3(
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17354,13 +17354,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tpq => NVec3(
+  NumVec3<T> get tpq => NumVec3(
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17368,13 +17368,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tqs => NVec3(
+  NumVec3<T> get tqs => NumVec3(
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17382,13 +17382,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tqt => NVec3(
+  NumVec3<T> get tqt => NumVec3(
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17396,13 +17396,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tqp => NVec3(
+  NumVec3<T> get tqp => NumVec3(
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17410,13 +17410,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get tqq => NVec3(
+  NumVec3<T> get tqq => NumVec3(
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17424,13 +17424,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pss => NVec3(
+  NumVec3<T> get pss => NumVec3(
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17438,13 +17438,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pst => NVec3(
+  NumVec3<T> get pst => NumVec3(
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17452,13 +17452,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get psp => NVec3(
+  NumVec3<T> get psp => NumVec3(
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17466,13 +17466,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get psq => NVec3(
+  NumVec3<T> get psq => NumVec3(
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17480,13 +17480,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pts => NVec3(
+  NumVec3<T> get pts => NumVec3(
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17494,13 +17494,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ptt => NVec3(
+  NumVec3<T> get ptt => NumVec3(
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17508,13 +17508,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ptp => NVec3(
+  NumVec3<T> get ptp => NumVec3(
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17522,13 +17522,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ptq => NVec3(
+  NumVec3<T> get ptq => NumVec3(
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17536,13 +17536,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pps => NVec3(
+  NumVec3<T> get pps => NumVec3(
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17550,13 +17550,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ppt => NVec3(
+  NumVec3<T> get ppt => NumVec3(
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17564,13 +17564,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ppp => NVec3(
+  NumVec3<T> get ppp => NumVec3(
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17578,13 +17578,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get ppq => NVec3(
+  NumVec3<T> get ppq => NumVec3(
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17592,13 +17592,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pqs => NVec3(
+  NumVec3<T> get pqs => NumVec3(
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17606,13 +17606,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pqt => NVec3(
+  NumVec3<T> get pqt => NumVec3(
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17620,13 +17620,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pqp => NVec3(
+  NumVec3<T> get pqp => NumVec3(
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17634,13 +17634,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get pqq => NVec3(
+  NumVec3<T> get pqq => NumVec3(
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17648,13 +17648,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qss => NVec3(
+  NumVec3<T> get qss => NumVec3(
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17662,13 +17662,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qst => NVec3(
+  NumVec3<T> get qst => NumVec3(
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17676,13 +17676,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qsp => NVec3(
+  NumVec3<T> get qsp => NumVec3(
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17690,13 +17690,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qsq => NVec3(
+  NumVec3<T> get qsq => NumVec3(
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17704,13 +17704,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qts => NVec3(
+  NumVec3<T> get qts => NumVec3(
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17718,13 +17718,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qtt => NVec3(
+  NumVec3<T> get qtt => NumVec3(
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17732,13 +17732,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qtp => NVec3(
+  NumVec3<T> get qtp => NumVec3(
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17746,13 +17746,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qtq => NVec3(
+  NumVec3<T> get qtq => NumVec3(
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17760,13 +17760,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qps => NVec3(
+  NumVec3<T> get qps => NumVec3(
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17774,13 +17774,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qpt => NVec3(
+  NumVec3<T> get qpt => NumVec3(
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17788,13 +17788,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qpp => NVec3(
+  NumVec3<T> get qpp => NumVec3(
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17802,13 +17802,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qpq => NVec3(
+  NumVec3<T> get qpq => NumVec3(
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17816,13 +17816,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qqs => NVec3(
+  NumVec3<T> get qqs => NumVec3(
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17830,13 +17830,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qqt => NVec3(
+  NumVec3<T> get qqt => NumVec3(
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17844,13 +17844,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qqp => NVec3(
+  NumVec3<T> get qqp => NumVec3(
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec3] with elements equal to this one in the following
+  /// Returns a [NumVec3] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17858,13 +17858,13 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec3<T> get qqq => NVec3(
+  NumVec3<T> get qqq => NumVec3(
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17872,14 +17872,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssss => NVec4(
+  NumVec4<T> get ssss => NumVec4(
         $1,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17887,14 +17887,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssst => NVec4(
+  NumVec4<T> get ssst => NumVec4(
         $1,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17902,14 +17902,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sssp => NVec4(
+  NumVec4<T> get sssp => NumVec4(
         $1,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17917,14 +17917,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sssq => NVec4(
+  NumVec4<T> get sssq => NumVec4(
         $1,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17932,14 +17932,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssts => NVec4(
+  NumVec4<T> get ssts => NumVec4(
         $1,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17947,14 +17947,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sstt => NVec4(
+  NumVec4<T> get sstt => NumVec4(
         $1,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17962,14 +17962,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sstp => NVec4(
+  NumVec4<T> get sstp => NumVec4(
         $1,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17977,14 +17977,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sstq => NVec4(
+  NumVec4<T> get sstq => NumVec4(
         $1,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -17992,14 +17992,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssps => NVec4(
+  NumVec4<T> get ssps => NumVec4(
         $1,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18007,14 +18007,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sspt => NVec4(
+  NumVec4<T> get sspt => NumVec4(
         $1,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18022,14 +18022,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sspp => NVec4(
+  NumVec4<T> get sspp => NumVec4(
         $1,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18037,14 +18037,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sspq => NVec4(
+  NumVec4<T> get sspq => NumVec4(
         $1,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18052,14 +18052,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssqs => NVec4(
+  NumVec4<T> get ssqs => NumVec4(
         $1,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18067,14 +18067,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssqt => NVec4(
+  NumVec4<T> get ssqt => NumVec4(
         $1,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18082,14 +18082,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssqp => NVec4(
+  NumVec4<T> get ssqp => NumVec4(
         $1,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18097,14 +18097,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ssqq => NVec4(
+  NumVec4<T> get ssqq => NumVec4(
         $1,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18112,14 +18112,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stss => NVec4(
+  NumVec4<T> get stss => NumVec4(
         $1,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18127,14 +18127,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stst => NVec4(
+  NumVec4<T> get stst => NumVec4(
         $1,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18142,14 +18142,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stsp => NVec4(
+  NumVec4<T> get stsp => NumVec4(
         $1,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18157,14 +18157,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stsq => NVec4(
+  NumVec4<T> get stsq => NumVec4(
         $1,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18172,14 +18172,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stts => NVec4(
+  NumVec4<T> get stts => NumVec4(
         $1,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18187,14 +18187,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sttt => NVec4(
+  NumVec4<T> get sttt => NumVec4(
         $1,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18202,14 +18202,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sttp => NVec4(
+  NumVec4<T> get sttp => NumVec4(
         $1,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18217,14 +18217,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sttq => NVec4(
+  NumVec4<T> get sttq => NumVec4(
         $1,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18232,14 +18232,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stps => NVec4(
+  NumVec4<T> get stps => NumVec4(
         $1,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18247,14 +18247,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stpt => NVec4(
+  NumVec4<T> get stpt => NumVec4(
         $1,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18262,14 +18262,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stpp => NVec4(
+  NumVec4<T> get stpp => NumVec4(
         $1,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18277,14 +18277,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stpq => NVec4(
+  NumVec4<T> get stpq => NumVec4(
         $1,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18292,14 +18292,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stqs => NVec4(
+  NumVec4<T> get stqs => NumVec4(
         $1,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18307,14 +18307,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stqt => NVec4(
+  NumVec4<T> get stqt => NumVec4(
         $1,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18322,14 +18322,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stqp => NVec4(
+  NumVec4<T> get stqp => NumVec4(
         $1,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18337,14 +18337,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get stqq => NVec4(
+  NumVec4<T> get stqq => NumVec4(
         $1,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18352,14 +18352,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spss => NVec4(
+  NumVec4<T> get spss => NumVec4(
         $1,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18367,14 +18367,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spst => NVec4(
+  NumVec4<T> get spst => NumVec4(
         $1,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18382,14 +18382,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spsp => NVec4(
+  NumVec4<T> get spsp => NumVec4(
         $1,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18397,14 +18397,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spsq => NVec4(
+  NumVec4<T> get spsq => NumVec4(
         $1,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18412,14 +18412,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spts => NVec4(
+  NumVec4<T> get spts => NumVec4(
         $1,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18427,14 +18427,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sptt => NVec4(
+  NumVec4<T> get sptt => NumVec4(
         $1,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18442,14 +18442,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sptp => NVec4(
+  NumVec4<T> get sptp => NumVec4(
         $1,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18457,14 +18457,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sptq => NVec4(
+  NumVec4<T> get sptq => NumVec4(
         $1,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18472,14 +18472,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spps => NVec4(
+  NumVec4<T> get spps => NumVec4(
         $1,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18487,14 +18487,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sppt => NVec4(
+  NumVec4<T> get sppt => NumVec4(
         $1,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18502,14 +18502,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sppp => NVec4(
+  NumVec4<T> get sppp => NumVec4(
         $1,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18517,14 +18517,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sppq => NVec4(
+  NumVec4<T> get sppq => NumVec4(
         $1,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18532,14 +18532,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spqs => NVec4(
+  NumVec4<T> get spqs => NumVec4(
         $1,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18547,14 +18547,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spqt => NVec4(
+  NumVec4<T> get spqt => NumVec4(
         $1,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18562,14 +18562,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spqp => NVec4(
+  NumVec4<T> get spqp => NumVec4(
         $1,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18577,14 +18577,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get spqq => NVec4(
+  NumVec4<T> get spqq => NumVec4(
         $1,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18592,14 +18592,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqss => NVec4(
+  NumVec4<T> get sqss => NumVec4(
         $1,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18607,14 +18607,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqst => NVec4(
+  NumVec4<T> get sqst => NumVec4(
         $1,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18622,14 +18622,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqsp => NVec4(
+  NumVec4<T> get sqsp => NumVec4(
         $1,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18637,14 +18637,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqsq => NVec4(
+  NumVec4<T> get sqsq => NumVec4(
         $1,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18652,14 +18652,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqts => NVec4(
+  NumVec4<T> get sqts => NumVec4(
         $1,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18667,14 +18667,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqtt => NVec4(
+  NumVec4<T> get sqtt => NumVec4(
         $1,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18682,14 +18682,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqtp => NVec4(
+  NumVec4<T> get sqtp => NumVec4(
         $1,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18697,14 +18697,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqtq => NVec4(
+  NumVec4<T> get sqtq => NumVec4(
         $1,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18712,14 +18712,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqps => NVec4(
+  NumVec4<T> get sqps => NumVec4(
         $1,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18727,14 +18727,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqpt => NVec4(
+  NumVec4<T> get sqpt => NumVec4(
         $1,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18742,14 +18742,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqpp => NVec4(
+  NumVec4<T> get sqpp => NumVec4(
         $1,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18757,14 +18757,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqpq => NVec4(
+  NumVec4<T> get sqpq => NumVec4(
         $1,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18772,14 +18772,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqqs => NVec4(
+  NumVec4<T> get sqqs => NumVec4(
         $1,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18787,14 +18787,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqqt => NVec4(
+  NumVec4<T> get sqqt => NumVec4(
         $1,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18802,14 +18802,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqqp => NVec4(
+  NumVec4<T> get sqqp => NumVec4(
         $1,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18817,14 +18817,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get sqqq => NVec4(
+  NumVec4<T> get sqqq => NumVec4(
         $1,
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18832,14 +18832,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsss => NVec4(
+  NumVec4<T> get tsss => NumVec4(
         $2,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18847,14 +18847,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsst => NVec4(
+  NumVec4<T> get tsst => NumVec4(
         $2,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18862,14 +18862,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tssp => NVec4(
+  NumVec4<T> get tssp => NumVec4(
         $2,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18877,14 +18877,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tssq => NVec4(
+  NumVec4<T> get tssq => NumVec4(
         $2,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18892,14 +18892,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsts => NVec4(
+  NumVec4<T> get tsts => NumVec4(
         $2,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18907,14 +18907,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tstt => NVec4(
+  NumVec4<T> get tstt => NumVec4(
         $2,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18922,14 +18922,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tstp => NVec4(
+  NumVec4<T> get tstp => NumVec4(
         $2,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18937,14 +18937,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tstq => NVec4(
+  NumVec4<T> get tstq => NumVec4(
         $2,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18952,14 +18952,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsps => NVec4(
+  NumVec4<T> get tsps => NumVec4(
         $2,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18967,14 +18967,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tspt => NVec4(
+  NumVec4<T> get tspt => NumVec4(
         $2,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18982,14 +18982,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tspp => NVec4(
+  NumVec4<T> get tspp => NumVec4(
         $2,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -18997,14 +18997,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tspq => NVec4(
+  NumVec4<T> get tspq => NumVec4(
         $2,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19012,14 +19012,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsqs => NVec4(
+  NumVec4<T> get tsqs => NumVec4(
         $2,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19027,14 +19027,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsqt => NVec4(
+  NumVec4<T> get tsqt => NumVec4(
         $2,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19042,14 +19042,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsqp => NVec4(
+  NumVec4<T> get tsqp => NumVec4(
         $2,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19057,14 +19057,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tsqq => NVec4(
+  NumVec4<T> get tsqq => NumVec4(
         $2,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19072,14 +19072,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttss => NVec4(
+  NumVec4<T> get ttss => NumVec4(
         $2,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19087,14 +19087,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttst => NVec4(
+  NumVec4<T> get ttst => NumVec4(
         $2,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19102,14 +19102,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttsp => NVec4(
+  NumVec4<T> get ttsp => NumVec4(
         $2,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19117,14 +19117,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttsq => NVec4(
+  NumVec4<T> get ttsq => NumVec4(
         $2,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19132,14 +19132,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttts => NVec4(
+  NumVec4<T> get ttts => NumVec4(
         $2,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19147,14 +19147,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tttt => NVec4(
+  NumVec4<T> get tttt => NumVec4(
         $2,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19162,14 +19162,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tttp => NVec4(
+  NumVec4<T> get tttp => NumVec4(
         $2,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19177,14 +19177,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tttq => NVec4(
+  NumVec4<T> get tttq => NumVec4(
         $2,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19192,14 +19192,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttps => NVec4(
+  NumVec4<T> get ttps => NumVec4(
         $2,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19207,14 +19207,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttpt => NVec4(
+  NumVec4<T> get ttpt => NumVec4(
         $2,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19222,14 +19222,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttpp => NVec4(
+  NumVec4<T> get ttpp => NumVec4(
         $2,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19237,14 +19237,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttpq => NVec4(
+  NumVec4<T> get ttpq => NumVec4(
         $2,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19252,14 +19252,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttqs => NVec4(
+  NumVec4<T> get ttqs => NumVec4(
         $2,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19267,14 +19267,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttqt => NVec4(
+  NumVec4<T> get ttqt => NumVec4(
         $2,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19282,14 +19282,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttqp => NVec4(
+  NumVec4<T> get ttqp => NumVec4(
         $2,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19297,14 +19297,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ttqq => NVec4(
+  NumVec4<T> get ttqq => NumVec4(
         $2,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19312,14 +19312,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpss => NVec4(
+  NumVec4<T> get tpss => NumVec4(
         $2,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19327,14 +19327,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpst => NVec4(
+  NumVec4<T> get tpst => NumVec4(
         $2,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19342,14 +19342,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpsp => NVec4(
+  NumVec4<T> get tpsp => NumVec4(
         $2,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19357,14 +19357,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpsq => NVec4(
+  NumVec4<T> get tpsq => NumVec4(
         $2,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19372,14 +19372,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpts => NVec4(
+  NumVec4<T> get tpts => NumVec4(
         $2,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19387,14 +19387,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tptt => NVec4(
+  NumVec4<T> get tptt => NumVec4(
         $2,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19402,14 +19402,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tptp => NVec4(
+  NumVec4<T> get tptp => NumVec4(
         $2,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19417,14 +19417,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tptq => NVec4(
+  NumVec4<T> get tptq => NumVec4(
         $2,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19432,14 +19432,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpps => NVec4(
+  NumVec4<T> get tpps => NumVec4(
         $2,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19447,14 +19447,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tppt => NVec4(
+  NumVec4<T> get tppt => NumVec4(
         $2,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19462,14 +19462,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tppp => NVec4(
+  NumVec4<T> get tppp => NumVec4(
         $2,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19477,14 +19477,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tppq => NVec4(
+  NumVec4<T> get tppq => NumVec4(
         $2,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19492,14 +19492,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpqs => NVec4(
+  NumVec4<T> get tpqs => NumVec4(
         $2,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19507,14 +19507,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpqt => NVec4(
+  NumVec4<T> get tpqt => NumVec4(
         $2,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19522,14 +19522,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpqp => NVec4(
+  NumVec4<T> get tpqp => NumVec4(
         $2,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19537,14 +19537,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tpqq => NVec4(
+  NumVec4<T> get tpqq => NumVec4(
         $2,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19552,14 +19552,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqss => NVec4(
+  NumVec4<T> get tqss => NumVec4(
         $2,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19567,14 +19567,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqst => NVec4(
+  NumVec4<T> get tqst => NumVec4(
         $2,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19582,14 +19582,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqsp => NVec4(
+  NumVec4<T> get tqsp => NumVec4(
         $2,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19597,14 +19597,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqsq => NVec4(
+  NumVec4<T> get tqsq => NumVec4(
         $2,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19612,14 +19612,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqts => NVec4(
+  NumVec4<T> get tqts => NumVec4(
         $2,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19627,14 +19627,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqtt => NVec4(
+  NumVec4<T> get tqtt => NumVec4(
         $2,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19642,14 +19642,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqtp => NVec4(
+  NumVec4<T> get tqtp => NumVec4(
         $2,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19657,14 +19657,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqtq => NVec4(
+  NumVec4<T> get tqtq => NumVec4(
         $2,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19672,14 +19672,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqps => NVec4(
+  NumVec4<T> get tqps => NumVec4(
         $2,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19687,14 +19687,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqpt => NVec4(
+  NumVec4<T> get tqpt => NumVec4(
         $2,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19702,14 +19702,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqpp => NVec4(
+  NumVec4<T> get tqpp => NumVec4(
         $2,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19717,14 +19717,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqpq => NVec4(
+  NumVec4<T> get tqpq => NumVec4(
         $2,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19732,14 +19732,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqqs => NVec4(
+  NumVec4<T> get tqqs => NumVec4(
         $2,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19747,14 +19747,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqqt => NVec4(
+  NumVec4<T> get tqqt => NumVec4(
         $2,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19762,14 +19762,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqqp => NVec4(
+  NumVec4<T> get tqqp => NumVec4(
         $2,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19777,14 +19777,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get tqqq => NVec4(
+  NumVec4<T> get tqqq => NumVec4(
         $2,
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19792,14 +19792,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psss => NVec4(
+  NumVec4<T> get psss => NumVec4(
         $3,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19807,14 +19807,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psst => NVec4(
+  NumVec4<T> get psst => NumVec4(
         $3,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19822,14 +19822,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pssp => NVec4(
+  NumVec4<T> get pssp => NumVec4(
         $3,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19837,14 +19837,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pssq => NVec4(
+  NumVec4<T> get pssq => NumVec4(
         $3,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19852,14 +19852,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psts => NVec4(
+  NumVec4<T> get psts => NumVec4(
         $3,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19867,14 +19867,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pstt => NVec4(
+  NumVec4<T> get pstt => NumVec4(
         $3,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19882,14 +19882,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pstp => NVec4(
+  NumVec4<T> get pstp => NumVec4(
         $3,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19897,14 +19897,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pstq => NVec4(
+  NumVec4<T> get pstq => NumVec4(
         $3,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19912,14 +19912,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psps => NVec4(
+  NumVec4<T> get psps => NumVec4(
         $3,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19927,14 +19927,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pspt => NVec4(
+  NumVec4<T> get pspt => NumVec4(
         $3,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19942,14 +19942,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pspp => NVec4(
+  NumVec4<T> get pspp => NumVec4(
         $3,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19957,14 +19957,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pspq => NVec4(
+  NumVec4<T> get pspq => NumVec4(
         $3,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19972,14 +19972,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psqs => NVec4(
+  NumVec4<T> get psqs => NumVec4(
         $3,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -19987,14 +19987,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psqt => NVec4(
+  NumVec4<T> get psqt => NumVec4(
         $3,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20002,14 +20002,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psqp => NVec4(
+  NumVec4<T> get psqp => NumVec4(
         $3,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20017,14 +20017,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get psqq => NVec4(
+  NumVec4<T> get psqq => NumVec4(
         $3,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20032,14 +20032,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptss => NVec4(
+  NumVec4<T> get ptss => NumVec4(
         $3,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20047,14 +20047,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptst => NVec4(
+  NumVec4<T> get ptst => NumVec4(
         $3,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20062,14 +20062,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptsp => NVec4(
+  NumVec4<T> get ptsp => NumVec4(
         $3,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20077,14 +20077,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptsq => NVec4(
+  NumVec4<T> get ptsq => NumVec4(
         $3,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20092,14 +20092,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptts => NVec4(
+  NumVec4<T> get ptts => NumVec4(
         $3,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20107,14 +20107,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pttt => NVec4(
+  NumVec4<T> get pttt => NumVec4(
         $3,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20122,14 +20122,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pttp => NVec4(
+  NumVec4<T> get pttp => NumVec4(
         $3,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20137,14 +20137,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pttq => NVec4(
+  NumVec4<T> get pttq => NumVec4(
         $3,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20152,14 +20152,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptps => NVec4(
+  NumVec4<T> get ptps => NumVec4(
         $3,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20167,14 +20167,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptpt => NVec4(
+  NumVec4<T> get ptpt => NumVec4(
         $3,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20182,14 +20182,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptpp => NVec4(
+  NumVec4<T> get ptpp => NumVec4(
         $3,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20197,14 +20197,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptpq => NVec4(
+  NumVec4<T> get ptpq => NumVec4(
         $3,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20212,14 +20212,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptqs => NVec4(
+  NumVec4<T> get ptqs => NumVec4(
         $3,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20227,14 +20227,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptqt => NVec4(
+  NumVec4<T> get ptqt => NumVec4(
         $3,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20242,14 +20242,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptqp => NVec4(
+  NumVec4<T> get ptqp => NumVec4(
         $3,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20257,14 +20257,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ptqq => NVec4(
+  NumVec4<T> get ptqq => NumVec4(
         $3,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20272,14 +20272,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppss => NVec4(
+  NumVec4<T> get ppss => NumVec4(
         $3,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20287,14 +20287,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppst => NVec4(
+  NumVec4<T> get ppst => NumVec4(
         $3,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20302,14 +20302,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppsp => NVec4(
+  NumVec4<T> get ppsp => NumVec4(
         $3,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20317,14 +20317,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppsq => NVec4(
+  NumVec4<T> get ppsq => NumVec4(
         $3,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20332,14 +20332,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppts => NVec4(
+  NumVec4<T> get ppts => NumVec4(
         $3,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20347,14 +20347,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pptt => NVec4(
+  NumVec4<T> get pptt => NumVec4(
         $3,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20362,14 +20362,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pptp => NVec4(
+  NumVec4<T> get pptp => NumVec4(
         $3,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20377,14 +20377,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pptq => NVec4(
+  NumVec4<T> get pptq => NumVec4(
         $3,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20392,14 +20392,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppps => NVec4(
+  NumVec4<T> get ppps => NumVec4(
         $3,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20407,14 +20407,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pppt => NVec4(
+  NumVec4<T> get pppt => NumVec4(
         $3,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20422,14 +20422,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pppp => NVec4(
+  NumVec4<T> get pppp => NumVec4(
         $3,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20437,14 +20437,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pppq => NVec4(
+  NumVec4<T> get pppq => NumVec4(
         $3,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20452,14 +20452,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppqs => NVec4(
+  NumVec4<T> get ppqs => NumVec4(
         $3,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20467,14 +20467,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppqt => NVec4(
+  NumVec4<T> get ppqt => NumVec4(
         $3,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20482,14 +20482,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppqp => NVec4(
+  NumVec4<T> get ppqp => NumVec4(
         $3,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20497,14 +20497,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get ppqq => NVec4(
+  NumVec4<T> get ppqq => NumVec4(
         $3,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20512,14 +20512,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqss => NVec4(
+  NumVec4<T> get pqss => NumVec4(
         $3,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20527,14 +20527,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqst => NVec4(
+  NumVec4<T> get pqst => NumVec4(
         $3,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20542,14 +20542,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqsp => NVec4(
+  NumVec4<T> get pqsp => NumVec4(
         $3,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20557,14 +20557,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqsq => NVec4(
+  NumVec4<T> get pqsq => NumVec4(
         $3,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20572,14 +20572,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqts => NVec4(
+  NumVec4<T> get pqts => NumVec4(
         $3,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20587,14 +20587,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqtt => NVec4(
+  NumVec4<T> get pqtt => NumVec4(
         $3,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20602,14 +20602,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqtp => NVec4(
+  NumVec4<T> get pqtp => NumVec4(
         $3,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20617,14 +20617,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqtq => NVec4(
+  NumVec4<T> get pqtq => NumVec4(
         $3,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20632,14 +20632,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqps => NVec4(
+  NumVec4<T> get pqps => NumVec4(
         $3,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20647,14 +20647,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqpt => NVec4(
+  NumVec4<T> get pqpt => NumVec4(
         $3,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20662,14 +20662,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqpp => NVec4(
+  NumVec4<T> get pqpp => NumVec4(
         $3,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20677,14 +20677,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqpq => NVec4(
+  NumVec4<T> get pqpq => NumVec4(
         $3,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20692,14 +20692,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqqs => NVec4(
+  NumVec4<T> get pqqs => NumVec4(
         $3,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20707,14 +20707,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqqt => NVec4(
+  NumVec4<T> get pqqt => NumVec4(
         $3,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20722,14 +20722,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqqp => NVec4(
+  NumVec4<T> get pqqp => NumVec4(
         $3,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20737,14 +20737,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get pqqq => NVec4(
+  NumVec4<T> get pqqq => NumVec4(
         $3,
         $4,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20752,14 +20752,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qsss => NVec4(
+  NumVec4<T> get qsss => NumVec4(
         $4,
         $1,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20767,14 +20767,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qsst => NVec4(
+  NumVec4<T> get qsst => NumVec4(
         $4,
         $1,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20782,14 +20782,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qssp => NVec4(
+  NumVec4<T> get qssp => NumVec4(
         $4,
         $1,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20797,14 +20797,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qssq => NVec4(
+  NumVec4<T> get qssq => NumVec4(
         $4,
         $1,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20812,14 +20812,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qsts => NVec4(
+  NumVec4<T> get qsts => NumVec4(
         $4,
         $1,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20827,14 +20827,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qstt => NVec4(
+  NumVec4<T> get qstt => NumVec4(
         $4,
         $1,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20842,14 +20842,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qstp => NVec4(
+  NumVec4<T> get qstp => NumVec4(
         $4,
         $1,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20857,14 +20857,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qstq => NVec4(
+  NumVec4<T> get qstq => NumVec4(
         $4,
         $1,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20872,14 +20872,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qsps => NVec4(
+  NumVec4<T> get qsps => NumVec4(
         $4,
         $1,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20887,14 +20887,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qspt => NVec4(
+  NumVec4<T> get qspt => NumVec4(
         $4,
         $1,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20902,14 +20902,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qspp => NVec4(
+  NumVec4<T> get qspp => NumVec4(
         $4,
         $1,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20917,14 +20917,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qspq => NVec4(
+  NumVec4<T> get qspq => NumVec4(
         $4,
         $1,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20932,14 +20932,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qsqs => NVec4(
+  NumVec4<T> get qsqs => NumVec4(
         $4,
         $1,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20947,14 +20947,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qsqt => NVec4(
+  NumVec4<T> get qsqt => NumVec4(
         $4,
         $1,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20962,14 +20962,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qsqp => NVec4(
+  NumVec4<T> get qsqp => NumVec4(
         $4,
         $1,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20977,14 +20977,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qsqq => NVec4(
+  NumVec4<T> get qsqq => NumVec4(
         $4,
         $1,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -20992,14 +20992,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtss => NVec4(
+  NumVec4<T> get qtss => NumVec4(
         $4,
         $2,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21007,14 +21007,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtst => NVec4(
+  NumVec4<T> get qtst => NumVec4(
         $4,
         $2,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21022,14 +21022,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtsp => NVec4(
+  NumVec4<T> get qtsp => NumVec4(
         $4,
         $2,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21037,14 +21037,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtsq => NVec4(
+  NumVec4<T> get qtsq => NumVec4(
         $4,
         $2,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21052,14 +21052,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtts => NVec4(
+  NumVec4<T> get qtts => NumVec4(
         $4,
         $2,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21067,14 +21067,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qttt => NVec4(
+  NumVec4<T> get qttt => NumVec4(
         $4,
         $2,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21082,14 +21082,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qttp => NVec4(
+  NumVec4<T> get qttp => NumVec4(
         $4,
         $2,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21097,14 +21097,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qttq => NVec4(
+  NumVec4<T> get qttq => NumVec4(
         $4,
         $2,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21112,14 +21112,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtps => NVec4(
+  NumVec4<T> get qtps => NumVec4(
         $4,
         $2,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21127,14 +21127,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtpt => NVec4(
+  NumVec4<T> get qtpt => NumVec4(
         $4,
         $2,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21142,14 +21142,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtpp => NVec4(
+  NumVec4<T> get qtpp => NumVec4(
         $4,
         $2,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21157,14 +21157,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtpq => NVec4(
+  NumVec4<T> get qtpq => NumVec4(
         $4,
         $2,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21172,14 +21172,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtqs => NVec4(
+  NumVec4<T> get qtqs => NumVec4(
         $4,
         $2,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21187,14 +21187,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtqt => NVec4(
+  NumVec4<T> get qtqt => NumVec4(
         $4,
         $2,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21202,14 +21202,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtqp => NVec4(
+  NumVec4<T> get qtqp => NumVec4(
         $4,
         $2,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21217,14 +21217,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qtqq => NVec4(
+  NumVec4<T> get qtqq => NumVec4(
         $4,
         $2,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21232,14 +21232,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qpss => NVec4(
+  NumVec4<T> get qpss => NumVec4(
         $4,
         $3,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21247,14 +21247,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qpst => NVec4(
+  NumVec4<T> get qpst => NumVec4(
         $4,
         $3,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21262,14 +21262,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qpsp => NVec4(
+  NumVec4<T> get qpsp => NumVec4(
         $4,
         $3,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21277,14 +21277,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qpsq => NVec4(
+  NumVec4<T> get qpsq => NumVec4(
         $4,
         $3,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21292,14 +21292,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qpts => NVec4(
+  NumVec4<T> get qpts => NumVec4(
         $4,
         $3,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21307,14 +21307,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qptt => NVec4(
+  NumVec4<T> get qptt => NumVec4(
         $4,
         $3,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21322,14 +21322,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qptp => NVec4(
+  NumVec4<T> get qptp => NumVec4(
         $4,
         $3,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21337,14 +21337,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qptq => NVec4(
+  NumVec4<T> get qptq => NumVec4(
         $4,
         $3,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21352,14 +21352,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qpps => NVec4(
+  NumVec4<T> get qpps => NumVec4(
         $4,
         $3,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21367,14 +21367,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qppt => NVec4(
+  NumVec4<T> get qppt => NumVec4(
         $4,
         $3,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21382,14 +21382,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qppp => NVec4(
+  NumVec4<T> get qppp => NumVec4(
         $4,
         $3,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21397,14 +21397,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qppq => NVec4(
+  NumVec4<T> get qppq => NumVec4(
         $4,
         $3,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21412,14 +21412,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qpqs => NVec4(
+  NumVec4<T> get qpqs => NumVec4(
         $4,
         $3,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21427,14 +21427,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qpqt => NVec4(
+  NumVec4<T> get qpqt => NumVec4(
         $4,
         $3,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21442,14 +21442,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qpqp => NVec4(
+  NumVec4<T> get qpqp => NumVec4(
         $4,
         $3,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21457,14 +21457,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qpqq => NVec4(
+  NumVec4<T> get qpqq => NumVec4(
         $4,
         $3,
         $4,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21472,14 +21472,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqss => NVec4(
+  NumVec4<T> get qqss => NumVec4(
         $4,
         $4,
         $1,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21487,14 +21487,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqst => NVec4(
+  NumVec4<T> get qqst => NumVec4(
         $4,
         $4,
         $1,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21502,14 +21502,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqsp => NVec4(
+  NumVec4<T> get qqsp => NumVec4(
         $4,
         $4,
         $1,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21517,14 +21517,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqsq => NVec4(
+  NumVec4<T> get qqsq => NumVec4(
         $4,
         $4,
         $1,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21532,14 +21532,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqts => NVec4(
+  NumVec4<T> get qqts => NumVec4(
         $4,
         $4,
         $2,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21547,14 +21547,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqtt => NVec4(
+  NumVec4<T> get qqtt => NumVec4(
         $4,
         $4,
         $2,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21562,14 +21562,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqtp => NVec4(
+  NumVec4<T> get qqtp => NumVec4(
         $4,
         $4,
         $2,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21577,14 +21577,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqtq => NVec4(
+  NumVec4<T> get qqtq => NumVec4(
         $4,
         $4,
         $2,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21592,14 +21592,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqps => NVec4(
+  NumVec4<T> get qqps => NumVec4(
         $4,
         $4,
         $3,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21607,14 +21607,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqpt => NVec4(
+  NumVec4<T> get qqpt => NumVec4(
         $4,
         $4,
         $3,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21622,14 +21622,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqpp => NVec4(
+  NumVec4<T> get qqpp => NumVec4(
         $4,
         $4,
         $3,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21637,14 +21637,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqpq => NVec4(
+  NumVec4<T> get qqpq => NumVec4(
         $4,
         $4,
         $3,
         $4,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21652,14 +21652,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqqs => NVec4(
+  NumVec4<T> get qqqs => NumVec4(
         $4,
         $4,
         $4,
         $1,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21667,14 +21667,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqqt => NVec4(
+  NumVec4<T> get qqqt => NumVec4(
         $4,
         $4,
         $4,
         $2,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21682,14 +21682,14 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqqp => NVec4(
+  NumVec4<T> get qqqp => NumVec4(
         $4,
         $4,
         $4,
         $3,
       );
 
-  /// Returns a [NVec4] with elements equal to this one in the following
+  /// Returns a [NumVec4] with elements equal to this one in the following
   /// order:
   ///
   /// ```
@@ -21697,7 +21697,7 @@ extension NVec4Getters<T extends num> on NVec4<T> {
   /// ```
   ///
   /// Names follow the STPQ system.
-  NVec4<T> get qqqq => NVec4(
+  NumVec4<T> get qqqq => NumVec4(
         $4,
         $4,
         $4,

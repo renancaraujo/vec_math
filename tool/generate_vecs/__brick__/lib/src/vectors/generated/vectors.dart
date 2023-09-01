@@ -1,8 +1,9 @@
 import 'dart:math' as math;
 import 'package:meta/meta.dart';
+import 'package:vec_math/vec_math.dart';
 
 @immutable
-sealed class Vec<T extends num> {
+sealed class Vec<T> {
   const Vec(this.allocation);
 
   final List<T> allocation;
@@ -17,8 +18,8 @@ Iterable<T> _iterate{{key}}<T>({{#value}}    T p{{value}},
 
 
 {{#sequences}}
-class NVec{{key}}<T extends num> extends Vec<T> {
-  NVec{{key}}(
+class NumVec{{key}}<T extends num> extends Vec<T> {
+  NumVec{{key}}(
 {{#value}}    T p{{value}},
 {{/value}}) : super(
           List<T>.from(
@@ -30,7 +31,7 @@ class NVec{{key}}<T extends num> extends Vec<T> {
           ),
         );
 
-  NVec{{key}}.fromList(List<T> list) : super(
+  NumVec{{key}}.fromList(List<T> list) : super(
           List<T>.from(
             _iterate{{key}}(
 {{#value}}              list[{{index}} % list.length],
@@ -40,7 +41,7 @@ class NVec{{key}}<T extends num> extends Vec<T> {
           ),
         );
 
-  NVec{{key}}.all(T item) : super(List<T>.filled({{key}}, item));
+  NumVec{{key}}.all(T item) : super(List<T>.filled({{key}}, item));
 
 {{#value}}
   T get ${{value}} => allocation[{{index}}];
@@ -50,10 +51,18 @@ class NVec{{key}}<T extends num> extends Vec<T> {
 
   /// The length of this vector.
   final int length = {{key}};
+
+  NumRecord{{key}}<T> toRecord() {
+    return (
+    {{#value}}    ${{value}},
+    {{/value}});
+  }
+
+  NumRecord{{key}}<T> get rec => toRecord();
 }{{/sequences}}{{#sequences}}
-typedef Vec{{key}} = NVec{{key}}<double>;{{/sequences}}
+typedef Vec{{key}} = NumVec{{key}}<double>;{{/sequences}}
 {{#sequences}}
-typedef IVec{{key}} = NVec{{key}}<int>;{{/sequences}}
+typedef IVec{{key}} = NumVec{{key}}<int>;{{/sequences}}
 
 
 V maxVec<V extends Vec<T>, T extends num>(V a, V b) {
@@ -62,16 +71,16 @@ V maxVec<V extends Vec<T>, T extends num>(V a, V b) {
       .toList(growable: false);
 
   return switch (a) {
-{{#sequences}}    NVec{{key}}<T>() => NVec{{key}}.fromList(list) as V,{{/sequences}}
+{{#sequences}}    NumVec{{key}}<T>() => NumVec{{key}}.fromList(list) as V,{{/sequences}}
   };
 }
 
-V minVec<V extends Vec<T>, T extends num>(V a, V b) {
+V miNumVec<V extends Vec<T>, T extends num>(V a, V b) {
   final list = a.allocation.indexed
       .map((i) => math.min(i.$2, b.allocation[i.$1]))
       .toList(growable: false);
 
   return switch (a) {
-{{#sequences}}    NVec{{key}}<T>() => NVec{{key}}.fromList(list) as V,{{/sequences}}
+{{#sequences}}    NumVec{{key}}<T>() => NumVec{{key}}.fromList(list) as V,{{/sequences}}
   };
 }

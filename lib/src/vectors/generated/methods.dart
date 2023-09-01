@@ -4,8 +4,8 @@ import 'dart:math' as math;
 
 import 'package:vec_math/vec_math.dart';
 
-/// A set of mutable operations that are common to all [NVec2]s.
-extension NVec2MutableMethods on NVec2 {
+/// A set of mutable operations that are common to all [NumVec2]s.
+extension NumVec2MutableMethods on NumVec2 {
   /// Modifies this vector to be its absolute value.
   ///
   /// Calls [num.abs] on each element.
@@ -115,7 +115,7 @@ extension NVec2MutableMethods on NVec2 {
   /// See also:
   /// - [cloneAndClamp], which returns a new vector instead of
   ///  modifying the current one.
-  void clamp(NVec2 lowerLimit, NVec2 upperLimit) {
+  void clamp(NumVec2 lowerLimit, NumVec2 upperLimit) {
     $1 = $1.clamp(lowerLimit.$1, upperLimit.$1);
     $2 = $2.clamp(lowerLimit.$2, upperLimit.$2);
   }
@@ -142,14 +142,14 @@ extension NVec2MutableMethods on NVec2 {
   }
 }
 
-/// A set of immutable operations that are common to all [NVec2]s.
-extension NVec2ImmutableMethods<T extends num> on NVec2<T> {
+/// A set of immutable operations that are common to all [NumVec2]s.
+extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
   /// Creates a new vector with the same values as this one but as
   /// doubles ([Vec2]).
   ///
   /// Calls [num.toDouble] on each element.
   Vec2 toDouble() {
-    return NVec2(
+    return NumVec2(
       $1.toDouble(),
       $2.toDouble(),
     );
@@ -159,14 +159,14 @@ extension NVec2ImmutableMethods<T extends num> on NVec2<T> {
   /// integers ([Vec2]).
   ///
   /// Calls [num.toInt] on each element.
-  IVec2 toInt() => NVec2(
+  IVec2 toInt() => NumVec2(
         $1.toInt(),
         $2.toInt(),
       );
 
   /// Creates a new vector with the same values as this one.
-  NVec2<T> clone() {
-    return NVec2<T>(
+  NumVec2<T> clone() {
+    return NumVec2<T>(
       $1,
       $2,
     );
@@ -178,7 +178,7 @@ extension NVec2ImmutableMethods<T extends num> on NVec2<T> {
   /// See also:
   /// - [abs], which modifies the current vector instead of
   ///  returning a new one.
-  NVec2<T> cloneAndAbs() {
+  NumVec2<T> cloneAndAbs() {
     return clone()..abs();
   }
 
@@ -248,7 +248,7 @@ extension NVec2ImmutableMethods<T extends num> on NVec2<T> {
   /// See also:
   /// - [clampScalar], which modifies the current vector instead of
   ///  returning a new one.
-  NVec2<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
+  NumVec2<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
     return clone()..clampScalar(lowerLimit, upperLimit);
   }
 
@@ -263,7 +263,7 @@ extension NVec2ImmutableMethods<T extends num> on NVec2<T> {
   /// See also:
   /// - [clamp], which modifies the current vector instead of
   ///  returning a new one.
-  NVec2<T> cloneAndClamp(NVec2<T> lowerLimit, NVec2<T> upperLimit) {
+  NumVec2<T> cloneAndClamp(NumVec2<T> lowerLimit, NumVec2<T> upperLimit) {
     return clone()..clamp(lowerLimit, upperLimit);
   }
 
@@ -286,13 +286,13 @@ extension NVec2ImmutableMethods<T extends num> on NVec2<T> {
   }
 }
 
-/// A set of immutable operations that are common to all [NVec2]s.
-extension NVec2Methods<T extends num> on NVec2<T> {
+/// A set of immutable operations that are common to all [NumVec2]s.
+extension NumVec2Methods<T extends num> on NumVec2<T> {
   /// The distance between this vector and [other].
   ///
   /// See also:
   /// - [distanceToSquared]
-  double distanceTo(NVec2 other) {
+  double distanceTo(NumVec2 other) {
     return math.sqrt(distanceToSquared(other));
   }
 
@@ -303,7 +303,7 @@ extension NVec2Methods<T extends num> on NVec2<T> {
   ///
   /// See also:
   /// - [distanceTo]
-  double distanceToSquared(NVec2 other) {
+  double distanceToSquared(NumVec2 other) {
     var distance = 0.0;
 
     final d1 = $1 - other.$1;
@@ -328,24 +328,24 @@ extension NVec2Methods<T extends num> on NVec2<T> {
   Iterable<T> get iterable => toIterable();
 
   /// Negate the elements of this vector.
-  NVec2<T> operator -() {
-    return NVec2(
+  NumVec2<T> operator -() {
+    return NumVec2(
       -$1 as T,
       -$2 as T,
     );
   }
 
   /// Sum of this vector and [other].
-  NVec2<T> operator +(NVec2<T> other) {
-    return NVec2(
+  NumVec2<T> operator +(NumVec2<T> other) {
+    return NumVec2(
       $1 + other.$1 as T,
       $2 + other.$2 as T,
     );
   }
 
   /// Subtracts [other] from this vector.
-  NVec2<T> operator -(NVec2<T> other) {
-    return NVec2(
+  NumVec2<T> operator -(NumVec2<T> other) {
+    return NumVec2(
       $1 - other.$1 as T,
       $2 - other.$2 as T,
     );
@@ -362,8 +362,8 @@ extension NVec2Methods<T extends num> on NVec2<T> {
   }
 }
 
-/// A set of mutable operations that are common to all [NVec3]s.
-extension NVec3MutableMethods on NVec3 {
+/// A set of mutable operations that are common to all [NumVec3]s.
+extension NumVec3MutableMethods on NumVec3 {
   /// Modifies this vector to be its absolute value.
   ///
   /// Calls [num.abs] on each element.
@@ -481,7 +481,7 @@ extension NVec3MutableMethods on NVec3 {
   /// See also:
   /// - [cloneAndClamp], which returns a new vector instead of
   ///  modifying the current one.
-  void clamp(NVec3 lowerLimit, NVec3 upperLimit) {
+  void clamp(NumVec3 lowerLimit, NumVec3 upperLimit) {
     $1 = $1.clamp(lowerLimit.$1, upperLimit.$1);
     $2 = $2.clamp(lowerLimit.$2, upperLimit.$2);
     $3 = $3.clamp(lowerLimit.$3, upperLimit.$3);
@@ -511,14 +511,14 @@ extension NVec3MutableMethods on NVec3 {
   }
 }
 
-/// A set of immutable operations that are common to all [NVec3]s.
-extension NVec3ImmutableMethods<T extends num> on NVec3<T> {
+/// A set of immutable operations that are common to all [NumVec3]s.
+extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
   /// Creates a new vector with the same values as this one but as
   /// doubles ([Vec3]).
   ///
   /// Calls [num.toDouble] on each element.
   Vec3 toDouble() {
-    return NVec3(
+    return NumVec3(
       $1.toDouble(),
       $2.toDouble(),
       $3.toDouble(),
@@ -529,15 +529,15 @@ extension NVec3ImmutableMethods<T extends num> on NVec3<T> {
   /// integers ([Vec3]).
   ///
   /// Calls [num.toInt] on each element.
-  IVec3 toInt() => NVec3(
+  IVec3 toInt() => NumVec3(
         $1.toInt(),
         $2.toInt(),
         $3.toInt(),
       );
 
   /// Creates a new vector with the same values as this one.
-  NVec3<T> clone() {
-    return NVec3<T>(
+  NumVec3<T> clone() {
+    return NumVec3<T>(
       $1,
       $2,
       $3,
@@ -550,7 +550,7 @@ extension NVec3ImmutableMethods<T extends num> on NVec3<T> {
   /// See also:
   /// - [abs], which modifies the current vector instead of
   ///  returning a new one.
-  NVec3<T> cloneAndAbs() {
+  NumVec3<T> cloneAndAbs() {
     return clone()..abs();
   }
 
@@ -620,7 +620,7 @@ extension NVec3ImmutableMethods<T extends num> on NVec3<T> {
   /// See also:
   /// - [clampScalar], which modifies the current vector instead of
   ///  returning a new one.
-  NVec3<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
+  NumVec3<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
     return clone()..clampScalar(lowerLimit, upperLimit);
   }
 
@@ -635,7 +635,7 @@ extension NVec3ImmutableMethods<T extends num> on NVec3<T> {
   /// See also:
   /// - [clamp], which modifies the current vector instead of
   ///  returning a new one.
-  NVec3<T> cloneAndClamp(NVec3<T> lowerLimit, NVec3<T> upperLimit) {
+  NumVec3<T> cloneAndClamp(NumVec3<T> lowerLimit, NumVec3<T> upperLimit) {
     return clone()..clamp(lowerLimit, upperLimit);
   }
 
@@ -658,13 +658,13 @@ extension NVec3ImmutableMethods<T extends num> on NVec3<T> {
   }
 }
 
-/// A set of immutable operations that are common to all [NVec3]s.
-extension NVec3Methods<T extends num> on NVec3<T> {
+/// A set of immutable operations that are common to all [NumVec3]s.
+extension NumVec3Methods<T extends num> on NumVec3<T> {
   /// The distance between this vector and [other].
   ///
   /// See also:
   /// - [distanceToSquared]
-  double distanceTo(NVec3 other) {
+  double distanceTo(NumVec3 other) {
     return math.sqrt(distanceToSquared(other));
   }
 
@@ -675,7 +675,7 @@ extension NVec3Methods<T extends num> on NVec3<T> {
   ///
   /// See also:
   /// - [distanceTo]
-  double distanceToSquared(NVec3 other) {
+  double distanceToSquared(NumVec3 other) {
     var distance = 0.0;
 
     final d1 = $1 - other.$1;
@@ -704,8 +704,8 @@ extension NVec3Methods<T extends num> on NVec3<T> {
   Iterable<T> get iterable => toIterable();
 
   /// Negate the elements of this vector.
-  NVec3<T> operator -() {
-    return NVec3(
+  NumVec3<T> operator -() {
+    return NumVec3(
       -$1 as T,
       -$2 as T,
       -$3 as T,
@@ -713,8 +713,8 @@ extension NVec3Methods<T extends num> on NVec3<T> {
   }
 
   /// Sum of this vector and [other].
-  NVec3<T> operator +(NVec3<T> other) {
-    return NVec3(
+  NumVec3<T> operator +(NumVec3<T> other) {
+    return NumVec3(
       $1 + other.$1 as T,
       $2 + other.$2 as T,
       $3 + other.$3 as T,
@@ -722,8 +722,8 @@ extension NVec3Methods<T extends num> on NVec3<T> {
   }
 
   /// Subtracts [other] from this vector.
-  NVec3<T> operator -(NVec3<T> other) {
-    return NVec3(
+  NumVec3<T> operator -(NumVec3<T> other) {
+    return NumVec3(
       $1 - other.$1 as T,
       $2 - other.$2 as T,
       $3 - other.$3 as T,
@@ -741,8 +741,8 @@ extension NVec3Methods<T extends num> on NVec3<T> {
   }
 }
 
-/// A set of mutable operations that are common to all [NVec4]s.
-extension NVec4MutableMethods on NVec4 {
+/// A set of mutable operations that are common to all [NumVec4]s.
+extension NumVec4MutableMethods on NumVec4 {
   /// Modifies this vector to be its absolute value.
   ///
   /// Calls [num.abs] on each element.
@@ -868,7 +868,7 @@ extension NVec4MutableMethods on NVec4 {
   /// See also:
   /// - [cloneAndClamp], which returns a new vector instead of
   ///  modifying the current one.
-  void clamp(NVec4 lowerLimit, NVec4 upperLimit) {
+  void clamp(NumVec4 lowerLimit, NumVec4 upperLimit) {
     $1 = $1.clamp(lowerLimit.$1, upperLimit.$1);
     $2 = $2.clamp(lowerLimit.$2, upperLimit.$2);
     $3 = $3.clamp(lowerLimit.$3, upperLimit.$3);
@@ -901,14 +901,14 @@ extension NVec4MutableMethods on NVec4 {
   }
 }
 
-/// A set of immutable operations that are common to all [NVec4]s.
-extension NVec4ImmutableMethods<T extends num> on NVec4<T> {
+/// A set of immutable operations that are common to all [NumVec4]s.
+extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
   /// Creates a new vector with the same values as this one but as
   /// doubles ([Vec4]).
   ///
   /// Calls [num.toDouble] on each element.
   Vec4 toDouble() {
-    return NVec4(
+    return NumVec4(
       $1.toDouble(),
       $2.toDouble(),
       $3.toDouble(),
@@ -920,7 +920,7 @@ extension NVec4ImmutableMethods<T extends num> on NVec4<T> {
   /// integers ([Vec4]).
   ///
   /// Calls [num.toInt] on each element.
-  IVec4 toInt() => NVec4(
+  IVec4 toInt() => NumVec4(
         $1.toInt(),
         $2.toInt(),
         $3.toInt(),
@@ -928,8 +928,8 @@ extension NVec4ImmutableMethods<T extends num> on NVec4<T> {
       );
 
   /// Creates a new vector with the same values as this one.
-  NVec4<T> clone() {
-    return NVec4<T>(
+  NumVec4<T> clone() {
+    return NumVec4<T>(
       $1,
       $2,
       $3,
@@ -943,7 +943,7 @@ extension NVec4ImmutableMethods<T extends num> on NVec4<T> {
   /// See also:
   /// - [abs], which modifies the current vector instead of
   ///  returning a new one.
-  NVec4<T> cloneAndAbs() {
+  NumVec4<T> cloneAndAbs() {
     return clone()..abs();
   }
 
@@ -1013,7 +1013,7 @@ extension NVec4ImmutableMethods<T extends num> on NVec4<T> {
   /// See also:
   /// - [clampScalar], which modifies the current vector instead of
   ///  returning a new one.
-  NVec4<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
+  NumVec4<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
     return clone()..clampScalar(lowerLimit, upperLimit);
   }
 
@@ -1028,7 +1028,7 @@ extension NVec4ImmutableMethods<T extends num> on NVec4<T> {
   /// See also:
   /// - [clamp], which modifies the current vector instead of
   ///  returning a new one.
-  NVec4<T> cloneAndClamp(NVec4<T> lowerLimit, NVec4<T> upperLimit) {
+  NumVec4<T> cloneAndClamp(NumVec4<T> lowerLimit, NumVec4<T> upperLimit) {
     return clone()..clamp(lowerLimit, upperLimit);
   }
 
@@ -1051,13 +1051,13 @@ extension NVec4ImmutableMethods<T extends num> on NVec4<T> {
   }
 }
 
-/// A set of immutable operations that are common to all [NVec4]s.
-extension NVec4Methods<T extends num> on NVec4<T> {
+/// A set of immutable operations that are common to all [NumVec4]s.
+extension NumVec4Methods<T extends num> on NumVec4<T> {
   /// The distance between this vector and [other].
   ///
   /// See also:
   /// - [distanceToSquared]
-  double distanceTo(NVec4 other) {
+  double distanceTo(NumVec4 other) {
     return math.sqrt(distanceToSquared(other));
   }
 
@@ -1068,7 +1068,7 @@ extension NVec4Methods<T extends num> on NVec4<T> {
   ///
   /// See also:
   /// - [distanceTo]
-  double distanceToSquared(NVec4 other) {
+  double distanceToSquared(NumVec4 other) {
     var distance = 0.0;
 
     final d1 = $1 - other.$1;
@@ -1101,8 +1101,8 @@ extension NVec4Methods<T extends num> on NVec4<T> {
   Iterable<T> get iterable => toIterable();
 
   /// Negate the elements of this vector.
-  NVec4<T> operator -() {
-    return NVec4(
+  NumVec4<T> operator -() {
+    return NumVec4(
       -$1 as T,
       -$2 as T,
       -$3 as T,
@@ -1111,8 +1111,8 @@ extension NVec4Methods<T extends num> on NVec4<T> {
   }
 
   /// Sum of this vector and [other].
-  NVec4<T> operator +(NVec4<T> other) {
-    return NVec4(
+  NumVec4<T> operator +(NumVec4<T> other) {
+    return NumVec4(
       $1 + other.$1 as T,
       $2 + other.$2 as T,
       $3 + other.$3 as T,
@@ -1121,8 +1121,8 @@ extension NVec4Methods<T extends num> on NVec4<T> {
   }
 
   /// Subtracts [other] from this vector.
-  NVec4<T> operator -(NVec4<T> other) {
-    return NVec4(
+  NumVec4<T> operator -(NumVec4<T> other) {
+    return NumVec4(
       $1 - other.$1 as T,
       $2 - other.$2 as T,
       $3 - other.$3 as T,

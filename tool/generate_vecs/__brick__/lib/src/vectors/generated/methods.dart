@@ -6,8 +6,8 @@ import 'package:vec_math/vec_math.dart';
 
 {{#getters}}
 
-/// A set of mutable operations that are common to all [NVec{{key}}]s.
-extension NVec{{key}}MutableMethods on NVec{{key}} {
+/// A set of mutable operations that are common to all [NumVec{{key}}]s.
+extension NumVec{{key}}MutableMethods on NumVec{{key}} {
 {{#value}}
   /// Modifies this vector to be its absolute value.
   ///
@@ -101,7 +101,7 @@ extension NVec{{key}}MutableMethods on NVec{{key}} {
   ///
   /// See also:
   /// - [cloneAndClamp], {{> immutableRef}}
-  void clamp(NVec{{key}} lowerLimit, NVec{{key}} upperLimit) {
+  void clamp(NumVec{{key}} lowerLimit, NumVec{{key}} upperLimit) {
     {{#sequence}}${{value}} = ${{value}}.clamp(lowerLimit.${{value}}, upperLimit.${{value}});{{/sequence}}
   }
 
@@ -124,15 +124,15 @@ extension NVec{{key}}MutableMethods on NVec{{key}} {
 {{/value}}
 }
 
-/// A set of immutable operations that are common to all [NVec{{key}}]s.
-extension NVec{{key}}ImmutableMethods<T extends num> on NVec{{key}}<T> {
+/// A set of immutable operations that are common to all [NumVec{{key}}]s.
+extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
 {{#value}}
   /// Creates a new vector with the same values as this one but as
   /// doubles ([Vec{{key}}]).
   ///
   /// Calls [num.toDouble] on each element.
   Vec{{key}} toDouble() {
-    return NVec{{key}}({{#sequence}}
+    return NumVec{{key}}({{#sequence}}
       ${{value}}.toDouble(),{{/sequence}}
     );
   }
@@ -141,11 +141,11 @@ extension NVec{{key}}ImmutableMethods<T extends num> on NVec{{key}}<T> {
   /// integers ([Vec{{key}}]).
   ///
   /// Calls [num.toInt] on each element.
-  IVec{{key}} toInt() => NVec{{key}}({{#sequence}}${{value}}.toInt(),{{/sequence}});
+  IVec{{key}} toInt() => NumVec{{key}}({{#sequence}}${{value}}.toInt(),{{/sequence}});
 
   /// Creates a new vector with the same values as this one.
-  NVec{{key}}<T> clone() {
-    return NVec{{key}}<T>({{#sequence}}
+  NumVec{{key}}<T> clone() {
+    return NumVec{{key}}<T>({{#sequence}}
       ${{value}},{{/sequence}}
     );
   }
@@ -155,7 +155,7 @@ extension NVec{{key}}ImmutableMethods<T extends num> on NVec{{key}}<T> {
   ///
   /// See also:
   /// - [abs], {{> mutableRef}}
-  NVec{{key}}<T> cloneAndAbs() {
+  NumVec{{key}}<T> cloneAndAbs() {
     return clone()..abs();
   }
 
@@ -218,7 +218,7 @@ extension NVec{{key}}ImmutableMethods<T extends num> on NVec{{key}}<T> {
   ///
   /// See also:
   /// - [clampScalar], {{> mutableRef}}
-  NVec{{key}}<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
+  NumVec{{key}}<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
     return clone()..clampScalar(lowerLimit, upperLimit);
   }
 
@@ -232,7 +232,7 @@ extension NVec{{key}}ImmutableMethods<T extends num> on NVec{{key}}<T> {
   ///
   /// See also:
   /// - [clamp], {{> mutableRef}}
-  NVec{{key}}<T> cloneAndClamp(NVec{{key}}<T> lowerLimit, NVec{{key}}<T> upperLimit) {
+  NumVec{{key}}<T> cloneAndClamp(NumVec{{key}}<T> lowerLimit, NumVec{{key}}<T> upperLimit) {
     return clone()..clamp(lowerLimit, upperLimit);
   }
 
@@ -255,14 +255,14 @@ extension NVec{{key}}ImmutableMethods<T extends num> on NVec{{key}}<T> {
   {{/value}}
 }
 
-/// A set of immutable operations that are common to all [NVec{{key}}]s.
-extension NVec{{key}}Methods<T extends num> on NVec{{key}}<T> {
+/// A set of immutable operations that are common to all [NumVec{{key}}]s.
+extension NumVec{{key}}Methods<T extends num> on NumVec{{key}}<T> {
 {{#value}}
   /// The distance between this vector and [other].
   ///
   /// See also:
   /// - [distanceToSquared]
-  double distanceTo(NVec{{key}} other) {
+  double distanceTo(NumVec{{key}} other) {
     return math.sqrt(distanceToSquared(other));
   }
 
@@ -273,7 +273,7 @@ extension NVec{{key}}Methods<T extends num> on NVec{{key}}<T> {
   ///
   /// See also:
   /// - [distanceTo]
-  double distanceToSquared(NVec{{key}} other) {
+  double distanceToSquared(NumVec{{key}} other) {
     var distance = 0.0;
 {{#sequence}}
     final d{{value}} = ${{value}} - other.${{value}};
@@ -294,22 +294,22 @@ extension NVec{{key}}Methods<T extends num> on NVec{{key}}<T> {
   Iterable<T> get iterable => toIterable();
 
   /// Negate the elements of this vector.
-  NVec{{key}}<T> operator -() {
-    return NVec{{key}}({{#sequence}}
+  NumVec{{key}}<T> operator -() {
+    return NumVec{{key}}({{#sequence}}
       -${{value}} as T,{{/sequence}}
     );
   }
 
   /// Sum of this vector and [other].
-  NVec{{key}}<T> operator +(NVec{{key}}<T> other) {
-    return NVec{{key}}({{#sequence}}
+  NumVec{{key}}<T> operator +(NumVec{{key}}<T> other) {
+    return NumVec{{key}}({{#sequence}}
       ${{value}} + other.${{value}} as T,{{/sequence}}
     );
   }
 
   /// Subtracts [other] from this vector.
-  NVec{{key}}<T> operator -(NVec{{key}}<T> other) {
-    return NVec{{key}}({{#sequence}}
+  NumVec{{key}}<T> operator -(NumVec{{key}}<T> other) {
+    return NumVec{{key}}({{#sequence}}
       ${{value}} - other.${{value}} as T,{{/sequence}}
     );
   }

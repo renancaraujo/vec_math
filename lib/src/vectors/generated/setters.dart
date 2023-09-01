@@ -1,32 +1,95 @@
 import 'package:vec_math/vec_math.dart';
 
-/// Defines setters for [NVec2].
-extension NVec2Setters<T extends num> on NVec2<T> {
-  /// Returns a new [NVec2] with the 1st element set to [value].
+/// Defines moethods that clones a [NumVec2] with specific values.
+extension NumVec2yWith<T extends num> on NumVec2<T> {
+  /// Returns a new [NumVec2] with the 1st element set to [value].
   ///
   /// Names follow the XYZW system.
-  NVec2<T> withX(T value) {
-    return NVec2(
+  NumVec2<T> withX(T value) {
+    return NumVec2(
       value,
       $2,
     );
   }
 
+  /// Returns a new [NumVec2] with the 2nd element set to [value].
+  ///
+  /// Names follow the XYZW system.
+  NumVec2<T> withY(T value) {
+    return NumVec2(
+      $1,
+      value,
+    );
+  }
+
+  /// Returns a new [NumVec2] with the 1st element set to [value].
+  ///
+  /// Names follow the RGBA system.
+  NumVec2<T> withR(T value) {
+    return NumVec2(
+      value,
+      $2,
+    );
+  }
+
+  /// Returns a new [NumVec2] with the 2nd element set to [value].
+  ///
+  /// Names follow the RGBA system.
+  NumVec2<T> withG(T value) {
+    return NumVec2(
+      $1,
+      value,
+    );
+  }
+
+  /// Returns a new [NumVec2] with the 1st element set to [value].
+  ///
+  /// Names follow the STPQ system.
+  NumVec2<T> withS(T value) {
+    return NumVec2(
+      value,
+      $2,
+    );
+  }
+
+  /// Returns a new [NumVec2] with the 2nd element set to [value].
+  ///
+  /// Names follow the STPQ system.
+  NumVec2<T> withT(T value) {
+    return NumVec2(
+      $1,
+      value,
+    );
+  }
+
+  /// Returns a new [NumVec2] with the 1st element set to [value].
+  ///
+  /// Names follow the Size system.
+  NumVec2<T> withWidth(T value) {
+    return NumVec2(
+      value,
+      $2,
+    );
+  }
+
+  /// Returns a new [NumVec2] with the 2nd element set to [value].
+  ///
+  /// Names follow the Size system.
+  NumVec2<T> withHeight(T value) {
+    return NumVec2(
+      $1,
+      value,
+    );
+  }
+}
+
+/// Defines setters for [NumVec2].
+extension NumVec2Setters<T extends num> on NumVec2<T> {
   /// Modifies the current vector with the 1st element set to [value].
   ///
   /// Names follow the XYZW system.
   set x(T value) {
     $1 = value;
-  }
-
-  /// Returns a new [NVec2] with the 2nd element set to [value].
-  ///
-  /// Names follow the XYZW system.
-  NVec2<T> withY(T value) {
-    return NVec2(
-      $1,
-      value,
-    );
   }
 
   /// Modifies the current vector with the 2nd element set to [value].
@@ -36,31 +99,11 @@ extension NVec2Setters<T extends num> on NVec2<T> {
     $2 = value;
   }
 
-  /// Returns a new [NVec2] with the 1st element set to [value].
-  ///
-  /// Names follow the RGBA system.
-  NVec2<T> withR(T value) {
-    return NVec2(
-      value,
-      $2,
-    );
-  }
-
   /// Modifies the current vector with the 1st element set to [value].
   ///
   /// Names follow the RGBA system.
   set r(T value) {
     $1 = value;
-  }
-
-  /// Returns a new [NVec2] with the 2nd element set to [value].
-  ///
-  /// Names follow the RGBA system.
-  NVec2<T> withG(T value) {
-    return NVec2(
-      $1,
-      value,
-    );
   }
 
   /// Modifies the current vector with the 2nd element set to [value].
@@ -70,31 +113,11 @@ extension NVec2Setters<T extends num> on NVec2<T> {
     $2 = value;
   }
 
-  /// Returns a new [NVec2] with the 1st element set to [value].
-  ///
-  /// Names follow the STPQ system.
-  NVec2<T> withS(T value) {
-    return NVec2(
-      value,
-      $2,
-    );
-  }
-
   /// Modifies the current vector with the 1st element set to [value].
   ///
   /// Names follow the STPQ system.
   set s(T value) {
     $1 = value;
-  }
-
-  /// Returns a new [NVec2] with the 2nd element set to [value].
-  ///
-  /// Names follow the STPQ system.
-  NVec2<T> withT(T value) {
-    return NVec2(
-      $1,
-      value,
-    );
   }
 
   /// Modifies the current vector with the 2nd element set to [value].
@@ -104,31 +127,11 @@ extension NVec2Setters<T extends num> on NVec2<T> {
     $2 = value;
   }
 
-  /// Returns a new [NVec2] with the 1st element set to [value].
-  ///
-  /// Names follow the Size system.
-  NVec2<T> withWidth(T value) {
-    return NVec2(
-      value,
-      $2,
-    );
-  }
-
   /// Modifies the current vector with the 1st element set to [value].
   ///
   /// Names follow the Size system.
   set width(T value) {
     $1 = value;
-  }
-
-  /// Returns a new [NVec2] with the 2nd element set to [value].
-  ///
-  /// Names follow the Size system.
-  NVec2<T> withHeight(T value) {
-    return NVec2(
-      $1,
-      value,
-    );
   }
 
   /// Modifies the current vector with the 2nd element set to [value].
@@ -139,35 +142,385 @@ extension NVec2Setters<T extends num> on NVec2<T> {
   }
 }
 
-/// Defines setters for [NVec3].
-extension NVec3Setters<T extends num> on NVec3<T> {
-  /// Returns a new [NVec3] with the 1st element set to [value].
+/// Defines moethods that clones a [NumVec3] with specific values.
+extension NumVec3yWith<T extends num> on NumVec3<T> {
+  /// Returns a new [NumVec3] with the 1st element set to [value].
   ///
   /// Names follow the XYZW system.
-  NVec3<T> withX(T value) {
-    return NVec3(
+  NumVec3<T> withX(T value) {
+    return NumVec3(
       value,
       $2,
       $3,
     );
   }
 
+  /// Returns a new [NumVec3] with the 2nd element set to [value].
+  ///
+  /// Names follow the XYZW system.
+  NumVec3<T> withY(T value) {
+    return NumVec3(
+      $1,
+      value,
+      $3,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the 3rd element set to [value].
+  ///
+  /// Names follow the XYZW system.
+  NumVec3<T> withZ(T value) {
+    return NumVec3(
+      $1,
+      $2,
+      value,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the 1st element set to [value].
+  ///
+  /// Names follow the RGBA system.
+  NumVec3<T> withR(T value) {
+    return NumVec3(
+      value,
+      $2,
+      $3,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the 2nd element set to [value].
+  ///
+  /// Names follow the RGBA system.
+  NumVec3<T> withG(T value) {
+    return NumVec3(
+      $1,
+      value,
+      $3,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the 3rd element set to [value].
+  ///
+  /// Names follow the RGBA system.
+  NumVec3<T> withB(T value) {
+    return NumVec3(
+      $1,
+      $2,
+      value,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the 1st element set to [value].
+  ///
+  /// Names follow the STPQ system.
+  NumVec3<T> withS(T value) {
+    return NumVec3(
+      value,
+      $2,
+      $3,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the 2nd element set to [value].
+  ///
+  /// Names follow the STPQ system.
+  NumVec3<T> withT(T value) {
+    return NumVec3(
+      $1,
+      value,
+      $3,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the 3rd element set to [value].
+  ///
+  /// Names follow the STPQ system.
+  NumVec3<T> withP(T value) {
+    return NumVec3(
+      $1,
+      $2,
+      value,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  NumVec3<T> withXY(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$1,
+      vec.$2,
+      $3,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  NumVec3<T> withXZ(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$1,
+      $2,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  NumVec3<T> withYX(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$2,
+      vec.$1,
+      $3,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  NumVec3<T> withYZ(NumVec2<T> vec) {
+    return NumVec3(
+      $1,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  NumVec3<T> withZX(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$2,
+      $2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  NumVec3<T> withZY(NumVec2<T> vec) {
+    return NumVec3(
+      $1,
+      vec.$2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  NumVec3<T> withRG(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$1,
+      vec.$2,
+      $3,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  NumVec3<T> withRB(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$1,
+      $2,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  NumVec3<T> withGR(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$2,
+      vec.$1,
+      $3,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  NumVec3<T> withGB(NumVec2<T> vec) {
+    return NumVec3(
+      $1,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  NumVec3<T> withBR(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$2,
+      $2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  NumVec3<T> withBG(NumVec2<T> vec) {
+    return NumVec3(
+      $1,
+      vec.$2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  NumVec3<T> withST(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$1,
+      vec.$2,
+      $3,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  NumVec3<T> withSP(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$1,
+      $2,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  NumVec3<T> withTS(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$2,
+      vec.$1,
+      $3,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  NumVec3<T> withTP(NumVec2<T> vec) {
+    return NumVec3(
+      $1,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  NumVec3<T> withPS(NumVec2<T> vec) {
+    return NumVec3(
+      vec.$2,
+      $2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec3] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  NumVec3<T> withPT(NumVec2<T> vec) {
+    return NumVec3(
+      $1,
+      vec.$2,
+      vec.$1,
+    );
+  }
+}
+
+/// Defines setters for [NumVec3].
+extension NumVec3Setters<T extends num> on NumVec3<T> {
   /// Modifies the current vector with the 1st element set to [value].
   ///
   /// Names follow the XYZW system.
   set x(T value) {
     $1 = value;
-  }
-
-  /// Returns a new [NVec3] with the 2nd element set to [value].
-  ///
-  /// Names follow the XYZW system.
-  NVec3<T> withY(T value) {
-    return NVec3(
-      $1,
-      value,
-      $3,
-    );
   }
 
   /// Modifies the current vector with the 2nd element set to [value].
@@ -177,33 +530,11 @@ extension NVec3Setters<T extends num> on NVec3<T> {
     $2 = value;
   }
 
-  /// Returns a new [NVec3] with the 3rd element set to [value].
-  ///
-  /// Names follow the XYZW system.
-  NVec3<T> withZ(T value) {
-    return NVec3(
-      $1,
-      $2,
-      value,
-    );
-  }
-
   /// Modifies the current vector with the 3rd element set to [value].
   ///
   /// Names follow the XYZW system.
   set z(T value) {
     $3 = value;
-  }
-
-  /// Returns a new [NVec3] with the 1st element set to [value].
-  ///
-  /// Names follow the RGBA system.
-  NVec3<T> withR(T value) {
-    return NVec3(
-      value,
-      $2,
-      $3,
-    );
   }
 
   /// Modifies the current vector with the 1st element set to [value].
@@ -213,33 +544,11 @@ extension NVec3Setters<T extends num> on NVec3<T> {
     $1 = value;
   }
 
-  /// Returns a new [NVec3] with the 2nd element set to [value].
-  ///
-  /// Names follow the RGBA system.
-  NVec3<T> withG(T value) {
-    return NVec3(
-      $1,
-      value,
-      $3,
-    );
-  }
-
   /// Modifies the current vector with the 2nd element set to [value].
   ///
   /// Names follow the RGBA system.
   set g(T value) {
     $2 = value;
-  }
-
-  /// Returns a new [NVec3] with the 3rd element set to [value].
-  ///
-  /// Names follow the RGBA system.
-  NVec3<T> withB(T value) {
-    return NVec3(
-      $1,
-      $2,
-      value,
-    );
   }
 
   /// Modifies the current vector with the 3rd element set to [value].
@@ -249,33 +558,11 @@ extension NVec3Setters<T extends num> on NVec3<T> {
     $3 = value;
   }
 
-  /// Returns a new [NVec3] with the 1st element set to [value].
-  ///
-  /// Names follow the STPQ system.
-  NVec3<T> withS(T value) {
-    return NVec3(
-      value,
-      $2,
-      $3,
-    );
-  }
-
   /// Modifies the current vector with the 1st element set to [value].
   ///
   /// Names follow the STPQ system.
   set s(T value) {
     $1 = value;
-  }
-
-  /// Returns a new [NVec3] with the 2nd element set to [value].
-  ///
-  /// Names follow the STPQ system.
-  NVec3<T> withT(T value) {
-    return NVec3(
-      $1,
-      value,
-      $3,
-    );
   }
 
   /// Modifies the current vector with the 2nd element set to [value].
@@ -285,17 +572,6 @@ extension NVec3Setters<T extends num> on NVec3<T> {
     $2 = value;
   }
 
-  /// Returns a new [NVec3] with the 3rd element set to [value].
-  ///
-  /// Names follow the STPQ system.
-  NVec3<T> withP(T value) {
-    return NVec3(
-      $1,
-      $2,
-      value,
-    );
-  }
-
   /// Modifies the current vector with the 3rd element set to [value].
   ///
   /// Names follow the STPQ system.
@@ -303,500 +579,230 @@ extension NVec3Setters<T extends num> on NVec3<T> {
     $3 = value;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  NVec3<T> withXY(NVec2<T> vec) {
-    return NVec3(
-      vec.$1,
-      vec.$2,
-      $3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  set xy(NVec2<T> vec) {
+  set xy(NumVec2<T> rec) {
     $1 = $1;
     $2 = $2;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  NVec3<T> withXZ(NVec2<T> vec) {
-    return NVec3(
-      vec.$1,
-      $2,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  set xz(NVec2<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  set xz(NumVec2<T> rec) {
     $1 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  NVec3<T> withYX(NVec2<T> vec) {
-    return NVec3(
-      vec.$2,
-      vec.$1,
-      $3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  set yx(NVec2<T> vec) {
+  set yx(NumVec2<T> rec) {
     $1 = $2;
     $2 = $1;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  NVec3<T> withYZ(NVec2<T> vec) {
-    return NVec3(
-      $1,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
-  set yz(NVec2<T> vec) {
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
+  set yz(NumVec2<T> rec) {
     $2 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  NVec3<T> withZX(NVec2<T> vec) {
-    return NVec3(
-      vec.$2,
-      $2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  set zx(NVec2<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  set zx(NumVec2<T> rec) {
     $1 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  NVec3<T> withZY(NVec2<T> vec) {
-    return NVec3(
-      $1,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
-  set zy(NVec2<T> vec) {
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
+  set zy(NumVec2<T> rec) {
     $2 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  NVec3<T> withRG(NVec2<T> vec) {
-    return NVec3(
-      vec.$1,
-      vec.$2,
-      $3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  set rg(NVec2<T> vec) {
+  set rg(NumVec2<T> rec) {
     $1 = $1;
     $2 = $2;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  NVec3<T> withRB(NVec2<T> vec) {
-    return NVec3(
-      vec.$1,
-      $2,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  set rb(NVec2<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  set rb(NumVec2<T> rec) {
     $1 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  NVec3<T> withGR(NVec2<T> vec) {
-    return NVec3(
-      vec.$2,
-      vec.$1,
-      $3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  set gr(NVec2<T> vec) {
+  set gr(NumVec2<T> rec) {
     $1 = $2;
     $2 = $1;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  NVec3<T> withGB(NVec2<T> vec) {
-    return NVec3(
-      $1,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
-  set gb(NVec2<T> vec) {
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
+  set gb(NumVec2<T> rec) {
     $2 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  NVec3<T> withBR(NVec2<T> vec) {
-    return NVec3(
-      vec.$2,
-      $2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  set br(NVec2<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  set br(NumVec2<T> rec) {
     $1 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  NVec3<T> withBG(NVec2<T> vec) {
-    return NVec3(
-      $1,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
-  set bg(NVec2<T> vec) {
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
+  set bg(NumVec2<T> rec) {
     $2 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  NVec3<T> withST(NVec2<T> vec) {
-    return NVec3(
-      vec.$1,
-      vec.$2,
-      $3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  set st(NVec2<T> vec) {
+  set st(NumVec2<T> rec) {
     $1 = $1;
     $2 = $2;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  NVec3<T> withSP(NVec2<T> vec) {
-    return NVec3(
-      vec.$1,
-      $2,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  set sp(NVec2<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  set sp(NumVec2<T> rec) {
     $1 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  NVec3<T> withTS(NVec2<T> vec) {
-    return NVec3(
-      vec.$2,
-      vec.$1,
-      $3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  set ts(NVec2<T> vec) {
+  set ts(NumVec2<T> rec) {
     $1 = $2;
     $2 = $1;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  NVec3<T> withTP(NVec2<T> vec) {
-    return NVec3(
-      $1,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
-  set tp(NVec2<T> vec) {
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
+  set tp(NumVec2<T> rec) {
     $2 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  NVec3<T> withPS(NVec2<T> vec) {
-    return NVec3(
-      vec.$2,
-      $2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  set ps(NVec2<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  set ps(NumVec2<T> rec) {
     $1 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec3] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  NVec3<T> withPT(NVec2<T> vec) {
-    return NVec3(
-      $1,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
-  set pt(NVec2<T> vec) {
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
+  set pt(NumVec2<T> rec) {
     $2 = $2;
     $3 = $1;
   }
 }
 
-/// Defines setters for [NVec4].
-extension NVec4Setters<T extends num> on NVec4<T> {
-  /// Returns a new [NVec4] with the 1st element set to [value].
+/// Defines moethods that clones a [NumVec4] with specific values.
+extension NumVec4yWith<T extends num> on NumVec4<T> {
+  /// Returns a new [NumVec4] with the 1st element set to [value].
   ///
   /// Names follow the XYZW system.
-  NVec4<T> withX(T value) {
-    return NVec4(
+  NumVec4<T> withX(T value) {
+    return NumVec4(
       value,
       $2,
       $3,
@@ -804,23 +810,1982 @@ extension NVec4Setters<T extends num> on NVec4<T> {
     );
   }
 
-  /// Modifies the current vector with the 1st element set to [value].
+  /// Returns a new [NumVec4] with the 2nd element set to [value].
   ///
   /// Names follow the XYZW system.
-  set x(T value) {
-    $1 = value;
-  }
-
-  /// Returns a new [NVec4] with the 2nd element set to [value].
-  ///
-  /// Names follow the XYZW system.
-  NVec4<T> withY(T value) {
-    return NVec4(
+  NumVec4<T> withY(T value) {
+    return NumVec4(
       $1,
       value,
       $3,
       $4,
     );
+  }
+
+  /// Returns a new [NumVec4] with the 3rd element set to [value].
+  ///
+  /// Names follow the XYZW system.
+  NumVec4<T> withZ(T value) {
+    return NumVec4(
+      $1,
+      $2,
+      value,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the 4th element set to [value].
+  ///
+  /// Names follow the XYZW system.
+  NumVec4<T> withW(T value) {
+    return NumVec4(
+      $1,
+      $2,
+      $3,
+      value,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the 1st element set to [value].
+  ///
+  /// Names follow the RGBA system.
+  NumVec4<T> withR(T value) {
+    return NumVec4(
+      value,
+      $2,
+      $3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the 2nd element set to [value].
+  ///
+  /// Names follow the RGBA system.
+  NumVec4<T> withG(T value) {
+    return NumVec4(
+      $1,
+      value,
+      $3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the 3rd element set to [value].
+  ///
+  /// Names follow the RGBA system.
+  NumVec4<T> withB(T value) {
+    return NumVec4(
+      $1,
+      $2,
+      value,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the 4th element set to [value].
+  ///
+  /// Names follow the RGBA system.
+  NumVec4<T> withA(T value) {
+    return NumVec4(
+      $1,
+      $2,
+      $3,
+      value,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the 1st element set to [value].
+  ///
+  /// Names follow the STPQ system.
+  NumVec4<T> withS(T value) {
+    return NumVec4(
+      value,
+      $2,
+      $3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the 2nd element set to [value].
+  ///
+  /// Names follow the STPQ system.
+  NumVec4<T> withT(T value) {
+    return NumVec4(
+      $1,
+      value,
+      $3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the 3rd element set to [value].
+  ///
+  /// Names follow the STPQ system.
+  NumVec4<T> withP(T value) {
+    return NumVec4(
+      $1,
+      $2,
+      value,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the 4th element set to [value].
+  ///
+  /// Names follow the STPQ system.
+  NumVec4<T> withQ(T value) {
+    return NumVec4(
+      $1,
+      $2,
+      $3,
+      value,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withXY(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$2,
+      $3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withXZ(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withXW(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withYX(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$1,
+      $3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withYZ(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withYW(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withZX(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withZY(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withZW(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      $2,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withWX(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withWY(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withWZ(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      $2,
+      vec.$2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withXYZ(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$2,
+      vec.$3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withXYW(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$2,
+      $3,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withXZY(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$3,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withXZW(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      vec.$2,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withXWY(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$3,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withXWZ(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      vec.$3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withYXZ(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$1,
+      vec.$3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withYXW(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$1,
+      $3,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withYZX(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$1,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withYZW(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      vec.$2,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withYWX(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$1,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withYWZ(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      vec.$3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withZXY(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$3,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withZXW(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      vec.$1,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withZYX(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$2,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withZYW(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      vec.$1,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withZWX(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      $2,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withZWY(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$3,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withWXY(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$3,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withWXZ(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      vec.$3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withWYX(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$2,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withWYZ(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      vec.$3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withWZX(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      $2,
+      vec.$2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withWZY(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$3,
+      vec.$2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withRG(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$2,
+      $3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withRB(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withRA(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withGR(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$1,
+      $3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withGB(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withGA(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withBR(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withBG(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withBA(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      $2,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withAR(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withAG(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withAB(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      $2,
+      vec.$2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withRGB(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$2,
+      vec.$3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withRGA(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$2,
+      $3,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withRBG(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$3,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withRBA(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      vec.$2,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withRAG(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$3,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withRAB(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      vec.$3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withGRB(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$1,
+      vec.$3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withGRA(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$1,
+      $3,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withGBR(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$1,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withGBA(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      vec.$2,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withGAR(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$1,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withGAB(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      vec.$3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withBRG(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$3,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withBRA(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      vec.$1,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withBGR(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$2,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withBGA(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      vec.$1,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withBAR(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      $2,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withBAG(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$3,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withARG(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$3,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withARB(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      vec.$3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withAGR(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$2,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withAGB(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      vec.$3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withABR(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      $2,
+      vec.$2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withABG(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$3,
+      vec.$2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withST(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$2,
+      $3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withSP(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withSQ(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withTS(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$1,
+      $3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withTP(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withTQ(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withPS(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withPT(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withPQ(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      $2,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withQS(NumVec2<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withQT(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withQP(NumVec2<T> vec) {
+    return NumVec4(
+      $1,
+      $2,
+      vec.$2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withSTP(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$2,
+      vec.$3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withSTQ(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$2,
+      $3,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withSPT(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$3,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withSPQ(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      vec.$2,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withSQT(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      vec.$3,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 1st element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withSQP(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$1,
+      $2,
+      vec.$3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withTSP(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$1,
+      vec.$3,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withTSQ(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$1,
+      $3,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withTPS(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$1,
+      vec.$2,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withTPQ(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      vec.$2,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withTQS(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$1,
+      $3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 1st element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withTQP(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$1,
+      vec.$3,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withPST(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$3,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withPSQ(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      vec.$1,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is kept as in the original vec.
+  NumVec4<T> withPTS(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$2,
+      vec.$1,
+      $4,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 3rd element of [vec].
+  NumVec4<T> withPTQ(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      vec.$1,
+      vec.$3,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withPQS(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      $2,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 1st element of [vec].
+  /// - The 4th element is the 2nd element of [vec].
+  NumVec4<T> withPQT(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$3,
+      vec.$1,
+      vec.$2,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withQST(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      vec.$3,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 2nd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withQSP(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$2,
+      $2,
+      vec.$3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is kept as in the original vec.
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withQTS(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      vec.$2,
+      $3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 2nd element of [vec].
+  /// - The 3rd element is the 3rd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withQTP(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$2,
+      vec.$3,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is the 3rd element of [vec].
+  /// - The 2nd element is kept as in the original vec.
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withQPS(NumVec3<T> vec) {
+    return NumVec4(
+      vec.$3,
+      $2,
+      vec.$2,
+      vec.$1,
+    );
+  }
+
+  /// Returns a new [NumVec4] with the elements set from [vec].
+  ///
+  /// The new vec will look like:
+  ///
+  /// - The 1st element is kept as in the original vec.
+  /// - The 2nd element is the 3rd element of [vec].
+  /// - The 3rd element is the 2nd element of [vec].
+  /// - The 4th element is the 1st element of [vec].
+  NumVec4<T> withQPT(NumVec3<T> vec) {
+    return NumVec4(
+      $1,
+      vec.$3,
+      vec.$2,
+      vec.$1,
+    );
+  }
+}
+
+/// Defines setters for [NumVec4].
+extension NumVec4Setters<T extends num> on NumVec4<T> {
+  /// Modifies the current vector with the 1st element set to [value].
+  ///
+  /// Names follow the XYZW system.
+  set x(T value) {
+    $1 = value;
   }
 
   /// Modifies the current vector with the 2nd element set to [value].
@@ -830,35 +2795,11 @@ extension NVec4Setters<T extends num> on NVec4<T> {
     $2 = value;
   }
 
-  /// Returns a new [NVec4] with the 3rd element set to [value].
-  ///
-  /// Names follow the XYZW system.
-  NVec4<T> withZ(T value) {
-    return NVec4(
-      $1,
-      $2,
-      value,
-      $4,
-    );
-  }
-
   /// Modifies the current vector with the 3rd element set to [value].
   ///
   /// Names follow the XYZW system.
   set z(T value) {
     $3 = value;
-  }
-
-  /// Returns a new [NVec4] with the 4th element set to [value].
-  ///
-  /// Names follow the XYZW system.
-  NVec4<T> withW(T value) {
-    return NVec4(
-      $1,
-      $2,
-      $3,
-      value,
-    );
   }
 
   /// Modifies the current vector with the 4th element set to [value].
@@ -868,35 +2809,11 @@ extension NVec4Setters<T extends num> on NVec4<T> {
     $4 = value;
   }
 
-  /// Returns a new [NVec4] with the 1st element set to [value].
-  ///
-  /// Names follow the RGBA system.
-  NVec4<T> withR(T value) {
-    return NVec4(
-      value,
-      $2,
-      $3,
-      $4,
-    );
-  }
-
   /// Modifies the current vector with the 1st element set to [value].
   ///
   /// Names follow the RGBA system.
   set r(T value) {
     $1 = value;
-  }
-
-  /// Returns a new [NVec4] with the 2nd element set to [value].
-  ///
-  /// Names follow the RGBA system.
-  NVec4<T> withG(T value) {
-    return NVec4(
-      $1,
-      value,
-      $3,
-      $4,
-    );
   }
 
   /// Modifies the current vector with the 2nd element set to [value].
@@ -906,35 +2823,11 @@ extension NVec4Setters<T extends num> on NVec4<T> {
     $2 = value;
   }
 
-  /// Returns a new [NVec4] with the 3rd element set to [value].
-  ///
-  /// Names follow the RGBA system.
-  NVec4<T> withB(T value) {
-    return NVec4(
-      $1,
-      $2,
-      value,
-      $4,
-    );
-  }
-
   /// Modifies the current vector with the 3rd element set to [value].
   ///
   /// Names follow the RGBA system.
   set b(T value) {
     $3 = value;
-  }
-
-  /// Returns a new [NVec4] with the 4th element set to [value].
-  ///
-  /// Names follow the RGBA system.
-  NVec4<T> withA(T value) {
-    return NVec4(
-      $1,
-      $2,
-      $3,
-      value,
-    );
   }
 
   /// Modifies the current vector with the 4th element set to [value].
@@ -944,35 +2837,11 @@ extension NVec4Setters<T extends num> on NVec4<T> {
     $4 = value;
   }
 
-  /// Returns a new [NVec4] with the 1st element set to [value].
-  ///
-  /// Names follow the STPQ system.
-  NVec4<T> withS(T value) {
-    return NVec4(
-      value,
-      $2,
-      $3,
-      $4,
-    );
-  }
-
   /// Modifies the current vector with the 1st element set to [value].
   ///
   /// Names follow the STPQ system.
   set s(T value) {
     $1 = value;
-  }
-
-  /// Returns a new [NVec4] with the 2nd element set to [value].
-  ///
-  /// Names follow the STPQ system.
-  NVec4<T> withT(T value) {
-    return NVec4(
-      $1,
-      value,
-      $3,
-      $4,
-    );
   }
 
   /// Modifies the current vector with the 2nd element set to [value].
@@ -982,35 +2851,11 @@ extension NVec4Setters<T extends num> on NVec4<T> {
     $2 = value;
   }
 
-  /// Returns a new [NVec4] with the 3rd element set to [value].
-  ///
-  /// Names follow the STPQ system.
-  NVec4<T> withP(T value) {
-    return NVec4(
-      $1,
-      $2,
-      value,
-      $4,
-    );
-  }
-
   /// Modifies the current vector with the 3rd element set to [value].
   ///
   /// Names follow the STPQ system.
   set p(T value) {
     $3 = value;
-  }
-
-  /// Returns a new [NVec4] with the 4th element set to [value].
-  ///
-  /// Names follow the STPQ system.
-  NVec4<T> withQ(T value) {
-    return NVec4(
-      $1,
-      $2,
-      $3,
-      value,
-    );
   }
 
   /// Modifies the current vector with the 4th element set to [value].
@@ -1020,3313 +2865,1477 @@ extension NVec4Setters<T extends num> on NVec4<T> {
     $4 = value;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withXY(NVec2<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$2,
-      $3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
   /// - The 4th element is not changed.
-  set xy(NVec2<T> vec) {
+  set xy(NumVec2<T> rec) {
     $1 = $1;
     $2 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withXZ(NVec2<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set xz(NVec2<T> vec) {
+  set xz(NumVec2<T> rec) {
     $1 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withXW(NVec2<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set xw(NVec2<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set xw(NumVec2<T> rec) {
     $1 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withYX(NVec2<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$1,
-      $3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
   /// - The 4th element is not changed.
-  set yx(NVec2<T> vec) {
+  set yx(NumVec2<T> rec) {
     $1 = $2;
     $2 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withYZ(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set yz(NVec2<T> vec) {
+  set yz(NumVec2<T> rec) {
     $2 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withYW(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set yw(NVec2<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set yw(NumVec2<T> rec) {
     $2 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withZX(NVec2<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set zx(NVec2<T> vec) {
+  set zx(NumVec2<T> rec) {
     $1 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withZY(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set zy(NVec2<T> vec) {
+  set zy(NumVec2<T> rec) {
     $2 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withZW(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      $2,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set zw(NVec2<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set zw(NumVec2<T> rec) {
     $3 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withWX(NVec2<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set wx(NVec2<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set wx(NumVec2<T> rec) {
     $1 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withWY(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set wy(NVec2<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set wy(NumVec2<T> rec) {
     $2 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withWZ(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      $2,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set wz(NVec2<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set wz(NumVec2<T> rec) {
     $3 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withXYZ(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$2,
-      vec.$3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
   /// - The 4th element is not changed.
-  set xyz(NVec3<T> vec) {
+  set xyz(NumVec3<T> rec) {
     $1 = $1;
     $2 = $2;
     $3 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withXYW(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$2,
-      $3,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 3rd element of [vec].
-  set xyw(NVec3<T> vec) {
+  /// - The 4th element will be the 3rd element of [rec].
+  set xyw(NumVec3<T> rec) {
     $1 = $1;
     $2 = $2;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withXZY(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$3,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set xzy(NVec3<T> vec) {
+  set xzy(NumVec3<T> rec) {
     $1 = $1;
     $2 = $3;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withXZW(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      vec.$2,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set xzw(NVec3<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set xzw(NumVec3<T> rec) {
     $1 = $1;
     $3 = $2;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withXWY(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$3,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set xwy(NVec3<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set xwy(NumVec3<T> rec) {
     $1 = $1;
     $2 = $3;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withXWZ(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      vec.$3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set xwz(NVec3<T> vec) {
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set xwz(NumVec3<T> rec) {
     $1 = $1;
     $3 = $3;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withYXZ(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$1,
-      vec.$3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
   /// - The 4th element is not changed.
-  set yxz(NVec3<T> vec) {
+  set yxz(NumVec3<T> rec) {
     $1 = $2;
     $2 = $1;
     $3 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withYXW(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$1,
-      $3,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 3rd element of [vec].
-  set yxw(NVec3<T> vec) {
+  /// - The 4th element will be the 3rd element of [rec].
+  set yxw(NumVec3<T> rec) {
     $1 = $2;
     $2 = $1;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withYZX(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$1,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set yzx(NVec3<T> vec) {
+  set yzx(NumVec3<T> rec) {
     $1 = $3;
     $2 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withYZW(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      vec.$2,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set yzw(NVec3<T> vec) {
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set yzw(NumVec3<T> rec) {
     $2 = $1;
     $3 = $2;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withYWX(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$1,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set ywx(NVec3<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set ywx(NumVec3<T> rec) {
     $1 = $3;
     $2 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withYWZ(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      vec.$3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set ywz(NVec3<T> vec) {
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set ywz(NumVec3<T> rec) {
     $2 = $1;
     $3 = $3;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withZXY(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$3,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set zxy(NVec3<T> vec) {
+  set zxy(NumVec3<T> rec) {
     $1 = $2;
     $2 = $3;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withZXW(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      vec.$1,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set zxw(NVec3<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set zxw(NumVec3<T> rec) {
     $1 = $2;
     $3 = $1;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withZYX(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$2,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set zyx(NVec3<T> vec) {
+  set zyx(NumVec3<T> rec) {
     $1 = $3;
     $2 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withZYW(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      vec.$1,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set zyw(NVec3<T> vec) {
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set zyw(NumVec3<T> rec) {
     $2 = $2;
     $3 = $1;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withZWX(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      $2,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set zwx(NVec3<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set zwx(NumVec3<T> rec) {
     $1 = $3;
     $3 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withZWY(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$3,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set zwy(NVec3<T> vec) {
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set zwy(NumVec3<T> rec) {
     $2 = $3;
     $3 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withWXY(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$3,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set wxy(NVec3<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set wxy(NumVec3<T> rec) {
     $1 = $2;
     $2 = $3;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withWXZ(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      vec.$3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set wxz(NVec3<T> vec) {
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set wxz(NumVec3<T> rec) {
     $1 = $2;
     $3 = $3;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withWYX(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$2,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set wyx(NVec3<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set wyx(NumVec3<T> rec) {
     $1 = $3;
     $2 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withWYZ(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      vec.$3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set wyz(NVec3<T> vec) {
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set wyz(NumVec3<T> rec) {
     $2 = $2;
     $3 = $3;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withWZX(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      $2,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set wzx(NVec3<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set wzx(NumVec3<T> rec) {
     $1 = $3;
     $3 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withWZY(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$3,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set wzy(NVec3<T> vec) {
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set wzy(NumVec3<T> rec) {
     $2 = $3;
     $3 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withRG(NVec2<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$2,
-      $3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
   /// - The 4th element is not changed.
-  set rg(NVec2<T> vec) {
+  set rg(NumVec2<T> rec) {
     $1 = $1;
     $2 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withRB(NVec2<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set rb(NVec2<T> vec) {
+  set rb(NumVec2<T> rec) {
     $1 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withRA(NVec2<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set ra(NVec2<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set ra(NumVec2<T> rec) {
     $1 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withGR(NVec2<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$1,
-      $3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
   /// - The 4th element is not changed.
-  set gr(NVec2<T> vec) {
+  set gr(NumVec2<T> rec) {
     $1 = $2;
     $2 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withGB(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set gb(NVec2<T> vec) {
+  set gb(NumVec2<T> rec) {
     $2 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withGA(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set ga(NVec2<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set ga(NumVec2<T> rec) {
     $2 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withBR(NVec2<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set br(NVec2<T> vec) {
+  set br(NumVec2<T> rec) {
     $1 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withBG(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set bg(NVec2<T> vec) {
+  set bg(NumVec2<T> rec) {
     $2 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withBA(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      $2,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set ba(NVec2<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set ba(NumVec2<T> rec) {
     $3 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withAR(NVec2<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set ar(NVec2<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set ar(NumVec2<T> rec) {
     $1 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withAG(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set ag(NVec2<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set ag(NumVec2<T> rec) {
     $2 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withAB(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      $2,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set ab(NVec2<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set ab(NumVec2<T> rec) {
     $3 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withRGB(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$2,
-      vec.$3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
   /// - The 4th element is not changed.
-  set rgb(NVec3<T> vec) {
+  set rgb(NumVec3<T> rec) {
     $1 = $1;
     $2 = $2;
     $3 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withRGA(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$2,
-      $3,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 3rd element of [vec].
-  set rga(NVec3<T> vec) {
+  /// - The 4th element will be the 3rd element of [rec].
+  set rga(NumVec3<T> rec) {
     $1 = $1;
     $2 = $2;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withRBG(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$3,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set rbg(NVec3<T> vec) {
+  set rbg(NumVec3<T> rec) {
     $1 = $1;
     $2 = $3;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withRBA(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      vec.$2,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set rba(NVec3<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set rba(NumVec3<T> rec) {
     $1 = $1;
     $3 = $2;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withRAG(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$3,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set rag(NVec3<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set rag(NumVec3<T> rec) {
     $1 = $1;
     $2 = $3;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withRAB(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      vec.$3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set rab(NVec3<T> vec) {
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set rab(NumVec3<T> rec) {
     $1 = $1;
     $3 = $3;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withGRB(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$1,
-      vec.$3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
   /// - The 4th element is not changed.
-  set grb(NVec3<T> vec) {
+  set grb(NumVec3<T> rec) {
     $1 = $2;
     $2 = $1;
     $3 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withGRA(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$1,
-      $3,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 3rd element of [vec].
-  set gra(NVec3<T> vec) {
+  /// - The 4th element will be the 3rd element of [rec].
+  set gra(NumVec3<T> rec) {
     $1 = $2;
     $2 = $1;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withGBR(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$1,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set gbr(NVec3<T> vec) {
+  set gbr(NumVec3<T> rec) {
     $1 = $3;
     $2 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withGBA(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      vec.$2,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set gba(NVec3<T> vec) {
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set gba(NumVec3<T> rec) {
     $2 = $1;
     $3 = $2;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withGAR(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$1,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set gar(NVec3<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set gar(NumVec3<T> rec) {
     $1 = $3;
     $2 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withGAB(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      vec.$3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set gab(NVec3<T> vec) {
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set gab(NumVec3<T> rec) {
     $2 = $1;
     $3 = $3;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withBRG(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$3,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set brg(NVec3<T> vec) {
+  set brg(NumVec3<T> rec) {
     $1 = $2;
     $2 = $3;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withBRA(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      vec.$1,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set bra(NVec3<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set bra(NumVec3<T> rec) {
     $1 = $2;
     $3 = $1;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withBGR(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$2,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set bgr(NVec3<T> vec) {
+  set bgr(NumVec3<T> rec) {
     $1 = $3;
     $2 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withBGA(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      vec.$1,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set bga(NVec3<T> vec) {
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set bga(NumVec3<T> rec) {
     $2 = $2;
     $3 = $1;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withBAR(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      $2,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set bar(NVec3<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set bar(NumVec3<T> rec) {
     $1 = $3;
     $3 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withBAG(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$3,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set bag(NVec3<T> vec) {
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set bag(NumVec3<T> rec) {
     $2 = $3;
     $3 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withARG(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$3,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set arg(NVec3<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set arg(NumVec3<T> rec) {
     $1 = $2;
     $2 = $3;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withARB(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      vec.$3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set arb(NVec3<T> vec) {
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set arb(NumVec3<T> rec) {
     $1 = $2;
     $3 = $3;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withAGR(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$2,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set agr(NVec3<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set agr(NumVec3<T> rec) {
     $1 = $3;
     $2 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withAGB(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      vec.$3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set agb(NVec3<T> vec) {
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set agb(NumVec3<T> rec) {
     $2 = $2;
     $3 = $3;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withABR(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      $2,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set abr(NVec3<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set abr(NumVec3<T> rec) {
     $1 = $3;
     $3 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withABG(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$3,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set abg(NVec3<T> vec) {
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set abg(NumVec3<T> rec) {
     $2 = $3;
     $3 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withST(NVec2<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$2,
-      $3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
   /// - The 4th element is not changed.
-  set st(NVec2<T> vec) {
+  set st(NumVec2<T> rec) {
     $1 = $1;
     $2 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withSP(NVec2<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set sp(NVec2<T> vec) {
+  set sp(NumVec2<T> rec) {
     $1 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withSQ(NVec2<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set sq(NVec2<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set sq(NumVec2<T> rec) {
     $1 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withTS(NVec2<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$1,
-      $3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
   /// - The 4th element is not changed.
-  set ts(NVec2<T> vec) {
+  set ts(NumVec2<T> rec) {
     $1 = $2;
     $2 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withTP(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set tp(NVec2<T> vec) {
+  set tp(NumVec2<T> rec) {
     $2 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withTQ(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set tq(NVec2<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set tq(NumVec2<T> rec) {
     $2 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withPS(NVec2<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set ps(NVec2<T> vec) {
+  set ps(NumVec2<T> rec) {
     $1 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withPT(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set pt(NVec2<T> vec) {
+  set pt(NumVec2<T> rec) {
     $2 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withPQ(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      $2,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set pq(NVec2<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set pq(NumVec2<T> rec) {
     $3 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withQS(NVec2<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set qs(NVec2<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set qs(NumVec2<T> rec) {
     $1 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withQT(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set qt(NVec2<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set qt(NumVec2<T> rec) {
     $2 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withQP(NVec2<T> vec) {
-    return NVec4(
-      $1,
-      $2,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set qp(NVec2<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set qp(NumVec2<T> rec) {
     $3 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withSTP(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$2,
-      vec.$3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
   /// - The 4th element is not changed.
-  set stp(NVec3<T> vec) {
+  set stp(NumVec3<T> rec) {
     $1 = $1;
     $2 = $2;
     $3 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withSTQ(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$2,
-      $3,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 3rd element of [vec].
-  set stq(NVec3<T> vec) {
+  /// - The 4th element will be the 3rd element of [rec].
+  set stq(NumVec3<T> rec) {
     $1 = $1;
     $2 = $2;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withSPT(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$3,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set spt(NVec3<T> vec) {
+  set spt(NumVec3<T> rec) {
     $1 = $1;
     $2 = $3;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withSPQ(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      vec.$2,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set spq(NVec3<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set spq(NumVec3<T> rec) {
     $1 = $1;
     $3 = $2;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withSQT(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      vec.$3,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set sqt(NVec3<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set sqt(NumVec3<T> rec) {
     $1 = $1;
     $2 = $3;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 1st element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withSQP(NVec3<T> vec) {
-    return NVec4(
-      vec.$1,
-      $2,
-      vec.$3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 1st element of [vec].
+  /// - The 1st element will be the 1st element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set sqp(NVec3<T> vec) {
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set sqp(NumVec3<T> rec) {
     $1 = $1;
     $3 = $3;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withTSP(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$1,
-      vec.$3,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
   /// - The 4th element is not changed.
-  set tsp(NVec3<T> vec) {
+  set tsp(NumVec3<T> rec) {
     $1 = $2;
     $2 = $1;
     $3 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withTSQ(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$1,
-      $3,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 3rd element of [vec].
-  set tsq(NVec3<T> vec) {
+  /// - The 4th element will be the 3rd element of [rec].
+  set tsq(NumVec3<T> rec) {
     $1 = $2;
     $2 = $1;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withTPS(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$1,
-      vec.$2,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
   /// - The 4th element is not changed.
-  set tps(NVec3<T> vec) {
+  set tps(NumVec3<T> rec) {
     $1 = $3;
     $2 = $1;
     $3 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withTPQ(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      vec.$2,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set tpq(NVec3<T> vec) {
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set tpq(NumVec3<T> rec) {
     $2 = $1;
     $3 = $2;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withTQS(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$1,
-      $3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 1st element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 1st element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 2nd element of [vec].
-  set tqs(NVec3<T> vec) {
+  /// - The 4th element will be the 2nd element of [rec].
+  set tqs(NumVec3<T> rec) {
     $1 = $3;
     $2 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 1st element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withTQP(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$1,
-      vec.$3,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 1st element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set tqp(NVec3<T> vec) {
+  /// - The 2nd element will be the 1st element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set tqp(NumVec3<T> rec) {
     $2 = $1;
     $3 = $3;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withPST(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$3,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set pst(NVec3<T> vec) {
+  set pst(NumVec3<T> rec) {
     $1 = $2;
     $2 = $3;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withPSQ(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      vec.$1,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set psq(NVec3<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set psq(NumVec3<T> rec) {
     $1 = $2;
     $3 = $1;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is kept as in the original vec.
-  NVec4<T> withPTS(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$2,
-      vec.$1,
-      $4,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
   /// - The 4th element is not changed.
-  set pts(NVec3<T> vec) {
+  set pts(NumVec3<T> rec) {
     $1 = $3;
     $2 = $2;
     $3 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 3rd element of [vec].
-  NVec4<T> withPTQ(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      vec.$1,
-      vec.$3,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 3rd element of [vec].
-  set ptq(NVec3<T> vec) {
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 3rd element of [rec].
+  set ptq(NumVec3<T> rec) {
     $2 = $2;
     $3 = $1;
     $4 = $3;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withPQS(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      $2,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set pqs(NVec3<T> vec) {
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set pqs(NumVec3<T> rec) {
     $1 = $3;
     $3 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 1st element of [vec].
-  /// - The 4th element is the 2nd element of [vec].
-  NVec4<T> withPQT(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$3,
-      vec.$1,
-      vec.$2,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 1st element of [vec].
-  /// - The 4th element will be the 2nd element of [vec].
-  set pqt(NVec3<T> vec) {
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 1st element of [rec].
+  /// - The 4th element will be the 2nd element of [rec].
+  set pqt(NumVec3<T> rec) {
     $2 = $3;
     $3 = $1;
     $4 = $2;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withQST(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      vec.$3,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
-  /// - The 2nd element will be the 3rd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
+  /// - The 2nd element will be the 3rd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set qst(NVec3<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set qst(NumVec3<T> rec) {
     $1 = $2;
     $2 = $3;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 2nd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withQSP(NVec3<T> vec) {
-    return NVec4(
-      vec.$2,
-      $2,
-      vec.$3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 2nd element of [vec].
+  /// - The 1st element will be the 2nd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set qsp(NVec3<T> vec) {
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set qsp(NumVec3<T> rec) {
     $1 = $2;
     $3 = $3;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is kept as in the original vec.
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withQTS(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      vec.$2,
-      $3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
-  /// - The 2nd element will be the 2nd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
+  /// - The 2nd element will be the 2nd element of [rec].
   /// - The 3rd element is not changed.
-  /// - The 4th element will be the 1st element of [vec].
-  set qts(NVec3<T> vec) {
+  /// - The 4th element will be the 1st element of [rec].
+  set qts(NumVec3<T> rec) {
     $1 = $3;
     $2 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 2nd element of [vec].
-  /// - The 3rd element is the 3rd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withQTP(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$2,
-      vec.$3,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 2nd element of [vec].
-  /// - The 3rd element will be the 3rd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set qtp(NVec3<T> vec) {
+  /// - The 2nd element will be the 2nd element of [rec].
+  /// - The 3rd element will be the 3rd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set qtp(NumVec3<T> rec) {
     $2 = $2;
     $3 = $3;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
-  /// - The 1st element is the 3rd element of [vec].
-  /// - The 2nd element is kept as in the original vec.
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withQPS(NVec3<T> vec) {
-    return NVec4(
-      vec.$3,
-      $2,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element will be the 3rd element of [vec].
+  /// - The 1st element will be the 3rd element of [rec].
   /// - The 2nd element is not changed.
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set qps(NVec3<T> vec) {
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set qps(NumVec3<T> rec) {
     $1 = $3;
     $3 = $2;
     $4 = $1;
   }
 
-  /// Returns a new [NVec4] with the elements set from [vec].
-  ///
-  /// The new vec will look like:
-  ///
-  /// - The 1st element is kept as in the original vec.
-  /// - The 2nd element is the 3rd element of [vec].
-  /// - The 3rd element is the 2nd element of [vec].
-  /// - The 4th element is the 1st element of [vec].
-  NVec4<T> withQPT(NVec3<T> vec) {
-    return NVec4(
-      $1,
-      vec.$3,
-      vec.$2,
-      vec.$1,
-    );
-  }
-
-  /// Modifies the current vector with the elements set from [vec].
+  /// Modifies the current vector with the elements set from the record [rec].
   ///
   /// The new vec will look like:
   ///
   /// - The 1st element is not changed.
-  /// - The 2nd element will be the 3rd element of [vec].
-  /// - The 3rd element will be the 2nd element of [vec].
-  /// - The 4th element will be the 1st element of [vec].
-  set qpt(NVec3<T> vec) {
+  /// - The 2nd element will be the 3rd element of [rec].
+  /// - The 3rd element will be the 2nd element of [rec].
+  /// - The 4th element will be the 1st element of [rec].
+  set qpt(NumVec3<T> rec) {
     $2 = $3;
     $3 = $2;
     $4 = $1;

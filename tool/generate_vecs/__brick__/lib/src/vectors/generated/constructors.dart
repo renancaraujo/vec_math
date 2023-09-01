@@ -10,7 +10,7 @@ extension NumX on (num,) {
   /// ```
   /// (1,).vec{{key}} => Vec of <{{#value}}1.0, {{/value}}>
   /// ```
-  Vec{{key}} get vec{{key}} => NVec{{key}}({{#value}}$1.toDouble(),{{/value}});
+  Vec{{key}} get vec{{key}} => NumVec{{key}}({{#value}}$1.toDouble(),{{/value}});
 
   /// Returns a [IVec{{key}}] from a record of a single number.
   ///
@@ -18,7 +18,7 @@ extension NumX on (num,) {
   /// ```
   /// (1.0,).ivec{{key}} => Vec of <{{#value}}1, {{/value}}>
   /// ```
-  IVec{{key}} get ivec{{key}} => NVec{{key}}({{#value}}$1.toInt(),{{/value}});
+  IVec{{key}} get ivec{{key}} => NumVec{{key}}({{#value}}$1.toInt(),{{/value}});
 
 {{/sequences}}}
 
@@ -32,17 +32,17 @@ extension ActualNumX on num {
   ///
   /// Example:
   /// ```
-  /// 1.vec{{key}} == NVec({{#value}}1.0, {{/value}})
-  /// 1.0.vec{{key}} == NVec({{#value}}1.0, {{/value}})
+  /// 1.vec{{key}} == NumVec({{#value}}1.0, {{/value}})
+  /// 1.0.vec{{key}} == NumVec({{#value}}1.0, {{/value}})
   /// ```
-  Vec{{key}} get vec{{key}} => NVec{{key}}({{#value}}toDouble(),{{/value}});
+  Vec{{key}} get vec{{key}} => NumVec{{key}}({{#value}}toDouble(),{{/value}});
 
   /// Returns a [IVec{{key}}] from a number.
   /// Example:
   /// ```
-  /// 1.0.ivec{{key}} == NVec({{#value}}1, {{/value}})
+  /// 1.0.ivec{{key}} == NumVec({{#value}}1, {{/value}})
   /// ```
-  IVec{{key}} get ivec{{key}} => NVec{{key}}({{#value}}toInt(),{{/value}});
+  IVec{{key}} get ivec{{key}} => NumVec{{key}}({{#value}}toInt(),{{/value}});
 
 {{/sequences}}}
 {{#sequences}}
@@ -56,7 +56,7 @@ extension {{#value}}Num{{/value}}X on ({{#value}}num,{{/value}}) {
   /// ```
   /// ({{#value}}{{value}}, {{/value}}).vec{{key}} == ({{#value}}{{value}}.0, {{/value}})
   /// ```
-  Vec{{key}} get vec{{key}} => NVec{{key}}({{#value}}${{value}}.toDouble(),{{/value}});
+  Vec{{key}} get vec => NumVec{{key}}({{#value}}${{value}}.toDouble(),{{/value}});
 
 
   /// Returns an [IVec{{key}}] from a record of {{key}} numbers.
@@ -65,7 +65,7 @@ extension {{#value}}Num{{/value}}X on ({{#value}}num,{{/value}}) {
   /// ```
   /// ({{#value}}{{value}}.0, {{/value}}).ivec{{key}} == ({{#value}}{{value}}, {{/value}})
   /// ```
-  IVec{{key}} get ivec{{key}} => NVec{{key}}({{#value}}${{value}}.toInt(),{{/value}});
+  IVec{{key}} get ivec => NumVec{{key}}({{#value}}${{value}}.toInt(),{{/value}});
 }
 {{/sequences}}{{#allSystems}}
 
@@ -84,7 +84,7 @@ extension {{key}}X on ({
   /// ```
   /// ({{#sequence}}{{name}}: {{index}}, {{/sequence}}).vec{{length}} == ({{#sequence}}{{index}}.0, {{/sequence}})
   /// ```
-  Vec{{length}} get vec{{length}} => NVec{{length}}({{#sequence}}{{name}}.toDouble(),{{/sequence}});
+  Vec{{length}} get vec{{length}} => NumVec{{length}}({{#sequence}}{{name}}.toDouble(),{{/sequence}});
 
   /// Returns an [IVec{{length}}] from a record of {{length}} numbers with elements named
   /// after the {{systemName}} ({{description}}) system.
@@ -93,7 +93,7 @@ extension {{key}}X on ({
   /// ```
   /// ({{#sequence}}{{name}}: {{index}}.0, {{/sequence}}).ivec{{length}} == ({{#sequence}}{{index}}, {{/sequence}})
   /// ```
-  IVec{{length}} get ivec{{length}} => NVec{{length}}({{#sequence}}{{name}}.toInt(),{{/sequence}});
+  IVec{{length}} get ivec{{length}} => NumVec{{length}}({{#sequence}}{{name}}.toInt(),{{/sequence}});
 {{/value}}
 }
 {{/allSystems}}

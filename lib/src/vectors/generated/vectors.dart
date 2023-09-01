@@ -1,8 +1,9 @@
 import 'dart:math' as math;
 import 'package:meta/meta.dart';
+import 'package:vec_math/vec_math.dart';
 
 @immutable
-sealed class Vec<T extends num> {
+sealed class Vec<T> {
   const Vec(this.allocation);
 
   final List<T> allocation;
@@ -38,8 +39,8 @@ Iterable<T> _iterate4<T>(
   yield p4;
 }
 
-class NVec2<T extends num> extends Vec<T> {
-  NVec2(
+class NumVec2<T extends num> extends Vec<T> {
+  NumVec2(
     T p1,
     T p2,
   ) : super(
@@ -52,7 +53,7 @@ class NVec2<T extends num> extends Vec<T> {
           ),
         );
 
-  NVec2.fromList(List<T> list)
+  NumVec2.fromList(List<T> list)
       : super(
           List<T>.from(
             _iterate2(
@@ -63,7 +64,7 @@ class NVec2<T extends num> extends Vec<T> {
           ),
         );
 
-  NVec2.all(T item) : super(List<T>.filled(2, item));
+  NumVec2.all(T item) : super(List<T>.filled(2, item));
 
   T get $1 => allocation[0];
 
@@ -75,10 +76,19 @@ class NVec2<T extends num> extends Vec<T> {
 
   /// The length of this vector.
   final int length = 2;
+
+  NumRecord2<T> toRecord() {
+    return (
+      $1,
+      $2,
+    );
+  }
+
+  NumRecord2<T> get rec => toRecord();
 }
 
-class NVec3<T extends num> extends Vec<T> {
-  NVec3(
+class NumVec3<T extends num> extends Vec<T> {
+  NumVec3(
     T p1,
     T p2,
     T p3,
@@ -93,7 +103,7 @@ class NVec3<T extends num> extends Vec<T> {
           ),
         );
 
-  NVec3.fromList(List<T> list)
+  NumVec3.fromList(List<T> list)
       : super(
           List<T>.from(
             _iterate3(
@@ -105,7 +115,7 @@ class NVec3<T extends num> extends Vec<T> {
           ),
         );
 
-  NVec3.all(T item) : super(List<T>.filled(3, item));
+  NumVec3.all(T item) : super(List<T>.filled(3, item));
 
   T get $1 => allocation[0];
 
@@ -121,10 +131,20 @@ class NVec3<T extends num> extends Vec<T> {
 
   /// The length of this vector.
   final int length = 3;
+
+  NumRecord3<T> toRecord() {
+    return (
+      $1,
+      $2,
+      $3,
+    );
+  }
+
+  NumRecord3<T> get rec => toRecord();
 }
 
-class NVec4<T extends num> extends Vec<T> {
-  NVec4(
+class NumVec4<T extends num> extends Vec<T> {
+  NumVec4(
     T p1,
     T p2,
     T p3,
@@ -141,7 +161,7 @@ class NVec4<T extends num> extends Vec<T> {
           ),
         );
 
-  NVec4.fromList(List<T> list)
+  NumVec4.fromList(List<T> list)
       : super(
           List<T>.from(
             _iterate4(
@@ -154,7 +174,7 @@ class NVec4<T extends num> extends Vec<T> {
           ),
         );
 
-  NVec4.all(T item) : super(List<T>.filled(4, item));
+  NumVec4.all(T item) : super(List<T>.filled(4, item));
 
   T get $1 => allocation[0];
 
@@ -174,15 +194,26 @@ class NVec4<T extends num> extends Vec<T> {
 
   /// The length of this vector.
   final int length = 4;
+
+  NumRecord4<T> toRecord() {
+    return (
+      $1,
+      $2,
+      $3,
+      $4,
+    );
+  }
+
+  NumRecord4<T> get rec => toRecord();
 }
 
-typedef Vec2 = NVec2<double>;
-typedef Vec3 = NVec3<double>;
-typedef Vec4 = NVec4<double>;
+typedef Vec2 = NumVec2<double>;
+typedef Vec3 = NumVec3<double>;
+typedef Vec4 = NumVec4<double>;
 
-typedef IVec2 = NVec2<int>;
-typedef IVec3 = NVec3<int>;
-typedef IVec4 = NVec4<int>;
+typedef IVec2 = NumVec2<int>;
+typedef IVec3 = NumVec3<int>;
+typedef IVec4 = NumVec4<int>;
 
 V maxVec<V extends Vec<T>, T extends num>(V a, V b) {
   final list = a.allocation.indexed
@@ -190,20 +221,20 @@ V maxVec<V extends Vec<T>, T extends num>(V a, V b) {
       .toList(growable: false);
 
   return switch (a) {
-    NVec2<T>() => NVec2.fromList(list) as V,
-    NVec3<T>() => NVec3.fromList(list) as V,
-    NVec4<T>() => NVec4.fromList(list) as V,
+    NumVec2<T>() => NumVec2.fromList(list) as V,
+    NumVec3<T>() => NumVec3.fromList(list) as V,
+    NumVec4<T>() => NumVec4.fromList(list) as V,
   };
 }
 
-V minVec<V extends Vec<T>, T extends num>(V a, V b) {
+V miNumVec<V extends Vec<T>, T extends num>(V a, V b) {
   final list = a.allocation.indexed
       .map((i) => math.min(i.$2, b.allocation[i.$1]))
       .toList(growable: false);
 
   return switch (a) {
-    NVec2<T>() => NVec2.fromList(list) as V,
-    NVec3<T>() => NVec3.fromList(list) as V,
-    NVec4<T>() => NVec4.fromList(list) as V,
+    NumVec2<T>() => NumVec2.fromList(list) as V,
+    NumVec3<T>() => NumVec3.fromList(list) as V,
+    NumVec4<T>() => NumVec4.fromList(list) as V,
   };
 }
