@@ -4,7 +4,7 @@ import 'dart:math' as math;
 
 import 'package:vec_math/vec_math.dart';
 
-{{#getters}}
+{{#gettersAndSetters}}
 
 /// A set of mutable operations that are common to all [NumVec{{key}}]s.
 extension NumVec{{key}}MutableMethods on NumVec{{key}} {
@@ -14,7 +14,7 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
   /// Calls [num.abs] on each element.
   ///
   /// See also:
-  /// - [cloneAndAbs], {{> immutableRef}}
+  /// - [cloneAbs], {{> immutableRef}}
   void abs() {
     {{#sequence}}${{value}} = ${{value}}.abs();{{/sequence}}
   }
@@ -24,7 +24,7 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
   /// Calls [num.ceil] on each element.
   ///
   /// See also:
-  /// - [cloneAndCeil], {{> immutableRef}}
+  /// - [cloneCeil], {{> immutableRef}}
   void ceil() {
     {{#sequence}}${{value}} =${{value}}.ceil();{{/sequence}}
   }
@@ -34,7 +34,7 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
   /// Calls [num.ceilToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndCeilToDouble], {{> immutableRef}}
+  /// - [cloneCeilToDouble], {{> immutableRef}}
   void ceilToDouble() {
     {{#sequence}}${{value}} = ${{value}}.ceilToDouble();{{/sequence}}
   }
@@ -44,7 +44,7 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
   /// Calls [num.floor] on each element.
   ///
   /// See also:
-  /// - [cloneAndFloor], {{> immutableRef}}
+  /// - [cloneFloor], {{> immutableRef}}
   void floor() {
     {{#sequence}}${{value}} = ${{value}}.floor();{{/sequence}}
   }
@@ -54,7 +54,7 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
   /// Calls [num.floorToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndFloorToDouble], {{> immutableRef}}
+  /// - [cloneFloorToDouble], {{> immutableRef}}
   void floorToDouble() {
     {{#sequence}}${{value}} = ${{value}}.floorToDouble();{{/sequence}}
   }
@@ -64,7 +64,7 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
   /// Calls [num.round] on each element.
   ///
   /// See also:
-  /// - [cloneAndRound], {{> immutableRef}}
+  /// - [cloneRound], {{> immutableRef}}
   void round() {
     {{#sequence}}${{value}} = ${{value}}.round();{{/sequence}}
   }
@@ -74,7 +74,7 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
   /// Calls [num.roundToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndRoundToDouble], {{> immutableRef}}
+  /// - [cloneRoundToDouble], {{> immutableRef}}
   void roundToDouble() {
     {{#sequence}}${{value}} = ${{value}}.roundToDouble();{{/sequence}}
   }
@@ -86,7 +86,7 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
   /// `lowerLimit.compareTo(upperLimit) <= 0`.
   ///
   /// See also:
-  /// - [cloneAndClampScalar], {{> immutableRef}}
+  /// - [cloneClampScalar], {{> immutableRef}}
   void clampScalar(num lowerLimit, num upperLimit){
     {{#sequence}}${{value}} = ${{value}}.clamp(lowerLimit, upperLimit);{{/sequence}}
   }
@@ -100,7 +100,7 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
   /// element of the vector.
   ///
   /// See also:
-  /// - [cloneAndClamp], {{> immutableRef}}
+  /// - [cloneClamp], {{> immutableRef}}
   void clamp(NumVec{{key}} lowerLimit, NumVec{{key}} upperLimit) {
     {{#sequence}}${{value}} = ${{value}}.clamp(lowerLimit.${{value}}, upperLimit.${{value}});{{/sequence}}
   }
@@ -108,7 +108,7 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
   /// Modifies this vector with its values scaled by [scalar].
   ///
   /// See also:
-  /// - [cloneAndScale], {{> immutableRef}}
+  /// - [cloneScale], {{> immutableRef}}
   void scale(num scalar) {
     {{#sequence}}${{value}} *= scalar;{{/sequence}}
   }
@@ -116,7 +116,7 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
   /// Modifies this vector with its values normalized.
   ///
   /// See also:
-  /// - [cloneAndNormalize], {{> immutableRef}}
+  /// - [cloneNormalize], {{> immutableRef}}
   void normalize() {
     final l = length;
     {{#sequence}}${{value}} /= l;{{/sequence}}
@@ -150,21 +150,30 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
     );
   }
 
+
+  /// Creates a new vector with the same values as this one but with each
+  /// component scaled by [scalar].
+  NumVec{{key}}<V> cloneScalar<V extends num>(V Function(T element) scalar) {
+    return NumVec{{key}}<V>({{#sequence}}
+      scalar(${{value}}),{{/sequence}}
+    );
+  }
+
   /// Returns a new vector with the absolute value of each component of this
   /// vector.
   ///
   /// See also:
   /// - [abs], {{> mutableRef}}
-  NumVec{{key}}<T> cloneAndAbs() {
-    return clone()..abs();
+  NumVec{{key}}<T> cloneAbs() {
+    return cloneScalar((e) => e.abs() as T);
   }
 
   /// Returns a new vector with each component of this vector ceiled.
   ///
   /// See also:
   /// - [ceil], {{> mutableRef}}
-  IVec{{key}} cloneAndCeil(){
-    return (clone()..ceil()) as IVec{{key}};
+  IVec{{key}} cloneCeil(){
+    return cloneScalar((e) => e.ceil());
   }
 
   /// Returns a new vector with each component of this vector ceiled
@@ -172,16 +181,16 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
   ///
   /// See also:
   /// - [ceilToDouble], {{> mutableRef}}
-  Vec{{key}} cloneAndCeilToDouble() {
-    return (clone()..ceilToDouble()) as Vec{{key}};
+  Vec{{key}} cloneCeilToDouble() {
+    return cloneScalar((e) => e.ceilToDouble());
   }
 
   /// Returns a new vector with each component of this vector floored.
   ///
   /// See also:
   /// - [floor], {{> mutableRef}}
-  IVec{{key}} cloneAndFloor(){
-    return (clone()..floor()) as IVec{{key}};
+  IVec{{key}} cloneFloor(){
+    return cloneScalar((e) => e.floor());
   }
 
   /// Returns a new vector with each component of this vector floored
@@ -189,15 +198,15 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
   ///
   /// See also:
   /// - [floorToDouble], {{> mutableRef}}
-  Vec{{key}} cloneAndFloorToDouble() {
-    return (clone()..floorToDouble()) as Vec{{key}};
+  Vec{{key}} cloneFloorToDouble() {
+    return cloneScalar((e) => e.floorToDouble());
   }
 
   /// Returns a new vector with each component of this vector rounded.
   ///
   /// See also:
   /// - [round], {{> mutableRef}}
-  IVec{{key}} cloneAndRound() {
+  IVec{{key}} cloneRound() {
     return (clone()..round()) as IVec{{key}};
   }
 
@@ -206,7 +215,7 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
   ///
   /// See also:
   /// - [roundToDouble], {{> mutableRef}}
-  Vec{{key}} cloneAndRoundToDouble() {
+  Vec{{key}} cloneRoundToDouble() {
     return (clone()..roundToDouble()) as Vec{{key}};
   }
 
@@ -218,7 +227,7 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
   ///
   /// See also:
   /// - [clampScalar], {{> mutableRef}}
-  NumVec{{key}}<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
+  NumVec{{key}}<T> cloneClampScalar(T lowerLimit, T upperLimit) {
     return clone()..clampScalar(lowerLimit, upperLimit);
   }
 
@@ -232,7 +241,7 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
   ///
   /// See also:
   /// - [clamp], {{> mutableRef}}
-  NumVec{{key}}<T> cloneAndClamp(NumVec{{key}}<T> lowerLimit, NumVec{{key}}<T> upperLimit) {
+  NumVec{{key}}<T> cloneClamp(NumVec{{key}}<T> lowerLimit, NumVec{{key}}<T> upperLimit) {
     return clone()..clamp(lowerLimit, upperLimit);
   }
 
@@ -240,7 +249,7 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
   ///
   /// See also:
   /// - [scale], {{> mutableRef}}
-  Vec{{key}} cloneAndScale(double scalar) {
+  Vec{{key}} cloneScale(double scalar) {
     return (clone()..scale(scalar)) as Vec{{key}};
   }
 
@@ -248,7 +257,7 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
   ///
   /// See also:
   /// - [normalize], {{> mutableRef}}
-  Vec{{key}} cloneAndNormalize() {
+  Vec{{key}} cloneNormalize() {
     return (clone()..normalize()) as Vec{{key}};
   }
 
@@ -316,13 +325,13 @@ extension NumVec{{key}}Methods<T extends num> on NumVec{{key}}<T> {
 
   /// Multiplies this vector by [scalar].
   Vec{{key}} operator *(double scalar) {
-    return cloneAndScale(scalar);
+    return cloneScale(scalar);
   }
 
   /// Divides this vector by [number].
   Vec{{key}} operator /(double number) {
-    return cloneAndScale(1.0 / number);
+    return cloneScale(1.0 / number);
   }
 {{/value}}
 }
-{{/getters}}
+{{/gettersAndSetters}}

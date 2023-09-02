@@ -3,10 +3,13 @@ import 'package:meta/meta.dart';
 import 'package:vec_math/vec_math.dart';
 
 @immutable
-sealed class Vec<T> {
+sealed class Vec<T> with Iterable<T> {
   const Vec(this.allocation);
 
   final List<T> allocation;
+
+  @override
+  Iterator<T> get iterator => allocation.iterator;
 }
 
 Iterable<T> _iterate2<T>(
@@ -53,18 +56,19 @@ class NumVec2<T extends num> extends Vec<T> {
           ),
         );
 
-  NumVec2.fromList(List<T> list)
+  NumVec2.fromIterable(Iterable<T> list)
       : super(
           List<T>.from(
-            _iterate2(
-              list[0 % list.length],
-              list[1 % list.length],
-            ),
+            list,
             growable: false,
           ),
         );
 
   NumVec2.all(T item) : super(List<T>.filled(2, item));
+
+  static Vec2 zero() => NumVec2.all(0);
+
+  static IVec2 zeroInt() => NumVec2.all(0);
 
   T get $1 => allocation[0];
 
@@ -75,6 +79,7 @@ class NumVec2<T extends num> extends Vec<T> {
   set $2(T value) => allocation[1] = value;
 
   /// The length of this vector.
+  @override
   final int length = 2;
 
   NumRecord2<T> toRecord() {
@@ -103,19 +108,19 @@ class NumVec3<T extends num> extends Vec<T> {
           ),
         );
 
-  NumVec3.fromList(List<T> list)
+  NumVec3.fromIterable(Iterable<T> list)
       : super(
           List<T>.from(
-            _iterate3(
-              list[0 % list.length],
-              list[1 % list.length],
-              list[2 % list.length],
-            ),
+            list,
             growable: false,
           ),
         );
 
   NumVec3.all(T item) : super(List<T>.filled(3, item));
+
+  static Vec3 zero() => NumVec3.all(0);
+
+  static IVec3 zeroInt() => NumVec3.all(0);
 
   T get $1 => allocation[0];
 
@@ -130,6 +135,7 @@ class NumVec3<T extends num> extends Vec<T> {
   set $3(T value) => allocation[2] = value;
 
   /// The length of this vector.
+  @override
   final int length = 3;
 
   NumRecord3<T> toRecord() {
@@ -161,20 +167,19 @@ class NumVec4<T extends num> extends Vec<T> {
           ),
         );
 
-  NumVec4.fromList(List<T> list)
+  NumVec4.fromIterable(Iterable<T> list)
       : super(
           List<T>.from(
-            _iterate4(
-              list[0 % list.length],
-              list[1 % list.length],
-              list[2 % list.length],
-              list[3 % list.length],
-            ),
+            list,
             growable: false,
           ),
         );
 
   NumVec4.all(T item) : super(List<T>.filled(4, item));
+
+  static Vec4 zero() => NumVec4.all(0);
+
+  static IVec4 zeroInt() => NumVec4.all(0);
 
   T get $1 => allocation[0];
 
@@ -193,6 +198,7 @@ class NumVec4<T extends num> extends Vec<T> {
   set $4(T value) => allocation[3] = value;
 
   /// The length of this vector.
+  @override
   final int length = 4;
 
   NumRecord4<T> toRecord() {
@@ -208,33 +214,49 @@ class NumVec4<T extends num> extends Vec<T> {
 }
 
 typedef Vec2 = NumVec2<double>;
-typedef Vec3 = NumVec3<double>;
-typedef Vec4 = NumVec4<double>;
 
 typedef IVec2 = NumVec2<int>;
+
+typedef Vec3 = NumVec3<double>;
+
 typedef IVec3 = NumVec3<int>;
+
+typedef Vec4 = NumVec4<double>;
+
 typedef IVec4 = NumVec4<int>;
 
-V maxVec<V extends Vec<T>, T extends num>(V a, V b) {
-  final list = a.allocation.indexed
-      .map((i) => math.max(i.$2, b.allocation[i.$1]))
-      .toList(growable: false);
-
-  return switch (a) {
-    NumVec2<T>() => NumVec2.fromList(list) as V,
-    NumVec3<T>() => NumVec3.fromList(list) as V,
-    NumVec4<T>() => NumVec4.fromList(list) as V,
-  };
+NumVec2<T> maxVec2<T extends num>(NumVec2<T> a, NumVec2<T> b) {
+  return NumVec2<T>.fromIterable(
+    a.indexed.map((i) => math.max(i.$2, b.allocation[i.$1])),
+  );
 }
 
-V miNumVec<V extends Vec<T>, T extends num>(V a, V b) {
-  final list = a.allocation.indexed
-      .map((i) => math.min(i.$2, b.allocation[i.$1]))
-      .toList(growable: false);
+NumVec2<T> minVec2<T extends num>(NumVec2<T> a, NumVec2<T> b) {
+  return NumVec2<T>.fromIterable(
+    a.indexed.map((i) => math.min(i.$2, b.allocation[i.$1])),
+  );
+}
 
-  return switch (a) {
-    NumVec2<T>() => NumVec2.fromList(list) as V,
-    NumVec3<T>() => NumVec3.fromList(list) as V,
-    NumVec4<T>() => NumVec4.fromList(list) as V,
-  };
+NumVec3<T> maxVec3<T extends num>(NumVec3<T> a, NumVec3<T> b) {
+  return NumVec3<T>.fromIterable(
+    a.indexed.map((i) => math.max(i.$2, b.allocation[i.$1])),
+  );
+}
+
+NumVec3<T> minVec3<T extends num>(NumVec3<T> a, NumVec3<T> b) {
+  return NumVec3<T>.fromIterable(
+    a.indexed.map((i) => math.min(i.$2, b.allocation[i.$1])),
+  );
+}
+
+NumVec4<T> maxVec4<T extends num>(NumVec4<T> a, NumVec4<T> b) {
+  return NumVec4<T>.fromIterable(
+    a.indexed.map((i) => math.max(i.$2, b.allocation[i.$1])),
+  );
+}
+
+NumVec4<T> minVec4<T extends num>(NumVec4<T> a, NumVec4<T> b) {
+  return NumVec4<T>.fromIterable(
+    a.indexed.map((i) => math.min(i.$2, b.allocation[i.$1])),
+  );
 }

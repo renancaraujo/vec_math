@@ -59,8 +59,7 @@ Map<String, dynamic> main() {
       ],
   };
 
-  final getters = <int, Map<String, dynamic>>{};
-  final setters = <int, Map<String, dynamic>>{};
+  final gettersAndSetters = <int, Map<String, dynamic>>{};
   for (final MapEntry(key: vectorLength, value: systemsForLength)
       in systemsPerLength.entries) {
     final multiElementGetters = <Map<String, dynamic>>[];
@@ -159,21 +158,19 @@ Map<String, dynamic> main() {
       }
     }
 
-    final map = getters[vectorLength] = {};
-    map['multiElementGetters'] = multiElementGetters;
-    map['singleElementGetters'] = singleElementGetters;
-    map['systems'] = systems.map((e) {
+    final mapGettersAndSetters = gettersAndSetters[vectorLength] = {};
+    mapGettersAndSetters['multiElementGetters'] = multiElementGetters;
+    mapGettersAndSetters['singleElementGetters'] = singleElementGetters;
+    mapGettersAndSetters['systems'] = systems.map((e) {
       return {
         'name': e.name,
         'sequence': e.sequence,
         'description': e.description,
       };
     }).toList();
-    map['sequence'] = sequences[vectorLength];
-
-    final mapSetters = setters[vectorLength] = {};
-    mapSetters['singleElementSetters'] = singleElementSetters;
-    mapSetters['multiElementSetters'] = multiElementSetters;
+    mapGettersAndSetters['sequence'] = sequences[vectorLength];
+    mapGettersAndSetters['singleElementSetters'] = singleElementSetters;
+    mapGettersAndSetters['multiElementSetters'] = multiElementSetters;
   }
 
   final allSystems = <String, dynamic>{};
@@ -195,8 +192,7 @@ Map<String, dynamic> main() {
 
   final result = {
     'sequences': sequences.asJSON(),
-    'getters': getters.asJSON(),
-    'setters': setters.asJSON(),
+    'gettersAndSetters': gettersAndSetters.asJSON(),
     'allSystems': allSystems.asJSON(),
   };
 

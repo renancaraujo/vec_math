@@ -6,10 +6,22 @@ void main(){
   final vectorB = vectorA.xxx;
   final vectorC = vectorB.withYX((1,2).vec);
 
-  final iVectorA = vectorA.cloneAndFloor();
+  final iVectorA = vectorA.cloneFloor();
 
-  final int ivaX = iVectorA.x;
+  final ivaX = iVectorA.t;
 
+  final min = minVec2(vectorA, iVectorA).toDouble();
 
+  final (x, y) = vectorB.yz.rec;
+  
+  final widthWidthFloored = vectorA.widthWidth.cloneScalar((element) => element.floor());
+
+  for(final element in vectorA){
+    print(element);
+  }
+
+  var vectorD = vectorC + (45, 22, 1).vec;
+  vectorD += vectorA.rgg;
+  vectorD *= 3;
 
 }

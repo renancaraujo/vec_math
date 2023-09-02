@@ -11,7 +11,7 @@ extension NumVec2MutableMethods on NumVec2 {
   /// Calls [num.abs] on each element.
   ///
   /// See also:
-  /// - [cloneAndAbs], which returns a new vector instead of
+  /// - [cloneAbs], which returns a new vector instead of
   ///  modifying the current one.
   void abs() {
     $1 = $1.abs();
@@ -23,7 +23,7 @@ extension NumVec2MutableMethods on NumVec2 {
   /// Calls [num.ceil] on each element.
   ///
   /// See also:
-  /// - [cloneAndCeil], which returns a new vector instead of
+  /// - [cloneCeil], which returns a new vector instead of
   ///  modifying the current one.
   void ceil() {
     $1 = $1.ceil();
@@ -35,7 +35,7 @@ extension NumVec2MutableMethods on NumVec2 {
   /// Calls [num.ceilToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndCeilToDouble], which returns a new vector instead of
+  /// - [cloneCeilToDouble], which returns a new vector instead of
   ///  modifying the current one.
   void ceilToDouble() {
     $1 = $1.ceilToDouble();
@@ -47,7 +47,7 @@ extension NumVec2MutableMethods on NumVec2 {
   /// Calls [num.floor] on each element.
   ///
   /// See also:
-  /// - [cloneAndFloor], which returns a new vector instead of
+  /// - [cloneFloor], which returns a new vector instead of
   ///  modifying the current one.
   void floor() {
     $1 = $1.floor();
@@ -59,7 +59,7 @@ extension NumVec2MutableMethods on NumVec2 {
   /// Calls [num.floorToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndFloorToDouble], which returns a new vector instead of
+  /// - [cloneFloorToDouble], which returns a new vector instead of
   ///  modifying the current one.
   void floorToDouble() {
     $1 = $1.floorToDouble();
@@ -71,7 +71,7 @@ extension NumVec2MutableMethods on NumVec2 {
   /// Calls [num.round] on each element.
   ///
   /// See also:
-  /// - [cloneAndRound], which returns a new vector instead of
+  /// - [cloneRound], which returns a new vector instead of
   ///  modifying the current one.
   void round() {
     $1 = $1.round();
@@ -83,7 +83,7 @@ extension NumVec2MutableMethods on NumVec2 {
   /// Calls [num.roundToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndRoundToDouble], which returns a new vector instead of
+  /// - [cloneRoundToDouble], which returns a new vector instead of
   ///  modifying the current one.
   void roundToDouble() {
     $1 = $1.roundToDouble();
@@ -97,7 +97,7 @@ extension NumVec2MutableMethods on NumVec2 {
   /// `lowerLimit.compareTo(upperLimit) <= 0`.
   ///
   /// See also:
-  /// - [cloneAndClampScalar], which returns a new vector instead of
+  /// - [cloneClampScalar], which returns a new vector instead of
   ///  modifying the current one.
   void clampScalar(num lowerLimit, num upperLimit) {
     $1 = $1.clamp(lowerLimit, upperLimit);
@@ -113,7 +113,7 @@ extension NumVec2MutableMethods on NumVec2 {
   /// element of the vector.
   ///
   /// See also:
-  /// - [cloneAndClamp], which returns a new vector instead of
+  /// - [cloneClamp], which returns a new vector instead of
   ///  modifying the current one.
   void clamp(NumVec2 lowerLimit, NumVec2 upperLimit) {
     $1 = $1.clamp(lowerLimit.$1, upperLimit.$1);
@@ -123,7 +123,7 @@ extension NumVec2MutableMethods on NumVec2 {
   /// Modifies this vector with its values scaled by [scalar].
   ///
   /// See also:
-  /// - [cloneAndScale], which returns a new vector instead of
+  /// - [cloneScale], which returns a new vector instead of
   ///  modifying the current one.
   void scale(num scalar) {
     $1 *= scalar;
@@ -133,7 +133,7 @@ extension NumVec2MutableMethods on NumVec2 {
   /// Modifies this vector with its values normalized.
   ///
   /// See also:
-  /// - [cloneAndNormalize], which returns a new vector instead of
+  /// - [cloneNormalize], which returns a new vector instead of
   ///  modifying the current one.
   void normalize() {
     final l = length;
@@ -172,14 +172,23 @@ extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
     );
   }
 
+  /// Creates a new vector with the same values as this one but with each
+  /// component scaled by [scalar].
+  NumVec2<V> cloneScalar<V extends num>(V Function(T element) scalar) {
+    return NumVec2<V>(
+      scalar($1),
+      scalar($2),
+    );
+  }
+
   /// Returns a new vector with the absolute value of each component of this
   /// vector.
   ///
   /// See also:
   /// - [abs], which modifies the current vector instead of
   ///  returning a new one.
-  NumVec2<T> cloneAndAbs() {
-    return clone()..abs();
+  NumVec2<T> cloneAbs() {
+    return cloneScalar((e) => e.abs() as T);
   }
 
   /// Returns a new vector with each component of this vector ceiled.
@@ -187,8 +196,8 @@ extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
   /// See also:
   /// - [ceil], which modifies the current vector instead of
   ///  returning a new one.
-  IVec2 cloneAndCeil() {
-    return (clone()..ceil()) as IVec2;
+  IVec2 cloneCeil() {
+    return cloneScalar((e) => e.ceil());
   }
 
   /// Returns a new vector with each component of this vector ceiled
@@ -197,8 +206,8 @@ extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
   /// See also:
   /// - [ceilToDouble], which modifies the current vector instead of
   ///  returning a new one.
-  Vec2 cloneAndCeilToDouble() {
-    return (clone()..ceilToDouble()) as Vec2;
+  Vec2 cloneCeilToDouble() {
+    return cloneScalar((e) => e.ceilToDouble());
   }
 
   /// Returns a new vector with each component of this vector floored.
@@ -206,8 +215,8 @@ extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
   /// See also:
   /// - [floor], which modifies the current vector instead of
   ///  returning a new one.
-  IVec2 cloneAndFloor() {
-    return (clone()..floor()) as IVec2;
+  IVec2 cloneFloor() {
+    return cloneScalar((e) => e.floor());
   }
 
   /// Returns a new vector with each component of this vector floored
@@ -216,8 +225,8 @@ extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
   /// See also:
   /// - [floorToDouble], which modifies the current vector instead of
   ///  returning a new one.
-  Vec2 cloneAndFloorToDouble() {
-    return (clone()..floorToDouble()) as Vec2;
+  Vec2 cloneFloorToDouble() {
+    return cloneScalar((e) => e.floorToDouble());
   }
 
   /// Returns a new vector with each component of this vector rounded.
@@ -225,7 +234,7 @@ extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
   /// See also:
   /// - [round], which modifies the current vector instead of
   ///  returning a new one.
-  IVec2 cloneAndRound() {
+  IVec2 cloneRound() {
     return (clone()..round()) as IVec2;
   }
 
@@ -235,7 +244,7 @@ extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
   /// See also:
   /// - [roundToDouble], which modifies the current vector instead of
   ///  returning a new one.
-  Vec2 cloneAndRoundToDouble() {
+  Vec2 cloneRoundToDouble() {
     return (clone()..roundToDouble()) as Vec2;
   }
 
@@ -248,7 +257,7 @@ extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
   /// See also:
   /// - [clampScalar], which modifies the current vector instead of
   ///  returning a new one.
-  NumVec2<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
+  NumVec2<T> cloneClampScalar(T lowerLimit, T upperLimit) {
     return clone()..clampScalar(lowerLimit, upperLimit);
   }
 
@@ -263,7 +272,7 @@ extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
   /// See also:
   /// - [clamp], which modifies the current vector instead of
   ///  returning a new one.
-  NumVec2<T> cloneAndClamp(NumVec2<T> lowerLimit, NumVec2<T> upperLimit) {
+  NumVec2<T> cloneClamp(NumVec2<T> lowerLimit, NumVec2<T> upperLimit) {
     return clone()..clamp(lowerLimit, upperLimit);
   }
 
@@ -272,7 +281,7 @@ extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
   /// See also:
   /// - [scale], which modifies the current vector instead of
   ///  returning a new one.
-  Vec2 cloneAndScale(double scalar) {
+  Vec2 cloneScale(double scalar) {
     return (clone()..scale(scalar)) as Vec2;
   }
 
@@ -281,7 +290,7 @@ extension NumVec2ImmutableMethods<T extends num> on NumVec2<T> {
   /// See also:
   /// - [normalize], which modifies the current vector instead of
   ///  returning a new one.
-  Vec2 cloneAndNormalize() {
+  Vec2 cloneNormalize() {
     return (clone()..normalize()) as Vec2;
   }
 }
@@ -353,12 +362,12 @@ extension NumVec2Methods<T extends num> on NumVec2<T> {
 
   /// Multiplies this vector by [scalar].
   Vec2 operator *(double scalar) {
-    return cloneAndScale(scalar);
+    return cloneScale(scalar);
   }
 
   /// Divides this vector by [number].
   Vec2 operator /(double number) {
-    return cloneAndScale(1.0 / number);
+    return cloneScale(1.0 / number);
   }
 }
 
@@ -369,7 +378,7 @@ extension NumVec3MutableMethods on NumVec3 {
   /// Calls [num.abs] on each element.
   ///
   /// See also:
-  /// - [cloneAndAbs], which returns a new vector instead of
+  /// - [cloneAbs], which returns a new vector instead of
   ///  modifying the current one.
   void abs() {
     $1 = $1.abs();
@@ -382,7 +391,7 @@ extension NumVec3MutableMethods on NumVec3 {
   /// Calls [num.ceil] on each element.
   ///
   /// See also:
-  /// - [cloneAndCeil], which returns a new vector instead of
+  /// - [cloneCeil], which returns a new vector instead of
   ///  modifying the current one.
   void ceil() {
     $1 = $1.ceil();
@@ -395,7 +404,7 @@ extension NumVec3MutableMethods on NumVec3 {
   /// Calls [num.ceilToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndCeilToDouble], which returns a new vector instead of
+  /// - [cloneCeilToDouble], which returns a new vector instead of
   ///  modifying the current one.
   void ceilToDouble() {
     $1 = $1.ceilToDouble();
@@ -408,7 +417,7 @@ extension NumVec3MutableMethods on NumVec3 {
   /// Calls [num.floor] on each element.
   ///
   /// See also:
-  /// - [cloneAndFloor], which returns a new vector instead of
+  /// - [cloneFloor], which returns a new vector instead of
   ///  modifying the current one.
   void floor() {
     $1 = $1.floor();
@@ -421,7 +430,7 @@ extension NumVec3MutableMethods on NumVec3 {
   /// Calls [num.floorToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndFloorToDouble], which returns a new vector instead of
+  /// - [cloneFloorToDouble], which returns a new vector instead of
   ///  modifying the current one.
   void floorToDouble() {
     $1 = $1.floorToDouble();
@@ -434,7 +443,7 @@ extension NumVec3MutableMethods on NumVec3 {
   /// Calls [num.round] on each element.
   ///
   /// See also:
-  /// - [cloneAndRound], which returns a new vector instead of
+  /// - [cloneRound], which returns a new vector instead of
   ///  modifying the current one.
   void round() {
     $1 = $1.round();
@@ -447,7 +456,7 @@ extension NumVec3MutableMethods on NumVec3 {
   /// Calls [num.roundToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndRoundToDouble], which returns a new vector instead of
+  /// - [cloneRoundToDouble], which returns a new vector instead of
   ///  modifying the current one.
   void roundToDouble() {
     $1 = $1.roundToDouble();
@@ -462,7 +471,7 @@ extension NumVec3MutableMethods on NumVec3 {
   /// `lowerLimit.compareTo(upperLimit) <= 0`.
   ///
   /// See also:
-  /// - [cloneAndClampScalar], which returns a new vector instead of
+  /// - [cloneClampScalar], which returns a new vector instead of
   ///  modifying the current one.
   void clampScalar(num lowerLimit, num upperLimit) {
     $1 = $1.clamp(lowerLimit, upperLimit);
@@ -479,7 +488,7 @@ extension NumVec3MutableMethods on NumVec3 {
   /// element of the vector.
   ///
   /// See also:
-  /// - [cloneAndClamp], which returns a new vector instead of
+  /// - [cloneClamp], which returns a new vector instead of
   ///  modifying the current one.
   void clamp(NumVec3 lowerLimit, NumVec3 upperLimit) {
     $1 = $1.clamp(lowerLimit.$1, upperLimit.$1);
@@ -490,7 +499,7 @@ extension NumVec3MutableMethods on NumVec3 {
   /// Modifies this vector with its values scaled by [scalar].
   ///
   /// See also:
-  /// - [cloneAndScale], which returns a new vector instead of
+  /// - [cloneScale], which returns a new vector instead of
   ///  modifying the current one.
   void scale(num scalar) {
     $1 *= scalar;
@@ -501,7 +510,7 @@ extension NumVec3MutableMethods on NumVec3 {
   /// Modifies this vector with its values normalized.
   ///
   /// See also:
-  /// - [cloneAndNormalize], which returns a new vector instead of
+  /// - [cloneNormalize], which returns a new vector instead of
   ///  modifying the current one.
   void normalize() {
     final l = length;
@@ -544,14 +553,24 @@ extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
     );
   }
 
+  /// Creates a new vector with the same values as this one but with each
+  /// component scaled by [scalar].
+  NumVec3<V> cloneScalar<V extends num>(V Function(T element) scalar) {
+    return NumVec3<V>(
+      scalar($1),
+      scalar($2),
+      scalar($3),
+    );
+  }
+
   /// Returns a new vector with the absolute value of each component of this
   /// vector.
   ///
   /// See also:
   /// - [abs], which modifies the current vector instead of
   ///  returning a new one.
-  NumVec3<T> cloneAndAbs() {
-    return clone()..abs();
+  NumVec3<T> cloneAbs() {
+    return cloneScalar((e) => e.abs() as T);
   }
 
   /// Returns a new vector with each component of this vector ceiled.
@@ -559,8 +578,8 @@ extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
   /// See also:
   /// - [ceil], which modifies the current vector instead of
   ///  returning a new one.
-  IVec3 cloneAndCeil() {
-    return (clone()..ceil()) as IVec3;
+  IVec3 cloneCeil() {
+    return cloneScalar((e) => e.ceil());
   }
 
   /// Returns a new vector with each component of this vector ceiled
@@ -569,8 +588,8 @@ extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
   /// See also:
   /// - [ceilToDouble], which modifies the current vector instead of
   ///  returning a new one.
-  Vec3 cloneAndCeilToDouble() {
-    return (clone()..ceilToDouble()) as Vec3;
+  Vec3 cloneCeilToDouble() {
+    return cloneScalar((e) => e.ceilToDouble());
   }
 
   /// Returns a new vector with each component of this vector floored.
@@ -578,8 +597,8 @@ extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
   /// See also:
   /// - [floor], which modifies the current vector instead of
   ///  returning a new one.
-  IVec3 cloneAndFloor() {
-    return (clone()..floor()) as IVec3;
+  IVec3 cloneFloor() {
+    return cloneScalar((e) => e.floor());
   }
 
   /// Returns a new vector with each component of this vector floored
@@ -588,8 +607,8 @@ extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
   /// See also:
   /// - [floorToDouble], which modifies the current vector instead of
   ///  returning a new one.
-  Vec3 cloneAndFloorToDouble() {
-    return (clone()..floorToDouble()) as Vec3;
+  Vec3 cloneFloorToDouble() {
+    return cloneScalar((e) => e.floorToDouble());
   }
 
   /// Returns a new vector with each component of this vector rounded.
@@ -597,7 +616,7 @@ extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
   /// See also:
   /// - [round], which modifies the current vector instead of
   ///  returning a new one.
-  IVec3 cloneAndRound() {
+  IVec3 cloneRound() {
     return (clone()..round()) as IVec3;
   }
 
@@ -607,7 +626,7 @@ extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
   /// See also:
   /// - [roundToDouble], which modifies the current vector instead of
   ///  returning a new one.
-  Vec3 cloneAndRoundToDouble() {
+  Vec3 cloneRoundToDouble() {
     return (clone()..roundToDouble()) as Vec3;
   }
 
@@ -620,7 +639,7 @@ extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
   /// See also:
   /// - [clampScalar], which modifies the current vector instead of
   ///  returning a new one.
-  NumVec3<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
+  NumVec3<T> cloneClampScalar(T lowerLimit, T upperLimit) {
     return clone()..clampScalar(lowerLimit, upperLimit);
   }
 
@@ -635,7 +654,7 @@ extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
   /// See also:
   /// - [clamp], which modifies the current vector instead of
   ///  returning a new one.
-  NumVec3<T> cloneAndClamp(NumVec3<T> lowerLimit, NumVec3<T> upperLimit) {
+  NumVec3<T> cloneClamp(NumVec3<T> lowerLimit, NumVec3<T> upperLimit) {
     return clone()..clamp(lowerLimit, upperLimit);
   }
 
@@ -644,7 +663,7 @@ extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
   /// See also:
   /// - [scale], which modifies the current vector instead of
   ///  returning a new one.
-  Vec3 cloneAndScale(double scalar) {
+  Vec3 cloneScale(double scalar) {
     return (clone()..scale(scalar)) as Vec3;
   }
 
@@ -653,7 +672,7 @@ extension NumVec3ImmutableMethods<T extends num> on NumVec3<T> {
   /// See also:
   /// - [normalize], which modifies the current vector instead of
   ///  returning a new one.
-  Vec3 cloneAndNormalize() {
+  Vec3 cloneNormalize() {
     return (clone()..normalize()) as Vec3;
   }
 }
@@ -732,12 +751,12 @@ extension NumVec3Methods<T extends num> on NumVec3<T> {
 
   /// Multiplies this vector by [scalar].
   Vec3 operator *(double scalar) {
-    return cloneAndScale(scalar);
+    return cloneScale(scalar);
   }
 
   /// Divides this vector by [number].
   Vec3 operator /(double number) {
-    return cloneAndScale(1.0 / number);
+    return cloneScale(1.0 / number);
   }
 }
 
@@ -748,7 +767,7 @@ extension NumVec4MutableMethods on NumVec4 {
   /// Calls [num.abs] on each element.
   ///
   /// See also:
-  /// - [cloneAndAbs], which returns a new vector instead of
+  /// - [cloneAbs], which returns a new vector instead of
   ///  modifying the current one.
   void abs() {
     $1 = $1.abs();
@@ -762,7 +781,7 @@ extension NumVec4MutableMethods on NumVec4 {
   /// Calls [num.ceil] on each element.
   ///
   /// See also:
-  /// - [cloneAndCeil], which returns a new vector instead of
+  /// - [cloneCeil], which returns a new vector instead of
   ///  modifying the current one.
   void ceil() {
     $1 = $1.ceil();
@@ -776,7 +795,7 @@ extension NumVec4MutableMethods on NumVec4 {
   /// Calls [num.ceilToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndCeilToDouble], which returns a new vector instead of
+  /// - [cloneCeilToDouble], which returns a new vector instead of
   ///  modifying the current one.
   void ceilToDouble() {
     $1 = $1.ceilToDouble();
@@ -790,7 +809,7 @@ extension NumVec4MutableMethods on NumVec4 {
   /// Calls [num.floor] on each element.
   ///
   /// See also:
-  /// - [cloneAndFloor], which returns a new vector instead of
+  /// - [cloneFloor], which returns a new vector instead of
   ///  modifying the current one.
   void floor() {
     $1 = $1.floor();
@@ -804,7 +823,7 @@ extension NumVec4MutableMethods on NumVec4 {
   /// Calls [num.floorToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndFloorToDouble], which returns a new vector instead of
+  /// - [cloneFloorToDouble], which returns a new vector instead of
   ///  modifying the current one.
   void floorToDouble() {
     $1 = $1.floorToDouble();
@@ -818,7 +837,7 @@ extension NumVec4MutableMethods on NumVec4 {
   /// Calls [num.round] on each element.
   ///
   /// See also:
-  /// - [cloneAndRound], which returns a new vector instead of
+  /// - [cloneRound], which returns a new vector instead of
   ///  modifying the current one.
   void round() {
     $1 = $1.round();
@@ -832,7 +851,7 @@ extension NumVec4MutableMethods on NumVec4 {
   /// Calls [num.roundToDouble] on each element.
   ///
   /// See also:
-  /// - [cloneAndRoundToDouble], which returns a new vector instead of
+  /// - [cloneRoundToDouble], which returns a new vector instead of
   ///  modifying the current one.
   void roundToDouble() {
     $1 = $1.roundToDouble();
@@ -848,7 +867,7 @@ extension NumVec4MutableMethods on NumVec4 {
   /// `lowerLimit.compareTo(upperLimit) <= 0`.
   ///
   /// See also:
-  /// - [cloneAndClampScalar], which returns a new vector instead of
+  /// - [cloneClampScalar], which returns a new vector instead of
   ///  modifying the current one.
   void clampScalar(num lowerLimit, num upperLimit) {
     $1 = $1.clamp(lowerLimit, upperLimit);
@@ -866,7 +885,7 @@ extension NumVec4MutableMethods on NumVec4 {
   /// element of the vector.
   ///
   /// See also:
-  /// - [cloneAndClamp], which returns a new vector instead of
+  /// - [cloneClamp], which returns a new vector instead of
   ///  modifying the current one.
   void clamp(NumVec4 lowerLimit, NumVec4 upperLimit) {
     $1 = $1.clamp(lowerLimit.$1, upperLimit.$1);
@@ -878,7 +897,7 @@ extension NumVec4MutableMethods on NumVec4 {
   /// Modifies this vector with its values scaled by [scalar].
   ///
   /// See also:
-  /// - [cloneAndScale], which returns a new vector instead of
+  /// - [cloneScale], which returns a new vector instead of
   ///  modifying the current one.
   void scale(num scalar) {
     $1 *= scalar;
@@ -890,7 +909,7 @@ extension NumVec4MutableMethods on NumVec4 {
   /// Modifies this vector with its values normalized.
   ///
   /// See also:
-  /// - [cloneAndNormalize], which returns a new vector instead of
+  /// - [cloneNormalize], which returns a new vector instead of
   ///  modifying the current one.
   void normalize() {
     final l = length;
@@ -937,14 +956,25 @@ extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
     );
   }
 
+  /// Creates a new vector with the same values as this one but with each
+  /// component scaled by [scalar].
+  NumVec4<V> cloneScalar<V extends num>(V Function(T element) scalar) {
+    return NumVec4<V>(
+      scalar($1),
+      scalar($2),
+      scalar($3),
+      scalar($4),
+    );
+  }
+
   /// Returns a new vector with the absolute value of each component of this
   /// vector.
   ///
   /// See also:
   /// - [abs], which modifies the current vector instead of
   ///  returning a new one.
-  NumVec4<T> cloneAndAbs() {
-    return clone()..abs();
+  NumVec4<T> cloneAbs() {
+    return cloneScalar((e) => e.abs() as T);
   }
 
   /// Returns a new vector with each component of this vector ceiled.
@@ -952,8 +982,8 @@ extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
   /// See also:
   /// - [ceil], which modifies the current vector instead of
   ///  returning a new one.
-  IVec4 cloneAndCeil() {
-    return (clone()..ceil()) as IVec4;
+  IVec4 cloneCeil() {
+    return cloneScalar((e) => e.ceil());
   }
 
   /// Returns a new vector with each component of this vector ceiled
@@ -962,8 +992,8 @@ extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
   /// See also:
   /// - [ceilToDouble], which modifies the current vector instead of
   ///  returning a new one.
-  Vec4 cloneAndCeilToDouble() {
-    return (clone()..ceilToDouble()) as Vec4;
+  Vec4 cloneCeilToDouble() {
+    return cloneScalar((e) => e.ceilToDouble());
   }
 
   /// Returns a new vector with each component of this vector floored.
@@ -971,8 +1001,8 @@ extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
   /// See also:
   /// - [floor], which modifies the current vector instead of
   ///  returning a new one.
-  IVec4 cloneAndFloor() {
-    return (clone()..floor()) as IVec4;
+  IVec4 cloneFloor() {
+    return cloneScalar((e) => e.floor());
   }
 
   /// Returns a new vector with each component of this vector floored
@@ -981,8 +1011,8 @@ extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
   /// See also:
   /// - [floorToDouble], which modifies the current vector instead of
   ///  returning a new one.
-  Vec4 cloneAndFloorToDouble() {
-    return (clone()..floorToDouble()) as Vec4;
+  Vec4 cloneFloorToDouble() {
+    return cloneScalar((e) => e.floorToDouble());
   }
 
   /// Returns a new vector with each component of this vector rounded.
@@ -990,7 +1020,7 @@ extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
   /// See also:
   /// - [round], which modifies the current vector instead of
   ///  returning a new one.
-  IVec4 cloneAndRound() {
+  IVec4 cloneRound() {
     return (clone()..round()) as IVec4;
   }
 
@@ -1000,7 +1030,7 @@ extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
   /// See also:
   /// - [roundToDouble], which modifies the current vector instead of
   ///  returning a new one.
-  Vec4 cloneAndRoundToDouble() {
+  Vec4 cloneRoundToDouble() {
     return (clone()..roundToDouble()) as Vec4;
   }
 
@@ -1013,7 +1043,7 @@ extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
   /// See also:
   /// - [clampScalar], which modifies the current vector instead of
   ///  returning a new one.
-  NumVec4<T> cloneAndClampScalar(T lowerLimit, T upperLimit) {
+  NumVec4<T> cloneClampScalar(T lowerLimit, T upperLimit) {
     return clone()..clampScalar(lowerLimit, upperLimit);
   }
 
@@ -1028,7 +1058,7 @@ extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
   /// See also:
   /// - [clamp], which modifies the current vector instead of
   ///  returning a new one.
-  NumVec4<T> cloneAndClamp(NumVec4<T> lowerLimit, NumVec4<T> upperLimit) {
+  NumVec4<T> cloneClamp(NumVec4<T> lowerLimit, NumVec4<T> upperLimit) {
     return clone()..clamp(lowerLimit, upperLimit);
   }
 
@@ -1037,7 +1067,7 @@ extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
   /// See also:
   /// - [scale], which modifies the current vector instead of
   ///  returning a new one.
-  Vec4 cloneAndScale(double scalar) {
+  Vec4 cloneScale(double scalar) {
     return (clone()..scale(scalar)) as Vec4;
   }
 
@@ -1046,7 +1076,7 @@ extension NumVec4ImmutableMethods<T extends num> on NumVec4<T> {
   /// See also:
   /// - [normalize], which modifies the current vector instead of
   ///  returning a new one.
-  Vec4 cloneAndNormalize() {
+  Vec4 cloneNormalize() {
     return (clone()..normalize()) as Vec4;
   }
 }
@@ -1132,11 +1162,11 @@ extension NumVec4Methods<T extends num> on NumVec4<T> {
 
   /// Multiplies this vector by [scalar].
   Vec4 operator *(double scalar) {
-    return cloneAndScale(scalar);
+    return cloneScale(scalar);
   }
 
   /// Divides this vector by [number].
   Vec4 operator /(double number) {
-    return cloneAndScale(1.0 / number);
+    return cloneScale(1.0 / number);
   }
 }
