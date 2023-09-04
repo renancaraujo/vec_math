@@ -1,3 +1,5 @@
+/*
+
 import 'package:vec_math/vec_math.dart';
 
 {{#gettersAndSetters}}
@@ -87,3 +89,4 @@ extension NumVec{{key}}GettersAndSetters<T extends num> on NumVec{{key}}<T> {
 }
 
 {{/gettersAndSetters}}
+*/

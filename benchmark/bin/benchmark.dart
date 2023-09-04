@@ -12,14 +12,8 @@ void main(List<String> arguments) {
     Vector3ConstructionBenchmark(),
     Vector4ConstructionBenchmark(),
   ];
-  print('-> Construction');
-  print('  -> vec_math');
-  vecBs.forEach((b) => b.report());
-  print('  -> vector_math');
-  vectorBs.forEach((b) => b.report());
 
-  print('  Comparison:');
-
+  print('Constructor comparison:');
   for (var i = 0; i < vecBs.length; i++) {
     var vecB = vecBs[i];
     var vectorB = vectorBs[i];

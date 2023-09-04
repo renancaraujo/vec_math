@@ -3,17 +3,17 @@
 import 'package:benchmark_harness/benchmark_harness.dart';
 import 'package:vec_math/vec_math.dart';
 
-class _NumVecBenchmarkBase<T extends Vec> extends BenchmarkBase {
+class _NumVecBenchmarkBase<T extends NumVec> extends BenchmarkBase {
   _NumVecBenchmarkBase(super.name, this.vector);
 
   final T vector;
 }
 
-class NumVec2CloneBenchmark extends _NumVecBenchmarkBase<NumVec2> {
+class NumVec2CloneBenchmark extends _NumVecBenchmarkBase<Vec2> {
   NumVec2CloneBenchmark()
       : super(
           'NumVec2.clone();',
-          NumVec2(
+          Vec2(
             100.0,
             200.0,
           ),
@@ -31,7 +31,7 @@ class NumVec3CloneBenchmark extends _NumVecBenchmarkBase<NumVec3> {
   NumVec3CloneBenchmark()
       : super(
           'NumVec3.clone();',
-          NumVec3(
+          Vec3(
             100.0,
             200.0,
             300.0,
@@ -51,7 +51,7 @@ class NumVec4CloneBenchmark extends _NumVecBenchmarkBase<NumVec4> {
   NumVec4CloneBenchmark()
       : super(
           'NumVec4.clone();',
-          NumVec4(
+          Vec4(
             100.0,
             200.0,
             300.0,

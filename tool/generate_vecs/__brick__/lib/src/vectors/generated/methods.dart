@@ -1,4 +1,5 @@
 // ignore_for_file: join_return_with_assignment
+/*
 
 import 'dart:math' as math;
 
@@ -9,6 +10,23 @@ import 'package:vec_math/vec_math.dart';
 /// A set of mutable operations that are common to all [NumVec{{key}}]s.
 extension NumVec{{key}}MutableMethods on NumVec{{key}} {
 {{#value}}
+
+    /// Creates a new vector with the same values as this one but as
+  /// doubles ([Vec{{key}}]).
+  ///
+  /// Calls [num.toDouble] on each element.
+  Vec{{key}} toDouble() {
+    return Vec{{key}}({{#sequence}}
+      ${{value}}.toDouble(),{{/sequence}}
+    );
+  }
+
+  /// Creates a new vector with the same values as this one but as
+  /// integers ([Vec{{key}}]).
+  ///
+  /// Calls [num.toInt] on each element.
+  IVec{{key}} toInt() => IVec{{key}}({{#sequence}}${{value}}.toInt(),{{/sequence}});
+
   /// Modifies this vector to be its absolute value.
   ///
   /// Calls [num.abs] on each element.
@@ -125,39 +143,10 @@ extension NumVec{{key}}MutableMethods on NumVec{{key}} {
 }
 
 /// A set of immutable operations that are common to all [NumVec{{key}}]s.
-extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
+extension NumVec{{key}}ImmutableMethods<T extends num, V extends NumVec{{key}}<T>> on V {
 {{#value}}
-  /// Creates a new vector with the same values as this one but as
-  /// doubles ([Vec{{key}}]).
-  ///
-  /// Calls [num.toDouble] on each element.
-  Vec{{key}} toDouble() {
-    return NumVec{{key}}({{#sequence}}
-      ${{value}}.toDouble(),{{/sequence}}
-    );
-  }
-
-  /// Creates a new vector with the same values as this one but as
-  /// integers ([Vec{{key}}]).
-  ///
-  /// Calls [num.toInt] on each element.
-  IVec{{key}} toInt() => NumVec{{key}}({{#sequence}}${{value}}.toInt(),{{/sequence}});
-
-  /// Creates a new vector with the same values as this one.
-  NumVec{{key}}<T> clone() {
-    return NumVec{{key}}<T>({{#sequence}}
-      ${{value}},{{/sequence}}
-    );
-  }
 
 
-  /// Creates a new vector with the same values as this one but with each
-  /// component scaled by [scalar].
-  NumVec{{key}}<V> cloneScalar<V extends num>(V Function(T element) scalar) {
-    return NumVec{{key}}<V>({{#sequence}}
-      scalar(${{value}}),{{/sequence}}
-    );
-  }
 
   /// Returns a new vector with the absolute value of each component of this
   /// vector.
@@ -207,7 +196,7 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
   /// See also:
   /// - [round], {{> mutableRef}}
   IVec{{key}} cloneRound() {
-    return (clone()..round()) as IVec{{key}};
+    return (clone()..round());
   }
 
   /// Returns a new vector with each component of this vector rounded
@@ -216,7 +205,7 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
   /// See also:
   /// - [roundToDouble], {{> mutableRef}}
   Vec{{key}} cloneRoundToDouble() {
-    return (clone()..roundToDouble()) as Vec{{key}};
+    return (clone()..roundToDouble());
   }
 
   /// Returns a new vector with each component of this vector clamped
@@ -250,7 +239,7 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
   /// See also:
   /// - [scale], {{> mutableRef}}
   Vec{{key}} cloneScale(double scalar) {
-    return (clone()..scale(scalar)) as Vec{{key}};
+    return (clone()..scale(scalar));
   }
 
   /// Returns a new vector with its values normalized.
@@ -258,7 +247,7 @@ extension NumVec{{key}}ImmutableMethods<T extends num> on NumVec{{key}}<T> {
   /// See also:
   /// - [normalize], {{> mutableRef}}
   Vec{{key}} cloneNormalize() {
-    return (clone()..normalize()) as Vec{{key}};
+    return (clone()..normalize());
   }
 
   {{/value}}
@@ -335,3 +324,4 @@ extension NumVec{{key}}Methods<T extends num> on NumVec{{key}}<T> {
 {{/value}}
 }
 {{/gettersAndSetters}}
+*/

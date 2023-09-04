@@ -29,7 +29,7 @@ void main() {
   vectorD *= 3;
 
   final float32list = Float32List.fromList(min.toList());
-  final vectorE = NumVec2.fromList(float32list);
+  final vectorE = Vec2.fromList(float32list);
 
   final vec = (1, 1.0).vec2;
   final ivec = (1, 1.0).iVec2;

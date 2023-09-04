@@ -1,21 +1,12 @@
 import 'dart:math' as math;
+import 'dart:typed_data';
 import 'package:meta/meta.dart';
 import 'package:vec_math/vec_math.dart';
 
-/// The base class for all vectors.
-///
-/// It contains a list [allocation] that holds the values of the vector.
-///
-/// As a Iterable, it can be used in for loops and other iterable operations.
-///
-/// See also:
-/// - [NumVec2], A numeric vector with 2 elements.
-/// - [NumVec3], A numeric vector with 3 elements.
-/// - [NumVec4], A numeric vector with 4 elements.
 @immutable
-sealed class Vec<T> with Iterable<T> {
+sealed class NumVec<T extends num> with Iterable<T> {
   /// Creates a new vector with the given [allocation].
-  const Vec(this.allocation);
+  const NumVec(this.allocation);
 
   /// The values of the vector.
   final List<T> allocation;
@@ -24,45 +15,7 @@ sealed class Vec<T> with Iterable<T> {
   Iterator<T> get iterator => allocation.iterator;
 }
 
-/// A numeric vector with 2 elements.
-///
-/// Consider using [Vec2] or [IVec2] type aliases for
-/// specific number types ([double] and [int], respectively).
-class NumVec2<T extends num> extends Vec<T> {
-  /// Creates a new [NumVec2] with the given values.
-  NumVec2(
-    T p1,
-    T p2,
-  ) : super(
-          List<T>.from(
-            _iterate2(
-              p1,
-              p2,
-            ),
-            growable: false,
-          ),
-        );
-
-  /// Creates a new [NumVec2] from the elements of a [List].
-  factory NumVec2.fromList(List<T> list) {
-    return NumVec2._fromIterableRaw([
-      list[0 % list.length],
-      list[1 % list.length],
-    ]);
-  }
-
-  NumVec2._fromIterableRaw(Iterable<T> iterable)
-      : super(List<T>.from(iterable, growable: false));
-
-  /// Creates a new [NumVec2] with all elements set to [item].
-  NumVec2.all(T item) : super(List<T>.filled(2, item));
-
-  /// Creates a new [Vec2] with all elements set to zero.
-  static Vec2 zero() => NumVec2.all(0);
-
-  /// Creates a new [IVec2] with all elements set to zero.
-  static IVec2 zeroInt() => NumVec2.all(0);
-
+mixin NumVec2<T extends num> on NumVec<T> {
   /// The 1st element of this vector.
   T get $1 => allocation[0];
 
@@ -79,6 +32,10 @@ class NumVec2<T extends num> extends Vec<T> {
   @override
   final int length = 2;
 
+  NumVec2<T> clone();
+
+  NumVec2<T> cloneScalar(T Function(T element) scalar);
+
   /// Converts this vector to a record.
   ///
   /// See also:
@@ -92,10 +49,51 @@ class NumVec2<T extends num> extends Vec<T> {
 
   /// A shorter alias for [toRecord].
   NumRecord2<T> get rec => toRecord();
+}
+
+class Vec2 extends NumVec<double> with NumVec2<double> {
+  Vec2(
+    double p1,
+    double p2,
+  ) : super(
+          Float32List.fromList(
+            [
+              p1,
+              p2,
+            ],
+          ),
+        );
+
+  Vec2.fromList(List<double> list) : super(Float32List.fromList(list));
+
+  Vec2.all(double item)
+      : this(
+          item,
+          item,
+        );
+
+  /// Creates a new [Vec2] with all elements set to zero.
+  Vec2.zero() : super(Float32List(2));
+
+  @override
+  Vec2 clone() {
+    return Vec2(
+      $1,
+      $2,
+    );
+  }
+
+  @override
+  Vec2 cloneScalar(double Function(double element) scalar) {
+    return Vec2(
+      scalar($1),
+      scalar($2),
+    );
+  }
 
   @override
   bool operator ==(Object other) =>
-      other is NumVec2<T> && ($1 == other.$1) && ($2 == other.$2);
+      other is Vec2 && ($1 == other.$1) && ($2 == other.$2);
 
   @override
   int get hashCode {
@@ -103,48 +101,57 @@ class NumVec2<T extends num> extends Vec<T> {
   }
 }
 
-/// A numeric vector with 3 elements.
-///
-/// Consider using [Vec3] or [IVec3] type aliases for
-/// specific number types ([double] and [int], respectively).
-class NumVec3<T extends num> extends Vec<T> {
-  /// Creates a new [NumVec3] with the given values.
-  NumVec3(
-    T p1,
-    T p2,
-    T p3,
+class IVec2 extends NumVec<int> with NumVec2<int> {
+  IVec2(
+    int p1,
+    int p2,
   ) : super(
-          List<T>.from(
-            _iterate3(
+          Int32List.fromList(
+            [
               p1,
               p2,
-              p3,
-            ),
-            growable: false,
+            ],
           ),
         );
 
-  /// Creates a new [NumVec3] from the elements of a [List].
-  factory NumVec3.fromList(List<T> list) {
-    return NumVec3._fromIterableRaw([
-      list[0 % list.length],
-      list[1 % list.length],
-      list[2 % list.length],
-    ]);
+  IVec2.fromList(List<int> list) : super(Int32List.fromList(list));
+
+  IVec2.all(int item)
+      : this(
+          item,
+          item,
+        );
+
+  /// Creates a new [Vec2] with all elements set to zero.
+  static IVec2 zero() => IVec2.all(0);
+
+  @override
+  IVec2 clone() {
+    return IVec2(
+      $1,
+      $2,
+    );
   }
 
-  NumVec3._fromIterableRaw(Iterable<T> iterable)
-      : super(List<T>.from(iterable, growable: false));
+  @override
+  IVec2 cloneScalar(int Function(int element) scalar) {
+    return IVec2(
+      scalar($1),
+      scalar($2),
+    );
+  }
 
-  /// Creates a new [NumVec3] with all elements set to [item].
-  NumVec3.all(T item) : super(List<T>.filled(3, item));
+  @override
+  bool operator ==(Object other) =>
+      other is IVec2 && ($1 == other.$1) && ($2 == other.$2);
 
-  /// Creates a new [Vec3] with all elements set to zero.
-  static Vec3 zero() => NumVec3.all(0);
+  @override
+  int get hashCode {
+    return Object.hashAll(allocation);
+  }
+}
 
-  /// Creates a new [IVec3] with all elements set to zero.
-  static IVec3 zeroInt() => NumVec3.all(0);
-
+mixin NumVec3<T extends num> on NumVec<T> {
   /// The 1st element of this vector.
   T get $1 => allocation[0];
 
@@ -167,6 +174,10 @@ class NumVec3<T extends num> extends Vec<T> {
   @override
   final int length = 3;
 
+  NumVec3<T> clone();
+
+  NumVec3<T> cloneScalar(T Function(T element) scalar);
+
   /// Converts this vector to a record.
   ///
   /// See also:
@@ -181,10 +192,111 @@ class NumVec3<T extends num> extends Vec<T> {
 
   /// A shorter alias for [toRecord].
   NumRecord3<T> get rec => toRecord();
+}
+
+class Vec3 extends NumVec<double> with NumVec3<double> {
+  Vec3(
+    double p1,
+    double p2,
+    double p3,
+  ) : super(
+          Float32List.fromList(
+            [
+              p1,
+              p2,
+              p3,
+            ],
+          ),
+        );
+
+  Vec3.fromList(List<double> list) : super(Float32List.fromList(list));
+
+  Vec3.all(double item)
+      : this(
+          item,
+          item,
+          item,
+        );
+
+  /// Creates a new [Vec3] with all elements set to zero.
+  Vec3.zero() : super(Float32List(2));
+
+  @override
+  Vec3 clone() {
+    return Vec3(
+      $1,
+      $2,
+      $3,
+    );
+  }
+
+  @override
+  Vec3 cloneScalar(double Function(double element) scalar) {
+    return Vec3(
+      scalar($1),
+      scalar($2),
+      scalar($3),
+    );
+  }
 
   @override
   bool operator ==(Object other) =>
-      other is NumVec3<T> &&
+      other is Vec3 && ($1 == other.$1) && ($2 == other.$2) && ($3 == other.$3);
+
+  @override
+  int get hashCode {
+    return Object.hashAll(allocation);
+  }
+}
+
+class IVec3 extends NumVec<int> with NumVec3<int> {
+  IVec3(
+    int p1,
+    int p2,
+    int p3,
+  ) : super(
+          Int32List.fromList(
+            [
+              p1,
+              p2,
+              p3,
+            ],
+          ),
+        );
+
+  IVec3.fromList(List<int> list) : super(Int32List.fromList(list));
+
+  IVec3.all(int item)
+      : this(
+          item,
+          item,
+          item,
+        );
+
+  /// Creates a new [Vec3] with all elements set to zero.
+  static IVec3 zero() => IVec3.all(0);
+
+  @override
+  IVec3 clone() {
+    return IVec3(
+      $1,
+      $2,
+      $3,
+    );
+  }
+
+  @override
+  IVec3 cloneScalar(int Function(int element) scalar) {
+    return IVec3(
+      scalar($1),
+      scalar($2),
+      scalar($3),
+    );
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      other is IVec3 &&
       ($1 == other.$1) &&
       ($2 == other.$2) &&
       ($3 == other.$3);
@@ -195,51 +307,7 @@ class NumVec3<T extends num> extends Vec<T> {
   }
 }
 
-/// A numeric vector with 4 elements.
-///
-/// Consider using [Vec4] or [IVec4] type aliases for
-/// specific number types ([double] and [int], respectively).
-class NumVec4<T extends num> extends Vec<T> {
-  /// Creates a new [NumVec4] with the given values.
-  NumVec4(
-    T p1,
-    T p2,
-    T p3,
-    T p4,
-  ) : super(
-          List<T>.from(
-            _iterate4(
-              p1,
-              p2,
-              p3,
-              p4,
-            ),
-            growable: false,
-          ),
-        );
-
-  /// Creates a new [NumVec4] from the elements of a [List].
-  factory NumVec4.fromList(List<T> list) {
-    return NumVec4._fromIterableRaw([
-      list[0 % list.length],
-      list[1 % list.length],
-      list[2 % list.length],
-      list[3 % list.length],
-    ]);
-  }
-
-  NumVec4._fromIterableRaw(Iterable<T> iterable)
-      : super(List<T>.from(iterable, growable: false));
-
-  /// Creates a new [NumVec4] with all elements set to [item].
-  NumVec4.all(T item) : super(List<T>.filled(4, item));
-
-  /// Creates a new [Vec4] with all elements set to zero.
-  static Vec4 zero() => NumVec4.all(0);
-
-  /// Creates a new [IVec4] with all elements set to zero.
-  static IVec4 zeroInt() => NumVec4.all(0);
-
+mixin NumVec4<T extends num> on NumVec<T> {
   /// The 1st element of this vector.
   T get $1 => allocation[0];
 
@@ -268,6 +336,10 @@ class NumVec4<T extends num> extends Vec<T> {
   @override
   final int length = 4;
 
+  NumVec4<T> clone();
+
+  NumVec4<T> cloneScalar(T Function(T element) scalar);
+
   /// Converts this vector to a record.
   ///
   /// See also:
@@ -283,10 +355,61 @@ class NumVec4<T extends num> extends Vec<T> {
 
   /// A shorter alias for [toRecord].
   NumRecord4<T> get rec => toRecord();
+}
+
+class Vec4 extends NumVec<double> with NumVec4<double> {
+  Vec4(
+    double p1,
+    double p2,
+    double p3,
+    double p4,
+  ) : super(
+          Float32List.fromList(
+            [
+              p1,
+              p2,
+              p3,
+              p4,
+            ],
+          ),
+        );
+
+  Vec4.fromList(List<double> list) : super(Float32List.fromList(list));
+
+  Vec4.all(double item)
+      : this(
+          item,
+          item,
+          item,
+          item,
+        );
+
+  /// Creates a new [Vec4] with all elements set to zero.
+  Vec4.zero() : super(Float32List(2));
+
+  @override
+  Vec4 clone() {
+    return Vec4(
+      $1,
+      $2,
+      $3,
+      $4,
+    );
+  }
+
+  @override
+  Vec4 cloneScalar(double Function(double element) scalar) {
+    return Vec4(
+      scalar($1),
+      scalar($2),
+      scalar($3),
+      scalar($4),
+    );
+  }
 
   @override
   bool operator ==(Object other) =>
-      other is NumVec4<T> &&
+      other is Vec4 &&
       ($1 == other.$1) &&
       ($2 == other.$2) &&
       ($3 == other.$3) &&
@@ -298,23 +421,69 @@ class NumVec4<T extends num> extends Vec<T> {
   }
 }
 
-/// A type alias for [NumVec2] with 2 [double] elements.
-typedef Vec2 = NumVec2<double>;
+class IVec4 extends NumVec<int> with NumVec4<int> {
+  IVec4(
+    int p1,
+    int p2,
+    int p3,
+    int p4,
+  ) : super(
+          Int32List.fromList(
+            [
+              p1,
+              p2,
+              p3,
+              p4,
+            ],
+          ),
+        );
 
-/// A type alias for [NumVec2] with 2 [int] elements.
-typedef IVec2 = NumVec2<int>;
+  IVec4.fromList(List<int> list) : super(Int32List.fromList(list));
 
-/// A type alias for [NumVec3] with 3 [double] elements.
-typedef Vec3 = NumVec3<double>;
+  IVec4.all(int item)
+      : this(
+          item,
+          item,
+          item,
+          item,
+        );
 
-/// A type alias for [NumVec3] with 3 [int] elements.
-typedef IVec3 = NumVec3<int>;
+  /// Creates a new [Vec4] with all elements set to zero.
+  static IVec4 zero() => IVec4.all(0);
 
-/// A type alias for [NumVec4] with 4 [double] elements.
-typedef Vec4 = NumVec4<double>;
+  @override
+  IVec4 clone() {
+    return IVec4(
+      $1,
+      $2,
+      $3,
+      $4,
+    );
+  }
 
-/// A type alias for [NumVec4] with 4 [int] elements.
-typedef IVec4 = NumVec4<int>;
+  @override
+  IVec4 cloneScalar(int Function(int element) scalar) {
+    return IVec4(
+      scalar($1),
+      scalar($2),
+      scalar($3),
+      scalar($4),
+    );
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      other is IVec4 &&
+      ($1 == other.$1) &&
+      ($2 == other.$2) &&
+      ($3 == other.$3) &&
+      ($4 == other.$4);
+
+  @override
+  int get hashCode {
+    return Object.hashAll(allocation);
+  }
+}
 
 /// Finds the larger value of each component of the given vectors.
 ///
@@ -322,10 +491,10 @@ typedef IVec4 = NumVec4<int>;
 ///
 /// If [result] is provided, it is returned after being modified with the
 /// resulting values.
-NumVec2<T> maxVec2<T extends num>(
-  NumVec2<T> a,
-  NumVec2<T> b, [
-  NumVec2<T>? result,
+Vec2 maxVec2(
+  Vec2 a,
+  Vec2 b, [
+  Vec2? result,
 ]) {
   if (result != null) {
     return result
@@ -333,8 +502,8 @@ NumVec2<T> maxVec2<T extends num>(
       ..$2 = math.max(a.$2, b.$2);
   }
 
-  return NumVec2<T>._fromIterableRaw(
-    a.indexed.map((i) => math.max(i.$2, b.allocation[i.$1])),
+  return Vec2.fromList(
+    a.indexed.map((i) => math.max(i.$2, b.allocation[i.$1])).toList(),
   );
 }
 
@@ -344,10 +513,10 @@ NumVec2<T> maxVec2<T extends num>(
 ///
 /// If [result] is provided, it is returned after being modified with the
 /// resulting values.
-NumVec2<T> minVec2<T extends num>(
-  NumVec2<T> a,
-  NumVec2<T> b, [
-  NumVec2<T>? result,
+Vec2 minVec2(
+  Vec2 a,
+  Vec2 b, [
+  Vec2? result,
 ]) {
   if (result != null) {
     return result
@@ -355,8 +524,8 @@ NumVec2<T> minVec2<T extends num>(
       ..$2 = math.min(a.$2, b.$2);
   }
 
-  return NumVec2<T>._fromIterableRaw(
-    a.indexed.map((i) => math.min(i.$2, b.allocation[i.$1])),
+  return Vec2.fromList(
+    a.indexed.map((i) => math.min(i.$2, b.allocation[i.$1])).toList(),
   );
 }
 
@@ -366,19 +535,20 @@ NumVec2<T> minVec2<T extends num>(
 ///
 /// If [result] is provided, it is returned after being modified with the
 /// resulting values.
-NumVec3<T> maxVec3<T extends num>(
-  NumVec3<T> a,
-  NumVec3<T> b, [
-  NumVec3<T>? result,
+Vec3 maxVec3(
+  Vec3 a,
+  Vec3 b, [
+  Vec3? result,
 ]) {
   if (result != null) {
     return result
       ..$1 = math.max(a.$1, b.$1)
-      ..$2 = math.max(a.$2, b.$2);
+      ..$2 = math.max(a.$2, b.$2)
+      ..$3 = math.max(a.$3, b.$3);
   }
 
-  return NumVec3<T>._fromIterableRaw(
-    a.indexed.map((i) => math.max(i.$2, b.allocation[i.$1])),
+  return Vec3.fromList(
+    a.indexed.map((i) => math.max(i.$2, b.allocation[i.$1])).toList(),
   );
 }
 
@@ -388,19 +558,20 @@ NumVec3<T> maxVec3<T extends num>(
 ///
 /// If [result] is provided, it is returned after being modified with the
 /// resulting values.
-NumVec3<T> minVec3<T extends num>(
-  NumVec3<T> a,
-  NumVec3<T> b, [
-  NumVec3<T>? result,
+Vec3 minVec3(
+  Vec3 a,
+  Vec3 b, [
+  Vec3? result,
 ]) {
   if (result != null) {
     return result
       ..$1 = math.min(a.$1, b.$1)
-      ..$2 = math.min(a.$2, b.$2);
+      ..$2 = math.min(a.$2, b.$2)
+      ..$3 = math.min(a.$3, b.$3);
   }
 
-  return NumVec3<T>._fromIterableRaw(
-    a.indexed.map((i) => math.min(i.$2, b.allocation[i.$1])),
+  return Vec3.fromList(
+    a.indexed.map((i) => math.min(i.$2, b.allocation[i.$1])).toList(),
   );
 }
 
@@ -410,19 +581,21 @@ NumVec3<T> minVec3<T extends num>(
 ///
 /// If [result] is provided, it is returned after being modified with the
 /// resulting values.
-NumVec4<T> maxVec4<T extends num>(
-  NumVec4<T> a,
-  NumVec4<T> b, [
-  NumVec4<T>? result,
+Vec4 maxVec4(
+  Vec4 a,
+  Vec4 b, [
+  Vec4? result,
 ]) {
   if (result != null) {
     return result
       ..$1 = math.max(a.$1, b.$1)
-      ..$2 = math.max(a.$2, b.$2);
+      ..$2 = math.max(a.$2, b.$2)
+      ..$3 = math.max(a.$3, b.$3)
+      ..$4 = math.max(a.$4, b.$4);
   }
 
-  return NumVec4<T>._fromIterableRaw(
-    a.indexed.map((i) => math.max(i.$2, b.allocation[i.$1])),
+  return Vec4.fromList(
+    a.indexed.map((i) => math.max(i.$2, b.allocation[i.$1])).toList(),
   );
 }
 
@@ -432,48 +605,20 @@ NumVec4<T> maxVec4<T extends num>(
 ///
 /// If [result] is provided, it is returned after being modified with the
 /// resulting values.
-NumVec4<T> minVec4<T extends num>(
-  NumVec4<T> a,
-  NumVec4<T> b, [
-  NumVec4<T>? result,
+Vec4 minVec4(
+  Vec4 a,
+  Vec4 b, [
+  Vec4? result,
 ]) {
   if (result != null) {
     return result
       ..$1 = math.min(a.$1, b.$1)
-      ..$2 = math.min(a.$2, b.$2);
+      ..$2 = math.min(a.$2, b.$2)
+      ..$3 = math.min(a.$3, b.$3)
+      ..$4 = math.min(a.$4, b.$4);
   }
 
-  return NumVec4<T>._fromIterableRaw(
-    a.indexed.map((i) => math.min(i.$2, b.allocation[i.$1])),
+  return Vec4.fromList(
+    a.indexed.map((i) => math.min(i.$2, b.allocation[i.$1])).toList(),
   );
-}
-
-Iterable<T> _iterate2<T>(
-  T p1,
-  T p2,
-) sync* {
-  yield p1;
-  yield p2;
-}
-
-Iterable<T> _iterate3<T>(
-  T p1,
-  T p2,
-  T p3,
-) sync* {
-  yield p1;
-  yield p2;
-  yield p3;
-}
-
-Iterable<T> _iterate4<T>(
-  T p1,
-  T p2,
-  T p3,
-  T p4,
-) sync* {
-  yield p1;
-  yield p2;
-  yield p3;
-  yield p4;
 }

@@ -9,7 +9,7 @@ class NumVec2ConstructionBenchmark extends BenchmarkBase {
   @override
   void run() {
     for (var i = 0; i < 1000000; i++) {
-      NumVec2(100.0, 200.0);
+      Vec2(100.0, 200.0);
     }
   }
 }
@@ -20,7 +20,7 @@ class NumVec2ConstructionAllBenchmark extends BenchmarkBase {
   @override
   void run() {
     for (var i = 0; i < 1000000; i++) {
-      NumVec2.all(100.0);
+      Vec2.all(100.0);
     }
   }
 }
@@ -31,7 +31,7 @@ class NumVec3ConstructionBenchmark extends BenchmarkBase {
   @override
   void run() {
     for (var i = 0; i < 1000000; i++) {
-      NumVec3(100.0, 200.0, 300.0);
+      Vec3(100.0, 200.0, 300.0);
     }
   }
 }
@@ -42,7 +42,7 @@ class NumVec3ConstructionAllBenchmark extends BenchmarkBase {
   @override
   void run() {
     for (var i = 0; i < 1000000; i++) {
-      NumVec3.all(100.0);
+      Vec3.all(100.0);
     }
   }
 }
@@ -56,7 +56,7 @@ class NumVec4ConstructionBenchmark extends BenchmarkBase {
   @override
   void run() {
     for (var i = 0; i < 1000000; i++) {
-      NumVec4(100.0, 200.0, 300.0, 400.0);
+      Vec4(100.0, 200.0, 300.0, 400.0);
     }
   }
 }

@@ -1,20 +1,12 @@
 import 'dart:math' as math;
+import 'dart:typed_data';
 import 'package:meta/meta.dart';
 import 'package:vec_math/vec_math.dart';
 
-/// The base class for all vectors.
-///
-/// It contains a list [allocation] that holds the values of the vector.
-///
-/// As a Iterable, it can be used in for loops and other iterable operations.
-///
-/// See also:{{#sequences}}
-/// - [NumVec{{key}}], A numeric vector with {{key}} elements.{{/sequences}}
 @immutable
-sealed class Vec<T> with Iterable<T> {
-
+sealed class NumVec<T extends num> with Iterable<T> {
   /// Creates a new vector with the given [allocation].
-  const Vec(this.allocation);
+  const NumVec(this.allocation);
 
   /// The values of the vector.
   final List<T> allocation;
@@ -25,44 +17,7 @@ sealed class Vec<T> with Iterable<T> {
 
 {{#sequences}}
 
-/// A numeric vector with {{key}} elements.
-///
-/// Consider using [Vec{{key}}] or [IVec{{key}}] type aliases for
-/// specific number types ([double] and [int], respectively).
-class NumVec{{key}}<T extends num> extends Vec<T> {
-
-  /// Creates a new [NumVec{{key}}] with the given values.
-  NumVec{{key}}(
-{{#value}}    T p{{value}},
-{{/value}}) : super(
-          List<T>.from(
-            _iterate{{key}}(
-{{#value}}              p{{value}},
-{{/value}}
-            ),
-            growable: false,
-          ),
-        );
-
-  /// Creates a new [NumVec{{key}}] from the elements of a [List].
-  factory NumVec{{key}}.fromList(List<T> list){
-    return NumVec{{key}}._fromIterableRaw([
-      {{#value}}list[{{index}} % list.length],{{/value}}
-    ]);
-  }
-
-  NumVec{{key}}._fromIterableRaw(Iterable<T> iterable)
-    : super(List<T>.from(iterable, growable: false));
-
-  /// Creates a new [NumVec{{key}}] with all elements set to [item].
-  NumVec{{key}}.all(T item) : super(List<T>.filled({{key}}, item));
-
-  /// Creates a new [Vec{{key}}] with all elements set to zero.
-  static Vec{{key}} zero() => NumVec{{key}}.all(0);
-
-  /// Creates a new [IVec{{key}}] with all elements set to zero.
-  static IVec{{key}} zeroInt() => NumVec{{key}}.all(0);
-
+mixin NumVec{{key}}<T extends num> on NumVec<T> {
   {{#value}}
 
   /// The {{ordinal}} element of this vector.
@@ -75,6 +30,10 @@ class NumVec{{key}}<T extends num> extends Vec<T> {
   /// The length of this vector.
   @override
   final int length = {{key}};
+
+  NumVec{{key}}<T> clone();
+
+  NumVec{{key}}<T> cloneScalar(T Function(T element) scalar);
 
   /// Converts this vector to a record.
   ///
@@ -89,24 +48,107 @@ class NumVec{{key}}<T extends num> extends Vec<T> {
   /// A shorter alias for [toRecord].
   NumRecord{{key}}<T> get rec => toRecord();
 
+}
+
+class Vec{{key}} extends NumVec<double> with NumVec{{key}}<double>  {
+
+  Vec{{key}}(
+{{#value}}    double p{{value}},
+{{/value}}) : super(
+Float32List.fromList(
+            [
+{{#value}}              p{{value}},
+{{/value}}
+            ],
+          ),
+        );
+
+  Vec{{key}}.fromList(List<double> list): super(Float32List.fromList(list));
+
+  Vec{{key}}.all(double item) : this({{#value}}    item,
+{{/value}});
+
+  /// Creates a new [Vec{{key}}] with all elements set to zero.
+  Vec{{key}}.zero(): super(Float32List(2));
+
+  @override
+  Vec{{key}} clone() {
+    return Vec{{key}}(
+{{#value}}
+  ${{value}},
+{{/value}}
+    );
+  }
+
+  @override
+  Vec{{key}} cloneScalar(double Function(double element) scalar) {
+    return Vec{{key}}(
+{{#value}}scalar(${{value}}),{{/value}}
+    );
+  }
+
   @override
   bool operator ==(Object other) =>
-    other is NumVec{{key}}<T> {{#value}}&& (${{value}} == other.${{value}}){{/value}};
-
+    other is Vec{{key}} {{#value}}&& (${{value}} == other.${{value}}){{/value}};
 
   @override
   int get hashCode {
     return Object.hashAll(allocation);
   }
-}{{/sequences}}
+}
 
-{{#sequences}}
-/// A type alias for [NumVec{{key}}] with {{key}} [double] elements.
-typedef Vec{{key}} = NumVec{{key}}<double>;
+class IVec{{key}} extends NumVec<int> with NumVec{{key}}<int>  {
 
-/// A type alias for [NumVec{{key}}] with {{key}} [int] elements.
-typedef IVec{{key}} = NumVec{{key}}<int>;
+  IVec{{key}}(
+{{#value}}    int p{{value}},
+{{/value}}) : super(
+Int32List.fromList(
+            [
+{{#value}}              p{{value}},
+{{/value}}
+            ],
+          ),
+        );
+
+  IVec{{key}}.fromList(List<int> list): super(Int32List.fromList(list));
+
+  IVec{{key}}.all(int item) : this({{#value}}    item,
+{{/value}});
+
+  /// Creates a new [Vec{{key}}] with all elements set to zero.
+  static IVec{{key}} zero() => IVec{{key}}.all(0);
+
+  @override
+  IVec{{key}} clone() {
+    return IVec{{key}}(
+{{#value}}
+  ${{value}},
+{{/value}}
+    );
+  }
+
+  @override
+  IVec{{key}} cloneScalar(int Function(int element) scalar) {
+    return IVec{{key}}(
+{{#value}}scalar(${{value}}),{{/value}}
+    );
+  }
+
+
+  @override
+  bool operator ==(Object other) =>
+    other is IVec{{key}} {{#value}}&& (${{value}} == other.${{value}}){{/value}};
+
+  @override
+  int get hashCode {
+    return Object.hashAll(allocation);
+  }
+}
+
+
 {{/sequences}}
+
+
 {{#sequences}}
 
 /// Finds the larger value of each component of the given vectors.
@@ -115,21 +157,24 @@ typedef IVec{{key}} = NumVec{{key}}<int>;
 ///
 /// If [result] is provided, it is returned after being modified with the
 /// resulting values.
-NumVec{{key}}<T> maxVec{{key}}<T extends num>(
-  NumVec{{key}}<T> a,
-  NumVec{{key}}<T> b, [
-  NumVec{{key}}<T>? result,
+Vec{{key}} maxVec{{key}}(
+  Vec{{key}} a,
+  Vec{{key}} b, [
+  Vec{{key}}? result,
 ]) {
+
   if (result != null) {
     return result
-      ..$1 = math.max(a.$1, b.$1)
-      ..$2 = math.max(a.$2, b.$2);
+{{#value}}
+..${{value}} = math.max(a.${{value}}, b.${{value}})
+{{/value}}
+;
   }
 
-  return NumVec{{key}}<T>._fromIterableRaw(
+  return Vec{{key}}.fromList(
     a.indexed.map(
       (i) => math.max(i.$2, b.allocation[i.$1])
-    ),
+    ).toList(),
   );
 }
 
@@ -139,29 +184,21 @@ NumVec{{key}}<T> maxVec{{key}}<T extends num>(
 ///
 /// If [result] is provided, it is returned after being modified with the
 /// resulting values.
-NumVec{{key}}<T> minVec{{key}}<T extends num>(
-  NumVec{{key}}<T> a,
-  NumVec{{key}}<T> b, [
-  NumVec{{key}}<T>? result,
-]) {
+Vec{{key}} minVec{{key}}(
+    Vec{{key}} a,
+    Vec{{key}} b, [
+    Vec{{key}}? result,
+  ]) {
   if (result != null) {
     return result
-      ..$1 = math.min(a.$1, b.$1)
-      ..$2 = math.min(a.$2, b.$2);
+{{#value}}
+..${{value}} = math.min(a.${{value}}, b.${{value}})
+{{/value}}
+;
   }
 
-  return NumVec{{key}}<T>._fromIterableRaw(
-    a.indexed.map(
-      (i) => math.min(i.$2, b.allocation[i.$1])
-    ),
+  return Vec{{key}}.fromList(
+    a.indexed.map((i) => math.min(i.$2, b.allocation[i.$1])).toList(),
   );
-}
-{{/sequences}}
-
-
-{{#sequences}}
-Iterable<T> _iterate{{key}}<T>({{#value}}    T p{{value}},{{/value}}) sync* {
-{{#value}}
-  yield p{{value}};{{/value}}
 }
 {{/sequences}}
