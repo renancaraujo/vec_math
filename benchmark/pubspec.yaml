@@ -1,5 +1,5 @@
-name: example
-description: A sample app for vec_math
+name: benchmark
+description: Benchmark for vec_math
 version: 1.0.0
 publish_to: none
 
@@ -7,8 +7,10 @@ environment:
   sdk: ^3.0.0
 
 dependencies:
+  benchmark_harness: ^2.2.2
   vec_math:
     path: ../
+  vector_math: ^2.1.4
 
 dev_dependencies:
   very_good_analysis: ^5.1.0

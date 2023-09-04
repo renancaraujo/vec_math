@@ -21,7 +21,7 @@ void main() {
       vectorA.widthWidth.map((e) => null);
 
   for (final element in vectorA) {
-    print(element);
+    // print(element);
   }
 
   var vectorD = vectorC + (45, 22, 1).vec3;
@@ -34,5 +34,5 @@ void main() {
   final vec = (1, 1.0).vec2;
   final ivec = (1, 1.0).iVec2;
 
-  print(1.0 == 1);
+  // print(1.0 == 1);
 }
