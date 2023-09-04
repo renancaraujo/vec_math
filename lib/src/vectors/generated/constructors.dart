@@ -18,9 +18,9 @@ extension NumX on (num,) {
   ///
   /// Example:
   /// ```
-  /// (1.0,).ivec2 => Vec of <1, 1, >
+  /// (1.0,).iVec2 => Vec of <1, 1, >
   /// ```
-  IVec2 get ivec2 => NumVec2(
+  IVec2 get iVec2 => NumVec2(
         $1.toInt(),
         $1.toInt(),
       );
@@ -41,9 +41,9 @@ extension NumX on (num,) {
   ///
   /// Example:
   /// ```
-  /// (1.0,).ivec3 => Vec of <1, 1, 1, >
+  /// (1.0,).iVec3 => Vec of <1, 1, 1, >
   /// ```
-  IVec3 get ivec3 => NumVec3(
+  IVec3 get iVec3 => NumVec3(
         $1.toInt(),
         $1.toInt(),
         $1.toInt(),
@@ -66,9 +66,9 @@ extension NumX on (num,) {
   ///
   /// Example:
   /// ```
-  /// (1.0,).ivec4 => Vec of <1, 1, 1, 1, >
+  /// (1.0,).iVec4 => Vec of <1, 1, 1, 1, >
   /// ```
-  IVec4 get ivec4 => NumVec4(
+  IVec4 get iVec4 => NumVec4(
         $1.toInt(),
         $1.toInt(),
         $1.toInt(),
@@ -94,9 +94,9 @@ extension ActualNumX on num {
   /// Returns a [IVec2] from a number.
   /// Example:
   /// ```
-  /// 1.0.ivec2 == NumVec(1, 1)
+  /// 1.0.iVec2 == NumVec(1, 1)
   /// ```
-  IVec2 get ivec2 => NumVec2(
+  IVec2 get iVec2 => NumVec2(
         toInt(),
         toInt(),
       );
@@ -117,9 +117,9 @@ extension ActualNumX on num {
   /// Returns a [IVec3] from a number.
   /// Example:
   /// ```
-  /// 1.0.ivec3 == NumVec(1, 1, 1)
+  /// 1.0.iVec3 == NumVec(1, 1, 1)
   /// ```
-  IVec3 get ivec3 => NumVec3(
+  IVec3 get iVec3 => NumVec3(
         toInt(),
         toInt(),
         toInt(),
@@ -142,9 +142,9 @@ extension ActualNumX on num {
   /// Returns a [IVec4] from a number.
   /// Example:
   /// ```
-  /// 1.0.ivec4 == NumVec(1, 1, 1, 1)
+  /// 1.0.iVec4 == NumVec(1, 1, 1, 1)
   /// ```
-  IVec4 get ivec4 => NumVec4(
+  IVec4 get iVec4 => NumVec4(
         toInt(),
         toInt(),
         toInt(),
@@ -164,7 +164,7 @@ extension NumNumX on (
   /// ```
   /// (1, 2).vec2 == (1.0, 2.0)
   /// ```
-  Vec2 get vec => NumVec2(
+  Vec2 get vec2 => NumVec2(
         $1.toDouble(),
         $2.toDouble(),
       );
@@ -173,9 +173,9 @@ extension NumNumX on (
   ///
   /// Example:
   /// ```
-  /// (1.0, 2.0).ivec2 == (1, 2)
+  /// (1.0, 2.0).iVec2 == (1, 2)
   /// ```
-  IVec2 get ivec => NumVec2(
+  IVec2 get iVec2 => NumVec2(
         $1.toInt(),
         $2.toInt(),
       );
@@ -194,7 +194,7 @@ extension NumNumNumX on (
   /// ```
   /// (1, 2, 3).vec3 == (1.0, 2.0, 3.0)
   /// ```
-  Vec3 get vec => NumVec3(
+  Vec3 get vec3 => NumVec3(
         $1.toDouble(),
         $2.toDouble(),
         $3.toDouble(),
@@ -204,9 +204,9 @@ extension NumNumNumX on (
   ///
   /// Example:
   /// ```
-  /// (1.0, 2.0, 3.0).ivec3 == (1, 2, 3)
+  /// (1.0, 2.0, 3.0).iVec3 == (1, 2, 3)
   /// ```
-  IVec3 get ivec => NumVec3(
+  IVec3 get iVec3 => NumVec3(
         $1.toInt(),
         $2.toInt(),
         $3.toInt(),
@@ -227,7 +227,7 @@ extension NumNumNumNumX on (
   /// ```
   /// (1, 2, 3, 4).vec4 == (1.0, 2.0, 3.0, 4.0)
   /// ```
-  Vec4 get vec => NumVec4(
+  Vec4 get vec4 => NumVec4(
         $1.toDouble(),
         $2.toDouble(),
         $3.toDouble(),
@@ -238,9 +238,9 @@ extension NumNumNumNumX on (
   ///
   /// Example:
   /// ```
-  /// (1.0, 2.0, 3.0, 4.0).ivec4 == (1, 2, 3, 4)
+  /// (1.0, 2.0, 3.0, 4.0).iVec4 == (1, 2, 3, 4)
   /// ```
-  IVec4 get ivec => NumVec4(
+  IVec4 get iVec4 => NumVec4(
         $1.toInt(),
         $2.toInt(),
         $3.toInt(),
@@ -272,9 +272,9 @@ extension XYZWSystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (x: 1.0, y: 2.0).ivec2 == (1, 2)
+  /// (x: 1.0, y: 2.0).iVec2 == (1, 2)
   /// ```
-  IVec2 get ivec2 => NumVec2(
+  IVec2 get iVec2 => NumVec2(
         x.toInt(),
         y.toInt(),
       );
@@ -304,9 +304,9 @@ extension RGBASystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (r: 1.0, g: 2.0).ivec2 == (1, 2)
+  /// (r: 1.0, g: 2.0).iVec2 == (1, 2)
   /// ```
-  IVec2 get ivec2 => NumVec2(
+  IVec2 get iVec2 => NumVec2(
         r.toInt(),
         g.toInt(),
       );
@@ -336,9 +336,9 @@ extension STPQSystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (s: 1.0, t: 2.0).ivec2 == (1, 2)
+  /// (s: 1.0, t: 2.0).iVec2 == (1, 2)
   /// ```
-  IVec2 get ivec2 => NumVec2(
+  IVec2 get iVec2 => NumVec2(
         s.toInt(),
         t.toInt(),
       );
@@ -368,9 +368,9 @@ extension SizeSystemNVec2X on ({
   ///
   /// Example:
   /// ```
-  /// (width: 1.0, height: 2.0).ivec2 == (1, 2)
+  /// (width: 1.0, height: 2.0).iVec2 == (1, 2)
   /// ```
-  IVec2 get ivec2 => NumVec2(
+  IVec2 get iVec2 => NumVec2(
         width.toInt(),
         height.toInt(),
       );
@@ -402,9 +402,9 @@ extension XYZWSystemNVec3X on ({
   ///
   /// Example:
   /// ```
-  /// (x: 1.0, y: 2.0, z: 3.0).ivec3 == (1, 2, 3)
+  /// (x: 1.0, y: 2.0, z: 3.0).iVec3 == (1, 2, 3)
   /// ```
-  IVec3 get ivec3 => NumVec3(
+  IVec3 get iVec3 => NumVec3(
         x.toInt(),
         y.toInt(),
         z.toInt(),
@@ -437,9 +437,9 @@ extension RGBASystemNVec3X on ({
   ///
   /// Example:
   /// ```
-  /// (r: 1.0, g: 2.0, b: 3.0).ivec3 == (1, 2, 3)
+  /// (r: 1.0, g: 2.0, b: 3.0).iVec3 == (1, 2, 3)
   /// ```
-  IVec3 get ivec3 => NumVec3(
+  IVec3 get iVec3 => NumVec3(
         r.toInt(),
         g.toInt(),
         b.toInt(),
@@ -472,9 +472,9 @@ extension STPQSystemNVec3X on ({
   ///
   /// Example:
   /// ```
-  /// (s: 1.0, t: 2.0, p: 3.0).ivec3 == (1, 2, 3)
+  /// (s: 1.0, t: 2.0, p: 3.0).iVec3 == (1, 2, 3)
   /// ```
-  IVec3 get ivec3 => NumVec3(
+  IVec3 get iVec3 => NumVec3(
         s.toInt(),
         t.toInt(),
         p.toInt(),
@@ -509,9 +509,9 @@ extension XYZWSystemNVec4X on ({
   ///
   /// Example:
   /// ```
-  /// (x: 1.0, y: 2.0, z: 3.0, w: 4.0).ivec4 == (1, 2, 3, 4)
+  /// (x: 1.0, y: 2.0, z: 3.0, w: 4.0).iVec4 == (1, 2, 3, 4)
   /// ```
-  IVec4 get ivec4 => NumVec4(
+  IVec4 get iVec4 => NumVec4(
         x.toInt(),
         y.toInt(),
         z.toInt(),
@@ -547,9 +547,9 @@ extension RGBASystemNVec4X on ({
   ///
   /// Example:
   /// ```
-  /// (r: 1.0, g: 2.0, b: 3.0, a: 4.0).ivec4 == (1, 2, 3, 4)
+  /// (r: 1.0, g: 2.0, b: 3.0, a: 4.0).iVec4 == (1, 2, 3, 4)
   /// ```
-  IVec4 get ivec4 => NumVec4(
+  IVec4 get iVec4 => NumVec4(
         r.toInt(),
         g.toInt(),
         b.toInt(),
@@ -585,9 +585,9 @@ extension STPQSystemNVec4X on ({
   ///
   /// Example:
   /// ```
-  /// (s: 1.0, t: 2.0, p: 3.0, q: 4.0).ivec4 == (1, 2, 3, 4)
+  /// (s: 1.0, t: 2.0, p: 3.0, q: 4.0).iVec4 == (1, 2, 3, 4)
   /// ```
-  IVec4 get ivec4 => NumVec4(
+  IVec4 get iVec4 => NumVec4(
         s.toInt(),
         t.toInt(),
         p.toInt(),

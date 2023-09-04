@@ -52,10 +52,15 @@ Map<String, dynamic> main() {
   Directory(generatedLibPath).deleteIfExists();
   Directory(generatedTestPath).deleteIfExists();
 
-  final sequences = <int, List<Map<String, int>>>{
+  final sequences = <int, List<Map<String, dynamic>>>{
     for (int i = 2; i <= maxDimension; i++)
       i: [
-        for (int j = 1; j <= i; j++) {'value': j, 'index': j - 1},
+        for (int j = 1; j <= i; j++)
+          {
+            'value': j,
+            'index': j - 1,
+            'ordinal': '${getOrdinal(j)}',
+          },
       ],
   };
 
@@ -133,7 +138,7 @@ Map<String, dynamic> main() {
                 for (var number in sequences[vectorLength]!)
                   if (sequenceOfIndexes.contains(number['value']!))
                     {
-                      'ordinal': getOrdinal(number['value']!),
+                      'ordinal': number['ordinal'],
                       'valueFromParam':
                           '${sequenceOfIndexes.indexOf(number['value']!) + 1}',
                       'valueFromParamOrdinal': getOrdinal(
@@ -142,7 +147,7 @@ Map<String, dynamic> main() {
                     }
                   else
                     {
-                      'ordinal': getOrdinal(number['value']!),
+                      'ordinal': number['ordinal'],
                       'valueFromVec': '${number['value']}',
                     },
               ];

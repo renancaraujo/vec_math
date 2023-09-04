@@ -3,6 +3,7 @@ import 'package:vec_math/vec_math.dart';
 /// A series of getters that allows semantic construction of vectors from a
 /// unary record of a number.
 extension NumX on (num,) {
+
 {{#sequences}}
   /// Returns a [Vec{{key}}] from a record of a single number.
   ///
@@ -16,11 +17,12 @@ extension NumX on (num,) {
   ///
   /// Example:
   /// ```
-  /// (1.0,).ivec{{key}} => Vec of <{{#value}}1, {{/value}}>
+  /// (1.0,).iVec{{key}} => Vec of <{{#value}}1, {{/value}}>
   /// ```
-  IVec{{key}} get ivec{{key}} => NumVec{{key}}({{#value}}$1.toInt(),{{/value}});
+  IVec{{key}} get iVec{{key}} => NumVec{{key}}({{#value}}$1.toInt(),{{/value}});
+{{/sequences}}
 
-{{/sequences}}}
+}
 
 
 /// A series of getters that allows semantic construction of vectors from a
@@ -40,9 +42,9 @@ extension ActualNumX on num {
   /// Returns a [IVec{{key}}] from a number.
   /// Example:
   /// ```
-  /// 1.0.ivec{{key}} == NumVec({{#value}}1, {{/value}})
+  /// 1.0.iVec{{key}} == NumVec({{#value}}1, {{/value}})
   /// ```
-  IVec{{key}} get ivec{{key}} => NumVec{{key}}({{#value}}toInt(),{{/value}});
+  IVec{{key}} get iVec{{key}} => NumVec{{key}}({{#value}}toInt(),{{/value}});
 
 {{/sequences}}}
 {{#sequences}}
@@ -56,16 +58,16 @@ extension {{#value}}Num{{/value}}X on ({{#value}}num,{{/value}}) {
   /// ```
   /// ({{#value}}{{value}}, {{/value}}).vec{{key}} == ({{#value}}{{value}}.0, {{/value}})
   /// ```
-  Vec{{key}} get vec => NumVec{{key}}({{#value}}${{value}}.toDouble(),{{/value}});
+  Vec{{key}} get vec{{key}} => NumVec{{key}}({{#value}}${{value}}.toDouble(),{{/value}});
 
 
   /// Returns an [IVec{{key}}] from a record of {{key}} numbers.
   ///
   /// Example:
   /// ```
-  /// ({{#value}}{{value}}.0, {{/value}}).ivec{{key}} == ({{#value}}{{value}}, {{/value}})
+  /// ({{#value}}{{value}}.0, {{/value}}).iVec{{key}} == ({{#value}}{{value}}, {{/value}})
   /// ```
-  IVec{{key}} get ivec => NumVec{{key}}({{#value}}${{value}}.toInt(),{{/value}});
+  IVec{{key}} get iVec{{key}} => NumVec{{key}}({{#value}}${{value}}.toInt(),{{/value}});
 }
 {{/sequences}}{{#allSystems}}
 
@@ -91,9 +93,9 @@ extension {{key}}X on ({
   ///
   /// Example:
   /// ```
-  /// ({{#sequence}}{{name}}: {{index}}.0, {{/sequence}}).ivec{{length}} == ({{#sequence}}{{index}}, {{/sequence}})
+  /// ({{#sequence}}{{name}}: {{index}}.0, {{/sequence}}).iVec{{length}} == ({{#sequence}}{{index}}, {{/sequence}})
   /// ```
-  IVec{{length}} get ivec{{length}} => NumVec{{length}}({{#sequence}}{{name}}.toInt(),{{/sequence}});
+  IVec{{length}} get iVec{{length}} => NumVec{{length}}({{#sequence}}{{name}}.toInt(),{{/sequence}});
 {{/value}}
 }
 {{/allSystems}}
