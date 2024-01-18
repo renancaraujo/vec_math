@@ -1,5 +1,5 @@
 export 'constructors.dart';
-export 'getters.dart';
+export 'getters_setters.dart';
 export 'methods.dart';
-export 'setters.dart';
+export 'typedefs.dart';
 export 'vectors.dart';

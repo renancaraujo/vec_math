@@ -1,0 +1,14 @@
+name: example
+description: A sample app for vec_math
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  vec_math:
+    path: ../
+
+dev_dependencies:
+  very_good_analysis: ^5.1.0

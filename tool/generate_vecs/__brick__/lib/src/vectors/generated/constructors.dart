@@ -3,24 +3,26 @@ import 'package:vec_math/vec_math.dart';
 /// A series of getters that allows semantic construction of vectors from a
 /// unary record of a number.
 extension NumX on (num,) {
+
 {{#sequences}}
   /// Returns a [Vec{{key}}] from a record of a single number.
   ///
   /// Example:
   /// ```
-  /// (1,).vec{{key}} == ({{#value}}1.0, {{/value}})
+  /// (1,).vec{{key}} => Vec of <{{#value}}1.0, {{/value}}>
   /// ```
-  Vec{{key}} get vec{{key}} => ({{#value}}$1.toDouble(),{{/value}});
+  Vec{{key}} get vec{{key}} => Vec{{key}}({{#value}}$1.toDouble(),{{/value}});
 
   /// Returns a [IVec{{key}}] from a record of a single number.
   ///
   /// Example:
   /// ```
-  /// (1.0,).ivec{{key}} == ({{#value}}1, {{/value}})
+  /// (1.0,).iVec{{key}} => Vec of <{{#value}}1, {{/value}}>
   /// ```
-  IVec{{key}} get ivec{{key}} => ({{#value}}$1.toInt(),{{/value}});
+  IVec{{key}} get iVec{{key}} => IVec{{key}}({{#value}}$1.toInt(),{{/value}});
+{{/sequences}}
 
-{{/sequences}}}
+}
 
 
 /// A series of getters that allows semantic construction of vectors from a
@@ -32,17 +34,17 @@ extension ActualNumX on num {
   ///
   /// Example:
   /// ```
-  /// 1.vec{{key}} == ({{#value}}1.0, {{/value}})
-  /// 1.0.vec{{key}} == ({{#value}}1.0, {{/value}})
+  /// 1.vec{{key}} == NumVec({{#value}}1.0, {{/value}})
+  /// 1.0.vec{{key}} == NumVec({{#value}}1.0, {{/value}})
   /// ```
-  Vec{{key}} get vec{{key}} => ({{#value}}toDouble(),{{/value}});
+  Vec{{key}} get vec{{key}} => Vec{{key}}({{#value}}toDouble(),{{/value}});
 
   /// Returns a [IVec{{key}}] from a number.
   /// Example:
   /// ```
-  /// 1.0.ivec{{key}} == ({{#value}}1, {{/value}})
+  /// 1.0.iVec{{key}} == NumVec({{#value}}1, {{/value}})
   /// ```
-  IVec{{key}} get ivec{{key}} => ({{#value}}toInt(),{{/value}});
+  IVec{{key}} get iVec{{key}} => IVec{{key}}({{#value}}toInt(),{{/value}});
 
 {{/sequences}}}
 {{#sequences}}
@@ -54,18 +56,18 @@ extension {{#value}}Num{{/value}}X on ({{#value}}num,{{/value}}) {
   ///
   /// Example:
   /// ```
-  /// ({{#value}}{{.}}, {{/value}}).vec{{key}} == ({{#value}}{{.}}.0, {{/value}})
+  /// ({{#value}}{{value}}, {{/value}}).vec{{key}} == ({{#value}}{{value}}.0, {{/value}})
   /// ```
-  Vec{{key}} get vec{{key}} => ({{#value}}${{.}}.toDouble(),{{/value}});
+  Vec{{key}} get vec{{key}} => Vec{{key}}({{#value}}${{value}}.toDouble(),{{/value}});
 
 
   /// Returns an [IVec{{key}}] from a record of {{key}} numbers.
   ///
   /// Example:
   /// ```
-  /// ({{#value}}{{.}}.0, {{/value}}).ivec{{key}} == ({{#value}}{{.}}, {{/value}})
+  /// ({{#value}}{{value}}.0, {{/value}}).iVec{{key}} == ({{#value}}{{value}}, {{/value}})
   /// ```
-  IVec{{key}} get ivec{{key}} => ({{#value}}${{.}}.toInt(),{{/value}});
+  IVec{{key}} get iVec{{key}} => IVec{{key}}({{#value}}${{value}}.toInt(),{{/value}});
 }
 {{/sequences}}{{#allSystems}}
 
@@ -84,16 +86,16 @@ extension {{key}}X on ({
   /// ```
   /// ({{#sequence}}{{name}}: {{index}}, {{/sequence}}).vec{{length}} == ({{#sequence}}{{index}}.0, {{/sequence}})
   /// ```
-  Vec{{length}} get vec{{length}} => ({{#sequence}}{{name}}.toDouble(),{{/sequence}});
+  Vec{{length}} get vec{{length}} => Vec{{length}}({{#sequence}}{{name}}.toDouble(),{{/sequence}});
 
   /// Returns an [IVec{{length}}] from a record of {{length}} numbers with elements named
   /// after the {{systemName}} ({{description}}) system.
   ///
   /// Example:
   /// ```
-  /// ({{#sequence}}{{name}}: {{index}}.0, {{/sequence}}).ivec{{length}} == ({{#sequence}}{{index}}, {{/sequence}})
+  /// ({{#sequence}}{{name}}: {{index}}.0, {{/sequence}}).iVec{{length}} == ({{#sequence}}{{index}}, {{/sequence}})
   /// ```
-  IVec{{length}} get ivec{{length}} => ({{#sequence}}{{name}}.toInt(),{{/sequence}});
+  IVec{{length}} get iVec{{length}} => IVec{{length}}({{#sequence}}{{name}}.toInt(),{{/sequence}});
 {{/value}}
 }
 {{/allSystems}}

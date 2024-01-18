@@ -52,15 +52,19 @@ Map<String, dynamic> main() {
   Directory(generatedLibPath).deleteIfExists();
   Directory(generatedTestPath).deleteIfExists();
 
-  final sequences = <int, List<int>>{
+  final sequences = <int, List<Map<String, dynamic>>>{
     for (int i = 2; i <= maxDimension; i++)
       i: [
-        for (int j = 1; j <= i; j++) j,
+        for (int j = 1; j <= i; j++)
+          {
+            'value': j,
+            'index': j - 1,
+            'ordinal': '${getOrdinal(j)}',
+          },
       ],
   };
 
-  final getters = <int, Map<String, dynamic>>{};
-  final setters = <int, Map<String, dynamic>>{};
+  final gettersAndSetters = <int, Map<String, dynamic>>{};
   for (final MapEntry(key: vectorLength, value: systemsForLength)
       in systemsPerLength.entries) {
     final multiElementGetters = <Map<String, dynamic>>[];
@@ -93,7 +97,7 @@ Map<String, dynamic> main() {
 
         final sequenceOfParams = <dynamic>[
           for (var number in sequences[vectorLength]!)
-            if (number == index) false else '\$$number',
+            if (number['value'] == index) false else '\$${number['value']}',
         ];
 
         return {
@@ -101,6 +105,7 @@ Map<String, dynamic> main() {
           'sequenceOfParams': sequenceOfParams,
           'ordinal': ordinal,
           'system': system.name,
+          'changedMember': index,
         };
       }));
 
@@ -131,18 +136,19 @@ Map<String, dynamic> main() {
 
               final sequenceOfParams = <Map<String, dynamic>>[
                 for (var number in sequences[vectorLength]!)
-                  if (sequenceOfIndexes.contains(number))
+                  if (sequenceOfIndexes.contains(number['value']!))
                     {
-                      'ordinal': getOrdinal(number),
+                      'ordinal': number['ordinal'],
                       'valueFromParam':
-                          '${sequenceOfIndexes.indexOf(number) + 1}',
-                      'valueFromParamOrdinal':
-                          getOrdinal(sequenceOfIndexes.indexOf(number) + 1),
+                          '${sequenceOfIndexes.indexOf(number['value']!) + 1}',
+                      'valueFromParamOrdinal': getOrdinal(
+                          sequenceOfIndexes.indexOf(number['value']!) + 1),
+                      'member': number['value']!,
                     }
                   else
                     {
-                      'ordinal': getOrdinal(number),
-                      'valueFromVec': '$number',
+                      'ordinal': number['ordinal'],
+                      'valueFromVec': '${number['value']}',
                     },
               ];
 
@@ -157,21 +163,19 @@ Map<String, dynamic> main() {
       }
     }
 
-    final map = getters[vectorLength] = {};
-    map['multiElementGetters'] = multiElementGetters;
-    map['singleElementGetters'] = singleElementGetters;
-    map['systems'] = systems.map((e) {
+    final mapGettersAndSetters = gettersAndSetters[vectorLength] = {};
+    mapGettersAndSetters['multiElementGetters'] = multiElementGetters;
+    mapGettersAndSetters['singleElementGetters'] = singleElementGetters;
+    mapGettersAndSetters['systems'] = systems.map((e) {
       return {
         'name': e.name,
         'sequence': e.sequence,
         'description': e.description,
       };
     }).toList();
-    map['sequence'] = sequences[vectorLength];
-
-    final mapSetters = setters[vectorLength] = {};
-    mapSetters['singleElementSetters'] = singleElementSetters;
-    mapSetters['multiElementSetters'] = multiElementSetters;
+    mapGettersAndSetters['sequence'] = sequences[vectorLength];
+    mapGettersAndSetters['singleElementSetters'] = singleElementSetters;
+    mapGettersAndSetters['multiElementSetters'] = multiElementSetters;
   }
 
   final allSystems = <String, dynamic>{};
@@ -193,8 +197,7 @@ Map<String, dynamic> main() {
 
   final result = {
     'sequences': sequences.asJSON(),
-    'getters': getters.asJSON(),
-    'setters': setters.asJSON(),
+    'gettersAndSetters': gettersAndSetters.asJSON(),
     'allSystems': allSystems.asJSON(),
   };
 
